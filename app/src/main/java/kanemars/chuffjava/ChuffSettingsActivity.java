@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
@@ -46,7 +47,9 @@ public class ChuffSettingsActivity extends AppCompatPreferenceActivity {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             // Show the Up button in the action bar.
+            actionBar.setDisplayShowHomeEnabled(true);
             actionBar.setDisplayHomeAsUpEnabled(true);
+
         }
     }
 
@@ -173,7 +176,8 @@ public class ChuffSettingsActivity extends AppCompatPreferenceActivity {
             // to their values. When their values change, their summaries are
             // updated to reflect the new value, per the Android Design
             // guidelines.
-            bindPreferenceSummaryToValue(findPreference("example_text"));
+            bindPreferenceSummaryToValue(findPreference("source_station"));
+            bindPreferenceSummaryToValue(findPreference("destination_station"));
             bindPreferenceSummaryToValue(findPreference("example_list"));
         }
 
@@ -181,7 +185,8 @@ public class ChuffSettingsActivity extends AppCompatPreferenceActivity {
         public boolean onOptionsItemSelected(MenuItem item) {
             int id = item.getItemId();
             if (id == android.R.id.home) {
-                startActivity(new Intent(getActivity(), ChuffSettingsActivity.class));
+                //startActivity(new Intent(getActivity(), MainActivity.class));
+                NavUtils.navigateUpFromSameTask(getActivity());
                 return true;
             }
             return super.onOptionsItemSelected(item);

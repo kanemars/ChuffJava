@@ -9,14 +9,26 @@
     <!-- NOTE: EditTextPreference accepts EditText attributes. -->
     <!-- NOTE: EditTextPreference's summary should be set to its value by the activity code. -->
     <EditTextPreference
-        android:key="example_text"
-        android:title="@string/pref_title_display_name"
-        android:defaultValue="@string/pref_default_display_name"
+        android:key="source_station"
+        android:title="@string/pref_source_station"
+        android:defaultValue="TAP"
         android:selectAllOnFocus="true"
-        android:inputType="textCapWords"
-        android:capitalize="words"
+        android:inputType="textCapCharacters"
+        android:capitalize="characters"
         android:singleLine="true"
-        android:maxLines="1" />
+        android:maxLines="1"
+        android:maxLength="3"/>
+
+    <EditTextPreference
+            android:key="destination_station"
+            android:title="@string/pref_destination_station"
+            android:defaultValue="RDG"
+            android:selectAllOnFocus="true"
+            android:inputType="textCapCharacters"
+            android:capitalize="characters"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:maxLength="3"/>
 
     <!-- NOTE: Hide buttons to simplify the UI. Users can touch outside the dialog to
          dismiss it. -->
