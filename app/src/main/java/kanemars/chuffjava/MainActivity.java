@@ -10,6 +10,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 String source = sharedPreferences.getString("source_station", "");
                 String destination = sharedPreferences.getString("destination_station", "");
 
+                GsonBuilder gsonBuilder = new GsonBuilder();
                 Toast.makeText(getApplicationContext(), "Times from " + source + " to " + destination, Toast.LENGTH_SHORT).show();
             }
         });
