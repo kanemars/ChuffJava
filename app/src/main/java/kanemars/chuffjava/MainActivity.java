@@ -2,6 +2,7 @@ package kanemars.chuffjava;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
@@ -12,6 +13,8 @@ import android.widget.Button;
 import android.widget.Toast;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import kanemars.KaneHuxleyJavaConsumer.Models.Departures;
+import kanemars.KaneHuxleyJavaConsumer.RestfulQueries;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,11 +39,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-                String source = sharedPreferences.getString("source_station", "");
-                String destination = sharedPreferences.getString("destination_station", "");
+                String source = sharedPreferences.getString("source_station", "TAP");
+                String destination = sharedPreferences.getString("destination_station", "RDG");
 
-                GsonBuilder gsonBuilder = new GsonBuilder();
-                Toast.makeText(getApplicationContext(), "Times from " + source + " to " + destination, Toast.LENGTH_SHORT).show();
+                String msg;
+                try {
+                    AsyncTask<String, Integer, Departures> departuresAsyncTask = new RestfulQueries().execute(source, destination, "2");
+                    Departures departures = departuresAsyncTask.get();
+                    msg = departures.locationName;
+                } catch (Exception e) {
+                    msg = e.toString();
+                }
+                Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
             }
         });
     }
