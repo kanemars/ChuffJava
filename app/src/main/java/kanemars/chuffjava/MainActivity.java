@@ -11,10 +11,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import kanemars.KaneHuxleyJavaConsumer.Models.Departures;
-import kanemars.KaneHuxleyJavaConsumer.RestfulQueries;
+import kanemars.KaneHuxleyJavaConsumer.Models.TrainService;
+import kanemars.KaneHuxleyJavaConsumer.RestfulAsynchTasks;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -44,9 +45,11 @@ public class MainActivity extends AppCompatActivity {
 
                 String msg;
                 try {
-                    AsyncTask<String, Integer, Departures> departuresAsyncTask = new RestfulQueries().execute(source, destination, "2");
+                    AsyncTask<String, Integer, Departures> departuresAsyncTask = new RestfulAsynchTasks().execute(source, destination, "2");
                     Departures departures = departuresAsyncTask.get();
-                    msg = departures.locationName;
+                    TrainService first = departures.trainServices.get(0);
+                    TrainService second = departures.trainServices.get(1);
+                    msg = String.format("%s %s; %s %s", first.std, second.etd, second.std, second.etd);
                 } catch (Exception e) {
                     msg = e.toString();
                 }

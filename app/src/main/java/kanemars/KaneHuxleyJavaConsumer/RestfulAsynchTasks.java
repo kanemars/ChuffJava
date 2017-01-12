@@ -9,7 +9,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 
-public class RestfulQueries extends AsyncTask<String, Integer, Departures>{
+public class RestfulAsynchTasks extends AsyncTask<String, Integer, Departures>{
     private static String readUrl(String urlString) throws Exception {
         BufferedReader reader = null;
 
