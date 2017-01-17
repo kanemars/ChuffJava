@@ -32,17 +32,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        Button findTimes = (Button) findViewById(R.id.checkTimesButton);
-        findTimes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ImmediatelyShowNext2Trains();
-            }
-        });
     }
 
-    private void ImmediatelyShowNext2Trains() {
+    public void onStartServiceButtonClick(View view) {
+        Toast.makeText(getApplicationContext(), "You wanted to start service", Toast.LENGTH_SHORT).show();
+    }
+
+    public void immediatelyShowNext2Trains(View view) {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         String source = sharedPreferences.getString("source_station", "TAP");
         String destination = sharedPreferences.getString("destination_station", "RDG");
