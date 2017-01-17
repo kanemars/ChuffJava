@@ -15,8 +15,6 @@ import kanemars.KaneHuxleyJavaConsumer.Models.Departures;
 import kanemars.KaneHuxleyJavaConsumer.Models.TrainService;
 import kanemars.KaneHuxleyJavaConsumer.RestfulAsynchTasks;
 
-import java.util.List;
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -39,23 +37,27 @@ public class MainActivity extends AppCompatActivity {
         findTimes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-                String source = sharedPreferences.getString("source_station", "TAP");
-                String destination = sharedPreferences.getString("destination_station", "RDG");
-
-                String msg;
-                try {
-                    AsyncTask<String, Integer, Departures> departuresAsyncTask = new RestfulAsynchTasks().execute(source, destination, "2");
-                    Departures departures = departuresAsyncTask.get();
-                    TrainService first = departures.trainServices.get(0);
-                    TrainService second = departures.trainServices.get(1);
-                    msg = String.format("%s %s; %s %s", first.std, second.etd, second.std, second.etd);
-                } catch (Exception e) {
-                    msg = e.toString();
-                }
-                Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
+                ImmediatelyShowNext2Trains();
             }
         });
+    }
+
+    private void ImmediatelyShowNext2Trains() {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        String source = sharedPreferences.getString("source_station", "TAP");
+        String destination = sharedPreferences.getString("destination_station", "RDG");
+
+        String msg;
+        try {
+            AsyncTask<String, Integer, Departures> departuresAsyncTask = new RestfulAsynchTasks().execute(source, destination, "2");
+            Departures departures = departuresAsyncTask.get();
+            TrainService first = departures.trainServices.get(0);
+            TrainService second = departures.trainServices.get(1);
+            msg = String.format("%s %s; %s %s", first.std, first.etd, second.std, second.etd);
+        } catch (Exception e) {
+            msg = e.toString();
+        }
+        Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
     }
 
 }
