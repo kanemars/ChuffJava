@@ -20,9 +20,13 @@ public class ChuffNotificationReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         Journey journey = new Journey(intent.getStringExtra("source"), intent.getStringExtra("destination"));
+
+        Spanned msg = ChuffNotificationReceiver.getNext2Departures(journey);
+
+        ChuffNotificationReceiver.ShowChufferNotification (context, journey.toString(), msg.toString(), MainActivity.notificationCounter.getAndIncrement());
     }
 
-    static void ShowChufferNotification(Context context, String title, String message, int uniqueId) {
+    private static void ShowChufferNotification(Context context, String title, String message, int uniqueId) {
         Intent resultIntent = new Intent(context, MainActivity.class);
         resultIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
@@ -52,7 +56,7 @@ public class ChuffNotificationReceiver extends BroadcastReceiver {
     }
 
     @SuppressWarnings("deprecation")
-    public static Spanned fromHtml(String html){
+    private static Spanned fromHtml(String html){
         Spanned result;
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
             result = Html.fromHtml(html,Html.FROM_HTML_MODE_LEGACY);
