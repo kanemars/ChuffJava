@@ -7,27 +7,19 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.text.Html;
+import android.text.Spanned;
 import kanemars.KaneHuxleyJavaConsumer.Models.Departures;
+import kanemars.KaneHuxleyJavaConsumer.Models.Journey;
 import kanemars.KaneHuxleyJavaConsumer.Models.TrainService;
 import kanemars.KaneHuxleyJavaConsumer.RestfulAsynchTasks;
 
 import java.util.concurrent.ExecutionException;
 
-import static android.content.Context.NOTIFICATION_SERVICE;
-
 public class ChuffNotificationReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
-        String source = intent.getStringExtra("source");
-        String destination = intent.getStringExtra("destination");
-        String title = "Trains from " + source + " to " + destination;
-        try {
-            String message = getNext2Departures(source, destination);
-
-            //ShowChufferNotification(context, title, message);
-        } catch (InterruptedException | ExecutionException e) {
-            //msg = e.toString();
-        }
+        Journey journey = new Journey(intent.getStringExtra("source"), intent.getStringExtra("destination"));
     }
 
     static void ShowChufferNotification(Context context, String title, String message, int uniqueId) {
@@ -47,13 +39,26 @@ public class ChuffNotificationReceiver extends BroadcastReceiver {
         nm.notify(uniqueId, notification);
     }
 
-    static String getNext2Departures(String source, String destination) throws InterruptedException, ExecutionException {
-        String msg;
-        AsyncTask<String, Integer, Departures> departuresAsyncTask = new RestfulAsynchTasks().execute(source, destination, "2");
-        Departures departures = departuresAsyncTask.get();
-        TrainService first = departures.trainServices.get(0);
-        TrainService second = departures.trainServices.get(1);
-        msg = String.format("%s %s; %s %s", first.std, first.etd, second.std, second.etd);
-        return msg;
+    static Spanned getNext2Departures(Journey journey) {
+        try {
+            AsyncTask<String, Integer, Departures> departuresAsyncTask = new RestfulAsynchTasks().execute(journey.source, journey.destination, "2");
+            Departures departures = departuresAsyncTask.get();
+            TrainService first = departures.trainServices.get(0);
+            TrainService second = departures.trainServices.get(1);
+            return fromHtml(String.format("<b>%s</b> %s; <b>%s</b> %s", first.std, first.etd, second.std, second.etd));
+        } catch (InterruptedException | ExecutionException e) {
+            return fromHtml(e.toString());
+        }
+    }
+
+    @SuppressWarnings("deprecation")
+    public static Spanned fromHtml(String html){
+        Spanned result;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            result = Html.fromHtml(html,Html.FROM_HTML_MODE_LEGACY);
+        } else {
+            result = Html.fromHtml(html);
+        }
+        return result;
     }
 }

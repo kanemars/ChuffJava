@@ -7,11 +7,13 @@ import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Spanned;
 import android.view.View;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import android.widget.Toast;
+import kanemars.KaneHuxleyJavaConsumer.Models.Journey;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,33 +37,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onStartServiceButtonClick(View view) {
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-        String source = sharedPreferences.getString("source_station", "TAP");
-        String destination = sharedPreferences.getString("destination_station", "RDG");
-        String msg;
-        String title = "Trains from " + source + " to " + destination;
-        try {
-            msg = ChuffNotificationReceiver.getNext2Departures(source, destination);
-        } catch (InterruptedException|ExecutionException e) {
-            msg = e.toString();
-        }
+        Journey journey = getDefaultJourney();
+        Spanned msg = ChuffNotificationReceiver.getNext2Departures(journey);
 
-        ChuffNotificationReceiver.ShowChufferNotification (this, title, msg, notificationCounter.getAndIncrement());
+        ChuffNotificationReceiver.ShowChufferNotification (this, journey.toString(), msg.toString(), notificationCounter.getAndIncrement());
     }
 
     public void immediatelyShowNext2Trains(View view) {
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-        String source = sharedPreferences.getString("source_station", "TAP");
-        String destination = sharedPreferences.getString("destination_station", "RDG");
+        Journey journey = getDefaultJourney();
+        Spanned msg = ChuffNotificationReceiver.getNext2Departures(journey);
 
-        String msg;
-        try {
-            msg = ChuffNotificationReceiver.getNext2Departures(source, destination);
-        } catch (InterruptedException|ExecutionException e) {
-            msg = e.toString();
-        }
         Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
     }
 
-
+    private Journey getDefaultJourney () {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        String source = sharedPreferences.getString("source_station", "TAP");
+        String destination = sharedPreferences.getString("destination_station", "RDG");
+        return new Journey(source, destination);
+    }
 }
