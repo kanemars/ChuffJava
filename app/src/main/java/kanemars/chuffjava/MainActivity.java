@@ -17,6 +17,7 @@ import java.util.Calendar;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import android.widget.TimePicker;
 import android.widget.Toast;
 import kanemars.KaneHuxleyJavaConsumer.Models.Journey;
 
@@ -28,8 +29,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -42,13 +41,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onStartServiceButtonClick(View view) {
+        TimePicker timePicker = (TimePicker) findViewById(R.id.notificationTimePicker);
+        Toast.makeText(getApplicationContext(), "Starting notification at " + timePicker.getHour() + ':' + timePicker.getMinute(), Toast.LENGTH_SHORT).show();
+
         Calendar timeToNotify = Calendar.getInstance();
         timeToNotify.setTimeInMillis(System.currentTimeMillis());
-        timeToNotify.add(Calendar.SECOND, 10);
+        timeToNotify.set(Calendar.HOUR_OF_DAY, timePicker.getHour());
+        timeToNotify.set(Calendar.MINUTE, timePicker.getMinute());
 
         setUpRepeatingNotifaction(getDefaultJourney(), timeToNotify);
-
-        //Toast.makeText(getApplicationContext(), "Setting up notifications", Toast.LENGTH_SHORT).show();
     }
 
     public void immediatelyShowNext2Trains(View view) {
@@ -67,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
 
         AlarmManager alarmMgr = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
-        int minutes = 1;
         alarmMgr.set(AlarmManager.RTC_WAKEUP, timeToNotify.getTimeInMillis(), pendingIntent);
         //alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, timeToNotify.getTimeInMillis(), 1000 * 60 * minutes, pendingIntent);
     }
