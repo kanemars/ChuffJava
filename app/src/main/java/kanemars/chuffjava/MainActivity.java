@@ -17,9 +17,13 @@ import java.util.Calendar;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 import kanemars.KaneHuxleyJavaConsumer.Models.Journey;
+
+import static kanemars.KaneHuxleyJavaConsumer.StationCodes.STATION_CRS_CODES;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,6 +33,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_dropdown_item_1line, STATION_CRS_CODES);
+        AutoCompleteTextView textView = (AutoCompleteTextView) findViewById(R.id.autoCompleteSource);
+        textView.setAdapter(adapter);
+
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

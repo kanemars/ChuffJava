@@ -47,6 +47,9 @@ public class ChuffNotificationReceiver extends BroadcastReceiver {
         try {
             AsyncTask<String, Integer, Departures> departuresAsyncTask = new RestfulAsynchTasks().execute(journey.source, journey.destination, "2");
             Departures departures = departuresAsyncTask.get();
+            if (departures == null) {
+                return fromHtml("Problem connecting to internet");
+            }
             TrainService first = departures.trainServices.get(0);
             TrainService second = departures.trainServices.get(1);
             return fromHtml(String.format("<b>%s</b> %s; <b>%s</b> %s", first.std, first.etd, second.std, second.etd));
