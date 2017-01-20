@@ -28,6 +28,8 @@ import static kanemars.KaneHuxleyJavaConsumer.StationCodes.STATION_CRS_CODES;
 public class MainActivity extends AppCompatActivity {
 
     static AtomicInteger notificationCounter = new AtomicInteger ();
+    AutoCompleteTextView source;
+    AutoCompleteTextView destination;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,12 +38,10 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_dropdown_item_1line, STATION_CRS_CODES);
-        AutoCompleteTextView source = (AutoCompleteTextView) findViewById(R.id.autoCompleteSource);
-        AutoCompleteTextView destination = (AutoCompleteTextView) findViewById(R.id.autoCompleteDestination);
+        source = (AutoCompleteTextView) findViewById(R.id.autoCompleteSource);
+        destination = (AutoCompleteTextView) findViewById(R.id.autoCompleteDestination);
         source.setAdapter(adapter);
         destination.setAdapter(adapter);
-
-
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -66,8 +66,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void immediatelyShowNext2Trains(View view) {
-        Journey journey = getDefaultJourney();
-        Spanned msg = ChuffNotificationReceiver.getNext2Departures(journey);
+        Spanned msg = ChuffNotificationReceiver.getNext2Departures(getDefaultJourney());
 
         Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
     }
@@ -86,9 +85,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private Journey getDefaultJourney () {
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-        String source = sharedPreferences.getString("source_station", "TAP");
-        String destination = sharedPreferences.getString("destination_station", "RDG");
-        return new Journey(source, destination);
+//        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+//        String source = sharedPreferences.getString("source_station", "TAP");
+//        String destination = sharedPreferences.getString("destination_station", "RDG");
+        return new Journey(source.getText().toString(), destination.getText().toString());
     }
 }
