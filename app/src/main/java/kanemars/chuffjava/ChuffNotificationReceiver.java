@@ -14,17 +14,24 @@ import kanemars.KaneHuxleyJavaConsumer.Models.Journey;
 import kanemars.KaneHuxleyJavaConsumer.Models.TrainService;
 import kanemars.KaneHuxleyJavaConsumer.RestfulAsynchTasks;
 
+import java.util.Calendar;
 import java.util.concurrent.ExecutionException;
 
 public class ChuffNotificationReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
-        Journey journey = (Journey) intent.getExtras().getSerializable("journey");
-                //new Journey(intent.getStringExtra("source"), intent.getStringExtra("destination"));
+        Calendar today = Calendar.getInstance();
+        today.setTimeInMillis(System.currentTimeMillis());
+        int dayOfWeek = today.get(Calendar.DAY_OF_WEEK);
+        if (dayOfWeek != Calendar.SATURDAY && dayOfWeek != Calendar.SUNDAY) {
 
-        Spanned msg = ChuffNotificationReceiver.getNext2Departures(journey);
+            Journey journey = (Journey) intent.getExtras().getSerializable("journey");
+            //new Journey(intent.getStringExtra("source"), intent.getStringExtra("destination"));
 
-        ChuffNotificationReceiver.ShowChufferNotification (context, journey.toString(), msg.toString(), MainActivity.notificationCounter.getAndIncrement());
+            Spanned msg = ChuffNotificationReceiver.getNext2Departures(journey);
+
+            ChuffNotificationReceiver.ShowChufferNotification(context, journey.toString(), msg.toString(), MainActivity.notificationCounter.getAndIncrement());
+        }
     }
 
     private static void ShowChufferNotification(Context context, String title, String message, int uniqueId) {
