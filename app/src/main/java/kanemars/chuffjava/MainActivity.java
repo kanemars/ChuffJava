@@ -17,14 +17,15 @@ import android.widget.AutoCompleteTextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 import kanemars.KaneHuxleyJavaConsumer.Models.Journey;
+import kanemars.KaneHuxleyJavaConsumer.Models.JourneyException;
 
 import static kanemars.KaneHuxleyJavaConsumer.StationCodes.STATION_CRS_CODES;
 
 public class MainActivity extends AppCompatActivity {
 
     static AtomicInteger notificationCounter = new AtomicInteger ();
-    AutoCompleteTextView source;
-    AutoCompleteTextView destination;
+    private AutoCompleteTextView source;
+    private AutoCompleteTextView destination;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,27 +41,32 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onStartServiceButtonClick(View view) {
-        TimePicker timePicker = (TimePicker) findViewById(R.id.notificationTimePicker);
-        Toast.makeText(getApplicationContext(), "Starting notification at " + timePicker.getHour() + ':' + timePicker.getMinute(), Toast.LENGTH_SHORT).show();
+        try {
+            TimePicker timePicker = (TimePicker) findViewById(R.id.notificationTimePicker);
 
-        Calendar timeToNotify = Calendar.getInstance();
-        timeToNotify.setTimeInMillis(System.currentTimeMillis());
-        timeToNotify.set(Calendar.HOUR_OF_DAY, timePicker.getHour());
-        timeToNotify.set(Calendar.MINUTE, timePicker.getMinute());
+            Calendar timeToNotify = Calendar.getInstance();
+            timeToNotify.setTimeInMillis(System.currentTimeMillis());
+            timeToNotify.set(Calendar.HOUR_OF_DAY, timePicker.getHour());
+            timeToNotify.set(Calendar.MINUTE, timePicker.getMinute());
 
-        setUpRepeatingNotifaction(getJourney(), timeToNotify);
+            setUpRepeatingNotifaction(getJourney(), timeToNotify);
+            Toast.makeText(getApplicationContext(), "Starting notification at " + timePicker.getHour() + ':' + timePicker.getMinute(), Toast.LENGTH_SHORT).show();
+        } catch (JourneyException ex) {
+            Toast.makeText(getApplicationContext(), ex.getMessage(), Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void immediatelyShowNext2Trains(View view) {
-        Spanned msg = ChuffNotificationReceiver.getNext2Departures(getJourney());
-
-        Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
+        try {
+            Toast.makeText(getApplicationContext(), ChuffNotificationReceiver.getNext2Departures(getJourney()), Toast.LENGTH_SHORT).show();
+        } catch (JourneyException ex) {
+            Toast.makeText(getApplicationContext(), ex.getMessage(), Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void setUpRepeatingNotifaction (Journey journey, Calendar firstTimeToNotify) {
         Intent notificationIntent = new Intent(getBaseContext(), ChuffNotificationReceiver.class);
-        notificationIntent.putExtra("source", journey.source);
-        notificationIntent.putExtra("destination", journey.destination);
+        notificationIntent.putExtra("journey", journey);
 
         PendingIntent pendingIntent = PendingIntent.getBroadcast(this, notificationCounter.getAndIncrement(), notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
@@ -70,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, firstTimeToNotify.getTimeInMillis(), AlarmManager.INTERVAL_FIFTEEN_MINUTES, pendingIntent);
     }
 
-    private Journey getJourney() {
+    private Journey getJourney() throws JourneyException {
         return new Journey(source.getText().toString(), destination.getText().toString());
     }
 }

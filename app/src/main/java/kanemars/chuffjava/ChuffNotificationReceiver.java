@@ -19,7 +19,8 @@ import java.util.concurrent.ExecutionException;
 public class ChuffNotificationReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
-        Journey journey = new Journey(intent.getStringExtra("source"), intent.getStringExtra("destination"));
+        Journey journey = (Journey) intent.getExtras().getSerializable("journey");
+                //new Journey(intent.getStringExtra("source"), intent.getStringExtra("destination"));
 
         Spanned msg = ChuffNotificationReceiver.getNext2Departures(journey);
 
@@ -33,7 +34,7 @@ public class ChuffNotificationReceiver extends BroadcastReceiver {
         Notification notification =
                 new Notification.Builder(context).setContentTitle(title)
                         .setContentText(message)
-                        .setSmallIcon(R.mipmap.ic_launcher)
+                        .setSmallIcon(R.drawable.ic_stat_train)
                         .setDefaults(Notification.DEFAULT_ALL)
                         .setContentIntent(PendingIntent.getActivity(context, 0, resultIntent, PendingIntent.FLAG_CANCEL_CURRENT))
                         .build();

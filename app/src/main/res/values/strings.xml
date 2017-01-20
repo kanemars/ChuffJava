@@ -12,6 +12,6 @@
     <string name="title_activity_main">Chuff</string>
     <string name="check_times_now">Check times now</string>
     <string name="start_service">Start repeating notifications</string>
-    <string name="destination">TAP</string>
+    <string name="destination">RDG</string>
     <string name="source">TAP</string>
 </resources>
