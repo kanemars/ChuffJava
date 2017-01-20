@@ -9,13 +9,34 @@
         tools:showIn="@layout/activity_main"
         tools:context="kanemars.chuffjava.MainActivity"
         android:orientation="vertical">
-
+<LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+    <TextView
+            android:text="Journey: "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textView1" android:layout_weight="1"/>
     <AutoCompleteTextView
             android:text="TAP"
             android:maxLines="1"
             android:maxLength="3"
-            android:layout_width="match_parent"
+            android:completionThreshold="1"
+            android:inputType="textCapCharacters"
+            android:layout_width="120dp"
             android:layout_height="wrap_content" android:id="@+id/autoCompleteSource"/>
+    <TextView
+            android:text=" to "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textView2" android:layout_weight="1"/>
+    <AutoCompleteTextView
+            android:text="TAP"
+            android:maxLines="1"
+            android:maxLength="3"
+            android:completionThreshold="1"
+            android:inputType="textCapCharacters"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content" android:id="@+id/autoCompleteDestination"/>
+
+</LinearLayout>
+
     <Button
             android:text="@string/check_times_now"
             android:layout_width="wrap_content"

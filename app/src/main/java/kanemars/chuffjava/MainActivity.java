@@ -36,8 +36,10 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_dropdown_item_1line, STATION_CRS_CODES);
-        AutoCompleteTextView textView = (AutoCompleteTextView) findViewById(R.id.autoCompleteSource);
-        textView.setAdapter(adapter);
+        AutoCompleteTextView source = (AutoCompleteTextView) findViewById(R.id.autoCompleteSource);
+        AutoCompleteTextView destination = (AutoCompleteTextView) findViewById(R.id.autoCompleteDestination);
+        source.setAdapter(adapter);
+        destination.setAdapter(adapter);
 
 
 
