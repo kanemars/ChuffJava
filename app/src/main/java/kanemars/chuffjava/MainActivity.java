@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         AlarmManager alarmMgr = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
         //alarmMgr.set(AlarmManager.RTC_WAKEUP, timeToNotify.getTimeInMillis(), pendingIntent);
-        alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, firstTimeToNotify.getTimeInMillis(), AlarmManager.INTERVAL_FIFTEEN_MINUTES, pendingIntent);
+        alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, firstTimeToNotify.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
     }
 
     private Journey getJourney() throws JourneyException {
