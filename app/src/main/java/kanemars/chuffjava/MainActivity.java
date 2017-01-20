@@ -42,15 +42,6 @@ public class MainActivity extends AppCompatActivity {
         destination = (AutoCompleteTextView) findViewById(R.id.autoCompleteDestination);
         source.setAdapter(adapter);
         destination.setAdapter(adapter);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), ChuffSettingsActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 
     public void onStartServiceButtonClick(View view) {
