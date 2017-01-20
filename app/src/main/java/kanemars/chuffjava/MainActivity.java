@@ -4,17 +4,12 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.text.Spanned;
 import android.view.View;
 
 import java.util.Calendar;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import android.widget.ArrayAdapter;
@@ -53,16 +48,16 @@ public class MainActivity extends AppCompatActivity {
         timeToNotify.set(Calendar.HOUR_OF_DAY, timePicker.getHour());
         timeToNotify.set(Calendar.MINUTE, timePicker.getMinute());
 
-        setUpRepeatingNotifaction(getDefaultJourney(), timeToNotify);
+        setUpRepeatingNotifaction(getJourney(), timeToNotify);
     }
 
     public void immediatelyShowNext2Trains(View view) {
-        Spanned msg = ChuffNotificationReceiver.getNext2Departures(getDefaultJourney());
+        Spanned msg = ChuffNotificationReceiver.getNext2Departures(getJourney());
 
         Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
     }
 
-    private void setUpRepeatingNotifaction (Journey journey, Calendar timeToNotify) {
+    private void setUpRepeatingNotifaction (Journey journey, Calendar firstTimeToNotify) {
         Intent notificationIntent = new Intent(getBaseContext(), ChuffNotificationReceiver.class);
         notificationIntent.putExtra("source", journey.source);
         notificationIntent.putExtra("destination", journey.destination);
@@ -71,14 +66,11 @@ public class MainActivity extends AppCompatActivity {
 
         AlarmManager alarmMgr = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
-        alarmMgr.set(AlarmManager.RTC_WAKEUP, timeToNotify.getTimeInMillis(), pendingIntent);
-        //alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, timeToNotify.getTimeInMillis(), 1000 * 60 * minutes, pendingIntent);
+        //alarmMgr.set(AlarmManager.RTC_WAKEUP, timeToNotify.getTimeInMillis(), pendingIntent);
+        alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, firstTimeToNotify.getTimeInMillis(), AlarmManager.INTERVAL_FIFTEEN_MINUTES, pendingIntent);
     }
 
-    private Journey getDefaultJourney () {
-//        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-//        String source = sharedPreferences.getString("source_station", "TAP");
-//        String destination = sharedPreferences.getString("destination_station", "RDG");
+    private Journey getJourney() {
         return new Journey(source.getText().toString(), destination.getText().toString());
     }
 }
