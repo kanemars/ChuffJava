@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Chuff</string>
+    <string name="app_name">Chuff Me</string>
 
     <!-- Strings related to Settings -->
 
@@ -16,4 +16,5 @@
     <string name="source">TAP</string>
     <string name="journey">Journey:</string>
     <string name="to">to</string>
+    <string name="settings">Settings</string>
 </resources>
