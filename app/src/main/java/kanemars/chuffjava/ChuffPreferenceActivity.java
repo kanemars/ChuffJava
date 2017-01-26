@@ -11,6 +11,7 @@ public class ChuffPreferenceActivity extends PreferenceActivity {
 
         super.onCreate(savedInstanceState);
         getFragmentManager().beginTransaction().replace(android.R.id.content, new ChuffPreferenceFragment()).commit();
+
     }
 
     public static class ChuffPreferenceFragment extends PreferenceFragment
@@ -20,6 +21,8 @@ public class ChuffPreferenceActivity extends PreferenceActivity {
         {
             super.onCreate(savedInstanceState);
             addPreferencesFromResource(R.xml.preferences);
+
+
         }
     }
 }

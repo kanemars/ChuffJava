@@ -4,7 +4,9 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -55,7 +57,11 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.journey_settings:
-                startActivity(new Intent(this, ChuffPreferenceActivity.class));
+                try {
+                    startActivity(new Intent(this, ChuffPreferenceActivity.class));
+                } catch (Exception ex) {
+                    return false;
+                }
                 return true;
 
             default:
@@ -101,6 +107,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private Journey getJourney() throws JourneyException {
-        return new Journey(source.getText().toString(), destination.getText().toString());
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        String strSource = sharedPreferences.getString("edit_text_source", "TAP");
+
+
+        return new Journey(strSource, destination.getText().toString());
     }
 }
