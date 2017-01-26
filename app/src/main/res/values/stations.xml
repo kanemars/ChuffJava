@@ -1,2576 +1,2573 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <resources>
     <string-array name="stations">
-        <item>ABW</item>
-        <item>ABE</item>
-        <item>ACY</item>
-        <item>ABA</item>
-        <item>ABD</item>
-        <item>AUR</item>
-        <item>AVY</item>
-        <item>ABH</item>
-        <item>AGV</item>
-        <item>AGL</item>
-        <item>AYW</item>
-        <item>ACR</item>
-        <item>AAT</item>
-        <item>ACN</item>
-        <item>ACH</item>
-        <item>ACK</item>
-        <item>ACL</item>
-        <item>ACG</item>
-        <item>ACB</item>
-        <item>ACC</item>
-        <item>AML</item>
-        <item>ADD</item>
-        <item>ADW</item>
-        <item>ASN</item>
-        <item>ADM</item>
-        <item>ADC</item>
-        <item>ADL</item>
-        <item>AWK</item>
-        <item>AIG</item>
-        <item>ANS</item>
-        <item>AIN</item>
-        <item>AIR</item>
-        <item>ADR</item>
-        <item>AYP</item>
-        <item>ALB</item>
-        <item>ALD</item>
-        <item>AMT</item>
-        <item>AHT</item>
-        <item>AGT</item>
-        <item>AAP</item>
-        <item>AXP</item>
-        <item>ALX</item>
-        <item>ALF</item>
-        <item>ALW</item>
-        <item>ALO</item>
-        <item>ASS</item>
-        <item>ALM</item>
-        <item>ALR</item>
-        <item>ASG</item>
-        <item>ALN</item>
-        <item>ALP</item>
-        <item>ABC</item>
-        <item>AON</item>
-        <item>ALT</item>
-        <item>ALV</item>
-        <item>AMB</item>
-        <item>AMY</item>
-        <item>AMR</item>
-        <item>AMF</item>
-        <item>ANC</item>
-        <item>AND</item>
-        <item>ADV</item>
-        <item>ANZ</item>
-        <item>AGR</item>
-        <item>ANG</item>
-        <item>ANN</item>
-        <item>ANL</item>
-        <item>AFV</item>
-        <item>APY</item>
-        <item>APP</item>
-        <item>APD</item>
-        <item>APF</item>
-        <item>APB</item>
-        <item>APS</item>
-        <item>ARB</item>
-        <item>ARD</item>
-        <item>AUI</item>
-        <item>ADS</item>
-        <item>ASB</item>
-        <item>ADN</item>
-        <item>ADK</item>
-        <item>AGS</item>
-        <item>ARG</item>
-        <item>ARL</item>
-        <item>ARM</item>
-        <item>AWT</item>
-        <item>ARN</item>
-        <item>ARR</item>
-        <item>ART</item>
-        <item>ARU</item>
-        <item>ACT</item>
-        <item>AUW</item>
-        <item>ASH</item>
-        <item>AHV</item>
-        <item>ABY</item>
-        <item>ASC</item>
-        <item>ASF</item>
-        <item>AFS</item>
-        <item>AFK</item>
-        <item>ASI</item>
-        <item>ASY</item>
-        <item>AHD</item>
-        <item>AHN</item>
-        <item>AHS</item>
-        <item>ANF</item>
-        <item>AWM</item>
-        <item>ASK</item>
-        <item>ALK</item>
-        <item>ASP</item>
-        <item>APG</item>
-        <item>AST</item>
-        <item>ATH</item>
-        <item>ATN</item>
-        <item>ATT</item>
-        <item>ATB</item>
-        <item>ATL</item>
-        <item>AUK</item>
-        <item>AUD</item>
-        <item>AUG</item>
-        <item>AVM</item>
-        <item>AVF</item>
-        <item>AVN</item>
-        <item>AXM</item>
-        <item>AYS</item>
-        <item>AVP</item>
-        <item>AYL</item>
-        <item>AYH</item>
-        <item>AYR</item>
-        <item>BAC</item>
-        <item>BAJ</item>
-        <item>BAG</item>
-        <item>BLD</item>
-        <item>BIO</item>
-        <item>BAB</item>
-        <item>BDK</item>
-        <item>BAL</item>
-        <item>BHC</item>
-        <item>BSI</item>
-        <item>BMB</item>
-        <item>BAM</item>
-        <item>BNV</item>
-        <item>BAN</item>
-        <item>BNG</item>
-        <item>BAH</item>
-        <item>BAD</item>
-        <item>BSS</item>
-        <item>ZBB</item>
-        <item>BLL</item>
-        <item>BAR</item>
-        <item>BGI</item>
-        <item>BGD</item>
-        <item>BKG</item>
-        <item>BRT</item>
-        <item>BMG</item>
-        <item>BRM</item>
-        <item>BNH</item>
-        <item>BNS</item>
-        <item>BNI</item>
-        <item>BTB</item>
-        <item>BAA</item>
-        <item>BNL</item>
-        <item>BNY</item>
-        <item>BNP</item>
-        <item>BTG</item>
-        <item>BRR</item>
-        <item>BRL</item>
-        <item>BAV</item>
-        <item>BIF</item>
-        <item>BWS</item>
-        <item>BRY</item>
-        <item>BYD</item>
-        <item>BYI</item>
-        <item>BYL</item>
-        <item>BAU</item>
-        <item>BSO</item>
-        <item>BSK</item>
-        <item>BBL</item>
-        <item>BTH</item>
-        <item>BHG</item>
-        <item>BTL</item>
-        <item>BTT</item>
-        <item>BAK</item>
-        <item>BAT</item>
-        <item>BLB</item>
-        <item>BAY</item>
-        <item>BCF</item>
-        <item>BER</item>
-        <item>BRN</item>
-        <item>BSD</item>
-        <item>BSL</item>
-        <item>BEU</item>
-        <item>BEL</item>
-        <item>BEB</item>
-        <item>BCC</item>
-        <item>BEC</item>
-        <item>BKJ</item>
-        <item>BDM</item>
-        <item>BSJ</item>
-        <item>BDH</item>
-        <item>BMT</item>
-        <item>BEH</item>
-        <item>BDW</item>
-        <item>BEE</item>
-        <item>BKS</item>
-        <item>BLV</item>
-        <item>BLG</item>
-        <item>BGM</item>
-        <item>BLH</item>
-        <item>BLM</item>
-        <item>BLP</item>
-        <item>BEG</item>
-        <item>BVD</item>
-        <item>BEM</item>
-        <item>BEY</item>
-        <item>BEF</item>
-        <item>BEN</item>
-        <item>BTY</item>
-        <item>BYK</item>
-        <item>BAS</item>
-        <item>BFE</item>
-        <item>BKM</item>
-        <item>BKW</item>
-        <item>BEP</item>
-        <item>BYA</item>
-        <item>BBW</item>
-        <item>BRS</item>
-        <item>BRK</item>
-        <item>BWK</item>
-        <item>BES</item>
-        <item>BSC</item>
-        <item>BTO</item>
-        <item>BET</item>
-        <item>BYC</item>
-        <item>BEV</item>
-        <item>BEX</item>
-        <item>BXY</item>
-        <item>BXH</item>
-        <item>BCS</item>
-        <item>BIT</item>
-        <item>BKL</item>
-        <item>BID</item>
-        <item>BIW</item>
-        <item>BBK</item>
-        <item>BIC</item>
-        <item>BIL</item>
-        <item>BIG</item>
-        <item>BIN</item>
-        <item>BIY</item>
-        <item>BCG</item>
-        <item>BCH</item>
-        <item>BWD</item>
-        <item>BIK</item>
-        <item>BDL</item>
-        <item>BKC</item>
-        <item>BKQ</item>
-        <item>BKN</item>
-        <item>BKP</item>
-        <item>BHI</item>
-        <item>BMO</item>
-        <item>BHM</item>
-        <item>BSW</item>
-        <item>BIA</item>
-        <item>BBG</item>
-        <item>BIS</item>
-        <item>BIP</item>
-        <item>BPT</item>
-        <item>BTE</item>
-        <item>BBN</item>
-        <item>BKH</item>
-        <item>BHO</item>
-        <item>BPN</item>
-        <item>BPB</item>
-        <item>BPS</item>
-        <item>BKR</item>
-        <item>BLK</item>
-        <item>BAW</item>
-        <item>BFF</item>
-        <item>BLA</item>
-        <item>BAI</item>
-        <item>BKT</item>
-        <item>BKD</item>
-        <item>BLT</item>
-        <item>BLO</item>
-        <item>BSB</item>
-        <item>BLY</item>
-        <item>BLX</item>
-        <item>BWN</item>
-        <item>BLN</item>
-        <item>BYB</item>
-        <item>BOD</item>
-        <item>BOR</item>
-        <item>BOG</item>
-        <item>BGS</item>
-        <item>BON</item>
-        <item>BTD</item>
-        <item>BKA</item>
-        <item>BOC</item>
-        <item>BNW</item>
-        <item>BOT</item>
-        <item>BBS</item>
-        <item>BRG</item>
-        <item>BRH</item>
-        <item>BOH</item>
-        <item>BSN</item>
-        <item>BOE</item>
-        <item>BTF</item>
-        <item>BNE</item>
-        <item>BMH</item>
-        <item>BRV</item>
-        <item>BWB</item>
-        <item>BOP</item>
-        <item>BWG</item>
-        <item>BXW</item>
-        <item>BCE</item>
-        <item>BDQ</item>
-        <item>BDI</item>
-        <item>BOA</item>
-        <item>BDN</item>
-        <item>BTR</item>
-        <item>BTP</item>
-        <item>BML</item>
-        <item>BMY</item>
-        <item>BLE</item>
-        <item>BMP</item>
-        <item>BRP</item>
-        <item>BCN</item>
-        <item>BND</item>
-        <item>BSM</item>
-        <item>BYS</item>
-        <item>BDY</item>
-        <item>BRC</item>
-        <item>BFD</item>
-        <item>BRE</item>
-        <item>BWO</item>
-        <item>BEA</item>
-        <item>BRO</item>
-        <item>BGN</item>
-        <item>BDG</item>
-        <item>BWT</item>
-        <item>BDT</item>
-        <item>BRF</item>
-        <item>BGG</item>
-        <item>BGH</item>
-        <item>BTN</item>
-        <item>BMD</item>
-        <item>BNT</item>
-        <item>BPW</item>
-        <item>BRI</item>
-        <item>BHD</item>
-        <item>BNF</item>
-        <item>BRX</item>
-        <item>BGE</item>
-        <item>BDB</item>
-        <item>BSR</item>
-        <item>BCU</item>
-        <item>BHS</item>
-        <item>BCY</item>
-        <item>BOM</item>
-        <item>BMR</item>
-        <item>BMC</item>
-        <item>BMN</item>
-        <item>BMS</item>
-        <item>BMV</item>
-        <item>BSY</item>
-        <item>BSP</item>
-        <item>BPK</item>
-        <item>BKO</item>
-        <item>BME</item>
-        <item>BMF</item>
-        <item>BRA</item>
-        <item>BUH</item>
-        <item>BYF</item>
-        <item>BXB</item>
-        <item>BCV</item>
-        <item>BDA</item>
-        <item>BGA</item>
-        <item>BSU</item>
-        <item>BRW</item>
-        <item>BRU</item>
-        <item>BYN</item>
-        <item>BUC</item>
-        <item>BCK</item>
-        <item>BUK</item>
-        <item>BSV</item>
-        <item>BGL</item>
-        <item>BHR</item>
-        <item>BLW</item>
-        <item>BUE</item>
-        <item>BUG</item>
-        <item>BUY</item>
-        <item>BUW</item>
-        <item>BNA</item>
-        <item>BUD</item>
-        <item>BNM</item>
-        <item>BUU</item>
-        <item>BUB</item>
-        <item>BNC</item>
-        <item>BYM</item>
-        <item>BUI</item>
-        <item>BTS</item>
-        <item>BCB</item>
-        <item>BCJ</item>
-        <item>BUO</item>
-        <item>BUJ</item>
-        <item>BUT</item>
-        <item>BSE</item>
-        <item>BUS</item>
-        <item>BHK</item>
-        <item>BSH</item>
-        <item>BUL</item>
-        <item>BXD</item>
-        <item>BUX</item>
-        <item>BFN</item>
-        <item>BYE</item>
-        <item>CAD</item>
-        <item>CGW</item>
-        <item>CPH</item>
-        <item>CWS</item>
-        <item>CAC</item>
-        <item>CDT</item>
-        <item>CIR</item>
-        <item>CSK</item>
-        <item>CDU</item>
-        <item>CAM</item>
-        <item>CBN</item>
-        <item>CBG</item>
-        <item>CBH</item>
-        <item>CBL</item>
-        <item>CMD</item>
-        <item>CMO</item>
-        <item>ZCW</item>
-        <item>CNL</item>
-        <item>CAO</item>
-        <item>CNN</item>
-        <item>CBE</item>
-        <item>CBW</item>
-        <item>CNY</item>
-        <item>CPU</item>
-        <item>CBB</item>
-        <item>CDD</item>
-        <item>CDB</item>
-        <item>CDF</item>
-        <item>CDQ</item>
-        <item>CDO</item>
-        <item>CDR</item>
-        <item>CRF</item>
-        <item>CAK</item>
-        <item>CAR</item>
-        <item>CTO</item>
-        <item>CLU</item>
-        <item>CMN</item>
-        <item>CML</item>
-        <item>CNF</item>
-        <item>CAN</item>
-        <item>CAY</item>
-        <item>CPK</item>
-        <item>CAG</item>
-        <item>CSH</item>
-        <item>CSB</item>
-        <item>CRS</item>
-        <item>CDY</item>
-        <item>CBP</item>
-        <item>CLC</item>
-        <item>CFD</item>
-        <item>CAS</item>
-        <item>CSM</item>
-        <item>CAT</item>
-        <item>CTF</item>
-        <item>CFB</item>
-        <item>CYS</item>
-        <item>CCT</item>
-        <item>CTL</item>
-        <item>CAU</item>
-        <item>CYB</item>
-        <item>CTH</item>
-        <item>CFH</item>
-        <item>CFO</item>
-        <item>CHW</item>
-        <item>CFR</item>
-        <item>CEF</item>
-        <item>CPN</item>
-        <item>CLN</item>
-        <item>CWC</item>
-        <item>CHG</item>
-        <item>CHC</item>
-        <item>CBY</item>
-        <item>CTN</item>
-        <item>CRT</item>
-        <item>CSR</item>
-        <item>CTE</item>
-        <item>CTM</item>
-        <item>CHT</item>
-        <item>CHU</item>
-        <item>CHE</item>
-        <item>CED</item>
-        <item>CEL</item>
-        <item>CHM</item>
-        <item>CLD</item>
-        <item>CNM</item>
-        <item>CPW</item>
-        <item>CYT</item>
-        <item>CHY</item>
-        <item>CHN</item>
-        <item>CSN</item>
-        <item>CSS</item>
-        <item>CTR</item>
-        <item>CRD</item>
-        <item>CHD</item>
-        <item>CLS</item>
-        <item>CSW</item>
-        <item>CNO</item>
-        <item>CCH</item>
-        <item>CIL</item>
-        <item>CHL</item>
-        <item>CHI</item>
-        <item>CLY</item>
-        <item>CPM</item>
-        <item>CHP</item>
-        <item>CRK</item>
-        <item>CIT</item>
-        <item>CHK</item>
-        <item>CHO</item>
-        <item>CRL</item>
-        <item>CLW</item>
-        <item>CHR</item>
-        <item>CHH</item>
-        <item>CTW</item>
-        <item>CHF</item>
-        <item>CTT</item>
-        <item>CIM</item>
-        <item>CTK</item>
-        <item>CLT</item>
-        <item>CLA</item>
-        <item>CPY</item>
-        <item>CLP</item>
-        <item>CLJ</item>
-        <item>CPT</item>
-        <item>CLR</item>
-        <item>CKS</item>
-        <item>CLV</item>
-        <item>CLG</item>
-        <item>CLE</item>
-        <item>CEA</item>
-        <item>CLI</item>
-        <item>CFN</item>
-        <item>CLH</item>
-        <item>CLK</item>
-        <item>CUW</item>
-        <item>CYK</item>
-        <item>CBC</item>
-        <item>CBS</item>
-        <item>COA</item>
-        <item>CSD</item>
-        <item>CSL</item>
-        <item>CGN</item>
-        <item>COL</item>
-        <item>CET</item>
-        <item>CEH</item>
-        <item>CLM</item>
-        <item>CLL</item>
-        <item>CNE</item>
-        <item>CWL</item>
-        <item>CWB</item>
-        <item>CME</item>
-        <item>COM</item>
-        <item>CNG</item>
-        <item>CNS</item>
-        <item>CON</item>
-        <item>CBD</item>
-        <item>CEY</item>
-        <item>CNP</item>
-        <item>CNW</item>
-        <item>COB</item>
-        <item>COO</item>
-        <item>CBR</item>
-        <item>COE</item>
-        <item>COP</item>
-        <item>CRB</item>
-        <item>COR</item>
-        <item>CKH</item>
-        <item>CKL</item>
-        <item>CPA</item>
-        <item>CRR</item>
-        <item>COY</item>
-        <item>CSY</item>
-        <item>COS</item>
-        <item>CSA</item>
-        <item>CGM</item>
-        <item>COT</item>
-        <item>CDS</item>
-        <item>CDN</item>
-        <item>COV</item>
-        <item>CAA</item>
-        <item>CWN</item>
-        <item>COW</item>
-        <item>CRA</item>
-        <item>CGD</item>
-        <item>CRM</item>
-        <item>CBK</item>
-        <item>CRV</item>
-        <item>CRW</item>
-        <item>CRY</item>
-        <item>CDI</item>
-        <item>CES</item>
-        <item>CSG</item>
-        <item>CWD</item>
-        <item>CRE</item>
-        <item>CKN</item>
-        <item>CWH</item>
-        <item>CNR</item>
-        <item>CCC</item>
-        <item>CRI</item>
-        <item>CFF</item>
-        <item>CFT</item>
-        <item>CMR</item>
-        <item>CMF</item>
-        <item>CKT</item>
-        <item>CRG</item>
-        <item>CFL</item>
-        <item>COI</item>
-        <item>CKY</item>
-        <item>CMY</item>
-        <item>CSO</item>
-        <item>CRH</item>
-        <item>COH</item>
-        <item>CWU</item>
-        <item>CWE</item>
-        <item>CRN</item>
-        <item>CRO</item>
-        <item>CYP</item>
-        <item>CUD</item>
-        <item>CUF</item>
-        <item>CUM</item>
-        <item>CUA</item>
-        <item>CUB</item>
-        <item>CUP</item>
-        <item>CUH</item>
-        <item>CUX</item>
-        <item>CMH</item>
-        <item>CWM</item>
-        <item>CYN</item>
-        <item>DDK</item>
-        <item>DSY</item>
-        <item>DAG</item>
-        <item>DAL</item>
-        <item>DAK</item>
-        <item>DAM</item>
-        <item>DMR</item>
-        <item>DLR</item>
-        <item>DLY</item>
-        <item>DLS</item>
-        <item>DLJ</item>
-        <item>DLK</item>
-        <item>DLT</item>
-        <item>DLW</item>
-        <item>DNY</item>
-        <item>DCT</item>
-        <item>DZY</item>
-        <item>DAR</item>
-        <item>DAN</item>
-        <item>DSM</item>
-        <item>DFD</item>
-        <item>DRT</item>
-        <item>DWN</item>
-        <item>DAT</item>
-        <item>DVN</item>
-        <item>DWL</item>
-        <item>DWW</item>
-        <item>DEA</item>
-        <item>DEN</item>
-        <item>DGT</item>
-        <item>DGY</item>
-        <item>DHN</item>
-        <item>DLM</item>
-        <item>DBD</item>
-        <item>DNM</item>
-        <item>DGC</item>
-        <item>DMK</item>
-        <item>DNT</item>
-        <item>DTN</item>
-        <item>DEP</item>
-        <item>DBY</item>
-        <item>DBR</item>
-        <item>DPT</item>
-        <item>DOC</item>
-        <item>DEW</item>
-        <item>DID</item>
-        <item>DIG</item>
-        <item>DMH</item>
-        <item>DMG</item>
-        <item>DNS</item>
-        <item>DGL</item>
-        <item>DIN</item>
-        <item>DND</item>
-        <item>DTG</item>
-        <item>DSL</item>
-        <item>DIS</item>
-        <item>DOD</item>
-        <item>DOL</item>
-        <item>DLH</item>
-        <item>DLG</item>
-        <item>DWD</item>
-        <item>DON</item>
-        <item>DCH</item>
-        <item>DCW</item>
-        <item>DOR</item>
-        <item>DKG</item>
-        <item>DPD</item>
-        <item>DKT</item>
-        <item>DMS</item>
-        <item>DDG</item>
-        <item>DVH</item>
-        <item>DVP</item>
-        <item>DVC</item>
-        <item>DVY</item>
-        <item>DOW</item>
-        <item>DRG</item>
-        <item>DYP</item>
-        <item>DRM</item>
-        <item>DRF</item>
-        <item>DRI</item>
-        <item>DTW</item>
-        <item>DRO</item>
-        <item>DMC</item>
-        <item>DFR</item>
-        <item>DRU</item>
-        <item>DMY</item>
-        <item>DFP</item>
-        <item>DPS</item>
-        <item>DUD</item>
-        <item>DDP</item>
-        <item>DFI</item>
-        <item>DRN</item>
-        <item>DST</item>
-        <item>DUL</item>
-        <item>DBC</item>
-        <item>DBE</item>
-        <item>DUM</item>
-        <item>DMF</item>
-        <item>DMP</item>
-        <item>DUN</item>
-        <item>DBL</item>
-        <item>DCG</item>
-        <item>DEE</item>
-        <item>DFL</item>
-        <item>DFE</item>
-        <item>DKD</item>
-        <item>DNL</item>
-        <item>DNO</item>
-        <item>DOT</item>
-        <item>DNG</item>
-        <item>DHM</item>
-        <item>DUR</item>
-        <item>DYC</item>
-        <item>DYF</item>
-        <item>EAG</item>
-        <item>EAL</item>
-        <item>ERL</item>
-        <item>EAR</item>
-        <item>EAD</item>
-        <item>ELD</item>
-        <item>EWD</item>
-        <item>ECR</item>
-        <item>EDY</item>
-        <item>EDW</item>
-        <item>EFL</item>
-        <item>EGF</item>
-        <item>EGR</item>
-        <item>EKL</item>
-        <item>EML</item>
-        <item>EMD</item>
-        <item>ETL</item>
-        <item>EWR</item>
-        <item>EBN</item>
-        <item>EBK</item>
-        <item>EST</item>
-        <item>ERA</item>
-        <item>ESL</item>
-        <item>EGN</item>
-        <item>EBD</item>
-        <item>EBV</item>
-        <item>EBB</item>
-        <item>ECC</item>
-        <item>ECS</item>
-        <item>ECL</item>
-        <item>EDL</item>
-        <item>EDN</item>
-        <item>EBR</item>
-        <item>EBT</item>
-        <item>EDG</item>
-        <item>EDB</item>
-        <item>EDP</item>
-        <item>EDR</item>
-        <item>EFF</item>
-        <item>EGG</item>
-        <item>EGH</item>
-        <item>EGT</item>
-        <item>EPH</item>
-        <item>ZEL</item>
-        <item>ELG</item>
-        <item>ELP</item>
-        <item>ELE</item>
-        <item>ESD</item>
-        <item>ESW</item>
-        <item>ELR</item>
-        <item>ESM</item>
-        <item>ELS</item>
-        <item>ELW</item>
-        <item>ELO</item>
-        <item>ELY</item>
-        <item>EMP</item>
-        <item>EMS</item>
-        <item>ECP</item>
-        <item>ENC</item>
-        <item>ENL</item>
-        <item>ENF</item>
-        <item>ENT</item>
-        <item>EPS</item>
-        <item>EPD</item>
-        <item>ERD</item>
-        <item>ERI</item>
-        <item>ERH</item>
-        <item>ESH</item>
-        <item>EKB</item>
-        <item>EXR</item>
-        <item>ETC</item>
-        <item>EBA</item>
-        <item>EVE</item>
-        <item>EWE</item>
-        <item>EWW</item>
-        <item>EXC</item>
-        <item>EXD</item>
-        <item>EXT</item>
-        <item>EXG</item>
-        <item>EXM</item>
-        <item>EXN</item>
-        <item>EYN</item>
-        <item>FRB</item>
-        <item>FRF</item>
-        <item>FRL</item>
-        <item>FRW</item>
-        <item>FCN</item>
-        <item>FKG</item>
-        <item>FKK</item>
-        <item>FOC</item>
-        <item>FMR</item>
-        <item>FAL</item>
-        <item>FMT</item>
-        <item>FRM</item>
-        <item>FNB</item>
-        <item>FNN</item>
-        <item>FNC</item>
-        <item>FNH</item>
-        <item>FNR</item>
-        <item>FNW</item>
-        <item>ZFD</item>
-        <item>FLD</item>
-        <item>FAV</item>
-        <item>FGT</item>
-        <item>FAZ</item>
-        <item>FRN</item>
-        <item>FEA</item>
-        <item>FLX</item>
-        <item>FEL</item>
-        <item>FNT</item>
-        <item>FEN</item>
-        <item>FER</item>
-        <item>FRY</item>
-        <item>FYS</item>
-        <item>FFA</item>
-        <item>FIL</item>
-        <item>FIT</item>
-        <item>FNY</item>
-        <item>FPK</item>
-        <item>FIN</item>
-        <item>FSB</item>
-        <item>FSG</item>
-        <item>FGW</item>
-        <item>FGH</item>
-        <item>FSK</item>
-        <item>FZW</item>
-        <item>FWY</item>
-        <item>FLE</item>
-        <item>FLM</item>
-        <item>FLN</item>
-        <item>FLT</item>
-        <item>FLI</item>
-        <item>FLF</item>
-        <item>FKC</item>
-        <item>FKW</item>
-        <item>FOD</item>
-        <item>FOG</item>
-        <item>FOH</item>
-        <item>FBY</item>
-        <item>FOR</item>
-        <item>FRS</item>
-        <item>FTM</item>
-        <item>FTW</item>
-        <item>FOK</item>
-        <item>FOX</item>
-        <item>FXN</item>
-        <item>FRT</item>
-        <item>FTN</item>
-        <item>FRE</item>
-        <item>FFD</item>
-        <item>FML</item>
-        <item>FRI</item>
-        <item>FZH</item>
-        <item>FRD</item>
-        <item>FRO</item>
-        <item>FLW</item>
-        <item>FNV</item>
-        <item>FZP</item>
-        <item>GNB</item>
-        <item>GBL</item>
-        <item>GAL</item>
-        <item>GCH</item>
-        <item>GRF</item>
-        <item>GGV</item>
-        <item>GAR</item>
-        <item>GRS</item>
-        <item>GSD</item>
-        <item>GSN</item>
-        <item>GSW</item>
-        <item>GRH</item>
-        <item>GMG</item>
-        <item>GTH</item>
-        <item>GVE</item>
-        <item>GST</item>
-        <item>GTY</item>
-        <item>GTW</item>
-        <item>GGJ</item>
-        <item>GER</item>
-        <item>GDP</item>
-        <item>GFN</item>
-        <item>GIG</item>
-        <item>GBD</item>
-        <item>GFF</item>
-        <item>GIL</item>
-        <item>GLM</item>
-        <item>GSC</item>
-        <item>GIP</item>
-        <item>GIR</item>
-        <item>GLS</item>
-        <item>GCW</item>
-        <item>GLC</item>
-        <item>GLQ</item>
-        <item>GLH</item>
-        <item>GLZ</item>
-        <item>GLE</item>
-        <item>GLF</item>
-        <item>GLG</item>
-        <item>GLT</item>
-        <item>GLO</item>
-        <item>GCR</item>
-        <item>GLY</item>
-        <item>GOB</item>
-        <item>GOD</item>
-        <item>GDL</item>
-        <item>GDN</item>
-        <item>GOE</item>
-        <item>GOF</item>
-        <item>GOL</item>
-        <item>GOM</item>
-        <item>GMY</item>
-        <item>GOO</item>
-        <item>GTR</item>
-        <item>GDH</item>
-        <item>GBG</item>
-        <item>GOR</item>
-        <item>GBS</item>
-        <item>GTO</item>
-        <item>GPO</item>
-        <item>GRK</item>
-        <item>GWN</item>
-        <item>GOX</item>
-        <item>GPK</item>
-        <item>GOS</item>
-        <item>GTN</item>
-        <item>GRA</item>
-        <item>GRT</item>
-        <item>GVH</item>
-        <item>GRV</item>
-        <item>GRY</item>
-        <item>GTA</item>
-        <item>GRB</item>
-        <item>GRC</item>
-        <item>GCT</item>
-        <item>GMV</item>
-        <item>GMN</item>
-        <item>GYM</item>
-        <item>GNL</item>
-        <item>GNR</item>
-        <item>GBK</item>
-        <item>GRL</item>
-        <item>GNF</item>
-        <item>GFD</item>
-        <item>GNH</item>
-        <item>GKC</item>
-        <item>GKW</item>
-        <item>GNW</item>
-        <item>GEA</item>
-        <item>GMD</item>
-        <item>GMB</item>
-        <item>GRN</item>
-        <item>GMT</item>
-        <item>GRP</item>
-        <item>GUI</item>
-        <item>GLD</item>
-        <item>GSY</item>
-        <item>GUN</item>
-        <item>GSL</item>
-        <item>GNT</item>
-        <item>GWE</item>
-        <item>GYP</item>
-        <item>HAB</item>
-        <item>HCB</item>
-        <item>HKC</item>
-        <item>HAC</item>
-        <item>HKW</item>
-        <item>HDM</item>
-        <item>HAD</item>
-        <item>HDF</item>
-        <item>HDW</item>
-        <item>HGF</item>
-        <item>HGG</item>
-        <item>HAG</item>
-        <item>HMY</item>
-        <item>HAL</item>
-        <item>HAS</item>
-        <item>HED</item>
-        <item>HFX</item>
-        <item>HLG</item>
-        <item>HLR</item>
-        <item>HAI</item>
-        <item>HID</item>
-        <item>HWH</item>
-        <item>HMT</item>
-        <item>HME</item>
-        <item>HNC</item>
-        <item>HNW</item>
-        <item>HMM</item>
-        <item>HMD</item>
-        <item>HDH</item>
-        <item>HMP</item>
-        <item>HMC</item>
-        <item>HMW</item>
-        <item>HIA</item>
-        <item>HSD</item>
-        <item>HAM</item>
-        <item>HND</item>
-        <item>HTH</item>
-        <item>HAN</item>
-        <item>HPN</item>
-        <item>HRL</item>
-        <item>HDN</item>
-        <item>HRD</item>
-        <item>HLN</item>
-        <item>HWM</item>
-        <item>HWN</item>
-        <item>HRO</item>
-        <item>HPD</item>
-        <item>HRM</item>
-        <item>HGY</item>
-        <item>HRY</item>
-        <item>HRR</item>
-        <item>HGT</item>
-        <item>HRW</item>
-        <item>HOH</item>
-        <item>HTF</item>
-        <item>HBY</item>
-        <item>HPL</item>
-        <item>HTW</item>
-        <item>HPQ</item>
-        <item>HWC</item>
-        <item>HSL</item>
-        <item>HSK</item>
-        <item>HGS</item>
-        <item>HTE</item>
-        <item>HFS</item>
-        <item>HAT</item>
-        <item>HAP</item>
-        <item>HSG</item>
-        <item>HTY</item>
-        <item>HTN</item>
-        <item>HAV</item>
-        <item>HVN</item>
-        <item>HVF</item>
-        <item>HWD</item>
-        <item>HWB</item>
-        <item>HKH</item>
-        <item>HDB</item>
-        <item>HYR</item>
-        <item>HAY</item>
-        <item>HYS</item>
-        <item>HYL</item>
-        <item>HYM</item>
-        <item>HHE</item>
-        <item>HAZ</item>
-        <item>HCN</item>
-        <item>HDY</item>
-        <item>HDL</item>
-        <item>HDG</item>
-        <item>HLI</item>
-        <item>HHL</item>
-        <item>HLL</item>
-        <item>HAF</item>
-        <item>HWV</item>
-        <item>HXX</item>
-        <item>HTC</item>
-        <item>HBD</item>
-        <item>HEC</item>
-        <item>HDE</item>
-        <item>HNF</item>
-        <item>HEI</item>
-        <item>HLC</item>
-        <item>HLU</item>
-        <item>HLD</item>
-        <item>HMS</item>
-        <item>HSB</item>
-        <item>HML</item>
-        <item>HEN</item>
-        <item>HNG</item>
-        <item>HNL</item>
-        <item>HOT</item>
-        <item>HEL</item>
-        <item>HFD</item>
-        <item>HNB</item>
-        <item>HNH</item>
-        <item>HER</item>
-        <item>HFE</item>
-        <item>HFN</item>
-        <item>HES</item>
-        <item>HSW</item>
-        <item>HEV</item>
-        <item>HEW</item>
-        <item>HEX</item>
-        <item>HYD</item>
-        <item>HHB</item>
-        <item>HIB</item>
-        <item>HST</item>
-        <item>ZHS</item>
-        <item>HWY</item>
-        <item>HGM</item>
-        <item>HIP</item>
-        <item>HIG</item>
-        <item>HHY</item>
-        <item>HTO</item>
-        <item>HLB</item>
-        <item>HLF</item>
-        <item>HLE</item>
-        <item>HLW</item>
-        <item>HIL</item>
-        <item>HLS</item>
-        <item>HYW</item>
-        <item>HNK</item>
-        <item>HIN</item>
-        <item>HNA</item>
-        <item>HIT</item>
-        <item>HGR</item>
-        <item>HOC</item>
-        <item>HBN</item>
-        <item>HCH</item>
-        <item>HLM</item>
-        <item>HOL</item>
-        <item>HHD</item>
-        <item>HLY</item>
-        <item>HMN</item>
-        <item>HYB</item>
-        <item>HON</item>
-        <item>HOY</item>
-        <item>HPA</item>
-        <item>HOK</item>
-        <item>HOO</item>
-        <item>HOP</item>
-        <item>HPE</item>
-        <item>HPT</item>
-        <item>HOR</item>
-        <item>HBP</item>
-        <item>HRN</item>
-        <item>HRS</item>
-        <item>HRH</item>
-        <item>HSY</item>
-        <item>HIR</item>
-        <item>HWI</item>
-        <item>HSC</item>
-        <item>HGN</item>
-        <item>HOU</item>
-        <item>HOV</item>
-        <item>HXM</item>
-        <item>HWW</item>
-        <item>HOW</item>
-        <item>HOZ</item>
-        <item>HOX</item>
-        <item>HYK</item>
-        <item>HBB</item>
-        <item>HKN</item>
-        <item>HUD</item>
-        <item>HUL</item>
-        <item>HUP</item>
-        <item>HCT</item>
-        <item>HGD</item>
-        <item>HUB</item>
-        <item>HUN</item>
-        <item>HNT</item>
-        <item>HNX</item>
-        <item>HUR</item>
-        <item>HUT</item>
-        <item>HUY</item>
-        <item>HYC</item>
-        <item>HYT</item>
-        <item>HKM</item>
-        <item>HYN</item>
-        <item>HYH</item>
-        <item>IBM</item>
-        <item>IFI</item>
-        <item>IFD</item>
-        <item>ILK</item>
-        <item>IMW</item>
-        <item>INE</item>
-        <item>INC</item>
-        <item>INT</item>
-        <item>INS</item>
-        <item>IGD</item>
-        <item>ING</item>
-        <item>INK</item>
-        <item>INP</item>
-        <item>INV</item>
-        <item>INH</item>
-        <item>INR</item>
-        <item>IPS</item>
-        <item>IRL</item>
-        <item>IRV</item>
-        <item>ISL</item>
-        <item>ISP</item>
-        <item>IVR</item>
-        <item>IVY</item>
-        <item>JCH</item>
-        <item>JEQ</item>
-        <item>JOH</item>
-        <item>JHN</item>
-        <item>JOR</item>
-        <item>KSL</item>
-        <item>KSN</item>
-        <item>KEI</item>
-        <item>KEH</item>
-        <item>KEL</item>
-        <item>KVD</item>
-        <item>KEM</item>
-        <item>KMH</item>
-        <item>KMP</item>
-        <item>KMS</item>
-        <item>KML</item>
-        <item>KEN</item>
-        <item>KLY</item>
-        <item>KNE</item>
-        <item>KNS</item>
-        <item>KNL</item>
-        <item>KNR</item>
-        <item>KPA</item>
-        <item>KTH</item>
-        <item>KTN</item>
-        <item>KTW</item>
-        <item>KNT</item>
-        <item>KBK</item>
-        <item>KET</item>
-        <item>KWB</item>
-        <item>KWG</item>
-        <item>KEY</item>
-        <item>KYN</item>
-        <item>KDB</item>
-        <item>KID</item>
-        <item>KDG</item>
-        <item>KWL</item>
-        <item>KBN</item>
-        <item>KLD</item>
-        <item>KIL</item>
-        <item>KGT</item>
-        <item>KMK</item>
-        <item>KLM</item>
-        <item>KPT</item>
-        <item>KWN</item>
-        <item>KBC</item>
-        <item>KGM</item>
-        <item>KGH</item>
-        <item>KGL</item>
-        <item>KLN</item>
-        <item>KNN</item>
-        <item>KGN</item>
-        <item>KGP</item>
-        <item>KGS</item>
-        <item>KGE</item>
-        <item>KNG</item>
-        <item>KND</item>
-        <item>KIN</item>
-        <item>KIT</item>
-        <item>KBX</item>
-        <item>KKS</item>
-        <item>KIR</item>
-        <item>KSW</item>
-        <item>KKB</item>
-        <item>KBF</item>
-        <item>KDY</item>
-        <item>KRK</item>
-        <item>KKD</item>
-        <item>KKM</item>
-        <item>KKH</item>
-        <item>KKN</item>
-        <item>KWD</item>
-        <item>KTL</item>
-        <item>KIV</item>
-        <item>KVP</item>
-        <item>KNA</item>
-        <item>KBW</item>
-        <item>KNI</item>
-        <item>KCK</item>
-        <item>KNO</item>
-        <item>KNU</item>
-        <item>KNF</item>
-        <item>KYL</item>
-        <item>LDY</item>
-        <item>LAD</item>
-        <item>LAI</item>
-        <item>LRG</item>
-        <item>LKE</item>
-        <item>LAK</item>
-        <item>LAM</item>
-        <item>LNK</item>
-        <item>LAN</item>
-        <item>LAC</item>
-        <item>LAW</item>
-        <item>LGB</item>
-        <item>LHO</item>
-        <item>LNY</item>
-        <item>LGG</item>
-        <item>LGM</item>
-        <item>LGS</item>
-        <item>LGW</item>
-        <item>LAG</item>
-        <item>LAP</item>
-        <item>LPW</item>
-        <item>LBT</item>
-        <item>LAR</item>
-        <item>LRH</item>
-        <item>LAU</item>
-        <item>LWH</item>
-        <item>LAY</item>
-        <item>LZB</item>
-        <item>LEB</item>
-        <item>LEG</item>
-        <item>LEH</item>
-        <item>LEA</item>
-        <item>LHM</item>
-        <item>LMS</item>
-        <item>LSW</item>
-        <item>LHD</item>
-        <item>LED</item>
-        <item>LEE</item>
-        <item>LDS</item>
-        <item>LEI</item>
-        <item>LIH</item>
-        <item>LES</item>
-        <item>LBZ</item>
-        <item>LEL</item>
-        <item>LTS</item>
-        <item>LEN</item>
-        <item>LNZ</item>
-        <item>LEO</item>
-        <item>LET</item>
-        <item>LEU</item>
-        <item>LVM</item>
-        <item>LWS</item>
-        <item>LEW</item>
-        <item>LEY</item>
-        <item>LEM</item>
-        <item>LER</item>
-        <item>LIC</item>
-        <item>LTV</item>
-        <item>LID</item>
-        <item>LHS</item>
-        <item>LCN</item>
-        <item>LFD</item>
-        <item>LGD</item>
-        <item>LIN</item>
-        <item>LIP</item>
-        <item>LSK</item>
-        <item>LIS</item>
-        <item>LVT</item>
-        <item>LTK</item>
-        <item>LTT</item>
-        <item>LTL</item>
-        <item>LIT</item>
-        <item>LVN</item>
-        <item>LTP</item>
-        <item>LVC</item>
-        <item>LVJ</item>
-        <item>LIV</item>
-        <item>LPY</item>
-        <item>LSN</item>
-        <item>LVG</item>
-        <item>LLA</item>
-        <item>LBR</item>
-        <item>LLT</item>
-        <item>LNB</item>
-        <item>LLN</item>
-        <item>LDN</item>
-        <item>LLC</item>
-        <item>LLL</item>
-        <item>LLV</item>
-        <item>LLO</item>
-        <item>LLD</item>
-        <item>LLJ</item>
-        <item>LLI</item>
-        <item>LLE</item>
-        <item>LLF</item>
-        <item>LPG</item>
-        <item>LLG</item>
-        <item>LLM</item>
-        <item>LLH</item>
-        <item>LGO</item>
-        <item>LLR</item>
-        <item>LTH</item>
-        <item>LLS</item>
-        <item>LWR</item>
-        <item>LAS</item>
-        <item>LWM</item>
-        <item>LNR</item>
-        <item>LNW</item>
-        <item>LLW</item>
-        <item>LLY</item>
-        <item>LHA</item>
-        <item>LHE</item>
-        <item>LCL</item>
-        <item>LCS</item>
-        <item>LCG</item>
-        <item>LCC</item>
-        <item>LHW</item>
-        <item>LOC</item>
-        <item>LCK</item>
-        <item>BFR</item>
-        <item>LBG</item>
-        <item>CST</item>
-        <item>CHX</item>
-        <item>EUS</item>
-        <item>FST</item>
-        <item>LOF</item>
-        <item>KGX</item>
-        <item>LST</item>
-        <item>MYB</item>
-        <item>PAD</item>
-        <item>LRB</item>
-        <item>LRD</item>
-        <item>SPX</item>
-        <item>STP</item>
-        <item>VIC</item>
-        <item>WAT</item>
-        <item>WAE</item>
-        <item>LBK</item>
-        <item>LGE</item>
-        <item>LPR</item>
-        <item>LGK</item>
-        <item>LOB</item>
-        <item>LNG</item>
-        <item>LGF</item>
-        <item>LND</item>
-        <item>LPT</item>
-        <item>LGN</item>
-        <item>LOO</item>
-        <item>LOT</item>
-        <item>LTG</item>
-        <item>LOH</item>
-        <item>LOS</item>
-        <item>LBO</item>
-        <item>LGJ</item>
-        <item>LOW</item>
-        <item>LSY</item>
-        <item>LWT</item>
-        <item>LUD</item>
-        <item>LUT</item>
-        <item>LTN</item>
-        <item>LUX</item>
-        <item>LYD</item>
-        <item>LYE</item>
-        <item>LYP</item>
-        <item>LYT</item>
-        <item>LYC</item>
-        <item>LYM</item>
-        <item>LTM</item>
-        <item>MAC</item>
-        <item>MCN</item>
-        <item>MST</item>
-        <item>MEW</item>
-        <item>MAG</item>
-        <item>MDN</item>
-        <item>MAI</item>
-        <item>MDB</item>
-        <item>MDE</item>
-        <item>MDW</item>
-        <item>MAL</item>
-        <item>MLG</item>
-        <item>MLT</item>
-        <item>MVL</item>
-        <item>MIA</item>
-        <item>MCO</item>
-        <item>MAN</item>
-        <item>MUF</item>
-        <item>MCV</item>
-        <item>MNE</item>
-        <item>MNG</item>
-        <item>MNP</item>
-        <item>MNR</item>
-        <item>MRB</item>
-        <item>MAS</item>
-        <item>MFT</item>
-        <item>MSW</item>
-        <item>MCH</item>
-        <item>MRN</item>
-        <item>MAR</item>
-        <item>MHR</item>
-        <item>MKR</item>
-        <item>MNC</item>
-        <item>MKT</item>
-        <item>MLW</item>
-        <item>MPL</item>
-        <item>MSN</item>
-        <item>MSK</item>
-        <item>MGN</item>
-        <item>MTM</item>
-        <item>MAO</item>
-        <item>MTO</item>
-        <item>MYH</item>
-        <item>MYL</item>
-        <item>MRY</item>
-        <item>MAT</item>
-        <item>MTB</item>
-        <item>MAU</item>
-        <item>MAX</item>
-        <item>MAY</item>
-        <item>MZH</item>
-        <item>MHS</item>
-        <item>MEL</item>
-        <item>MKM</item>
-        <item>MES</item>
-        <item>MMO</item>
-        <item>MEN</item>
-        <item>MNN</item>
-        <item>MEO</item>
-        <item>MEC</item>
-        <item>MEP</item>
-        <item>MEY</item>
-        <item>MHM</item>
-        <item>MER</item>
-        <item>MEV</item>
-        <item>MGM</item>
-        <item>MCE</item>
-        <item>MEX</item>
-        <item>MIC</item>
-        <item>MIK</item>
-        <item>MBR</item>
-        <item>MDL</item>
-        <item>MDG</item>
-        <item>MLF</item>
-        <item>MFH</item>
-        <item>MLH</item>
-        <item>MIL</item>
-        <item>MLB</item>
-        <item>MBK</item>
-        <item>MIN</item>
-        <item>MLM</item>
-        <item>MIH</item>
-        <item>MLN</item>
-        <item>MKC</item>
-        <item>MFF</item>
-        <item>MSR</item>
-        <item>MIR</item>
-        <item>MIS</item>
-        <item>MTC</item>
-        <item>MIJ</item>
-        <item>MOB</item>
-        <item>MON</item>
-        <item>MRS</item>
-        <item>MTP</item>
-        <item>MTS</item>
-        <item>MRF</item>
-        <item>MOG</item>
-        <item>MSD</item>
-        <item>MRP</item>
-        <item>MRR</item>
-        <item>MRD</item>
-        <item>MDS</item>
-        <item>MCM</item>
-        <item>MTN</item>
-        <item>MRT</item>
-        <item>MIM</item>
-        <item>MFA</item>
-        <item>MLY</item>
-        <item>MPT</item>
-        <item>MOR</item>
-        <item>MTL</item>
-        <item>MSS</item>
-        <item>MOS</item>
-        <item>MSL</item>
-        <item>MSH</item>
-        <item>MPK</item>
-        <item>MSO</item>
-        <item>MTH</item>
-        <item>MOT</item>
-        <item>MTG</item>
-        <item>DBG</item>
-        <item>MLD</item>
-        <item>MCB</item>
-        <item>MFL</item>
-        <item>MTV</item>
-        <item>MTA</item>
-        <item>MOO</item>
-        <item>MUI</item>
-        <item>MUB</item>
-        <item>MYT</item>
-        <item>NFN</item>
-        <item>NLS</item>
-        <item>NRN</item>
-        <item>NAN</item>
-        <item>NAR</item>
-        <item>NBR</item>
-        <item>NVR</item>
-        <item>NTH</item>
-        <item>NMT</item>
-        <item>NEI</item>
-        <item>NEL</item>
-        <item>NES</item>
-        <item>NET</item>
-        <item>NRT</item>
-        <item>NTL</item>
-        <item>NBA</item>
-        <item>NBC</item>
-        <item>NBN</item>
-        <item>NCE</item>
-        <item>NWX</item>
-        <item>NXG</item>
-        <item>NCK</item>
-        <item>NEH</item>
-        <item>NHL</item>
-        <item>NHE</item>
-        <item>NLN</item>
-        <item>NEM</item>
-        <item>NMC</item>
-        <item>NMN</item>
-        <item>NWM</item>
-        <item>NPD</item>
-        <item>NSG</item>
-        <item>NCT</item>
-        <item>NNG</item>
-        <item>NBE</item>
-        <item>NBY</item>
-        <item>NRC</item>
-        <item>NCL</item>
-        <item>NCO</item>
-        <item>NEW</item>
-        <item>NVH</item>
-        <item>NVN</item>
-        <item>NGT</item>
-        <item>NMK</item>
-        <item>NWE</item>
-        <item>NWP</item>
-        <item>NQY</item>
-        <item>NSD</item>
-        <item>NTN</item>
-        <item>NTA</item>
-        <item>NAY</item>
-        <item>NWN</item>
-        <item>NTC</item>
-        <item>NEG</item>
-        <item>NLW</item>
-        <item>NWR</item>
-        <item>NOA</item>
-        <item>NWT</item>
-        <item>NNP</item>
-        <item>NIT</item>
-        <item>NBT</item>
-        <item>NRB</item>
-        <item>NSB</item>
-        <item>NOR</item>
-        <item>NBW</item>
-        <item>NCM</item>
-        <item>NDL</item>
-        <item>NFA</item>
-        <item>NLR</item>
-        <item>NQU</item>
-        <item>NRD</item>
-        <item>NSH</item>
-        <item>NWA</item>
-        <item>NWB</item>
-        <item>NTR</item>
-        <item>NMP</item>
-        <item>NFD</item>
-        <item>NFL</item>
-        <item>NLT</item>
-        <item>NUM</item>
-        <item>NWI</item>
-        <item>NTB</item>
-        <item>NRW</item>
-        <item>NWD</item>
-        <item>NOT</item>
-        <item>NUN</item>
-        <item>NHD</item>
-        <item>NNT</item>
-        <item>NUT</item>
-        <item>NUF</item>
-        <item>OKN</item>
-        <item>OKM</item>
-        <item>OKL</item>
-        <item>OBN</item>
-        <item>OCK</item>
-        <item>OLY</item>
-        <item>OKE</item>
-        <item>OHL</item>
-        <item>ORN</item>
-        <item>OLD</item>
-        <item>OLF</item>
-        <item>OLT</item>
-        <item>ORE</item>
-        <item>OMS</item>
-        <item>ORP</item>
-        <item>ORR</item>
-        <item>OPK</item>
-        <item>OTF</item>
-        <item>OUN</item>
-        <item>OUS</item>
-        <item>OUT</item>
-        <item>OVE</item>
-        <item>OVR</item>
-        <item>OXN</item>
-        <item>OXF</item>
-        <item>OXP</item>
-        <item>OXS</item>
-        <item>OXT</item>
-        <item>PDW</item>
-        <item>PDG</item>
-        <item>PGN</item>
-        <item>PCN</item>
-        <item>PYG</item>
-        <item>PYJ</item>
-        <item>PAL</item>
-        <item>PAN</item>
-        <item>PNL</item>
-        <item>PTF</item>
-        <item>PAR</item>
-        <item>PBL</item>
-        <item>PKT</item>
-        <item>PKS</item>
-        <item>PSN</item>
-        <item>PTK</item>
-        <item>PRN</item>
-        <item>PWY</item>
-        <item>PAT</item>
-        <item>PTT</item>
-        <item>PEA</item>
-        <item>PMR</item>
-        <item>PEG</item>
-        <item>PEM</item>
-        <item>PBY</item>
-        <item>PMB</item>
-        <item>PMD</item>
-        <item>PNA</item>
-        <item>PEN</item>
-        <item>PCD</item>
-        <item>PGM</item>
-        <item>PNE</item>
-        <item>PNW</item>
-        <item>PHG</item>
-        <item>PNS</item>
-        <item>PKG</item>
-        <item>PMW</item>
-        <item>PNM</item>
-        <item>PER</item>
-        <item>PRH</item>
-        <item>PNR</item>
-        <item>PYN</item>
-        <item>PES</item>
-        <item>PHR</item>
-        <item>PTB</item>
-        <item>PNY</item>
-        <item>PNC</item>
-        <item>PNF</item>
-        <item>PNZ</item>
-        <item>PRW</item>
-        <item>PRY</item>
-        <item>PSH</item>
-        <item>PTH</item>
-        <item>PBO</item>
-        <item>PTR</item>
-        <item>PET</item>
-        <item>PEV</item>
-        <item>PEB</item>
-        <item>PEW</item>
-        <item>PIL</item>
-        <item>PIN</item>
-        <item>PIT</item>
-        <item>PSE</item>
-        <item>PLS</item>
-        <item>PLK</item>
-        <item>PLC</item>
-        <item>PLM</item>
-        <item>PMP</item>
-        <item>PLU</item>
-        <item>PLY</item>
-        <item>POK</item>
-        <item>PLG</item>
-        <item>PSW</item>
-        <item>PWE</item>
-        <item>PWW</item>
-        <item>PLE</item>
-        <item>PLW</item>
-        <item>PMT</item>
-        <item>POL</item>
-        <item>PON</item>
-        <item>PTD</item>
-        <item>PFR</item>
-        <item>PFM</item>
-        <item>POT</item>
-        <item>PLT</item>
-        <item>PYC</item>
-        <item>PYP</item>
-        <item>PPL</item>
-        <item>PPD</item>
-        <item>POO</item>
-        <item>POP</item>
-        <item>PTG</item>
-        <item>PSL</item>
-        <item>PTA</item>
-        <item>PTC</item>
-        <item>POR</item>
-        <item>PTM</item>
-        <item>PLN</item>
-        <item>PLD</item>
-        <item>PMS</item>
-        <item>PMA</item>
-        <item>PMH</item>
-        <item>PPK</item>
-        <item>PBR</item>
-        <item>PFY</item>
-        <item>PYT</item>
-        <item>PRS</item>
-        <item>PSC</item>
-        <item>PRT</item>
-        <item>PRB</item>
-        <item>PRE</item>
-        <item>PRP</item>
-        <item>PST</item>
-        <item>PRA</item>
-        <item>PTW</item>
-        <item>PTL</item>
-        <item>PRR</item>
-        <item>PRL</item>
-        <item>PRU</item>
-        <item>PUL</item>
-        <item>PFL</item>
-        <item>PUR</item>
-        <item>PUO</item>
-        <item>PUT</item>
-        <item>PWL</item>
-        <item>PYE</item>
-        <item>PYL</item>
-        <item>QYD</item>
-        <item>QBR</item>
-        <item>QPK</item>
-        <item>QPW</item>
-        <item>QRP</item>
-        <item>QRB</item>
-        <item>QUI</item>
-        <item>RDF</item>
-        <item>RDT</item>
-        <item>RAD</item>
-        <item>RDR</item>
-        <item>RNF</item>
-        <item>RNM</item>
-        <item>RAI</item>
-        <item>RNH</item>
-        <item>RAM</item>
-        <item>RGW</item>
-        <item>RAN</item>
-        <item>RAU</item>
-        <item>RAV</item>
-        <item>RVB</item>
-        <item>RVN</item>
-        <item>RWC</item>
-        <item>RLG</item>
-        <item>RAY</item>
-        <item>RDG</item>
-        <item>RDW</item>
-        <item>REC</item>
-        <item>RDB</item>
-        <item>RBS</item>
-        <item>RCC</item>
-        <item>RCE</item>
-        <item>RDN</item>
-        <item>RDS</item>
-        <item>RDC</item>
-        <item>RDH</item>
-        <item>RDA</item>
-        <item>RED</item>
-        <item>REE</item>
-        <item>RHM</item>
-        <item>REI</item>
-        <item>RTN</item>
-        <item>RET</item>
-        <item>RHI</item>
-        <item>RIA</item>
-        <item>RHO</item>
-        <item>RHL</item>
-        <item>RHY</item>
-        <item>RHD</item>
-        <item>RIL</item>
-        <item>RMD</item>
-        <item>RIC</item>
-        <item>RDD</item>
-        <item>RID</item>
-        <item>RDM</item>
-        <item>RCA</item>
-        <item>RIS</item>
-        <item>RBR</item>
-        <item>ROB</item>
-        <item>RCD</item>
-        <item>ROC</item>
-        <item>RTR</item>
-        <item>RFD</item>
-        <item>RFY</item>
-        <item>ROG</item>
-        <item>ROR</item>
-        <item>ROL</item>
-        <item>RMB</item>
-        <item>RMF</item>
-        <item>RML</item>
-        <item>ROM</item>
-        <item>ROO</item>
-        <item>RSG</item>
-        <item>RSH</item>
-        <item>ROS</item>
-        <item>RMC</item>
-        <item>ROE</item>
-        <item>RNR</item>
-        <item>RLN</item>
-        <item>ROW</item>
-        <item>RYB</item>
-        <item>RYN</item>
-        <item>RYS</item>
-        <item>RUA</item>
-        <item>RUF</item>
-        <item>RUG</item>
-        <item>RGT</item>
-        <item>RGL</item>
-        <item>RUN</item>
-        <item>RUE</item>
-        <item>RKT</item>
-        <item>RUS</item>
-        <item>RUT</item>
-        <item>RYD</item>
-        <item>RYP</item>
-        <item>RYR</item>
-        <item>RRB</item>
-        <item>RYE</item>
-        <item>RYH</item>
-        <item>SFD</item>
-        <item>SLD</item>
-        <item>SAF</item>
-        <item>SAH</item>
-        <item>SAL</item>
-        <item>SAE</item>
-        <item>STS</item>
-        <item>SLB</item>
-        <item>SLT</item>
-        <item>SAM</item>
-        <item>SLW</item>
-        <item>SMC</item>
-        <item>SNA</item>
-        <item>SDB</item>
-        <item>SNR</item>
-        <item>SDL</item>
-        <item>SND</item>
-        <item>SDG</item>
-        <item>SAN</item>
-        <item>SDP</item>
-        <item>SAD</item>
-        <item>SDW</item>
-        <item>SDY</item>
-        <item>SNK</item>
-        <item>SQH</item>
-        <item>SRR</item>
-        <item>SDF</item>
-        <item>SDR</item>
-        <item>SAW</item>
-        <item>SXY</item>
-        <item>SAX</item>
-        <item>SCA</item>
-        <item>SCT</item>
-        <item>SCH</item>
-        <item>SCU</item>
-        <item>SML</item>
-        <item>SEF</item>
-        <item>SFL</item>
-        <item>SEA</item>
-        <item>SEM</item>
-        <item>SSC</item>
-        <item>SEC</item>
-        <item>SRG</item>
-        <item>SBY</item>
-        <item>SRS</item>
-        <item>SEL</item>
-        <item>SEG</item>
-        <item>SLY</item>
-        <item>SET</item>
-        <item>SVK</item>
-        <item>SVS</item>
-        <item>SEV</item>
-        <item>SVB</item>
-        <item>STJ</item>
-        <item>SDE</item>
-        <item>SFR</item>
-        <item>SHN</item>
-        <item>SFI</item>
-        <item>SHW</item>
-        <item>SHL</item>
-        <item>SSS</item>
-        <item>SHF</item>
-        <item>SED</item>
-        <item>SNF</item>
-        <item>SEN</item>
-        <item>SPB</item>
-        <item>SPH</item>
-        <item>SPY</item>
-        <item>SHP</item>
-        <item>STH</item>
-        <item>SHE</item>
-        <item>SIE</item>
-        <item>SHM</item>
-        <item>SLS</item>
-        <item>SDM</item>
-        <item>SFN</item>
-        <item>SHD</item>
-        <item>SHI</item>
-        <item>SHY</item>
-        <item>SPP</item>
-        <item>SIP</item>
-        <item>SHB</item>
-        <item>SHH</item>
-        <item>SRO</item>
-        <item>SRL</item>
-        <item>SRY</item>
-        <item>SHO</item>
-        <item>SDC</item>
-        <item>SEH</item>
-        <item>SSE</item>
-        <item>SRT</item>
-        <item>SHT</item>
-        <item>SHS</item>
-        <item>SHR</item>
-        <item>SID</item>
-        <item>SIL</item>
-        <item>SIC</item>
-        <item>SLK</item>
-        <item>SLV</item>
-        <item>SVR</item>
-        <item>SIN</item>
-        <item>SIT</item>
-        <item>SKG</item>
-        <item>SKE</item>
-        <item>SKI</item>
-        <item>SGR</item>
-        <item>SWT</item>
-        <item>SLA</item>
-        <item>SLR</item>
-        <item>SLH</item>
-        <item>SLO</item>
-        <item>SMA</item>
-        <item>SAB</item>
-        <item>SGB</item>
-        <item>SMR</item>
-        <item>SMB</item>
-        <item>SNI</item>
-        <item>SDA</item>
-        <item>SWO</item>
-        <item>SOR</item>
-        <item>SOL</item>
-        <item>SYT</item>
-        <item>SAT</item>
-        <item>SBK</item>
-        <item>SBM</item>
-        <item>SCY</item>
-        <item>SES</item>
-        <item>SGN</item>
-        <item>SGL</item>
-        <item>SOH</item>
-        <item>SOK</item>
-        <item>SMO</item>
-        <item>SOM</item>
-        <item>SRU</item>
-        <item>STO</item>
-        <item>SWS</item>
-        <item>SOF</item>
-        <item>STL</item>
-        <item>SOA</item>
-        <item>SOU</item>
-        <item>SOB</item>
-        <item>SBU</item>
-        <item>SEE</item>
-        <item>SIA</item>
-        <item>SOC</item>
-        <item>SOE</item>
-        <item>SOV</item>
-        <item>SMN</item>
-        <item>SOP</item>
-        <item>SWK</item>
-        <item>SOW</item>
-        <item>SPA</item>
-        <item>SBR</item>
-        <item>SPI</item>
-        <item>SPO</item>
-        <item>SPN</item>
-        <item>SRI</item>
-        <item>SPR</item>
-        <item>SPF</item>
-        <item>SQU</item>
-        <item>SAA</item>
-        <item>SAC</item>
-        <item>SAR</item>
-        <item>SAS</item>
-        <item>SAU</item>
-        <item>SBS</item>
-        <item>SBF</item>
-        <item>SBV</item>
-        <item>SCR</item>
-        <item>SDN</item>
-        <item>SER</item>
-        <item>SGM</item>
-        <item>SNH</item>
-        <item>SHJ</item>
-        <item>SIH</item>
-        <item>SIV</item>
-        <item>SJP</item>
-        <item>SJS</item>
-        <item>SAJ</item>
-        <item>SKN</item>
-        <item>SLQ</item>
-        <item>SMT</item>
-        <item>SMG</item>
-        <item>SMY</item>
-        <item>STM</item>
-        <item>SNO</item>
-        <item>STA</item>
-        <item>SNS</item>
-        <item>SLL</item>
-        <item>SYB</item>
-        <item>SMD</item>
-        <item>SMH</item>
-        <item>SFO</item>
-        <item>SNT</item>
-        <item>SSD</item>
-        <item>SST</item>
-        <item>SPU</item>
-        <item>SRD</item>
-        <item>SBE</item>
-        <item>SCS</item>
-        <item>SVL</item>
-        <item>SCF</item>
-        <item>SON</item>
-        <item>SPS</item>
-        <item>SVG</item>
-        <item>STV</item>
-        <item>SWR</item>
-        <item>STT</item>
-        <item>STG</item>
-        <item>SPT</item>
-        <item>SKS</item>
-        <item>SSM</item>
-        <item>STK</item>
-        <item>SKM</item>
-        <item>SKW</item>
-        <item>SOT</item>
-        <item>SNE</item>
-        <item>SCG</item>
-        <item>SBP</item>
-        <item>SOG</item>
-        <item>STN</item>
-        <item>SHU</item>
-        <item>SNL</item>
-        <item>SBJ</item>
-        <item>SBT</item>
-        <item>SOI</item>
-        <item>SMK</item>
-        <item>STR</item>
-        <item>SRA</item>
-        <item>SFA</item>
-        <item>SAV</item>
-        <item>STY</item>
-        <item>STC</item>
-        <item>STW</item>
-        <item>STE</item>
-        <item>SRC</item>
-        <item>SRH</item>
-        <item>SHC</item>
-        <item>SRN</item>
-        <item>STF</item>
-        <item>SOO</item>
-        <item>STD</item>
-        <item>STU</item>
-        <item>SYA</item>
-        <item>SUD</item>
-        <item>SUY</item>
-        <item>SDH</item>
-        <item>SUG</item>
-        <item>SUM</item>
-        <item>SUU</item>
-        <item>SUN</item>
-        <item>SUP</item>
-        <item>SNG</item>
-        <item>SNY</item>
-        <item>SUR</item>
-        <item>SQE</item>
-        <item>SUO</item>
-        <item>SUT</item>
-        <item>SUC</item>
-        <item>SPK</item>
-        <item>SWL</item>
-        <item>SAY</item>
-        <item>SWM</item>
-        <item>SWA</item>
-        <item>SNW</item>
-        <item>SWY</item>
-        <item>SWG</item>
-        <item>SWD</item>
-        <item>SWI</item>
-        <item>SWE</item>
-        <item>SNN</item>
-        <item>SWN</item>
-        <item>SYD</item>
-        <item>SYH</item>
-        <item>SYL</item>
-        <item>SYS</item>
-        <item>TAC</item>
-        <item>TAD</item>
-        <item>TAF</item>
-        <item>TAI</item>
-        <item>TAL</item>
-        <item>TLB</item>
-        <item>TLC</item>
-        <item>TAB</item>
-        <item>TAM</item>
-        <item>TAP</item>
-        <item>TAT</item>
-        <item>TAU</item>
-        <item>TAY</item>
-        <item>TED</item>
-        <item>TEA</item>
-        <item>TGM</item>
-        <item>TFC</item>
-        <item>TMC</item>
-        <item>TEN</item>
-        <item>TEY</item>
-        <item>THD</item>
-        <item>THA</item>
-        <item>THH</item>
-        <item>THW</item>
-        <item>TLK</item>
-        <item>THE</item>
-        <item>TEO</item>
-        <item>TTF</item>
-        <item>THI</item>
-        <item>TBY</item>
-        <item>TNN</item>
-        <item>TNS</item>
-        <item>THO</item>
-        <item>THB</item>
-        <item>TNA</item>
-        <item>TTH</item>
-        <item>THT</item>
-        <item>TPB</item>
-        <item>TPC</item>
-        <item>TLS</item>
-        <item>TBD</item>
-        <item>TOK</item>
-        <item>THU</item>
-        <item>THC</item>
-        <item>THS</item>
-        <item>TRS</item>
-        <item>TIL</item>
-        <item>THL</item>
-        <item>TLH</item>
-        <item>TIP</item>
-        <item>TIR</item>
-        <item>TIS</item>
-        <item>TVP</item>
-        <item>TOD</item>
-        <item>TOL</item>
-        <item>TPN</item>
-        <item>TON</item>
-        <item>TDU</item>
-        <item>TNF</item>
-        <item>TNP</item>
-        <item>TOO</item>
-        <item>TOP</item>
-        <item>TQY</item>
-        <item>TRR</item>
-        <item>TOT</item>
-        <item>TOM</item>
-        <item>TTN</item>
-        <item>TWN</item>
-        <item>TRA</item>
-        <item>TRF</item>
-        <item>TRE</item>
-        <item>TRH</item>
-        <item>TRB</item>
-        <item>TRY</item>
-        <item>TRM</item>
-        <item>TRI</item>
-        <item>TRD</item>
-        <item>TRN</item>
-        <item>TRO</item>
-        <item>TRU</item>
-        <item>TUL</item>
-        <item>TUH</item>
-        <item>TBW</item>
-        <item>TUR</item>
-        <item>TUT</item>
-        <item>TWB</item>
-        <item>TWI</item>
-        <item>TWY</item>
-        <item>TYC</item>
-        <item>TGS</item>
-        <item>TYG</item>
-        <item>TYL</item>
-        <item>TYS</item>
-        <item>TYW</item>
-        <item>UCK</item>
-        <item>UDD</item>
-        <item>ULC</item>
-        <item>ULL</item>
-        <item>ULV</item>
-        <item>UMB</item>
-        <item>UNI</item>
-        <item>UHA</item>
-        <item>UPL</item>
-        <item>UPM</item>
-        <item>UPH</item>
-        <item>UHL</item>
-        <item>UTY</item>
-        <item>UWL</item>
-        <item>UPT</item>
-        <item>UPW</item>
-        <item>URM</item>
-        <item>UTT</item>
-        <item>VAL</item>
-        <item>VXH</item>
-        <item>VIR</item>
-        <item>WDO</item>
-        <item>WAD</item>
-        <item>WFL</item>
-        <item>WKK</item>
-        <item>WKF</item>
-        <item>WKD</item>
-        <item>WLG</item>
-        <item>WLV</item>
-        <item>WLT</item>
-        <item>WAF</item>
-        <item>WAM</item>
-        <item>WSL</item>
-        <item>WDN</item>
-        <item>WLC</item>
-        <item>WHC</item>
-        <item>WMW</item>
-        <item>WAO</item>
-        <item>WAL</item>
-        <item>WON</item>
-        <item>WAN</item>
-        <item>WSW</item>
-        <item>WWR</item>
-        <item>WNT</item>
-        <item>WNP</item>
-        <item>WPE</item>
-        <item>WBL</item>
-        <item>WAR</item>
-        <item>WRM</item>
-        <item>WGV</item>
-        <item>WMN</item>
-        <item>WNH</item>
-        <item>WBQ</item>
-        <item>WAC</item>
-        <item>WRW</item>
-        <item>WRP</item>
-        <item>WTO</item>
-        <item>WBC</item>
-        <item>WTR</item>
-        <item>WLO</item>
-        <item>WFH</item>
-        <item>WFJ</item>
-        <item>WFN</item>
-        <item>WTG</item>
-        <item>WAS</item>
-        <item>WNG</item>
-        <item>WAV</item>
-        <item>WED</item>
-        <item>WEE</item>
-        <item>WET</item>
-        <item>WMG</item>
-        <item>WLI</item>
-        <item>WEL</item>
-        <item>WLN</item>
-        <item>WLP</item>
-        <item>WGC</item>
-        <item>WLW</item>
-        <item>WEM</item>
-        <item>WMB</item>
-        <item>WCX</item>
-        <item>WMS</item>
-        <item>WND</item>
-        <item>WNN</item>
-        <item>WSA</item>
-        <item>WBP</item>
-        <item>WBY</item>
-        <item>WCL</item>
-        <item>WCY</item>
-        <item>WDT</item>
-        <item>WDU</item>
-        <item>WEA</item>
-        <item>WEH</item>
-        <item>WHD</item>
-        <item>WHP</item>
-        <item>WHR</item>
-        <item>WKB</item>
-        <item>WKI</item>
-        <item>WMA</item>
-        <item>WNW</item>
-        <item>WRU</item>
-        <item>WRN</item>
-        <item>WLD</item>
-        <item>WSU</item>
-        <item>WWI</item>
-        <item>WWO</item>
-        <item>WSB</item>
-        <item>WCF</item>
-        <item>WCB</item>
-        <item>WHA</item>
-        <item>WTA</item>
-        <item>WFI</item>
-        <item>WES</item>
-        <item>WGA</item>
-        <item>WHG</item>
-        <item>WNM</item>
-        <item>WSM</item>
-        <item>WRL</item>
-        <item>WYB</item>
-        <item>WEY</item>
-        <item>WBR</item>
-        <item>WHE</item>
-        <item>WTS</item>
-        <item>WFF</item>
-        <item>WHM</item>
-        <item>WNL</item>
-        <item>WHN</item>
-        <item>WTB</item>
-        <item>WHT</item>
-        <item>WCH</item>
-        <item>WTC</item>
-        <item>WHL</item>
-        <item>WNY</item>
-        <item>ZLW</item>
-        <item>WCR</item>
-        <item>WTH</item>
-        <item>WTL</item>
-        <item>WBD</item>
-        <item>WTE</item>
-        <item>WHI</item>
-        <item>WLE</item>
-        <item>WLF</item>
-        <item>WTN</item>
-        <item>WWL</item>
-        <item>WHY</item>
-        <item>WHS</item>
-        <item>WCK</item>
-        <item>WIC</item>
-        <item>WCM</item>
-        <item>WDD</item>
-        <item>WID</item>
-        <item>WMR</item>
-        <item>WGN</item>
-        <item>WGW</item>
-        <item>WGT</item>
-        <item>WMI</item>
-        <item>WIJ</item>
-        <item>WLM</item>
-        <item>WIL</item>
-        <item>WMC</item>
-        <item>WML</item>
-        <item>WNE</item>
-        <item>WIM</item>
-        <item>WBO</item>
-        <item>WSE</item>
-        <item>WIN</item>
-        <item>WNF</item>
-        <item>WIH</item>
-        <item>WDM</item>
-        <item>WNC</item>
-        <item>WNR</item>
-        <item>WNS</item>
-        <item>WTI</item>
-        <item>WSF</item>
-        <item>WSH</item>
-        <item>WTM</item>
-        <item>WTY</item>
-        <item>WTT</item>
-        <item>WVF</item>
-        <item>WIV</item>
-        <item>WOB</item>
-        <item>WOK</item>
-        <item>WKM</item>
-        <item>WOH</item>
-        <item>WVH</item>
-        <item>WOL</item>
-        <item>WOM</item>
-        <item>WDE</item>
-        <item>WST</item>
-        <item>WDB</item>
-        <item>WGR</item>
-        <item>WDL</item>
-        <item>WDH</item>
-        <item>WDS</item>
-        <item>WLY</item>
-        <item>WME</item>
-        <item>WSR</item>
-        <item>WOO</item>
-        <item>WLS</item>
-        <item>WWA</item>
-        <item>WWD</item>
-        <item>WWW</item>
-        <item>WOF</item>
-        <item>WCP</item>
-        <item>WOS</item>
-        <item>WKG</item>
-        <item>WRK</item>
-        <item>WOR</item>
-        <item>WPL</item>
-        <item>WRT</item>
-        <item>WRH</item>
-        <item>WRB</item>
-        <item>WRY</item>
-        <item>WRE</item>
-        <item>WRS</item>
-        <item>WXC</item>
-        <item>WRX</item>
-        <item>WYE</item>
-        <item>WYM</item>
-        <item>WYL</item>
-        <item>WMD</item>
-        <item>WYT</item>
-        <item>YAL</item>
-        <item>YRD</item>
-        <item>YRM</item>
-        <item>YAE</item>
-        <item>YAT</item>
-        <item>YEO</item>
-        <item>YVJ</item>
-        <item>YVP</item>
-        <item>YET</item>
-        <item>YNW</item>
-        <item>YOK</item>
-        <item>YRK</item>
-        <item>YRT</item>
-        <item>YSM</item>
-        <item>YSR</item>
-
+        <item>Abbey Wood (ABW)</item>
+        <item>Aber (ABE)</item>
+        <item>Abercynon (ACY)</item>
+        <item>Aberdare (ABA)</item>
+        <item>Aberdeen (ABD)</item>
+        <item>Aberdour (AUR)</item>
+        <item>Aberdovey (AVY)</item>
+        <item>Abererch (ABH)</item>
+        <item>Abergavenny (AGV)</item>
+        <item>Abergele &amp; Pensarn (AGL)</item>
+        <item>Aberystwyth (AYW)</item>
+        <item>Accrington (ACR)</item>
+        <item>Achanalt (AAT)</item>
+        <item>Achnasheen (ACN)</item>
+        <item>Achnashellach (ACH)</item>
+        <item>Acklington (ACK)</item>
+        <item>Acle (ACL)</item>
+        <item>Acocks Green (ACG)</item>
+        <item>Acton Bridge (Cheshire) (ACB)</item>
+        <item>Acton Central (ACC)</item>
+        <item>Acton Main Line (AML)</item>
+        <item>Adderley Park (ADD)</item>
+        <item>Addiewell (ADW)</item>
+        <item>Addlestone (ASN)</item>
+        <item>Adisham (ADM)</item>
+        <item>Adlington (Cheshire) (ADC)</item>
+        <item>Adlington (Lancs) (ADL)</item>
+        <item>Adwick (AWK)</item>
+        <item>Aigburth (AIG)</item>
+        <item>Ainsdale (ANS)</item>
+        <item>Aintree (AIN)</item>
+        <item>Airbles (AIR)</item>
+        <item>Airdrie (ADR)</item>
+        <item>Albany Park (AYP)</item>
+        <item>Albrighton (ALB)</item>
+        <item>Alderley Edge (ALD)</item>
+        <item>Aldermaston (AMT)</item>
+        <item>Aldershot (AHT)</item>
+        <item>Aldrington (AGT)</item>
+        <item>Alexandra Palace (AAP)</item>
+        <item>Alexandra Parade (AXP)</item>
+        <item>Alexandria (ALX)</item>
+        <item>Alfreton (ALF)</item>
+        <item>Allens West (ALW)</item>
+        <item>Alloa (ALO)</item>
+        <item>Alness (ASS)</item>
+        <item>Alnmouth (ALM)</item>
+        <item>Alresford (Essex) (ALR)</item>
+        <item>Alsager (ASG)</item>
+        <item>Althorne (Essex) (ALN)</item>
+        <item>Althorpe (ALP)</item>
+        <item>Altnabreac (ABC)</item>
+        <item>Alton (AON)</item>
+        <item>Altrincham (ALT)</item>
+        <item>Alvechurch (ALV)</item>
+        <item>Ambergate (AMB)</item>
+        <item>Amberley (AMY)</item>
+        <item>Amersham (AMR)</item>
+        <item>Ammanford (AMF)</item>
+        <item>Ancaster (ANC)</item>
+        <item>Anderston (AND)</item>
+        <item>Andover (ADV)</item>
+        <item>Anerley (ANZ)</item>
+        <item>Angel Road (AGR)</item>
+        <item>Angmering (ANG)</item>
+        <item>Annan (ANN)</item>
+        <item>Anniesland (ANL)</item>
+        <item>Ansdell &amp; Fairhaven (AFV)</item>
+        <item>Apperley Bridge (APY)</item>
+        <item>Appleby (APP)</item>
+        <item>Appledore (Kent) (APD)</item>
+        <item>Appleford (APF)</item>
+        <item>Appley Bridge (APB)</item>
+        <item>Apsley (APS)</item>
+        <item>Arbroath (ARB)</item>
+        <item>Ardgay (ARD)</item>
+        <item>Ardlui (AUI)</item>
+        <item>Ardrossan Harbour (ADS)</item>
+        <item>Ardrossan South Beach (ASB)</item>
+        <item>Ardrossan Town (ADN)</item>
+        <item>Ardwick (ADK)</item>
+        <item>Argyle Street (AGS)</item>
+        <item>Arisaig (ARG)</item>
+        <item>Arlesey (ARL)</item>
+        <item>Armadale (West Lothian) (ARM)</item>
+        <item>Armathwaite (AWT)</item>
+        <item>Arnside (ARN)</item>
+        <item>Arram (ARR)</item>
+        <item>Arrochar &amp; Tarbet (ART)</item>
+        <item>Arundel (ARU)</item>
+        <item>Ascot (Berks) (ACT)</item>
+        <item>Ascott-under-Wychwood (AUW)</item>
+        <item>Ash (ASH)</item>
+        <item>Ash Vale (AHV)</item>
+        <item>Ashburys (ABY)</item>
+        <item>Ashchurch for Tewkesbury (ASC)</item>
+        <item>Ashfield (ASF)</item>
+        <item>Ashford (Surrey) (AFS)</item>
+        <item>Ashford International (AFK)</item>
+        <item>Ashford International (Eurostar) (ASI)</item>
+        <item>Ashley (ASY)</item>
+        <item>Ashtead (AHD)</item>
+        <item>Ashton-under-Lyne (AHN)</item>
+        <item>Ashurst (Kent) (AHS)</item>
+        <item>Ashurst New Forest (ANF)</item>
+        <item>Ashwell &amp; Morden (AWM)</item>
+        <item>Askam (ASK)</item>
+        <item>Aslockton (ALK)</item>
+        <item>Aspatria (ASP)</item>
+        <item>Aspley Guise (APG)</item>
+        <item>Aston (AST)</item>
+        <item>Atherstone (ATH)</item>
+        <item>Atherton (ATN)</item>
+        <item>Attadale (ATT)</item>
+        <item>Attenborough (ATB)</item>
+        <item>Attleborough (ATL)</item>
+        <item>Auchinleck (AUK)</item>
+        <item>Audley End (AUD)</item>
+        <item>Aughton Park (AUG)</item>
+        <item>Aviemore (AVM)</item>
+        <item>Avoncliff (AVF)</item>
+        <item>Avonmouth (AVN)</item>
+        <item>Axminster (AXM)</item>
+        <item>Aylesbury (AYS)</item>
+        <item>Aylesbury Vale Parkway (AVP)</item>
+        <item>Aylesford (AYL)</item>
+        <item>Aylesham (AYH)</item>
+        <item>Ayr (AYR)</item>
+        <item>Bache (BAC)</item>
+        <item>Baglan (BAJ)</item>
+        <item>Bagshot (BAG)</item>
+        <item>Baildon (BLD)</item>
+        <item>Baillieston (BIO)</item>
+        <item>Balcombe (BAB)</item>
+        <item>Baldock (BDK)</item>
+        <item>Balham (BAL)</item>
+        <item>Balloch (BHC)</item>
+        <item>Balmossie (BSI)</item>
+        <item>Bamber Bridge (BMB)</item>
+        <item>Bamford (BAM)</item>
+        <item>Banavie (BNV)</item>
+        <item>Banbury (BAN)</item>
+        <item>Bangor (Gwynedd) (BNG)</item>
+        <item>Bank Hall (BAH)</item>
+        <item>Banstead (BAD)</item>
+        <item>Barassie (BSS)</item>
+        <item>Barbican (ZBB)</item>
+        <item>Bardon Mill (BLL)</item>
+        <item>Bare Lane (BAR)</item>
+        <item>Bargeddie (BGI)</item>
+        <item>Bargoed (BGD)</item>
+        <item>Barking (BKG)</item>
+        <item>Barlaston (BRT)</item>
+        <item>Barming (BMG)</item>
+        <item>Barmouth (BRM)</item>
+        <item>Barnehurst (BNH)</item>
+        <item>Barnes (BNS)</item>
+        <item>Barnes Bridge (BNI)</item>
+        <item>Barnetby (BTB)</item>
+        <item>Barnham (BAA)</item>
+        <item>Barnhill (BNL)</item>
+        <item>Barnsley (BNY)</item>
+        <item>Barnstaple (BNP)</item>
+        <item>Barnt Green (BTG)</item>
+        <item>Barrhead (BRR)</item>
+        <item>Barrhill (BRL)</item>
+        <item>Barrow Haven (BAV)</item>
+        <item>Barrow-in-Furness (BIF)</item>
+        <item>Barrow-Upon-Soar (BWS)</item>
+        <item>Barry (BRY)</item>
+        <item>Barry Docks (BYD)</item>
+        <item>Barry Island (BYI)</item>
+        <item>Barry Links (BYL)</item>
+        <item>Barton-on-Humber (BAU)</item>
+        <item>Basildon (BSO)</item>
+        <item>Basingstoke (BSK)</item>
+        <item>Bat &amp; Ball (BBL)</item>
+        <item>Bath Spa (BTH)</item>
+        <item>Bathgate (BHG)</item>
+        <item>Batley (BTL)</item>
+        <item>Battersby (BTT)</item>
+        <item>Battersea Park (BAK)</item>
+        <item>Battle (BAT)</item>
+        <item>Battlesbridge (BLB)</item>
+        <item>Bayford (BAY)</item>
+        <item>Beaconsfield (BCF)</item>
+        <item>Bearley (BER)</item>
+        <item>Bearsden (BRN)</item>
+        <item>Bearsted (BSD)</item>
+        <item>Beasdale (BSL)</item>
+        <item>Beaulieu Road (BEU)</item>
+        <item>Beauly (BEL)</item>
+        <item>Bebington (BEB)</item>
+        <item>Beccles (BCC)</item>
+        <item>Beckenham Hill (BEC)</item>
+        <item>Beckenham Junction (BKJ)</item>
+        <item>Bedford (BDM)</item>
+        <item>Bedford St Johns (BSJ)</item>
+        <item>Bedhampton (BDH)</item>
+        <item>Bedminster (BMT)</item>
+        <item>Bedworth (BEH)</item>
+        <item>Bedwyn (BDW)</item>
+        <item>Beeston (BEE)</item>
+        <item>Bekesbourne (BKS)</item>
+        <item>Belle Vue (BLV)</item>
+        <item>Bellgrove (BLG)</item>
+        <item>Bellingham (BGM)</item>
+        <item>Bellshill (BLH)</item>
+        <item>Belmont (BLM)</item>
+        <item>Belper (BLP)</item>
+        <item>Beltring (BEG)</item>
+        <item>Belvedere (BVD)</item>
+        <item>Bempton (BEM)</item>
+        <item>Ben Rhydding (BEY)</item>
+        <item>Benfleet (BEF)</item>
+        <item>Bentham (BEN)</item>
+        <item>Bentley (Hants) (BTY)</item>
+        <item>Bentley (South Yorks) (BYK)</item>
+        <item>Bere Alston (BAS)</item>
+        <item>Bere Ferrers (BFE)</item>
+        <item>Berkhamsted (BKM)</item>
+        <item>Berkswell (BKW)</item>
+        <item>Bermuda Park (BEP)</item>
+        <item>Berney Arms (BYA)</item>
+        <item>Berry Brow (BBW)</item>
+        <item>Berrylands (BRS)</item>
+        <item>Berwick (Sussex) (BRK)</item>
+        <item>Berwick-upon-Tweed (BWK)</item>
+        <item>Bescar Lane (BES)</item>
+        <item>Bescot Stadium (BSC)</item>
+        <item>Betchworth (BTO)</item>
+        <item>Bethnal Green (BET)</item>
+        <item>Betws-y-Coed (BYC)</item>
+        <item>Beverley (BEV)</item>
+        <item>Bexhill (BEX)</item>
+        <item>Bexley (BXY)</item>
+        <item>Bexleyheath (BXH)</item>
+        <item>Bicester North (BCS)</item>
+        <item>Bicester Village (BIT)</item>
+        <item>Bickley (BKL)</item>
+        <item>Bidston (BID)</item>
+        <item>Biggleswade (BIW)</item>
+        <item>Bilbrook (BBK)</item>
+        <item>Billericay (BIC)</item>
+        <item>Billingham (Cleveland) (BIL)</item>
+        <item>Billingshurst (BIG)</item>
+        <item>Bingham (BIN)</item>
+        <item>Bingley (BIY)</item>
+        <item>Birchgrove (BCG)</item>
+        <item>Birchington-on-sea (BCH)</item>
+        <item>Birchwood (BWD)</item>
+        <item>Birkbeck (BIK)</item>
+        <item>Birkdale (BDL)</item>
+        <item>Birkenhead Central (BKC)</item>
+        <item>Birkenhead Hamilton Square (BKQ)</item>
+        <item>Birkenhead North (BKN)</item>
+        <item>Birkenhead Park (BKP)</item>
+        <item>Birmingham International (BHI)</item>
+        <item>Birmingham Moor Street (BMO)</item>
+        <item>Birmingham New Street (BHM)</item>
+        <item>Birmingham Snow Hill (BSW)</item>
+        <item>Bishop Auckland (BIA)</item>
+        <item>Bishopbriggs (BBG)</item>
+        <item>Bishops Stortford (BIS)</item>
+        <item>Bishopstone (Sussex) (BIP)</item>
+        <item>Bishopton (Strathclyde) (BPT)</item>
+        <item>Bitterne (BTE)</item>
+        <item>Blackburn (BBN)</item>
+        <item>Blackheath (BKH)</item>
+        <item>Blackhorse Road (BHO)</item>
+        <item>Blackpool North (BPN)</item>
+        <item>Blackpool Pleasure Beach (BPB)</item>
+        <item>Blackpool South (BPS)</item>
+        <item>Blackridge (BKR)</item>
+        <item>Blackrod (BLK)</item>
+        <item>Blackwater (BAW)</item>
+        <item>Blaenau Ffestiniog (BFF)</item>
+        <item>Blair Atholl (BLA)</item>
+        <item>Blairhill (BAI)</item>
+        <item>Blake Street (BKT)</item>
+        <item>Blakedown (BKD)</item>
+        <item>Blantyre (BLT)</item>
+        <item>Blaydon (BLO)</item>
+        <item>Bleasby (BSB)</item>
+        <item>Bletchley (BLY)</item>
+        <item>Bloxwich (BLX)</item>
+        <item>Bloxwich North (BWN)</item>
+        <item>Blundellsands &amp; Crosby (BLN)</item>
+        <item>Blythe Bridge (BYB)</item>
+        <item>Bodmin Parkway (BOD)</item>
+        <item>Bodorgan (BOR)</item>
+        <item>Bognor Regis (BOG)</item>
+        <item>Bogston (BGS)</item>
+        <item>Bolton (BON)</item>
+        <item>Bolton-Upon-Dearne (BTD)</item>
+        <item>Bookham (BKA)</item>
+        <item>Bootle (Cumbria) (BOC)</item>
+        <item>Bootle New Strand (BNW)</item>
+        <item>Bootle Oriel Road (BOT)</item>
+        <item>Bordesley (BBS)</item>
+        <item>Borough Green &amp; Wrotham (BRG)</item>
+        <item>Borth (BRH)</item>
+        <item>Bosham (BOH)</item>
+        <item>Boston (BSN)</item>
+        <item>Botley (BOE)</item>
+        <item>Bottesford (BTF)</item>
+        <item>Bourne End (BNE)</item>
+        <item>Bournemouth (BMH)</item>
+        <item>Bournville (BRV)</item>
+        <item>Bow Brickhill (BWB)</item>
+        <item>Bowes Park (BOP)</item>
+        <item>Bowling (BWG)</item>
+        <item>Box Hill &amp; Westhumble (BXW)</item>
+        <item>Bracknell (BCE)</item>
+        <item>Bradford Forster Square (BDQ)</item>
+        <item>Bradford Interchange (BDI)</item>
+        <item>Bradford-on-Avon (BOA)</item>
+        <item>Brading (BDN)</item>
+        <item>Braintree (BTR)</item>
+        <item>Braintree Freeport (BTP)</item>
+        <item>Bramhall (BML)</item>
+        <item>Bramley (Hants) (BMY)</item>
+        <item>Bramley (W Yorks) (BLE)</item>
+        <item>Brampton (Cumbria) (BMP)</item>
+        <item>Brampton (Suffolk) (BRP)</item>
+        <item>Branchton (BCN)</item>
+        <item>Brandon (BND)</item>
+        <item>Branksome (BSM)</item>
+        <item>Braystones (Cumbria) (BYS)</item>
+        <item>Bredbury (BDY)</item>
+        <item>Breich (BRC)</item>
+        <item>Brentford (BFD)</item>
+        <item>Brentwood (BRE)</item>
+        <item>Bricket Wood (BWO)</item>
+        <item>Bridge of Allan (BEA)</item>
+        <item>Bridge of Orchy (BRO)</item>
+        <item>Bridgend (BGN)</item>
+        <item>Bridgeton (BDG)</item>
+        <item>Bridgwater (BWT)</item>
+        <item>Bridlington (BDT)</item>
+        <item>Brierfield (BRF)</item>
+        <item>Brigg (BGG)</item>
+        <item>Brighouse (BGH)</item>
+        <item>Brighton (East Sussex) (BTN)</item>
+        <item>Brimsdown (BMD)</item>
+        <item>Brinnington (BNT)</item>
+        <item>Bristol Parkway (BPW)</item>
+        <item>Bristol Temple Meads (BRI)</item>
+        <item>Brithdir (BHD)</item>
+        <item>Briton Ferry (BNF)</item>
+        <item>Brixton (BRX)</item>
+        <item>Broad Green (BGE)</item>
+        <item>Broadbottom (BDB)</item>
+        <item>Broadstairs (BSR)</item>
+        <item>Brockenhurst (BCU)</item>
+        <item>Brockholes (BHS)</item>
+        <item>Brockley (BCY)</item>
+        <item>Bromborough (BOM)</item>
+        <item>Bromborough Rake (BMR)</item>
+        <item>Bromley Cross (Lancs) (BMC)</item>
+        <item>Bromley North (BMN)</item>
+        <item>Bromley South (BMS)</item>
+        <item>Bromsgrove (BMV)</item>
+        <item>Brondesbury (BSY)</item>
+        <item>Brondesbury Park (BSP)</item>
+        <item>Brookmans Park (BPK)</item>
+        <item>Brookwood (BKO)</item>
+        <item>Broome (BME)</item>
+        <item>Broomfleet (BMF)</item>
+        <item>Brora (BRA)</item>
+        <item>Brough (BUH)</item>
+        <item>Broughty Ferry (BYF)</item>
+        <item>Broxbourne (BXB)</item>
+        <item>Bruce Grove (BCV)</item>
+        <item>Brundall (BDA)</item>
+        <item>Brundall Gardens (BGA)</item>
+        <item>Brunstane (BSU)</item>
+        <item>Brunswick (BRW)</item>
+        <item>Bruton (BRU)</item>
+        <item>Bryn (BYN)</item>
+        <item>Buckenham (Norfolk) (BUC)</item>
+        <item>Buckley (BCK)</item>
+        <item>Bucknell (BUK)</item>
+        <item>Buckshaw Parkway (BSV)</item>
+        <item>Bugle (BGL)</item>
+        <item>Builth Road (BHR)</item>
+        <item>Bulwell (BLW)</item>
+        <item>Bures (BUE)</item>
+        <item>Burgess Hill (BUG)</item>
+        <item>Burley Park (BUY)</item>
+        <item>Burley-in-Wharfedale (BUW)</item>
+        <item>Burnage (BNA)</item>
+        <item>Burneside (Cumbria) (BUD)</item>
+        <item>Burnham (Bucks) (BNM)</item>
+        <item>Burnham-on-Crouch (BUU)</item>
+        <item>Burnley Barracks (BUB)</item>
+        <item>Burnley Central (BNC)</item>
+        <item>Burnley Manchester Road (BYM)</item>
+        <item>Burnside (Strathclyde) (BUI)</item>
+        <item>Burntisland (BTS)</item>
+        <item>Burscough Bridge (BCB)</item>
+        <item>Burscough Junction (BCJ)</item>
+        <item>Bursledon (BUO)</item>
+        <item>Burton Joyce (BUJ)</item>
+        <item>Burton-on-Trent (BUT)</item>
+        <item>Bury St Edmunds (BSE)</item>
+        <item>Busby (BUS)</item>
+        <item>Bush Hill Park (BHK)</item>
+        <item>Bushey (BSH)</item>
+        <item>Butlers Lane (BUL)</item>
+        <item>Buxted (BXD)</item>
+        <item>Buxton (BUX)</item>
+        <item>Byfleet &amp; New Haw (BFN)</item>
+        <item>Bynea (BYE)</item>
+        <item>Cadoxton (CAD)</item>
+        <item>Caergwrle (CGW)</item>
+        <item>Caerphilly (CPH)</item>
+        <item>Caersws (CWS)</item>
+        <item>Caldercruix (CAC)</item>
+        <item>Caldicot (CDT)</item>
+        <item>Caledonian Rd &amp; Barnsbury (CIR)</item>
+        <item>Calstock (CSK)</item>
+        <item>Cam &amp; Dursley (CDU)</item>
+        <item>Camberley (CAM)</item>
+        <item>Camborne (CBN)</item>
+        <item>Cambridge (CBG)</item>
+        <item>Cambridge Heath (CBH)</item>
+        <item>Cambuslang (CBL)</item>
+        <item>Camden Road (CMD)</item>
+        <item>Camelon (CMO)</item>
+        <item>Canada Water (ZCW)</item>
+        <item>Canley (CNL)</item>
+        <item>Cannock (CAO)</item>
+        <item>Canonbury (CNN)</item>
+        <item>Canterbury East (CBE)</item>
+        <item>Canterbury West (CBW)</item>
+        <item>Cantley (CNY)</item>
+        <item>Capenhurst (CPU)</item>
+        <item>Carbis Bay (CBB)</item>
+        <item>Cardenden (CDD)</item>
+        <item>Cardiff Bay (CDB)</item>
+        <item>Cardiff Central (CDF)</item>
+        <item>Cardiff Queen Street (CDQ)</item>
+        <item>Cardonald (CDO)</item>
+        <item>Cardross (CDR)</item>
+        <item>Carfin (CRF)</item>
+        <item>Cark &amp; Cartmel (CAK)</item>
+        <item>Carlisle (CAR)</item>
+        <item>Carlton (CTO)</item>
+        <item>Carluke (CLU)</item>
+        <item>Carmarthen (CMN)</item>
+        <item>Carmyle (CML)</item>
+        <item>Carnforth (CNF)</item>
+        <item>Carnoustie (CAN)</item>
+        <item>Carntyne (CAY)</item>
+        <item>Carpenders Park (CPK)</item>
+        <item>Carrbridge (CAG)</item>
+        <item>Carshalton (CSH)</item>
+        <item>Carshalton Beeches (CSB)</item>
+        <item>Carstairs (CRS)</item>
+        <item>Cartsdyke (CDY)</item>
+        <item>Castle Bar Park (CBP)</item>
+        <item>Castle Cary (CLC)</item>
+        <item>Castleford (CFD)</item>
+        <item>Castleton (Manchester) (CAS)</item>
+        <item>Castleton Moor (CSM)</item>
+        <item>Caterham (CAT)</item>
+        <item>Catford (CTF)</item>
+        <item>Catford Bridge (CFB)</item>
+        <item>Cathays (CYS)</item>
+        <item>Cathcart (CCT)</item>
+        <item>Cattal (CTL)</item>
+        <item>Causeland (CAU)</item>
+        <item>Cefn-y-Bedd (CYB)</item>
+        <item>Chadwell Heath (CTH)</item>
+        <item>Chafford Hundred Lakeside (CFH)</item>
+        <item>Chalfont &amp; Latimer (CFO)</item>
+        <item>Chalkwell (CHW)</item>
+        <item>Chandlers Ford (CFR)</item>
+        <item>Chapel-en-le-Frith (CEF)</item>
+        <item>Chapelton (Devon) (CPN)</item>
+        <item>Chapeltown (South Yorks) (CLN)</item>
+        <item>Chappel &amp; Wakes Colne (CWC)</item>
+        <item>Charing (Kent) (CHG)</item>
+        <item>Charing Cross (Glasgow) (CHC)</item>
+        <item>Charlbury (CBY)</item>
+        <item>Charlton (CTN)</item>
+        <item>Chartham (CRT)</item>
+        <item>Chassen Road (CSR)</item>
+        <item>Chatelherault (CTE)</item>
+        <item>Chatham (CTM)</item>
+        <item>Chathill (CHT)</item>
+        <item>Cheadle Hulme (CHU)</item>
+        <item>Cheam (CHE)</item>
+        <item>Cheddington (CED)</item>
+        <item>Chelford (Cheshire) (CEL)</item>
+        <item>Chelmsford (CHM)</item>
+        <item>Chelsfield (CLD)</item>
+        <item>Cheltenham Spa (CNM)</item>
+        <item>Chepstow (CPW)</item>
+        <item>Cherry Tree (CYT)</item>
+        <item>Chertsey (CHY)</item>
+        <item>Cheshunt (CHN)</item>
+        <item>Chessington North (CSN)</item>
+        <item>Chessington South (CSS)</item>
+        <item>Chester (CTR)</item>
+        <item>Chester Road (CRD)</item>
+        <item>Chesterfield (CHD)</item>
+        <item>Chester-le-Street (CLS)</item>
+        <item>Chestfield &amp; Swalecliffe (CSW)</item>
+        <item>Chetnole (CNO)</item>
+        <item>Chichester (CCH)</item>
+        <item>Chilham (CIL)</item>
+        <item>Chilworth (CHL)</item>
+        <item>Chingford (CHI)</item>
+        <item>Chinley (CLY)</item>
+        <item>Chippenham (CPM)</item>
+        <item>Chipstead (CHP)</item>
+        <item>Chirk (CRK)</item>
+        <item>Chislehurst (CIT)</item>
+        <item>Chiswick (CHK)</item>
+        <item>Cholsey (CHO)</item>
+        <item>Chorley (CRL)</item>
+        <item>Chorleywood (CLW)</item>
+        <item>Christchurch (CHR)</item>
+        <item>Christs Hospital (CHH)</item>
+        <item>Church &amp; Oswaldtwistle (CTW)</item>
+        <item>Church Fenton (CHF)</item>
+        <item>Church Stretton (CTT)</item>
+        <item>Cilmeri (CIM)</item>
+        <item>City Thameslink (CTK)</item>
+        <item>Clacton-on-Sea (CLT)</item>
+        <item>Clandon (CLA)</item>
+        <item>Clapham (North Yorkshire) (CPY)</item>
+        <item>Clapham High Street (CLP)</item>
+        <item>Clapham Junction (CLJ)</item>
+        <item>Clapton (CPT)</item>
+        <item>Clarbeston Road (CLR)</item>
+        <item>Clarkston (CKS)</item>
+        <item>Claverdon (CLV)</item>
+        <item>Claygate (CLG)</item>
+        <item>Cleethorpes (CLE)</item>
+        <item>Cleland (CEA)</item>
+        <item>Clifton (Manchester) (CLI)</item>
+        <item>Clifton Down (CFN)</item>
+        <item>Clitheroe (CLH)</item>
+        <item>Clock House (CLK)</item>
+        <item>Clunderwen (CUW)</item>
+        <item>Clydebank (CYK)</item>
+        <item>Coatbridge Central (CBC)</item>
+        <item>Coatbridge Sunnyside (CBS)</item>
+        <item>Coatdyke (COA)</item>
+        <item>Cobham &amp; Stoke d\'Abernon (CSD)</item>
+        <item>Codsall (CSL)</item>
+        <item>Cogan (CGN)</item>
+        <item>Colchester (COL)</item>
+        <item>Colchester Town (CET)</item>
+        <item>Coleshill Parkway (CEH)</item>
+        <item>Collingham (CLM)</item>
+        <item>Collington (CLL)</item>
+        <item>Colne (CNE)</item>
+        <item>Colwall (CWL)</item>
+        <item>Colwyn Bay (CWB)</item>
+        <item>Combe (Oxon) (CME)</item>
+        <item>Commondale (COM)</item>
+        <item>Congleton (CNG)</item>
+        <item>Conisbrough (CNS)</item>
+        <item>Connel Ferry (CON)</item>
+        <item>Conon Bridge (CBD)</item>
+        <item>Cononley (CEY)</item>
+        <item>Conway Park (CNP)</item>
+        <item>Conwy (CNW)</item>
+        <item>Cooden Beach (COB)</item>
+        <item>Cookham (COO)</item>
+        <item>Cooksbridge (CBR)</item>
+        <item>Coombe Junction Halt (COE)</item>
+        <item>Copplestone (COP)</item>
+        <item>Corbridge (CRB)</item>
+        <item>Corby (COR)</item>
+        <item>Corkerhill (CKH)</item>
+        <item>Corkickle (CKL)</item>
+        <item>Corpach (CPA)</item>
+        <item>Corrour (CRR)</item>
+        <item>Coryton (COY)</item>
+        <item>Coseley (CSY)</item>
+        <item>Cosford (COS)</item>
+        <item>Cosham (CSA)</item>
+        <item>Cottingham (CGM)</item>
+        <item>Cottingley (COT)</item>
+        <item>Coulsdon South (CDS)</item>
+        <item>Coulsdon Town (CDN)</item>
+        <item>Coventry (COV)</item>
+        <item>Coventry Arena (CAA)</item>
+        <item>Cowden (Kent) (CWN)</item>
+        <item>Cowdenbeath (COW)</item>
+        <item>Cradley Heath (CRA)</item>
+        <item>Craigendoran (CGD)</item>
+        <item>Cramlington (CRM)</item>
+        <item>Cranbrook (Devon) (CBK)</item>
+        <item>Craven Arms (CRV)</item>
+        <item>Crawley (CRW)</item>
+        <item>Crayford (CRY)</item>
+        <item>Crediton (CDI)</item>
+        <item>Cressing (Essex) (CES)</item>
+        <item>Cressington (CSG)</item>
+        <item>Creswell (CWD)</item>
+        <item>Crewe (CRE)</item>
+        <item>Crewkerne (CKN)</item>
+        <item>Crews Hill (CWH)</item>
+        <item>Crianlarich (CNR)</item>
+        <item>Criccieth (CCC)</item>
+        <item>Cricklewood (CRI)</item>
+        <item>Croftfoot (CFF)</item>
+        <item>Crofton Park (CFT)</item>
+        <item>Cromer (CMR)</item>
+        <item>Cromford (CMF)</item>
+        <item>Crookston (CKT)</item>
+        <item>Cross Gates (CRG)</item>
+        <item>Crossflatts (CFL)</item>
+        <item>Crosshill (COI)</item>
+        <item>Crosskeys (CKY)</item>
+        <item>Crossmyloof (CMY)</item>
+        <item>Croston (CSO)</item>
+        <item>Crouch Hill (CRH)</item>
+        <item>Crowborough (COH)</item>
+        <item>Crowhurst (CWU)</item>
+        <item>Crowle (CWE)</item>
+        <item>Crowthorne (CRN)</item>
+        <item>Croy (CRO)</item>
+        <item>Crystal Palace (CYP)</item>
+        <item>Cuddington (CUD)</item>
+        <item>Cuffley (CUF)</item>
+        <item>Culham (CUM)</item>
+        <item>Culrain (CUA)</item>
+        <item>Cumbernauld (CUB)</item>
+        <item>Cupar (CUP)</item>
+        <item>Curriehill (CUH)</item>
+        <item>Cuxton (CUX)</item>
+        <item>Cwmbach (CMH)</item>
+        <item>Cwmbran (CWM)</item>
+        <item>Cynghordy (CYN)</item>
+        <item>Dagenham Dock (DDK)</item>
+        <item>Daisy Hill (DSY)</item>
+        <item>Dalgety Bay (DAG)</item>
+        <item>Dalmally (DAL)</item>
+        <item>Dalmarnock (DAK)</item>
+        <item>Dalmeny (DAM)</item>
+        <item>Dalmuir (DMR)</item>
+        <item>Dalreoch (DLR)</item>
+        <item>Dalry (DLY)</item>
+        <item>Dalston (Cumbria) (DLS)</item>
+        <item>Dalston Junction (DLJ)</item>
+        <item>Dalston Kingsland (DLK)</item>
+        <item>Dalton (Cumbria) (DLT)</item>
+        <item>Dalwhinnie (DLW)</item>
+        <item>Danby (DNY)</item>
+        <item>Danescourt (DCT)</item>
+        <item>Danzey (DZY)</item>
+        <item>Darlington (DAR)</item>
+        <item>Darnall (DAN)</item>
+        <item>Darsham (DSM)</item>
+        <item>Dartford (DFD)</item>
+        <item>Darton (DRT)</item>
+        <item>Darwen (DWN)</item>
+        <item>Datchet (DAT)</item>
+        <item>Davenport (DVN)</item>
+        <item>Dawlish (DWL)</item>
+        <item>Dawlish Warren (DWW)</item>
+        <item>Deal (DEA)</item>
+        <item>Dean (Wilts) (DEN)</item>
+        <item>Deansgate (DGT)</item>
+        <item>Deganwy (DGY)</item>
+        <item>Deighton (DHN)</item>
+        <item>Delamere (DLM)</item>
+        <item>Denby Dale (DBD)</item>
+        <item>Denham (DNM)</item>
+        <item>Denham Golf Club (DGC)</item>
+        <item>Denmark Hill (DMK)</item>
+        <item>Dent (DNT)</item>
+        <item>Denton (DTN)</item>
+        <item>Deptford (DEP)</item>
+        <item>Derby (DBY)</item>
+        <item>Derby Road (Ipswich) (DBR)</item>
+        <item>Devonport (Devon) (DPT)</item>
+        <item>Devonport Dockyard (DOC)</item>
+        <item>Dewsbury (DEW)</item>
+        <item>Didcot Parkway (DID)</item>
+        <item>Digby &amp; Sowton (DIG)</item>
+        <item>Dilton Marsh (DMH)</item>
+        <item>Dinas (Rhondda) (DMG)</item>
+        <item>Dinas Powys (DNS)</item>
+        <item>Dingle Road (DGL)</item>
+        <item>Dingwall (DIN)</item>
+        <item>Dinsdale (DND)</item>
+        <item>Dinting (DTG)</item>
+        <item>Disley (DSL)</item>
+        <item>Diss (DIS)</item>
+        <item>Dodworth (DOD)</item>
+        <item>Dolau (DOL)</item>
+        <item>Doleham (DLH)</item>
+        <item>Dolgarrog (DLG)</item>
+        <item>Dolwyddelan (DWD)</item>
+        <item>Doncaster (DON)</item>
+        <item>Dorchester South (DCH)</item>
+        <item>Dorchester West (DCW)</item>
+        <item>Dore &amp; Totley (DOR)</item>
+        <item>Dorking (Main) (DKG)</item>
+        <item>Dorking Deepdene (DPD)</item>
+        <item>Dorking West (DKT)</item>
+        <item>Dormans (DMS)</item>
+        <item>Dorridge (DDG)</item>
+        <item>Dove Holes (DVH)</item>
+        <item>Dover Priory (DVP)</item>
+        <item>Dovercourt (DVC)</item>
+        <item>Dovey Junction (DVY)</item>
+        <item>Downham Market (DOW)</item>
+        <item>Drayton Green (DRG)</item>
+        <item>Drayton Park (DYP)</item>
+        <item>Drem (DRM)</item>
+        <item>Driffield (DRF)</item>
+        <item>Drigg (DRI)</item>
+        <item>Droitwich Spa (DTW)</item>
+        <item>Dronfield (DRO)</item>
+        <item>Drumchapel (DMC)</item>
+        <item>Drumfrochar (DFR)</item>
+        <item>Drumgelloch (DRU)</item>
+        <item>Drumry (DMY)</item>
+        <item>Dublin Ferryport (DFP)</item>
+        <item>Dublin Port - Stena (DPS)</item>
+        <item>Duddeston (DUD)</item>
+        <item>Dudley Port (DDP)</item>
+        <item>Duffield (DFI)</item>
+        <item>Duirinish (DRN)</item>
+        <item>Duke Street (DST)</item>
+        <item>Dullingham (DUL)</item>
+        <item>Dumbarton Central (DBC)</item>
+        <item>Dumbarton East (DBE)</item>
+        <item>Dumbreck (DUM)</item>
+        <item>Dumfries (DMF)</item>
+        <item>Dumpton Park (DMP)</item>
+        <item>Dunbar (DUN)</item>
+        <item>Dunblane (DBL)</item>
+        <item>Duncraig (DCG)</item>
+        <item>Dundee (DEE)</item>
+        <item>Dunfermline Queen Margaret (DFL)</item>
+        <item>Dunfermline Town (DFE)</item>
+        <item>Dunkeld &amp; Birnam (DKD)</item>
+        <item>Dunlop (DNL)</item>
+        <item>Dunrobin Castle (DNO)</item>
+        <item>Dunston (DOT)</item>
+        <item>Dunton Green (DNG)</item>
+        <item>Durham (DHM)</item>
+        <item>Durrington-on-Sea (DUR)</item>
+        <item>Dyce (DYC)</item>
+        <item>Dyffryn Ardudwy (DYF)</item>
+        <item>Eaglescliffe (EAG)</item>
+        <item>Ealing Broadway (EAL)</item>
+        <item>Earlestown (ERL)</item>
+        <item>Earley (EAR)</item>
+        <item>Earlsfield (EAD)</item>
+        <item>Earlswood (Surrey) (ELD)</item>
+        <item>Earlswood (West Midlands) (EWD)</item>
+        <item>East Croydon (ECR)</item>
+        <item>East Didsbury (EDY)</item>
+        <item>East Dulwich (EDW)</item>
+        <item>East Farleigh (EFL)</item>
+        <item>East Garforth (EGF)</item>
+        <item>East Grinstead (EGR)</item>
+        <item>East Kilbride (EKL)</item>
+        <item>East Malling (EML)</item>
+        <item>East Midlands Parkway (EMD)</item>
+        <item>East Tilbury (ETL)</item>
+        <item>East Worthing (EWR)</item>
+        <item>Eastbourne (EBN)</item>
+        <item>Eastbrook (EBK)</item>
+        <item>Easterhouse (EST)</item>
+        <item>Eastham Rake (ERA)</item>
+        <item>Eastleigh (ESL)</item>
+        <item>Eastrington (EGN)</item>
+        <item>Ebbsfleet International (EBD)</item>
+        <item>Ebbw Vale Parkway (EBV)</item>
+        <item>Ebbw Vale Town (EBB)</item>
+        <item>Eccles (Manchester) (ECC)</item>
+        <item>Eccles Road (ECS)</item>
+        <item>Eccleston Park (ECL)</item>
+        <item>Edale (EDL)</item>
+        <item>Eden Park (EDN)</item>
+        <item>Edenbridge (EBR)</item>
+        <item>Edenbridge Town (EBT)</item>
+        <item>Edge Hill (EDG)</item>
+        <item>Edinburgh (EDB)</item>
+        <item>Edinburgh Park (EDP)</item>
+        <item>Edmonton Green (EDR)</item>
+        <item>Effingham Junction (EFF)</item>
+        <item>Eggesford (EGG)</item>
+        <item>Egham (EGH)</item>
+        <item>Egton (EGT)</item>
+        <item>Elephant &amp; Castle (EPH)</item>
+        <item>Elephant &amp; Castle (Underground) (ZEL)</item>
+        <item>Elgin (ELG)</item>
+        <item>Ellesmere Port (ELP)</item>
+        <item>Elmers End (ELE)</item>
+        <item>Elmstead Woods (ESD)</item>
+        <item>Elmswell (ESW)</item>
+        <item>Elsecar (ELR)</item>
+        <item>Elsenham (Essex) (ESM)</item>
+        <item>Elstree &amp; Borehamwood (ELS)</item>
+        <item>Eltham (ELW)</item>
+        <item>Elton &amp; Orston (ELO)</item>
+        <item>Ely (ELY)</item>
+        <item>Emerson Park (EMP)</item>
+        <item>Emsworth (EMS)</item>
+        <item>Energlyn &amp; Churchill Park (ECP)</item>
+        <item>Enfield Chase (ENC)</item>
+        <item>Enfield Lock (ENL)</item>
+        <item>Enfield Town (ENF)</item>
+        <item>Entwistle (ENT)</item>
+        <item>Epsom (Surrey) (EPS)</item>
+        <item>Epsom Downs (EPD)</item>
+        <item>Erdington (ERD)</item>
+        <item>Eridge (ERI)</item>
+        <item>Erith (ERH)</item>
+        <item>Esher (ESH)</item>
+        <item>Eskbank (EKB)</item>
+        <item>Essex Road (EXR)</item>
+        <item>Etchingham (ETC)</item>
+        <item>Euxton Balshaw Lane (EBA)</item>
+        <item>Evesham (EVE)</item>
+        <item>Ewell East (EWE)</item>
+        <item>Ewell West (EWW)</item>
+        <item>Exeter Central (EXC)</item>
+        <item>Exeter St David\'s (EXD)</item>
+        <item>Exeter St Thomas (EXT)</item>
+        <item>Exhibition Centre (Glasgow) (EXG)</item>
+        <item>Exmouth (EXM)</item>
+        <item>Exton (EXN)</item>
+        <item>Eynsford (EYN)</item>
+        <item>Fairbourne (FRB)</item>
+        <item>Fairfield (FRF)</item>
+        <item>Fairlie (FRL)</item>
+        <item>Fairwater (FRW)</item>
+        <item>Falconwood (FCN)</item>
+        <item>Falkirk Grahamston (FKG)</item>
+        <item>Falkirk High (FKK)</item>
+        <item>Falls of Cruachan (FOC)</item>
+        <item>Falmer (FMR)</item>
+        <item>Falmouth Docks (FAL)</item>
+        <item>Falmouth Town (FMT)</item>
+        <item>Fareham (FRM)</item>
+        <item>Farnborough (Main) (FNB)</item>
+        <item>Farnborough North (FNN)</item>
+        <item>Farncombe (FNC)</item>
+        <item>Farnham (FNH)</item>
+        <item>Farningham Road (FNR)</item>
+        <item>Farnworth (FNW)</item>
+        <item>Farringdon (ZFD)</item>
+        <item>Fauldhouse (FLD)</item>
+        <item>Faversham (FAV)</item>
+        <item>Faygate (FGT)</item>
+        <item>Fazakerley (FAZ)</item>
+        <item>Fearn (FRN)</item>
+        <item>Featherstone (FEA)</item>
+        <item>Felixstowe (FLX)</item>
+        <item>Feltham (FEL)</item>
+        <item>Feniton (FNT)</item>
+        <item>Fenny Stratford (FEN)</item>
+        <item>Fernhill (FER)</item>
+        <item>Ferriby (FRY)</item>
+        <item>Ferryside (FYS)</item>
+        <item>Ffairfach (FFA)</item>
+        <item>Filey (FIL)</item>
+        <item>Filton Abbey Wood (FIT)</item>
+        <item>Finchley Road &amp; Frognal (FNY)</item>
+        <item>Finsbury Park (FPK)</item>
+        <item>Finstock (FIN)</item>
+        <item>Fishbourne (Sussex) (FSB)</item>
+        <item>Fishersgate (FSG)</item>
+        <item>Fishguard &amp; Goodwick (FGW)</item>
+        <item>Fishguard Harbour (FGH)</item>
+        <item>Fiskerton (FSK)</item>
+        <item>Fitzwilliam (FZW)</item>
+        <item>Five Ways (FWY)</item>
+        <item>Fleet (FLE)</item>
+        <item>Flimby (FLM)</item>
+        <item>Flint (FLN)</item>
+        <item>Flitwick (FLT)</item>
+        <item>Flixton (FLI)</item>
+        <item>Flowery Field (FLF)</item>
+        <item>Folkestone Central (FKC)</item>
+        <item>Folkestone West (FKW)</item>
+        <item>Ford (FOD)</item>
+        <item>Forest Gate (FOG)</item>
+        <item>Forest Hill (FOH)</item>
+        <item>Formby (FBY)</item>
+        <item>Forres (FOR)</item>
+        <item>Forsinard (FRS)</item>
+        <item>Fort Matilda (FTM)</item>
+        <item>Fort William (FTW)</item>
+        <item>Four Oaks (FOK)</item>
+        <item>Foxfield (FOX)</item>
+        <item>Foxton (FXN)</item>
+        <item>Frant (FRT)</item>
+        <item>Fratton (FTN)</item>
+        <item>Freshfield (FRE)</item>
+        <item>Freshford (FFD)</item>
+        <item>Frimley (FML)</item>
+        <item>Frinton-on-Sea (FRI)</item>
+        <item>Frizinghall (FZH)</item>
+        <item>Frodsham (FRD)</item>
+        <item>Frome (FRO)</item>
+        <item>Fulwell (FLW)</item>
+        <item>Furness Vale (FNV)</item>
+        <item>Furze Platt (FZP)</item>
+        <item>Gainsborough Central (GNB)</item>
+        <item>Gainsborough Lea Road (GBL)</item>
+        <item>Galashiels (GAL)</item>
+        <item>Garelochhead (GCH)</item>
+        <item>Garforth (GRF)</item>
+        <item>Gargrave (GGV)</item>
+        <item>Garrowhill (GAR)</item>
+        <item>Garscadden (GRS)</item>
+        <item>Garsdale (GSD)</item>
+        <item>Garston (Hertfordshire) (GSN)</item>
+        <item>Garswood (GSW)</item>
+        <item>Gartcosh (GRH)</item>
+        <item>Garth (Mid Glamorgan) (GMG)</item>
+        <item>Garth (Powys) (GTH)</item>
+        <item>Garve (GVE)</item>
+        <item>Gathurst (GST)</item>
+        <item>Gatley (GTY)</item>
+        <item>Gatwick Airport (GTW)</item>
+        <item>Georgemas Junction (GGJ)</item>
+        <item>Gerrards Cross (GER)</item>
+        <item>Gidea Park (GDP)</item>
+        <item>Giffnock (GFN)</item>
+        <item>Giggleswick (GIG)</item>
+        <item>Gilberdyke (GBD)</item>
+        <item>Gilfach Fargoed (GFF)</item>
+        <item>Gillingham (Dorset) (GIL)</item>
+        <item>Gillingham (Kent) (GLM)</item>
+        <item>Gilshochill (GSC)</item>
+        <item>Gipsy Hill (GIP)</item>
+        <item>Girvan (GIR)</item>
+        <item>Glaisdale (GLS)</item>
+        <item>Glan Conwy (GCW)</item>
+        <item>Glasgow Central (GLC)</item>
+        <item>Glasgow Queen Street (GLQ)</item>
+        <item>Glasshoughton (GLH)</item>
+        <item>Glazebrook (GLZ)</item>
+        <item>Gleneagles (GLE)</item>
+        <item>Glenfinnan (GLF)</item>
+        <item>Glengarnock (GLG)</item>
+        <item>Glenrothes with Thornton (GLT)</item>
+        <item>Glossop (GLO)</item>
+        <item>Gloucester (GCR)</item>
+        <item>Glynde (GLY)</item>
+        <item>Gobowen (GOB)</item>
+        <item>Godalming (GOD)</item>
+        <item>Godley (GDL)</item>
+        <item>Godstone (GDN)</item>
+        <item>Goldthorpe (GOE)</item>
+        <item>Golf Street (GOF)</item>
+        <item>Golspie (GOL)</item>
+        <item>Gomshall (GOM)</item>
+        <item>Goodmayes (GMY)</item>
+        <item>Goole (GOO)</item>
+        <item>Goostrey (GTR)</item>
+        <item>Gordon Hill (GDH)</item>
+        <item>Gorebridge (GBG)</item>
+        <item>Goring &amp; Streatley (GOR)</item>
+        <item>Goring-by-Sea (GBS)</item>
+        <item>Gorton (GTO)</item>
+        <item>Gospel Oak (GPO)</item>
+        <item>Gourock (GRK)</item>
+        <item>Gowerton (GWN)</item>
+        <item>Goxhill (GOX)</item>
+        <item>Grange Park (GPK)</item>
+        <item>Grange-Over-Sands (GOS)</item>
+        <item>Grangetown (Cardiff) (GTN)</item>
+        <item>Grantham (GRA)</item>
+        <item>Grateley (GRT)</item>
+        <item>Gravelly Hill (GVH)</item>
+        <item>Gravesend (GRV)</item>
+        <item>Grays (GRY)</item>
+        <item>Great Ayton (GTA)</item>
+        <item>Great Bentley (GRB)</item>
+        <item>Great Chesterford (GRC)</item>
+        <item>Great Coates (GCT)</item>
+        <item>Great Malvern (GMV)</item>
+        <item>Great Missenden (GMN)</item>
+        <item>Great Yarmouth (GYM)</item>
+        <item>Green Lane (GNL)</item>
+        <item>Green Road (GNR)</item>
+        <item>Greenbank (GBK)</item>
+        <item>Greenfaulds (GRL)</item>
+        <item>Greenfield (GNF)</item>
+        <item>Greenford (GFD)</item>
+        <item>Greenhithe (GNH)</item>
+        <item>Greenock Central (GKC)</item>
+        <item>Greenock West (GKW)</item>
+        <item>Greenwich (GNW)</item>
+        <item>Gretna Green (GEA)</item>
+        <item>Grimsby Docks (GMD)</item>
+        <item>Grimsby Town (GMB)</item>
+        <item>Grindleford (GRN)</item>
+        <item>Grosmont (GMT)</item>
+        <item>Grove Park (GRP)</item>
+        <item>Guide Bridge (GUI)</item>
+        <item>Guildford (GLD)</item>
+        <item>Guiseley (GSY)</item>
+        <item>Gunnersbury (GUN)</item>
+        <item>Gunnislake (GSL)</item>
+        <item>Gunton (GNT)</item>
+        <item>Gwersyllt (GWE)</item>
+        <item>Gypsy Lane (GYP)</item>
+        <item>Habrough (HAB)</item>
+        <item>Hackbridge (HCB)</item>
+        <item>Hackney Central (HKC)</item>
+        <item>Hackney Downs (HAC)</item>
+        <item>Hackney Wick (HKW)</item>
+        <item>Haddenham &amp; Thame Parkway (HDM)</item>
+        <item>Haddiscoe (HAD)</item>
+        <item>Hadfield (HDF)</item>
+        <item>Hadley Wood (HDW)</item>
+        <item>Hag Fold (HGF)</item>
+        <item>Haggerston (HGG)</item>
+        <item>Hagley (HAG)</item>
+        <item>Hairmyres (HMY)</item>
+        <item>Hale (Manchester) (HAL)</item>
+        <item>Halesworth (HAS)</item>
+        <item>Halewood (HED)</item>
+        <item>Halifax (HFX)</item>
+        <item>Hall Green (HLG)</item>
+        <item>Hall Road (HLR)</item>
+        <item>Halling (HAI)</item>
+        <item>Hall-i\'-th\'-Wood (HID)</item>
+        <item>Haltwhistle (HWH)</item>
+        <item>Ham Street (HMT)</item>
+        <item>Hamble (HME)</item>
+        <item>Hamilton Central (HNC)</item>
+        <item>Hamilton West (HNW)</item>
+        <item>Hammerton (HMM)</item>
+        <item>Hampden Park (Sussex) (HMD)</item>
+        <item>Hampstead Heath (HDH)</item>
+        <item>Hampton (London) (HMP)</item>
+        <item>Hampton Court (HMC)</item>
+        <item>Hampton Wick (HMW)</item>
+        <item>Hampton-in-Arden (HIA)</item>
+        <item>Hamstead (Birmingham) (HSD)</item>
+        <item>Hamworthy (HAM)</item>
+        <item>Hanborough (HND)</item>
+        <item>Handforth (HTH)</item>
+        <item>Hanwell (HAN)</item>
+        <item>Hapton (HPN)</item>
+        <item>Harlech (HRL)</item>
+        <item>Harlesden (HDN)</item>
+        <item>Harling Road (HRD)</item>
+        <item>Harlington (Beds) (HLN)</item>
+        <item>Harlow Mill (HWM)</item>
+        <item>Harlow Town (HWN)</item>
+        <item>Harold Wood (HRO)</item>
+        <item>Harpenden (HPD)</item>
+        <item>Harrietsham (HRM)</item>
+        <item>Harringay (HGY)</item>
+        <item>Harringay Green Lanes (HRY)</item>
+        <item>Harrington (HRR)</item>
+        <item>Harrogate (HGT)</item>
+        <item>Harrow &amp; Wealdstone (HRW)</item>
+        <item>Harrow-on-the-Hill (HOH)</item>
+        <item>Hartford (Cheshire) (HTF)</item>
+        <item>Hartlebury (HBY)</item>
+        <item>Hartlepool (HPL)</item>
+        <item>Hartwood (HTW)</item>
+        <item>Harwich International (HPQ)</item>
+        <item>Harwich Town (HWC)</item>
+        <item>Haslemere (HSL)</item>
+        <item>Hassocks (HSK)</item>
+        <item>Hastings (HGS)</item>
+        <item>Hatch End (HTE)</item>
+        <item>Hatfield &amp; Stainforth (HFS)</item>
+        <item>Hatfield (Herts) (HAT)</item>
+        <item>Hatfield Peverel (HAP)</item>
+        <item>Hathersage (HSG)</item>
+        <item>Hattersley (HTY)</item>
+        <item>Hatton (HTN)</item>
+        <item>Havant (HAV)</item>
+        <item>Havenhouse (HVN)</item>
+        <item>Haverfordwest (HVF)</item>
+        <item>Hawarden (HWD)</item>
+        <item>Hawarden Bridge (HWB)</item>
+        <item>Hawkhead (HKH)</item>
+        <item>Haydon Bridge (HDB)</item>
+        <item>Haydons Road (HYR)</item>
+        <item>Hayes &amp; Harlington (HAY)</item>
+        <item>Hayes (Kent) (HYS)</item>
+        <item>Hayle (HYL)</item>
+        <item>Haymarket (HYM)</item>
+        <item>Haywards Heath (HHE)</item>
+        <item>Hazel Grove (HAZ)</item>
+        <item>Headcorn (HCN)</item>
+        <item>Headingley (HDY)</item>
+        <item>Headstone Lane (HDL)</item>
+        <item>Heald Green (HDG)</item>
+        <item>Healing (HLI)</item>
+        <item>Heath High Level (HHL)</item>
+        <item>Heath Low Level (HLL)</item>
+        <item>Heathrow Airport Terminal 4 (HAF)</item>
+        <item>Heathrow Airport Terminal 5 (HWV)</item>
+        <item>"Heathrow Airport Terminals 1 ( 2 and 3" (HXX)</item>
+        <item>Heaton Chapel (HTC)</item>
+        <item>Hebden Bridge (HBD)</item>
+        <item>Heckington (HEC)</item>
+        <item>Hedge End (HDE)</item>
+        <item>Hednesford (HNF)</item>
+        <item>Heighington (HEI)</item>
+        <item>Helensburgh Central (HLC)</item>
+        <item>Helensburgh Upper (HLU)</item>
+        <item>Hellifield (HLD)</item>
+        <item>Helmsdale (HMS)</item>
+        <item>Helsby (HSB)</item>
+        <item>Hemel Hempstead (HML)</item>
+        <item>Hendon (HEN)</item>
+        <item>Hengoed (HNG)</item>
+        <item>Henley-in-Arden (HNL)</item>
+        <item>Henley-on-Thames (HOT)</item>
+        <item>Hensall (HEL)</item>
+        <item>Hereford (HFD)</item>
+        <item>Herne Bay (HNB)</item>
+        <item>Herne Hill (HNH)</item>
+        <item>Hersham (HER)</item>
+        <item>Hertford East (HFE)</item>
+        <item>Hertford North (HFN)</item>
+        <item>Hessle (HES)</item>
+        <item>Heswall (HSW)</item>
+        <item>Hever (HEV)</item>
+        <item>Heworth (HEW)</item>
+        <item>Hexham (HEX)</item>
+        <item>Heyford (HYD)</item>
+        <item>Heysham Port (HHB)</item>
+        <item>High Brooms (HIB)</item>
+        <item>High Street (Glasgow) (HST)</item>
+        <item>High Street Kensington Underground (ZHS)</item>
+        <item>High Wycombe (HWY)</item>
+        <item>Higham (Kent) (HGM)</item>
+        <item>Highams Park (HIP)</item>
+        <item>Highbridge &amp; Burnham (HIG)</item>
+        <item>Highbury &amp; Islington (HHY)</item>
+        <item>Hightown (HTO)</item>
+        <item>Hildenborough (HLB)</item>
+        <item>Hillfoot (HLF)</item>
+        <item>Hillington East (HLE)</item>
+        <item>Hillington West (HLW)</item>
+        <item>Hillside (HIL)</item>
+        <item>Hilsea (HLS)</item>
+        <item>Hinchley Wood (HYW)</item>
+        <item>Hinckley (Leics) (HNK)</item>
+        <item>Hindley (HIN)</item>
+        <item>Hinton Admiral (HNA)</item>
+        <item>Hitchin (HIT)</item>
+        <item>Hither Green (HGR)</item>
+        <item>Hockley (HOC)</item>
+        <item>Hollingbourne (HBN)</item>
+        <item>Holmes Chapel (HCH)</item>
+        <item>Holmwood (HLM)</item>
+        <item>Holton Heath (HOL)</item>
+        <item>Holyhead (HHD)</item>
+        <item>Holytown (HLY)</item>
+        <item>Homerton (HMN)</item>
+        <item>Honeybourne (HYB)</item>
+        <item>Honiton (HON)</item>
+        <item>Honley (HOY)</item>
+        <item>Honor Oak Park (HPA)</item>
+        <item>Hook (HOK)</item>
+        <item>Hooton (HOO)</item>
+        <item>Hope (Derbyshire) (HOP)</item>
+        <item>Hope (Flintshire) (HPE)</item>
+        <item>Hopton Heath (HPT)</item>
+        <item>Horley (HOR)</item>
+        <item>Hornbeam Park (HBP)</item>
+        <item>Hornsey (HRN)</item>
+        <item>Horsforth (HRS)</item>
+        <item>Horsham (HRH)</item>
+        <item>Horsley (HSY)</item>
+        <item>Horton-in-Ribblesdale (HIR)</item>
+        <item>Horwich Parkway (HWI)</item>
+        <item>Hoscar (HSC)</item>
+        <item>Hough Green (HGN)</item>
+        <item>Hounslow (HOU)</item>
+        <item>Hove (HOV)</item>
+        <item>Hoveton &amp; Wroxham (HXM)</item>
+        <item>How Wood (Herts) (HWW)</item>
+        <item>Howden (HOW)</item>
+        <item>Howwood (Renfrewshire) (HOZ)</item>
+        <item>Hoxton (HOX)</item>
+        <item>Hoylake (HYK)</item>
+        <item>Hubberts Bridge (HBB)</item>
+        <item>Hucknall (HKN)</item>
+        <item>Huddersfield (HUD)</item>
+        <item>Hull (HUL)</item>
+        <item>Humphrey Park (HUP)</item>
+        <item>Huncoat (HCT)</item>
+        <item>Hungerford (HGD)</item>
+        <item>Hunmanby (HUB)</item>
+        <item>Huntingdon (HUN)</item>
+        <item>Huntly (HNT)</item>
+        <item>Hunts Cross (HNX)</item>
+        <item>Hurst Green (HUR)</item>
+        <item>Hutton Cranswick (HUT)</item>
+        <item>Huyton (HUY)</item>
+        <item>Hyde Central (HYC)</item>
+        <item>Hyde North (HYT)</item>
+        <item>Hykeham (HKM)</item>
+        <item>Hyndland (HYN)</item>
+        <item>Hythe (Essex) (HYH)</item>
+        <item>IBM Halt (IBM)</item>
+        <item>Ifield (IFI)</item>
+        <item>Ilford (IFD)</item>
+        <item>Ilkley (ILK)</item>
+        <item>Imperial Wharf (IMW)</item>
+        <item>Ince &amp; Elton (INE)</item>
+        <item>Ince (Manchester) (INC)</item>
+        <item>Ingatestone (INT)</item>
+        <item>Insch (INS)</item>
+        <item>Invergordon (IGD)</item>
+        <item>Invergowrie (ING)</item>
+        <item>Inverkeithing (INK)</item>
+        <item>Inverkip (INP)</item>
+        <item>Inverness (INV)</item>
+        <item>Invershin (INH)</item>
+        <item>Inverurie (INR)</item>
+        <item>Ipswich (IPS)</item>
+        <item>Irlam (IRL)</item>
+        <item>Irvine (IRV)</item>
+        <item>Isleworth (ISL)</item>
+        <item>Islip (ISP)</item>
+        <item>Iver (IVR)</item>
+        <item>Ivybridge (IVY)</item>
+        <item>James Cook (JCH)</item>
+        <item>Jewellery Quarter (JEQ)</item>
+        <item>Johnston (Pembs) (JOH)</item>
+        <item>Johnstone (Strathclyde) (JHN)</item>
+        <item>Jordanhill (JOR)</item>
+        <item>Kearsley (Manchester) (KSL)</item>
+        <item>Kearsney (Kent) (KSN)</item>
+        <item>Keighley (KEI)</item>
+        <item>Keith (KEH)</item>
+        <item>Kelvedon (KEL)</item>
+        <item>Kelvindale (KVD)</item>
+        <item>Kemble (KEM)</item>
+        <item>Kempston Hardwick (KMH)</item>
+        <item>Kempton Park Racecourse (KMP)</item>
+        <item>Kemsing (KMS)</item>
+        <item>Kemsley (KML)</item>
+        <item>Kendal (KEN)</item>
+        <item>Kenley (KLY)</item>
+        <item>Kennett (KNE)</item>
+        <item>Kennishead (KNS)</item>
+        <item>Kensal Green (KNL)</item>
+        <item>Kensal Rise (KNR)</item>
+        <item>Kensington Olympia (KPA)</item>
+        <item>Kent House (KTH)</item>
+        <item>Kentish Town (KTN)</item>
+        <item>Kentish Town West (KTW)</item>
+        <item>Kenton (KNT)</item>
+        <item>Kents Bank (KBK)</item>
+        <item>Kettering (KET)</item>
+        <item>Kew Bridge (KWB)</item>
+        <item>Kew Gardens (KWG)</item>
+        <item>Keyham (KEY)</item>
+        <item>Keynsham (KYN)</item>
+        <item>Kidbrooke (KDB)</item>
+        <item>Kidderminster (KID)</item>
+        <item>Kidsgrove (KDG)</item>
+        <item>Kidwelly (KWL)</item>
+        <item>Kilburn High Road (KBN)</item>
+        <item>Kildale (KLD)</item>
+        <item>Kildonan (KIL)</item>
+        <item>Kilgetty (KGT)</item>
+        <item>Kilmarnock (KMK)</item>
+        <item>Kilmaurs (KLM)</item>
+        <item>Kilpatrick (KPT)</item>
+        <item>Kilwinning (KWN)</item>
+        <item>Kinbrace (KBC)</item>
+        <item>Kingham (KGM)</item>
+        <item>Kinghorn (KGH)</item>
+        <item>Kings Langley (KGL)</item>
+        <item>Kings Lynn (KLN)</item>
+        <item>Kings Norton (KNN)</item>
+        <item>Kings Nympton (KGN)</item>
+        <item>Kings Park (KGP)</item>
+        <item>Kings Sutton (KGS)</item>
+        <item>Kingsknowe (KGE)</item>
+        <item>Kingston (KNG)</item>
+        <item>Kingswood (KND)</item>
+        <item>Kingussie (KIN)</item>
+        <item>Kintbury (KIT)</item>
+        <item>Kirby Cross (KBX)</item>
+        <item>Kirk Sandall (KKS)</item>
+        <item>Kirkby (Merseyside) (KIR)</item>
+        <item>Kirkby Stephen (KSW)</item>
+        <item>Kirkby-in-Ashfield (KKB)</item>
+        <item>Kirkby-in-Furness (KBF)</item>
+        <item>Kirkcaldy (KDY)</item>
+        <item>Kirkconnel (KRK)</item>
+        <item>Kirkdale (KKD)</item>
+        <item>Kirkham &amp; Wesham (KKM)</item>
+        <item>Kirkhill (KKH)</item>
+        <item>Kirknewton (KKN)</item>
+        <item>Kirkwood (KWD)</item>
+        <item>Kirton Lindsey (KTL)</item>
+        <item>Kiveton Bridge (KIV)</item>
+        <item>Kiveton Park (KVP)</item>
+        <item>Knaresborough (KNA)</item>
+        <item>Knebworth (KBW)</item>
+        <item>Knighton (KNI)</item>
+        <item>Knockholt (KCK)</item>
+        <item>Knottingley (KNO)</item>
+        <item>Knucklas (KNU)</item>
+        <item>Knutsford (KNF)</item>
+        <item>Kyle of Lochalsh (KYL)</item>
+        <item>Ladybank (LDY)</item>
+        <item>Ladywell (LAD)</item>
+        <item>Laindon (LAI)</item>
+        <item>Lairg (LRG)</item>
+        <item>Lake (LKE)</item>
+        <item>Lakenheath (LAK)</item>
+        <item>Lamphey (LAM)</item>
+        <item>Lanark (LNK)</item>
+        <item>Lancaster (LAN)</item>
+        <item>Lancing (LAC)</item>
+        <item>Landywood (LAW)</item>
+        <item>Langbank (LGB)</item>
+        <item>Langho (LHO)</item>
+        <item>Langley (Berks) (LNY)</item>
+        <item>Langley Green (LGG)</item>
+        <item>Langley Mill (LGM)</item>
+        <item>Langside (LGS)</item>
+        <item>Langwathby (LGW)</item>
+        <item>Langwith-Whaley Thorns (LAG)</item>
+        <item>Lapford (LAP)</item>
+        <item>Lapworth (LPW)</item>
+        <item>Larbert (LBT)</item>
+        <item>Largs (LAR)</item>
+        <item>Larkhall (LRH)</item>
+        <item>Laurencekirk (LAU)</item>
+        <item>Lawrence Hill (LWH)</item>
+        <item>Layton (Lancs) (LAY)</item>
+        <item>Lazonby &amp; Kirkoswald (LZB)</item>
+        <item>Lea Bridge (LEB)</item>
+        <item>Lea Green (LEG)</item>
+        <item>Lea Hall (LEH)</item>
+        <item>Leagrave (LEA)</item>
+        <item>Lealholm (LHM)</item>
+        <item>Leamington Spa (LMS)</item>
+        <item>Leasowe (LSW)</item>
+        <item>Leatherhead (LHD)</item>
+        <item>Ledbury (LED)</item>
+        <item>Lee (London) (LEE)</item>
+        <item>Leeds (LDS)</item>
+        <item>Leicester (LEI)</item>
+        <item>Leigh (Kent) (LIH)</item>
+        <item>Leigh-on-Sea (LES)</item>
+        <item>Leighton Buzzard (LBZ)</item>
+        <item>Lelant (LEL)</item>
+        <item>Lelant Saltings (LTS)</item>
+        <item>Lenham (LEN)</item>
+        <item>Lenzie (LNZ)</item>
+        <item>Leominster (LEO)</item>
+        <item>Letchworth Garden City (LET)</item>
+        <item>Leuchars (for St. Andrews) (LEU)</item>
+        <item>Levenshulme (LVM)</item>
+        <item>Lewes (LWS)</item>
+        <item>Lewisham (LEW)</item>
+        <item>Leyland (LEY)</item>
+        <item>Leyton Midland Road (LEM)</item>
+        <item>Leytonstone High Road (LER)</item>
+        <item>Lichfield City (LIC)</item>
+        <item>Lichfield Trent Valley (LTV)</item>
+        <item>Lidlington (LID)</item>
+        <item>Limehouse (LHS)</item>
+        <item>Lincoln Central (LCN)</item>
+        <item>Lingfield (LFD)</item>
+        <item>Lingwood (LGD)</item>
+        <item>Linlithgow (LIN)</item>
+        <item>Liphook (LIP)</item>
+        <item>Liskeard (LSK)</item>
+        <item>Liss (LIS)</item>
+        <item>Lisvane &amp; Thornhill (LVT)</item>
+        <item>Little Kimble (LTK)</item>
+        <item>Little Sutton (LTT)</item>
+        <item>Littleborough (LTL)</item>
+        <item>Littlehampton (LIT)</item>
+        <item>Littlehaven (LVN)</item>
+        <item>Littleport (LTP)</item>
+        <item>Liverpool Central (LVC)</item>
+        <item>Liverpool James Street (LVJ)</item>
+        <item>Liverpool Lime Street (LIV)</item>
+        <item>Liverpool South Parkway (LPY)</item>
+        <item>Livingston North (LSN)</item>
+        <item>Livingston South (LVG)</item>
+        <item>Llanaber (LLA)</item>
+        <item>Llanbedr (LBR)</item>
+        <item>Llanbister Road (LLT)</item>
+        <item>Llanbradach (LNB)</item>
+        <item>Llandaf (LLN)</item>
+        <item>Llandanwg (LDN)</item>
+        <item>Llandecwyn (LLC)</item>
+        <item>Llandeilo (LLL)</item>
+        <item>Llandovery (LLV)</item>
+        <item>Llandrindod (LLO)</item>
+        <item>Llandudno (LLD)</item>
+        <item>Llandudno Junction (LLJ)</item>
+        <item>Llandybie (LLI)</item>
+        <item>Llanelli (LLE)</item>
+        <item>Llanfairfechan (LLF)</item>
+        <item>Llanfairpwll (LPG)</item>
+        <item>Llangadog (LLG)</item>
+        <item>Llangammarch (LLM)</item>
+        <item>Llangennech (LLH)</item>
+        <item>Llangynllo (LGO)</item>
+        <item>Llanharan (LLR)</item>
+        <item>Llanhilleth (LTH)</item>
+        <item>Llanishen (LLS)</item>
+        <item>Llanrwst (LWR)</item>
+        <item>Llansamlet (LAS)</item>
+        <item>Llantwit Major (LWM)</item>
+        <item>Llanwrda (LNR)</item>
+        <item>Llanwrtyd (LNW)</item>
+        <item>Llwyngwril (LLW)</item>
+        <item>Llwynypia (LLY)</item>
+        <item>Loch Awe (LHA)</item>
+        <item>Loch Eil Outward Bound (LHE)</item>
+        <item>Lochailort (LCL)</item>
+        <item>Locheilside (LCS)</item>
+        <item>Lochgelly (LCG)</item>
+        <item>Lochluichart (LCC)</item>
+        <item>Lochwinnoch (LHW)</item>
+        <item>Lockerbie (LOC)</item>
+        <item>Lockwood (LCK)</item>
+        <item>London Blackfriars (BFR)</item>
+        <item>London Bridge (LBG)</item>
+        <item>London Cannon Street (CST)</item>
+        <item>London Charing Cross (CHX)</item>
+        <item>London Euston (EUS)</item>
+        <item>London Fenchurch Street (FST)</item>
+        <item>London Fields (LOF)</item>
+        <item>London Kings Cross (KGX)</item>
+        <item>London Liverpool Street (LST)</item>
+        <item>London Marylebone (MYB)</item>
+        <item>London Paddington (PAD)</item>
+        <item>London Road (Brighton) (LRB)</item>
+        <item>London Road (Guildford) (LRD)</item>
+        <item>London St Pancras (Intl) (SPX)</item>
+        <item>London St Pancras International (STP)</item>
+        <item>London Victoria (VIC)</item>
+        <item>London Waterloo (WAT)</item>
+        <item>London Waterloo East (WAE)</item>
+        <item>Long Buckby (LBK)</item>
+        <item>Long Eaton (LGE)</item>
+        <item>Long Preston (LPR)</item>
+        <item>Longbeck (LGK)</item>
+        <item>Longbridge (LOB)</item>
+        <item>Longcross (LNG)</item>
+        <item>Longfield (LGF)</item>
+        <item>Longniddry (LND)</item>
+        <item>Longport (LPT)</item>
+        <item>Longton (LGN)</item>
+        <item>Looe (LOO)</item>
+        <item>Lostock (LOT)</item>
+        <item>Lostock Gralam (LTG)</item>
+        <item>Lostock Hall (LOH)</item>
+        <item>Lostwithiel (LOS)</item>
+        <item>Loughborough (LBO)</item>
+        <item>Loughborough Junction (LGJ)</item>
+        <item>Lowdham (LOW)</item>
+        <item>Lower Sydenham (LSY)</item>
+        <item>Lowestoft (LWT)</item>
+        <item>Ludlow (LUD)</item>
+        <item>Luton (LUT)</item>
+        <item>Luton Airport Parkway (LTN)</item>
+        <item>Luxulyan (LUX)</item>
+        <item>Lydney (LYD)</item>
+        <item>Lye (West Midlands) (LYE)</item>
+        <item>Lymington Pier (LYP)</item>
+        <item>Lymington Town (LYT)</item>
+        <item>Lympstone Commando (LYC)</item>
+        <item>Lympstone Village (LYM)</item>
+        <item>Lytham (LTM)</item>
+        <item>Macclesfield (MAC)</item>
+        <item>Machynlleth (MCN)</item>
+        <item>Maesteg (MST)</item>
+        <item>Maesteg (Ewenny Road) (MEW)</item>
+        <item>Maghull (MAG)</item>
+        <item>Maiden Newton (MDN)</item>
+        <item>Maidenhead (MAI)</item>
+        <item>Maidstone Barracks (MDB)</item>
+        <item>Maidstone East (MDE)</item>
+        <item>Maidstone West (MDW)</item>
+        <item>Malden Manor (MAL)</item>
+        <item>Mallaig (MLG)</item>
+        <item>Malton (MLT)</item>
+        <item>Malvern Link (MVL)</item>
+        <item>Manchester Airport (MIA)</item>
+        <item>Manchester Oxford Road (MCO)</item>
+        <item>Manchester Piccadilly (MAN)</item>
+        <item>Manchester United Football Ground (MUF)</item>
+        <item>Manchester Victoria (MCV)</item>
+        <item>Manea (MNE)</item>
+        <item>Manningtree (MNG)</item>
+        <item>Manor Park (MNP)</item>
+        <item>Manor Road (MNR)</item>
+        <item>Manorbier (MRB)</item>
+        <item>Manors (MAS)</item>
+        <item>Mansfield (MFT)</item>
+        <item>Mansfield Woodhouse (MSW)</item>
+        <item>March (MCH)</item>
+        <item>Marden (Kent) (MRN)</item>
+        <item>Margate (MAR)</item>
+        <item>Market Harborough (MHR)</item>
+        <item>Market Rasen (MKR)</item>
+        <item>Markinch (MNC)</item>
+        <item>Marks Tey (MKT)</item>
+        <item>Marlow (MLW)</item>
+        <item>Marple (MPL)</item>
+        <item>Marsden (Yorks) (MSN)</item>
+        <item>Marske (MSK)</item>
+        <item>Marston Green (MGN)</item>
+        <item>Martin Mill (MTM)</item>
+        <item>Martins Heron (MAO)</item>
+        <item>Marton (MTO)</item>
+        <item>Maryhill (MYH)</item>
+        <item>Maryland (MYL)</item>
+        <item>Maryport (MRY)</item>
+        <item>Matlock (MAT)</item>
+        <item>Matlock Bath (MTB)</item>
+        <item>Mauldeth Road (MAU)</item>
+        <item>Maxwell Park (MAX)</item>
+        <item>Maybole (MAY)</item>
+        <item>Maze Hill (MZH)</item>
+        <item>Meadowhall (MHS)</item>
+        <item>Meldreth (MEL)</item>
+        <item>Melksham (MKM)</item>
+        <item>Melton (Suffolk) (MES)</item>
+        <item>Melton Mowbray (MMO)</item>
+        <item>Menheniot (MEN)</item>
+        <item>Menston (MNN)</item>
+        <item>Meols (MEO)</item>
+        <item>Meols Cop (MEC)</item>
+        <item>Meopham (MEP)</item>
+        <item>Merryton (MEY)</item>
+        <item>Merstham (MHM)</item>
+        <item>Merthyr Tydfil (MER)</item>
+        <item>Merthyr Vale (MEV)</item>
+        <item>Metheringham (MGM)</item>
+        <item>MetroCentre (MCE)</item>
+        <item>Mexborough (MEX)</item>
+        <item>Micheldever (MIC)</item>
+        <item>Micklefield (MIK)</item>
+        <item>Middlesbrough (MBR)</item>
+        <item>Middlewood (MDL)</item>
+        <item>Midgham (MDG)</item>
+        <item>Milford (Surrey) (MLF)</item>
+        <item>Milford Haven (MFH)</item>
+        <item>Mill Hill (Lancs) (MLH)</item>
+        <item>Mill Hill Broadway (MIL)</item>
+        <item>Millbrook (Beds) (MLB)</item>
+        <item>Millbrook (Hants) (MBK)</item>
+        <item>Milliken Park (MIN)</item>
+        <item>Millom (MLM)</item>
+        <item>Mills Hill (Manchester) (MIH)</item>
+        <item>Milngavie (MLN)</item>
+        <item>Milton Keynes Central (MKC)</item>
+        <item>Minffordd (MFF)</item>
+        <item>Minster (MSR)</item>
+        <item>Mirfield (MIR)</item>
+        <item>Mistley (MIS)</item>
+        <item>Mitcham Eastfields (MTC)</item>
+        <item>Mitcham Junction (MIJ)</item>
+        <item>Mobberley (MOB)</item>
+        <item>Monifieth (MON)</item>
+        <item>Monks Risborough (MRS)</item>
+        <item>Montpelier (MTP)</item>
+        <item>Montrose (MTS)</item>
+        <item>Moorfields (MRF)</item>
+        <item>Moorgate (MOG)</item>
+        <item>Moorside (MSD)</item>
+        <item>Moorthorpe (MRP)</item>
+        <item>Morar (MRR)</item>
+        <item>Morchard Road (MRD)</item>
+        <item>Morden South (MDS)</item>
+        <item>Morecambe (MCM)</item>
+        <item>Moreton (Dorset) (MTN)</item>
+        <item>Moreton (Merseyside) (MRT)</item>
+        <item>Moreton-in-Marsh (MIM)</item>
+        <item>Morfa Mawddach (MFA)</item>
+        <item>Morley (MLY)</item>
+        <item>Morpeth (MPT)</item>
+        <item>Mortimer (MOR)</item>
+        <item>Mortlake (MTL)</item>
+        <item>Moses Gate (MSS)</item>
+        <item>Moss Side (MOS)</item>
+        <item>Mossley (Manchester) (MSL)</item>
+        <item>Mossley Hill (MSH)</item>
+        <item>Mosspark (MPK)</item>
+        <item>Moston (MSO)</item>
+        <item>Motherwell (MTH)</item>
+        <item>Motspur Park (MOT)</item>
+        <item>Mottingham (MTG)</item>
+        <item>Mottisfont &amp; Dunbridge (DBG)</item>
+        <item>Mouldsworth (MLD)</item>
+        <item>Moulsecoomb (MCB)</item>
+        <item>Mount Florida (MFL)</item>
+        <item>Mount Vernon (MTV)</item>
+        <item>Mountain Ash (MTA)</item>
+        <item>Muir of Ord (MOO)</item>
+        <item>Muirend (MUI)</item>
+        <item>Musselburgh (MUB)</item>
+        <item>Mytholmroyd (MYT)</item>
+        <item>Nafferton (NFN)</item>
+        <item>Nailsea &amp; Backwell (NLS)</item>
+        <item>Nairn (NRN)</item>
+        <item>Nantwich (NAN)</item>
+        <item>Narberth (NAR)</item>
+        <item>Narborough (NBR)</item>
+        <item>Navigation Road (NVR)</item>
+        <item>Neath (NTH)</item>
+        <item>Needham Market (NMT)</item>
+        <item>Neilston (NEI)</item>
+        <item>Nelson (NEL)</item>
+        <item>Neston (NES)</item>
+        <item>Netherfield (NET)</item>
+        <item>Nethertown (NRT)</item>
+        <item>Netley (NTL)</item>
+        <item>New Barnet (NBA)</item>
+        <item>New Beckenham (NBC)</item>
+        <item>New Brighton (NBN)</item>
+        <item>New Clee (NCE)</item>
+        <item>New Cross (NWX)</item>
+        <item>New Cross Gate (NXG)</item>
+        <item>New Cumnock (NCK)</item>
+        <item>New Eltham (NEH)</item>
+        <item>New Holland (NHL)</item>
+        <item>New Hythe (NHE)</item>
+        <item>New Lane (NLN)</item>
+        <item>New Malden (NEM)</item>
+        <item>New Mills Central (NMC)</item>
+        <item>New Mills Newtown (NMN)</item>
+        <item>New Milton (NWM)</item>
+        <item>New Pudsey (NPD)</item>
+        <item>New Southgate (NSG)</item>
+        <item>Newark Castle (NCT)</item>
+        <item>Newark North Gate (NNG)</item>
+        <item>Newbridge (NBE)</item>
+        <item>Newbury (NBY)</item>
+        <item>Newbury Racecourse (NRC)</item>
+        <item>Newcastle (NCL)</item>
+        <item>Newcourt (NCO)</item>
+        <item>Newcraighall (NEW)</item>
+        <item>Newhaven Harbour (NVH)</item>
+        <item>Newhaven Town (NVN)</item>
+        <item>Newington (NGT)</item>
+        <item>Newmarket (NMK)</item>
+        <item>Newport (Essex) (NWE)</item>
+        <item>Newport (South Wales) (NWP)</item>
+        <item>Newquay (NQY)</item>
+        <item>Newstead (NSD)</item>
+        <item>Newton (Lanark) (NTN)</item>
+        <item>Newton Abbot (NTA)</item>
+        <item>Newton Aycliffe (NAY)</item>
+        <item>Newton for Hyde (NWN)</item>
+        <item>Newton St Cyres (NTC)</item>
+        <item>Newtongrange (NEG)</item>
+        <item>Newton-le-Willows (NLW)</item>
+        <item>Newtonmore (NWR)</item>
+        <item>Newton-on-Ayr (NOA)</item>
+        <item>Newtown (Powys) (NWT)</item>
+        <item>Ninian Park (NNP)</item>
+        <item>Nitshill (NIT)</item>
+        <item>Norbiton (NBT)</item>
+        <item>Norbury (NRB)</item>
+        <item>Normans Bay (NSB)</item>
+        <item>Normanton (NOR)</item>
+        <item>North Berwick (NBW)</item>
+        <item>North Camp (NCM)</item>
+        <item>North Dulwich (NDL)</item>
+        <item>North Fambridge (NFA)</item>
+        <item>North Llanrwst (NLR)</item>
+        <item>North Queensferry (NQU)</item>
+        <item>North Road (Darlington) (NRD)</item>
+        <item>North Sheen (NSH)</item>
+        <item>North Walsham (NWA)</item>
+        <item>North Wembley (NWB)</item>
+        <item>Northallerton (NTR)</item>
+        <item>Northampton (NMP)</item>
+        <item>Northfield (NFD)</item>
+        <item>Northfleet (NFL)</item>
+        <item>Northolt Park (NLT)</item>
+        <item>Northumberland Park (NUM)</item>
+        <item>Northwich (NWI)</item>
+        <item>Norton Bridge (NTB)</item>
+        <item>Norwich (NRW)</item>
+        <item>Norwood Junction (NWD)</item>
+        <item>Nottingham (NOT)</item>
+        <item>Nuneaton (NUN)</item>
+        <item>Nunhead (NHD)</item>
+        <item>Nunthorpe (NNT)</item>
+        <item>Nutbourne (NUT)</item>
+        <item>Nutfield (NUF)</item>
+        <item>Oakengates (OKN)</item>
+        <item>Oakham (OKM)</item>
+        <item>Oakleigh Park (OKL)</item>
+        <item>Oban (OBN)</item>
+        <item>Ockendon (OCK)</item>
+        <item>Ockley (OLY)</item>
+        <item>Okehampton (OKE)</item>
+        <item>Old Hill (OHL)</item>
+        <item>Old Roan (ORN)</item>
+        <item>Old Street (OLD)</item>
+        <item>Oldfield Park (OLF)</item>
+        <item>Olton (OLT)</item>
+        <item>Ore (ORE)</item>
+        <item>Ormskirk (OMS)</item>
+        <item>Orpington (ORP)</item>
+        <item>Orrell (ORR)</item>
+        <item>Orrell Park (OPK)</item>
+        <item>Otford (OTF)</item>
+        <item>Oulton Broad North (OUN)</item>
+        <item>Oulton Broad South (OUS)</item>
+        <item>Outwood (OUT)</item>
+        <item>Overpool (OVE)</item>
+        <item>Overton (OVR)</item>
+        <item>Oxenholme Lake District (OXN)</item>
+        <item>Oxford (OXF)</item>
+        <item>Oxford Parkway (OXP)</item>
+        <item>Oxshott (OXS)</item>
+        <item>Oxted (OXT)</item>
+        <item>Paddock Wood (PDW)</item>
+        <item>Padgate (PDG)</item>
+        <item>Paignton (PGN)</item>
+        <item>Paisley Canal (PCN)</item>
+        <item>Paisley Gilmour Street (PYG)</item>
+        <item>Paisley St James (PYJ)</item>
+        <item>Palmers Green (PAL)</item>
+        <item>Pangbourne (PAN)</item>
+        <item>Pannal (PNL)</item>
+        <item>Pantyffynnon (PTF)</item>
+        <item>Par (PAR)</item>
+        <item>Parbold (PBL)</item>
+        <item>Park Street (PKT)</item>
+        <item>Parkstone (Dorset) (PKS)</item>
+        <item>Parson Street (PSN)</item>
+        <item>Partick (PTK)</item>
+        <item>Parton (PRN)</item>
+        <item>Patchway (PWY)</item>
+        <item>Patricroft (PAT)</item>
+        <item>Patterton (PTT)</item>
+        <item>Peartree (PEA)</item>
+        <item>Peckham Rye (PMR)</item>
+        <item>Pegswood (PEG)</item>
+        <item>Pemberton (PEM)</item>
+        <item>Pembrey &amp; Burry Port (PBY)</item>
+        <item>Pembroke (PMB)</item>
+        <item>Pembroke Dock (PMD)</item>
+        <item>Penally (PNA)</item>
+        <item>Penarth (PEN)</item>
+        <item>Pencoed (PCD)</item>
+        <item>Pengam (PGM)</item>
+        <item>Penge East (PNE)</item>
+        <item>Penge West (PNW)</item>
+        <item>Penhelig (PHG)</item>
+        <item>Penistone (PNS)</item>
+        <item>Penkridge (PKG)</item>
+        <item>Penmaenmawr (PMW)</item>
+        <item>Penmere (PNM)</item>
+        <item>Penrhiwceiber (PER)</item>
+        <item>Penrhyndeudraeth (PRH)</item>
+        <item>Penrith (North Lakes) (PNR)</item>
+        <item>Penryn (Cornwall) (PYN)</item>
+        <item>Pensarn (Gwynedd) (PES)</item>
+        <item>Penshurst (PHR)</item>
+        <item>Pentre-Bach (PTB)</item>
+        <item>Pen-y-Bont (PNY)</item>
+        <item>Penychain (PNC)</item>
+        <item>Penyffordd (PNF)</item>
+        <item>Penzance (PNZ)</item>
+        <item>Perranwell (PRW)</item>
+        <item>Perry Barr (PRY)</item>
+        <item>Pershore (PSH)</item>
+        <item>Perth (PTH)</item>
+        <item>Peterborough (PBO)</item>
+        <item>Petersfield (PTR)</item>
+        <item>Petts Wood (PET)</item>
+        <item>Pevensey &amp; Westham (PEV)</item>
+        <item>Pevensey Bay (PEB)</item>
+        <item>Pewsey (PEW)</item>
+        <item>Pilning (PIL)</item>
+        <item>Pinhoe (PIN)</item>
+        <item>Pitlochry (PIT)</item>
+        <item>Pitsea (PSE)</item>
+        <item>Pleasington (PLS)</item>
+        <item>Plockton (PLK)</item>
+        <item>Pluckley (PLC)</item>
+        <item>Plumley (PLM)</item>
+        <item>Plumpton (PMP)</item>
+        <item>Plumstead (PLU)</item>
+        <item>Plymouth (PLY)</item>
+        <item>Pokesdown (POK)</item>
+        <item>Polegate (PLG)</item>
+        <item>Polesworth (PSW)</item>
+        <item>Pollokshaws East (PWE)</item>
+        <item>Pollokshaws West (PWW)</item>
+        <item>Pollokshields East (PLE)</item>
+        <item>Pollokshields West (PLW)</item>
+        <item>Polmont (PMT)</item>
+        <item>Polsloe Bridge (POL)</item>
+        <item>Ponders End (PON)</item>
+        <item>Pontarddulais (PTD)</item>
+        <item>Pontefract Baghill (PFR)</item>
+        <item>Pontefract Monkhill (PFM)</item>
+        <item>Pontefract Tanshelf (POT)</item>
+        <item>Pontlottyn (PLT)</item>
+        <item>Pontyclun (PYC)</item>
+        <item>Pont-y-Pant (PYP)</item>
+        <item>Pontypool &amp; New Inn (PPL)</item>
+        <item>Pontypridd (PPD)</item>
+        <item>Poole (POO)</item>
+        <item>Poppleton (POP)</item>
+        <item>Port Glasgow (PTG)</item>
+        <item>Port Sunlight (PSL)</item>
+        <item>Port Talbot Parkway (PTA)</item>
+        <item>Portchester (PTC)</item>
+        <item>Porth (POR)</item>
+        <item>Porthmadog (PTM)</item>
+        <item>Portlethen (PLN)</item>
+        <item>Portslade (PLD)</item>
+        <item>Portsmouth &amp; Southsea (PMS)</item>
+        <item>Portsmouth Arms (PMA)</item>
+        <item>Portsmouth Harbour (PMH)</item>
+        <item>Possilpark &amp; Parkhouse (PPK)</item>
+        <item>Potters Bar (PBR)</item>
+        <item>Poulton-le-Fylde (PFY)</item>
+        <item>Poynton (PYT)</item>
+        <item>Prees (PRS)</item>
+        <item>Prescot (PSC)</item>
+        <item>Prestatyn (PRT)</item>
+        <item>Prestbury (PRB)</item>
+        <item>Preston (Lancs) (PRE)</item>
+        <item>Preston Park (PRP)</item>
+        <item>Prestonpans (PST)</item>
+        <item>Prestwick International Airport (PRA)</item>
+        <item>Prestwick Town (PTW)</item>
+        <item>Priesthill &amp; Darnley (PTL)</item>
+        <item>Princes Risborough (PRR)</item>
+        <item>Prittlewell (PRL)</item>
+        <item>Prudhoe (PRU)</item>
+        <item>Pulborough (PUL)</item>
+        <item>Purfleet (PFL)</item>
+        <item>Purley (PUR)</item>
+        <item>Purley Oaks (PUO)</item>
+        <item>Putney (PUT)</item>
+        <item>Pwllheli (PWL)</item>
+        <item>Pye Corner (PYE)</item>
+        <item>Pyle (PYL)</item>
+        <item>Quakers Yard (QYD)</item>
+        <item>Queenborough (QBR)</item>
+        <item>Queens Park (Glasgow) (QPK)</item>
+        <item>Queens Park (London) (QPW)</item>
+        <item>Queens Road (Peckham) (QRP)</item>
+        <item>Queenstown Road (Battersea) (QRB)</item>
+        <item>Quintrell Downs (QUI)</item>
+        <item>Radcliffe-on-Trent (RDF)</item>
+        <item>Radlett (RDT)</item>
+        <item>Radley (RAD)</item>
+        <item>Radyr (RDR)</item>
+        <item>Rainford (RNF)</item>
+        <item>Rainham (Essex) (RNM)</item>
+        <item>Rainham (Kent) (RAI)</item>
+        <item>Rainhill (RNH)</item>
+        <item>Ramsgate (RAM)</item>
+        <item>Ramsgreave &amp; Wilpshire (RGW)</item>
+        <item>Rannoch (RAN)</item>
+        <item>Rauceby (RAU)</item>
+        <item>Ravenglass for Eskdale (RAV)</item>
+        <item>Ravensbourne (RVB)</item>
+        <item>Ravensthorpe (RVN)</item>
+        <item>Rawcliffe (RWC)</item>
+        <item>Rayleigh (RLG)</item>
+        <item>Raynes Park (RAY)</item>
+        <item>Reading (RDG)</item>
+        <item>Reading West (RDW)</item>
+        <item>Rectory Road (REC)</item>
+        <item>Redbridge (RDB)</item>
+        <item>Redcar British Steel (RBS)</item>
+        <item>Redcar Central (RCC)</item>
+        <item>Redcar East (RCE)</item>
+        <item>Reddish North (RDN)</item>
+        <item>Reddish South (RDS)</item>
+        <item>Redditch (RDC)</item>
+        <item>Redhill (RDH)</item>
+        <item>Redland (RDA)</item>
+        <item>Redruth (RED)</item>
+        <item>Reedham (Norfolk) (REE)</item>
+        <item>Reedham (Surrey) (RHM)</item>
+        <item>Reigate (REI)</item>
+        <item>Renton (RTN)</item>
+        <item>Retford (RET)</item>
+        <item>Rhiwbina (RHI)</item>
+        <item>Rhoose Cardiff International Airport (RIA)</item>
+        <item>Rhosneigr (RHO)</item>
+        <item>Rhyl (RHL)</item>
+        <item>Rhymney (RHY)</item>
+        <item>Ribblehead (RHD)</item>
+        <item>Rice Lane (RIL)</item>
+        <item>Richmond (London) (RMD)</item>
+        <item>Rickmansworth (RIC)</item>
+        <item>Riddlesdown (RDD)</item>
+        <item>Ridgmont (RID)</item>
+        <item>Riding Mill (RDM)</item>
+        <item>Risca &amp; Pontymister (RCA)</item>
+        <item>Rishton (RIS)</item>
+        <item>Robertsbridge (RBR)</item>
+        <item>Roby (ROB)</item>
+        <item>Rochdale (RCD)</item>
+        <item>Roche (ROC)</item>
+        <item>Rochester (RTR)</item>
+        <item>Rochford (RFD)</item>
+        <item>Rock Ferry (RFY)</item>
+        <item>Rogart (ROG)</item>
+        <item>Rogerstone (ROR)</item>
+        <item>Rolleston (ROL)</item>
+        <item>Roman Bridge (RMB)</item>
+        <item>Romford (RMF)</item>
+        <item>Romiley (RML)</item>
+        <item>Romsey (ROM)</item>
+        <item>Roose (ROO)</item>
+        <item>Rose Grove (RSG)</item>
+        <item>Rose Hill Marple (RSH)</item>
+        <item>Rosyth (ROS)</item>
+        <item>Rotherham Central (RMC)</item>
+        <item>Rotherhithe (ROE)</item>
+        <item>Roughton Road (RNR)</item>
+        <item>Rowlands Castle (RLN)</item>
+        <item>Rowley Regis (ROW)</item>
+        <item>Roy Bridge (RYB)</item>
+        <item>Roydon (RYN)</item>
+        <item>Royston (RYS)</item>
+        <item>Ruabon (RUA)</item>
+        <item>Rufford (RUF)</item>
+        <item>Rugby (RUG)</item>
+        <item>Rugeley Town (RGT)</item>
+        <item>Rugeley Trent Valley (RGL)</item>
+        <item>Runcorn (RUN)</item>
+        <item>Runcorn East (RUE)</item>
+        <item>Ruskington (RKT)</item>
+        <item>Ruswarp (RUS)</item>
+        <item>Rutherglen (RUT)</item>
+        <item>Ryde Esplanade (RYD)</item>
+        <item>Ryde Pier Head (RYP)</item>
+        <item>Ryde St Johns Road (RYR)</item>
+        <item>Ryder Brow (RRB)</item>
+        <item>Rye (Sussex) (RYE)</item>
+        <item>Rye House (RYH)</item>
+        <item>Salford Central (SFD)</item>
+        <item>Salford Crescent (SLD)</item>
+        <item>Salfords (Surrey) (SAF)</item>
+        <item>Salhouse (SAH)</item>
+        <item>Salisbury (SAL)</item>
+        <item>Saltaire (SAE)</item>
+        <item>Saltash (STS)</item>
+        <item>Saltburn (SLB)</item>
+        <item>Saltcoats (SLT)</item>
+        <item>Saltmarshe (SAM)</item>
+        <item>Salwick (SLW)</item>
+        <item>Sampford Courtenay (SMC)</item>
+        <item>Sandal &amp; Agbrigg (SNA)</item>
+        <item>Sandbach (SDB)</item>
+        <item>Sanderstead (SNR)</item>
+        <item>Sandhills (SDL)</item>
+        <item>Sandhurst (Berks) (SND)</item>
+        <item>Sandling (SDG)</item>
+        <item>Sandown (SAN)</item>
+        <item>Sandplace (SDP)</item>
+        <item>Sandwell &amp; Dudley (SAD)</item>
+        <item>Sandwich (SDW)</item>
+        <item>Sandy (SDY)</item>
+        <item>Sankey for Penketh (SNK)</item>
+        <item>Sanquhar (SQH)</item>
+        <item>Sarn (SRR)</item>
+        <item>Saundersfoot (SDF)</item>
+        <item>Saunderton (SDR)</item>
+        <item>Sawbridgeworth (SAW)</item>
+        <item>Saxilby (SXY)</item>
+        <item>Saxmundham (SAX)</item>
+        <item>Scarborough (SCA)</item>
+        <item>Scotscalder (SCT)</item>
+        <item>Scotstounhill (SCH)</item>
+        <item>Scunthorpe (SCU)</item>
+        <item>Sea Mills (SML)</item>
+        <item>Seaford (Sussex) (SEF)</item>
+        <item>Seaforth &amp; Litherland (SFL)</item>
+        <item>Seaham (SEA)</item>
+        <item>Seamer (SEM)</item>
+        <item>Seascale (SSC)</item>
+        <item>Seaton Carew (SEC)</item>
+        <item>Seer Green &amp; Jordans (SRG)</item>
+        <item>Selby (SBY)</item>
+        <item>Selhurst (SRS)</item>
+        <item>Sellafield (SEL)</item>
+        <item>Selling (SEG)</item>
+        <item>Selly Oak (SLY)</item>
+        <item>Settle (SET)</item>
+        <item>Seven Kings (SVK)</item>
+        <item>Seven Sisters (SVS)</item>
+        <item>Sevenoaks (SEV)</item>
+        <item>Severn Beach (SVB)</item>
+        <item>Severn Tunnel Junction (STJ)</item>
+        <item>Shadwell (SDE)</item>
+        <item>Shalford (Surrey) (SFR)</item>
+        <item>Shanklin (SHN)</item>
+        <item>Shawfair (SFI)</item>
+        <item>Shawford (SHW)</item>
+        <item>Shawlands (SHL)</item>
+        <item>Sheerness-on-Sea (SSS)</item>
+        <item>Sheffield (SHF)</item>
+        <item>Shelford (Cambs) (SED)</item>
+        <item>Shenfield (SNF)</item>
+        <item>Shenstone (SEN)</item>
+        <item>Shepherd\'s Bush (SPB)</item>
+        <item>Shepherds Well (SPH)</item>
+        <item>Shepley (SPY)</item>
+        <item>Shepperton (SHP)</item>
+        <item>Shepreth (STH)</item>
+        <item>Sherborne (SHE)</item>
+        <item>Sherburn-in-Elmet (SIE)</item>
+        <item>Sheringham (SHM)</item>
+        <item>Shettleston (SLS)</item>
+        <item>Shieldmuir (SDM)</item>
+        <item>Shifnal (SFN)</item>
+        <item>Shildon (SHD)</item>
+        <item>Shiplake (SHI)</item>
+        <item>Shipley (Yorks) (SHY)</item>
+        <item>Shippea Hill (SPP)</item>
+        <item>Shipton (SIP)</item>
+        <item>Shirebrook (SHB)</item>
+        <item>Shirehampton (SHH)</item>
+        <item>Shireoaks (SRO)</item>
+        <item>Shirley (SRL)</item>
+        <item>Shoeburyness (SRY)</item>
+        <item>Sholing (SHO)</item>
+        <item>Shoreditch High Street (SDC)</item>
+        <item>Shoreham (Kent) (SEH)</item>
+        <item>Shoreham-by-Sea (SSE)</item>
+        <item>Shortlands (SRT)</item>
+        <item>Shotton (SHT)</item>
+        <item>Shotts (SHS)</item>
+        <item>Shrewsbury (SHR)</item>
+        <item>Sidcup (SID)</item>
+        <item>Sileby (SIL)</item>
+        <item>Silecroft (SIC)</item>
+        <item>Silkstone Common (SLK)</item>
+        <item>Silver Street (SLV)</item>
+        <item>Silverdale (SVR)</item>
+        <item>Singer (SIN)</item>
+        <item>Sittingbourne (SIT)</item>
+        <item>Skegness (SKG)</item>
+        <item>Skewen (SKE)</item>
+        <item>Skipton (SKI)</item>
+        <item>Slade Green (SGR)</item>
+        <item>Slaithwaite (SWT)</item>
+        <item>Slateford (SLA)</item>
+        <item>Sleaford (SLR)</item>
+        <item>Sleights (SLH)</item>
+        <item>Slough (SLO)</item>
+        <item>Small Heath (SMA)</item>
+        <item>Smallbrook Junction (SAB)</item>
+        <item>Smethwick Galton Bridge (SGB)</item>
+        <item>Smethwick Rolfe Street (SMR)</item>
+        <item>Smithy Bridge (SMB)</item>
+        <item>Snaith (SNI)</item>
+        <item>Snodland (SDA)</item>
+        <item>Snowdown (SWO)</item>
+        <item>Sole Street (SOR)</item>
+        <item>Solihull (SOL)</item>
+        <item>Somerleyton (SYT)</item>
+        <item>South Acton (SAT)</item>
+        <item>South Bank (SBK)</item>
+        <item>South Bermondsey (SBM)</item>
+        <item>South Croydon (SCY)</item>
+        <item>South Elmsall (SES)</item>
+        <item>South Greenford (SGN)</item>
+        <item>South Gyle (SGL)</item>
+        <item>South Hampstead (SOH)</item>
+        <item>South Kenton (SOK)</item>
+        <item>South Merton (SMO)</item>
+        <item>South Milford (SOM)</item>
+        <item>South Ruislip (SRU)</item>
+        <item>South Tottenham (STO)</item>
+        <item>South Wigston (SWS)</item>
+        <item>South Woodham Ferrers (SOF)</item>
+        <item>Southall (STL)</item>
+        <item>Southampton Airport Parkway (SOA)</item>
+        <item>Southampton Central (SOU)</item>
+        <item>Southbourne (SOB)</item>
+        <item>Southbury (SBU)</item>
+        <item>Southease (SEE)</item>
+        <item>Southend Airport (SIA)</item>
+        <item>Southend Central (SOC)</item>
+        <item>Southend East (SOE)</item>
+        <item>Southend Victoria (SOV)</item>
+        <item>Southminster (SMN)</item>
+        <item>Southport (SOP)</item>
+        <item>Southwick (SWK)</item>
+        <item>Sowerby Bridge (SOW)</item>
+        <item>Spalding (SPA)</item>
+        <item>Spean Bridge (SBR)</item>
+        <item>Spital (SPI)</item>
+        <item>Spondon (SPO)</item>
+        <item>Spooner Row (SPN)</item>
+        <item>Spring Road (SRI)</item>
+        <item>Springburn (SPR)</item>
+        <item>Springfield (SPF)</item>
+        <item>Squires Gate (SQU)</item>
+        <item>St Albans Abbey (SAA)</item>
+        <item>St Albans City (SAC)</item>
+        <item>St Andrews Road (SAR)</item>
+        <item>St Annes-on-Sea (SAS)</item>
+        <item>St Austell (SAU)</item>
+        <item>St Bees (SBS)</item>
+        <item>St Budeaux Ferry Road (SBF)</item>
+        <item>St Budeaux Victoria Road (SBV)</item>
+        <item>St Columb Road (SCR)</item>
+        <item>St Denys (SDN)</item>
+        <item>St Erth (SER)</item>
+        <item>St Germans (SGM)</item>
+        <item>St Helens Central (SNH)</item>
+        <item>St Helens Junction (SHJ)</item>
+        <item>St Helier (Surrey) (SIH)</item>
+        <item>St Ives (Cornwall) (SIV)</item>
+        <item>St James Park (Exeter) (SJP)</item>
+        <item>St James Street (Walthamstow) (SJS)</item>
+        <item>St Johns (London) (SAJ)</item>
+        <item>St Keyne Wishing Well Halt (SKN)</item>
+        <item>St Leonards Warrior Square (SLQ)</item>
+        <item>St Margarets (Herts) (SMT)</item>
+        <item>St Margarets (London) (SMG)</item>
+        <item>St Mary Cray (SMY)</item>
+        <item>St Michaels (STM)</item>
+        <item>St Neots (SNO)</item>
+        <item>Stafford (STA)</item>
+        <item>Staines (SNS)</item>
+        <item>Stallingborough (SLL)</item>
+        <item>Stalybridge (SYB)</item>
+        <item>Stamford (Lincs) (SMD)</item>
+        <item>Stamford Hill (SMH)</item>
+        <item>Stanford-le-Hope (SFO)</item>
+        <item>Stanlow &amp; Thornton (SNT)</item>
+        <item>Stansted Airport (SSD)</item>
+        <item>Stansted Mountfitchet (SST)</item>
+        <item>Staplehurst (SPU)</item>
+        <item>Stapleton Road (SRD)</item>
+        <item>Starbeck (SBE)</item>
+        <item>Starcross (SCS)</item>
+        <item>Staveley (Cumbria) (SVL)</item>
+        <item>Stechford (SCF)</item>
+        <item>Steeton &amp; Silsden (SON)</item>
+        <item>Stepps (SPS)</item>
+        <item>Stevenage (SVG)</item>
+        <item>Stevenston (STV)</item>
+        <item>Stewartby (SWR)</item>
+        <item>Stewarton (STT)</item>
+        <item>Stirling (STG)</item>
+        <item>Stockport (SPT)</item>
+        <item>Stocksfield (SKS)</item>
+        <item>Stocksmoor (SSM)</item>
+        <item>Stockton (STK)</item>
+        <item>Stoke Mandeville (SKM)</item>
+        <item>Stoke Newington (SKW)</item>
+        <item>Stoke-on-Trent (SOT)</item>
+        <item>Stone (Staffs) (SNE)</item>
+        <item>Stone Crossing (SCG)</item>
+        <item>Stonebridge Park (SBP)</item>
+        <item>Stonegate (SOG)</item>
+        <item>Stonehaven (STN)</item>
+        <item>Stonehouse (SHU)</item>
+        <item>Stoneleigh (SNL)</item>
+        <item>Stourbridge Junction (SBJ)</item>
+        <item>Stourbridge Town (SBT)</item>
+        <item>Stow (SOI)</item>
+        <item>Stowmarket (SMK)</item>
+        <item>Stranraer (STR)</item>
+        <item>Stratford (London) (SRA)</item>
+        <item>Stratford International (SFA)</item>
+        <item>Stratford-upon-Avon (SAV)</item>
+        <item>Stratford-upon-Avon Parkway (STY)</item>
+        <item>Strathcarron (STC)</item>
+        <item>Strawberry Hill (STW)</item>
+        <item>Streatham (Greater London) (STE)</item>
+        <item>Streatham Common (SRC)</item>
+        <item>Streatham Hill (SRH)</item>
+        <item>Streethouse (SHC)</item>
+        <item>Strines (SRN)</item>
+        <item>Stromeferry (STF)</item>
+        <item>Strood (Kent) (SOO)</item>
+        <item>Stroud (Gloucs) (STD)</item>
+        <item>Sturry (STU)</item>
+        <item>Styal (SYA)</item>
+        <item>Sudbury &amp; Harrow Road (SUD)</item>
+        <item>Sudbury (Suffolk) (SUY)</item>
+        <item>Sudbury Hill Harrow (SDH)</item>
+        <item>Sugar Loaf (SUG)</item>
+        <item>Summerston (SUM)</item>
+        <item>Sunbury (SUU)</item>
+        <item>Sunderland (SUN)</item>
+        <item>Sundridge Park (SUP)</item>
+        <item>Sunningdale (SNG)</item>
+        <item>Sunnymeads (SNY)</item>
+        <item>Surbiton (SUR)</item>
+        <item>Surrey Quays (SQE)</item>
+        <item>Sutton (Surrey) (SUO)</item>
+        <item>Sutton Coldfield (SUT)</item>
+        <item>Sutton Common (SUC)</item>
+        <item>Sutton Parkway (SPK)</item>
+        <item>Swale (SWL)</item>
+        <item>Swanley (SAY)</item>
+        <item>Swanscombe (SWM)</item>
+        <item>Swansea (SWA)</item>
+        <item>Swanwick (SNW)</item>
+        <item>Sway (SWY)</item>
+        <item>Swaythling (SWG)</item>
+        <item>Swinderby (SWD)</item>
+        <item>Swindon (Wilts) (SWI)</item>
+        <item>Swineshead (SWE)</item>
+        <item>Swinton (Manchester) (SNN)</item>
+        <item>Swinton (South Yorks) (SWN)</item>
+        <item>Sydenham (London) (SYD)</item>
+        <item>Sydenham Hill (SYH)</item>
+        <item>Syon Lane (SYL)</item>
+        <item>Syston (SYS)</item>
+        <item>Tackley (TAC)</item>
+        <item>Tadworth (TAD)</item>
+        <item>Taffs Well (TAF)</item>
+        <item>Tain (TAI)</item>
+        <item>Talsarnau (TAL)</item>
+        <item>Talybont (TLB)</item>
+        <item>Tal-y-Cafn (TLC)</item>
+        <item>Tame Bridge Parkway (TAB)</item>
+        <item>Tamworth (TAM)</item>
+        <item>Taplow (TAP)</item>
+        <item>Tattenham Corner (TAT)</item>
+        <item>Taunton (TAU)</item>
+        <item>Taynuilt (TAY)</item>
+        <item>Teddington (TED)</item>
+        <item>Tees-side Airport (TEA)</item>
+        <item>Teignmouth (TGM)</item>
+        <item>Telford Central (TFC)</item>
+        <item>Templecombe (TMC)</item>
+        <item>Tenby (TEN)</item>
+        <item>Teynham (TEY)</item>
+        <item>Thames Ditton (THD)</item>
+        <item>Thatcham (THA)</item>
+        <item>Thatto Heath (THH)</item>
+        <item>The Hawthorns (THW)</item>
+        <item>The Lakes (Warks) (TLK)</item>
+        <item>Theale (THE)</item>
+        <item>Theobalds Grove (TEO)</item>
+        <item>Thetford (TTF)</item>
+        <item>Thirsk (THI)</item>
+        <item>Thornaby (TBY)</item>
+        <item>Thorne North (TNN)</item>
+        <item>Thorne South (TNS)</item>
+        <item>Thornford (THO)</item>
+        <item>Thornliebank (THB)</item>
+        <item>Thornton Abbey (TNA)</item>
+        <item>Thornton Heath (TTH)</item>
+        <item>Thorntonhall (THT)</item>
+        <item>Thorpe Bay (TPB)</item>
+        <item>Thorpe Culvert (TPC)</item>
+        <item>Thorpe-le-Soken (TLS)</item>
+        <item>Three Bridges (TBD)</item>
+        <item>Three Oaks (TOK)</item>
+        <item>Thurgarton (THU)</item>
+        <item>Thurnscoe (THC)</item>
+        <item>Thurso (THS)</item>
+        <item>Thurston (TRS)</item>
+        <item>Tilbury Town (TIL)</item>
+        <item>Tile Hill (THL)</item>
+        <item>Tilehurst (TLH)</item>
+        <item>Tipton (TIP)</item>
+        <item>Tir-Phil (TIR)</item>
+        <item>Tisbury (TIS)</item>
+        <item>Tiverton Parkway (TVP)</item>
+        <item>Todmorden (TOD)</item>
+        <item>Tolworth (TOL)</item>
+        <item>Ton Pentre (TPN)</item>
+        <item>Tonbridge (TON)</item>
+        <item>Tondu (TDU)</item>
+        <item>Tonfanau (TNF)</item>
+        <item>Tonypandy (TNP)</item>
+        <item>Tooting (TOO)</item>
+        <item>Topsham (TOP)</item>
+        <item>Torquay (TQY)</item>
+        <item>Torre (TRR)</item>
+        <item>Totnes (TOT)</item>
+        <item>Tottenham Hale (TOM)</item>
+        <item>Totton (TTN)</item>
+        <item>Town Green (TWN)</item>
+        <item>Trafford Park (TRA)</item>
+        <item>Trefforest (TRF)</item>
+        <item>Trefforest Estate (TRE)</item>
+        <item>Trehafod (TRH)</item>
+        <item>Treherbert (TRB)</item>
+        <item>Treorchy (TRY)</item>
+        <item>Trimley (TRM)</item>
+        <item>Tring (TRI)</item>
+        <item>Troed-y-rhiw (TRD)</item>
+        <item>Troon (TRN)</item>
+        <item>Trowbridge (TRO)</item>
+        <item>Truro (TRU)</item>
+        <item>Tulloch (TUL)</item>
+        <item>Tulse Hill (TUH)</item>
+        <item>Tunbridge Wells (TBW)</item>
+        <item>Turkey Street (TUR)</item>
+        <item>Tutbury &amp; Hatton (TUT)</item>
+        <item>Tweedbank (TWB)</item>
+        <item>Twickenham (TWI)</item>
+        <item>Twyford (TWY)</item>
+        <item>Ty Croes (TYC)</item>
+        <item>Ty Glas (TGS)</item>
+        <item>Tygwyn (TYG)</item>
+        <item>Tyndrum Lower (TYL)</item>
+        <item>Tyseley (TYS)</item>
+        <item>Tywyn (TYW)</item>
+        <item>Uckfield (UCK)</item>
+        <item>Uddingston (UDD)</item>
+        <item>Ulceby (ULC)</item>
+        <item>Ulleskelf (ULL)</item>
+        <item>Ulverston (ULV)</item>
+        <item>Umberleigh (UMB)</item>
+        <item>University (Birmingham) (UNI)</item>
+        <item>Uphall (UHA)</item>
+        <item>Upholland (UPL)</item>
+        <item>Upminster (UPM)</item>
+        <item>Upper Halliford (UPH)</item>
+        <item>Upper Holloway (UHL)</item>
+        <item>Upper Tyndrum (UTY)</item>
+        <item>Upper Warlingham (UWL)</item>
+        <item>Upton (Merseyside) (UPT)</item>
+        <item>Upwey (UPW)</item>
+        <item>Urmston (URM)</item>
+        <item>Uttoxeter (UTT)</item>
+        <item>Valley (VAL)</item>
+        <item>Vauxhall (VXH)</item>
+        <item>Virginia Water (VIR)</item>
+        <item>Waddon (WDO)</item>
+        <item>Wadhurst (WAD)</item>
+        <item>Wainfleet (WFL)</item>
+        <item>Wakefield Kirkgate (WKK)</item>
+        <item>Wakefield Westgate (WKF)</item>
+        <item>Walkden (WKD)</item>
+        <item>Wallasey Grove Road (WLG)</item>
+        <item>Wallasey Village (WLV)</item>
+        <item>Wallington (WLT)</item>
+        <item>Wallyford (WAF)</item>
+        <item>Walmer (WAM)</item>
+        <item>Walsall (WSL)</item>
+        <item>Walsden (WDN)</item>
+        <item>Waltham Cross (WLC)</item>
+        <item>Walthamstow Central (WHC)</item>
+        <item>Walthamstow Queen\'s Road (WMW)</item>
+        <item>Walton (Merseyside) (WAO)</item>
+        <item>Walton-on-Thames (WAL)</item>
+        <item>Walton-on-the-Naze (WON)</item>
+        <item>Wanborough (WAN)</item>
+        <item>Wandsworth Common (WSW)</item>
+        <item>Wandsworth Road (WWR)</item>
+        <item>Wandsworth Town (WNT)</item>
+        <item>Wanstead Park (WNP)</item>
+        <item>Wapping (WPE)</item>
+        <item>Warblington (WBL)</item>
+        <item>Ware (Herts) (WAR)</item>
+        <item>Wareham (Dorset) (WRM)</item>
+        <item>Wargrave (WGV)</item>
+        <item>Warminster (WMN)</item>
+        <item>Warnham (WNH)</item>
+        <item>Warrington Bank Quay (WBQ)</item>
+        <item>Warrington Central (WAC)</item>
+        <item>Warwick (WRW)</item>
+        <item>Warwick Parkway (WRP)</item>
+        <item>Water Orton (WTO)</item>
+        <item>Waterbeach (WBC)</item>
+        <item>Wateringbury (WTR)</item>
+        <item>Waterloo (Merseyside) (WLO)</item>
+        <item>Watford High Street (WFH)</item>
+        <item>Watford Junction (WFJ)</item>
+        <item>Watford North (WFN)</item>
+        <item>Watlington (WTG)</item>
+        <item>Watton-at-Stone (WAS)</item>
+        <item>Waun-Gron Park (WNG)</item>
+        <item>Wavertree Technology Park (WAV)</item>
+        <item>Wedgwood (WED)</item>
+        <item>Weeley (WEE)</item>
+        <item>Weeton (WET)</item>
+        <item>Welham Green (WMG)</item>
+        <item>Welling (WLI)</item>
+        <item>Wellingborough (WEL)</item>
+        <item>Wellington (Shropshire) (WLN)</item>
+        <item>Welshpool (WLP)</item>
+        <item>Welwyn Garden City (WGC)</item>
+        <item>Welwyn North (WLW)</item>
+        <item>Wem (WEM)</item>
+        <item>Wembley Central (WMB)</item>
+        <item>Wembley Stadium (WCX)</item>
+        <item>Wemyss Bay (WMS)</item>
+        <item>Wendover (WND)</item>
+        <item>Wennington (WNN)</item>
+        <item>West Allerton (WSA)</item>
+        <item>West Brompton (WBP)</item>
+        <item>West Byfleet (WBY)</item>
+        <item>West Calder (WCL)</item>
+        <item>West Croydon (WCY)</item>
+        <item>West Drayton (WDT)</item>
+        <item>West Dulwich (WDU)</item>
+        <item>West Ealing (WEA)</item>
+        <item>West Ham (WEH)</item>
+        <item>West Hampstead (WHD)</item>
+        <item>West Hampstead Thameslink (WHP)</item>
+        <item>West Horndon (WHR)</item>
+        <item>West Kilbride (WKB)</item>
+        <item>West Kirby (WKI)</item>
+        <item>West Malling (WMA)</item>
+        <item>West Norwood (WNW)</item>
+        <item>West Ruislip (WRU)</item>
+        <item>West Runton (WRN)</item>
+        <item>West St Leonards (WLD)</item>
+        <item>West Sutton (WSU)</item>
+        <item>West Wickham (WWI)</item>
+        <item>West Worthing (WWO)</item>
+        <item>Westbury (Wilts) (WSB)</item>
+        <item>Westcliff (WCF)</item>
+        <item>Westcombe Park (WCB)</item>
+        <item>Westenhanger (WHA)</item>
+        <item>Wester Hailes (WTA)</item>
+        <item>Westerfield (WFI)</item>
+        <item>Westerton (WES)</item>
+        <item>Westgate-on-Sea (WGA)</item>
+        <item>Westhoughton (WHG)</item>
+        <item>Weston Milton (WNM)</item>
+        <item>Weston-super-Mare (WSM)</item>
+        <item>Wetheral (WRL)</item>
+        <item>Weybridge (WYB)</item>
+        <item>Weymouth (WEY)</item>
+        <item>Whaley Bridge (WBR)</item>
+        <item>Whalley (Lancs) (WHE)</item>
+        <item>Whatstandwell (WTS)</item>
+        <item>Whifflet (WFF)</item>
+        <item>Whimple (WHM)</item>
+        <item>Whinhill (WNL)</item>
+        <item>Whiston (WHN)</item>
+        <item>Whitby (WTB)</item>
+        <item>Whitchurch (Cardiff) (WHT)</item>
+        <item>Whitchurch (Hants) (WCH)</item>
+        <item>Whitchurch (Shropshire) (WTC)</item>
+        <item>White Hart Lane (WHL)</item>
+        <item>White Notley (WNY)</item>
+        <item>Whitechapel (ZLW)</item>
+        <item>Whitecraigs (WCR)</item>
+        <item>Whitehaven (WTH)</item>
+        <item>Whitland (WTL)</item>
+        <item>Whitley Bridge (WBD)</item>
+        <item>Whitlocks End (WTE)</item>
+        <item>Whitstable (WHI)</item>
+        <item>Whittlesea (WLE)</item>
+        <item>Whittlesford Parkway (WLF)</item>
+        <item>Whitton (London) (WTN)</item>
+        <item>Whitwell (Derbyshire) (WWL)</item>
+        <item>Whyteleafe (WHY)</item>
+        <item>Whyteleafe South (WHS)</item>
+        <item>Wick (WCK)</item>
+        <item>Wickford (WIC)</item>
+        <item>Wickham Market (WCM)</item>
+        <item>Widdrington (WDD)</item>
+        <item>Widnes (WID)</item>
+        <item>Widney Manor (WMR)</item>
+        <item>Wigan North Western (WGN)</item>
+        <item>Wigan Wallgate (WGW)</item>
+        <item>Wigton (WGT)</item>
+        <item>Wildmill (WMI)</item>
+        <item>Willesden Junction (WIJ)</item>
+        <item>Williamwood (WLM)</item>
+        <item>Willington (WIL)</item>
+        <item>Wilmcote (WMC)</item>
+        <item>Wilmslow (WML)</item>
+        <item>Wilnecote (Staffs) (WNE)</item>
+        <item>Wimbledon (WIM)</item>
+        <item>Wimbledon Chase (WBO)</item>
+        <item>Winchelsea (WSE)</item>
+        <item>Winchester (WIN)</item>
+        <item>Winchfield (WNF)</item>
+        <item>Winchmore Hill (WIH)</item>
+        <item>Windermere (WDM)</item>
+        <item>Windsor &amp; Eton Central (WNC)</item>
+        <item>Windsor &amp; Eton Riverside (WNR)</item>
+        <item>Winnersh (WNS)</item>
+        <item>Winnersh Triangle (WTI)</item>
+        <item>Winsford (WSF)</item>
+        <item>Wishaw (WSH)</item>
+        <item>Witham (WTM)</item>
+        <item>Witley (WTY)</item>
+        <item>Witton (West Midlands) (WTT)</item>
+        <item>Wivelsfield (WVF)</item>
+        <item>Wivenhoe (WIV)</item>
+        <item>Woburn Sands (WOB)</item>
+        <item>Woking (WOK)</item>
+        <item>Wokingham (WKM)</item>
+        <item>Woldingham (WOH)</item>
+        <item>Wolverhampton (WVH)</item>
+        <item>Wolverton (WOL)</item>
+        <item>Wombwell (WOM)</item>
+        <item>Wood End (WDE)</item>
+        <item>Wood Street (WST)</item>
+        <item>Woodbridge (WDB)</item>
+        <item>Woodgrange Park (WGR)</item>
+        <item>Woodhall (WDL)</item>
+        <item>Woodhouse (WDH)</item>
+        <item>Woodlesford (WDS)</item>
+        <item>Woodley (WLY)</item>
+        <item>Woodmansterne (WME)</item>
+        <item>Woodsmoor (WSR)</item>
+        <item>Wool (WOO)</item>
+        <item>Woolston (WLS)</item>
+        <item>Woolwich Arsenal (WWA)</item>
+        <item>Woolwich Dockyard (WWD)</item>
+        <item>Wootton Wawen (WWW)</item>
+        <item>Worcester Foregate Street (WOF)</item>
+        <item>Worcester Park (WCP)</item>
+        <item>Worcester Shrub Hill (WOS)</item>
+        <item>Workington (WKG)</item>
+        <item>Worksop (WRK)</item>
+        <item>Worle (WOR)</item>
+        <item>Worplesdon (WPL)</item>
+        <item>Worstead (WRT)</item>
+        <item>Worthing (WRH)</item>
+        <item>Wrabness (WRB)</item>
+        <item>Wraysbury (WRY)</item>
+        <item>Wrenbury (WRE)</item>
+        <item>Wressle (WRS)</item>
+        <item>Wrexham Central (WXC)</item>
+        <item>Wrexham General (WRX)</item>
+        <item>Wye (WYE)</item>
+        <item>Wylam (WYM)</item>
+        <item>Wylde Green (WYL)</item>
+        <item>Wymondham (WMD)</item>
+        <item>Wythall (WYT)</item>
+        <item>Yalding (YAL)</item>
+        <item>Yardley Wood (YRD)</item>
+        <item>Yarm (YRM)</item>
+        <item>Yate (YAE)</item>
+        <item>Yatton (YAT)</item>
+        <item>Yeoford (YEO)</item>
+        <item>Yeovil Junction (YVJ)</item>
+        <item>Yeovil Pen Mill (YVP)</item>
+        <item>Yetminster (YET)</item>
+        <item>Ynyswen (YNW)</item>
+        <item>Yoker (YOK)</item>
+        <item>York (YRK)</item>
+        <item>Yorton (YRT)</item>
+        <item>Ystrad Mynach (YSM)</item>
+        <item>Ystrad Rhondda (YSR)</item>
     </string-array>
-
-
 </resources>

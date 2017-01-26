@@ -18,7 +18,7 @@ public class AutoCompletePreference extends EditTextPreference {
         super(context, attrs);
         mEditText = new AutoCompleteTextView(context, attrs);
         mEditText.setThreshold(0);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(context, android.R.layout.simple_dropdown_item_1line, StationCodes.STATION_CRS_CODES);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(context, android.R.layout.simple_dropdown_item_1line, StationCodes.STATION_CODES);
         mEditText.setAdapter(adapter);
     }
 

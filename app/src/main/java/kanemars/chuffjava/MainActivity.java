@@ -23,7 +23,7 @@ import android.widget.Toast;
 import kanemars.KaneHuxleyJavaConsumer.Models.Journey;
 import kanemars.KaneHuxleyJavaConsumer.Models.JourneyException;
 
-import static kanemars.KaneHuxleyJavaConsumer.StationCodes.STATION_CRS_CODES;
+import static kanemars.KaneHuxleyJavaConsumer.StationCodes.STATION_CODES;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(myToolbar);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_dropdown_item_1line, STATION_CRS_CODES);
+                android.R.layout.simple_dropdown_item_1line, STATION_CODES);
         source = (AutoCompleteTextView) findViewById(R.id.autoCompleteSource);
         destination = (AutoCompleteTextView) findViewById(R.id.autoCompleteDestination);
         source.setAdapter(adapter);
