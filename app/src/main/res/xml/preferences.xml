@@ -3,7 +3,7 @@
                   android:title="@string/settings"
                   android:summary="Set preferred journeys">
     <kanemars.chuffjava.AutoCompletePreference
-            android:defaultValue="TAP"
+            android:defaultValue="Taplow - TAP"
             android:selectAllOnFocus="true"
             android:singleLine="true"
             android:title="Source station"
@@ -12,7 +12,7 @@
             android:key="edit_text_source"
     />
     <kanemars.chuffjava.AutoCompletePreference
-            android:defaultValue="RDG"
+            android:defaultValue="Reading - RDG"
             android:selectAllOnFocus="true"
             android:singleLine="true"
             android:title="Destination station"
