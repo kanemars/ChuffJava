@@ -17,4 +17,6 @@
     <string name="journey">Journey:</string>
     <string name="to">to</string>
     <string name="settings">Journeys</string>
+    <string name="set">Set</string>
+    <string name="cancel">Cancel</string>
 </resources>

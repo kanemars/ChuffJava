@@ -29,8 +29,6 @@ import static kanemars.KaneHuxleyJavaConsumer.StationCodes.STATION_CODES;
 public class MainActivity extends AppCompatActivity {
 
     static AtomicInteger notificationCounter = new AtomicInteger ();
-    private AutoCompleteTextView source;
-    private AutoCompleteTextView destination;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,13 +37,6 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.chuffToolbar);
         setSupportActionBar(myToolbar);
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_dropdown_item_1line, STATION_CODES);
-        source = (AutoCompleteTextView) findViewById(R.id.autoCompleteSource);
-        destination = (AutoCompleteTextView) findViewById(R.id.autoCompleteDestination);
-        source.setAdapter(adapter);
-        destination.setAdapter(adapter);
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

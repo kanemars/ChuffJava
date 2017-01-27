@@ -22,4 +22,8 @@
             android:key="edit_text_destination"
             android:summary="@string/destination"
     />
+    <kanemars.chuffjava.TimePreference
+            android:key="notification_time"
+            android:title="Daily notification time"/>
+
 </PreferenceScreen>
