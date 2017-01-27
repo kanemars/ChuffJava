@@ -3,10 +3,12 @@ package kanemars.chuffjava;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.preference.EditTextPreference;
+import android.preference.ListPreference;
+import android.preference.Preference;
 import android.support.v7.app.AlertDialog;
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,13 +16,9 @@ import android.view.ViewParent;
 import android.widget.*;
 import kanemars.KaneHuxleyJavaConsumer.StationCodes;
 
-import static android.widget.Toast.*;
-import static kanemars.KaneHuxleyJavaConsumer.StationCodes.STATION_CODES_SET;
-
 public class AutoCompletePreference extends EditTextPreference {
 
     private AutoCompleteTextView autoCompleteTextView = null;
-    String my_var; //keep track!
 
     public AutoCompletePreference(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -80,6 +78,21 @@ public class AutoCompletePreference extends EditTextPreference {
             String value = autoCompleteTextView.getText().toString();
             if (callChangeListener(value)) {
                 setText(value);
+            }
+        }
+    }
+
+    @Override
+    public CharSequence getSummary() {
+        String text = getText();
+        if (TextUtils.isEmpty(text)) {
+            return getEditText().getHint();
+        } else {
+            CharSequence summary = super.getSummary();
+            if (summary != null) {
+                return String.format(summary.toString(), text);
+            } else {
+                return null;
             }
         }
     }

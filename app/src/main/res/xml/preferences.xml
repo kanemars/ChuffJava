@@ -10,6 +10,7 @@
             android:inputType="textCapCharacters"
             android:maxLines="1"
             android:key="edit_text_source"
+            android:summary="@string/source"
     />
     <kanemars.chuffjava.AutoCompletePreference
             android:defaultValue="Reading - RDG"
@@ -19,5 +20,6 @@
             android:inputType="textCapCharacters"
             android:maxLines="1"
             android:key="edit_text_destination"
+            android:summary="@string/destination"
     />
 </PreferenceScreen>
