@@ -2,7 +2,6 @@ package kanemars.chuffjava;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.os.Build;
 import android.preference.DialogPreference;
 import java.util.Calendar;
 
@@ -43,8 +42,8 @@ public class TimePreference extends DialogPreference {
     @Override
     protected void onBindDialogView(View v) {
         super.onBindDialogView(v);
-        picker.setCurrentHour(calendar.get(Calendar.HOUR_OF_DAY));
-        picker.setCurrentMinute(calendar.get(Calendar.MINUTE));
+        picker.setHour(calendar.get(Calendar.HOUR_OF_DAY));
+        picker.setMinute(calendar.get(Calendar.MINUTE));
     }
 
     @Override
@@ -52,8 +51,8 @@ public class TimePreference extends DialogPreference {
         super.onDialogClosed(positiveResult);
 
         if (positiveResult) {
-            calendar.set(Calendar.HOUR_OF_DAY, picker.getCurrentHour());
-            calendar.set(Calendar.MINUTE, picker.getCurrentMinute());
+            calendar.set(Calendar.HOUR_OF_DAY, picker.getHour());
+            calendar.set(Calendar.MINUTE, picker.getMinute());
 
             setSummary(getSummary());
             if (callChangeListener(calendar.getTimeInMillis())) {

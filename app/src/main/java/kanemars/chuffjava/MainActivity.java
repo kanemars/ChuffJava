@@ -63,19 +63,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onStartServiceButtonClick(View view) {
-        try {
-            TimePicker timePicker = (TimePicker) findViewById(R.id.notificationTimePicker);
-
-            Calendar timeToNotify = Calendar.getInstance();
-            timeToNotify.setTimeInMillis(System.currentTimeMillis());
-            timeToNotify.set(Calendar.HOUR_OF_DAY, timePicker.getHour());
-            timeToNotify.set(Calendar.MINUTE, timePicker.getMinute());
-
-            setUpRepeatingNotifaction(getJourney(), timeToNotify);
-            Toast.makeText(getApplicationContext(), "Starting notification at " + timePicker.getHour() + ':' + timePicker.getMinute(), Toast.LENGTH_SHORT).show();
-        } catch (JourneyException ex) {
-            Toast.makeText(getApplicationContext(), ex.getMessage(), Toast.LENGTH_SHORT).show();
-        }
+//        try {
+//            TimePicker timePicker = (TimePicker) findViewById(R.id.notificationTimePicker);
+//
+//            Calendar timeToNotify = Calendar.getInstance();
+//            timeToNotify.setTimeInMillis(System.currentTimeMillis());
+//            timeToNotify.set(Calendar.HOUR_OF_DAY, timePicker.getHour());
+//            timeToNotify.set(Calendar.MINUTE, timePicker.getMinute());
+//
+//            setUpRepeatingNotifaction(getJourney(), timeToNotify);
+//            Toast.makeText(getApplicationContext(), "Starting notification at " + timePicker.getHour() + ':' + timePicker.getMinute(), Toast.LENGTH_SHORT).show();
+//        } catch (JourneyException ex) {
+//            Toast.makeText(getApplicationContext(), ex.getMessage(), Toast.LENGTH_SHORT).show();
+//        }
     }
 
     public void immediatelyShowNext2Trains(View view) {

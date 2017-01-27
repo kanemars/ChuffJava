@@ -1,8 +1,11 @@
 package kanemars.chuffjava;
 
 import android.os.Bundle;
+import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
+import android.preference.SwitchPreference;
+import android.widget.Toast;
 
 public class ChuffPreferenceActivity extends PreferenceActivity {
 
@@ -22,7 +25,18 @@ public class ChuffPreferenceActivity extends PreferenceActivity {
             super.onCreate(savedInstanceState);
             addPreferencesFromResource(R.xml.preferences);
 
+            SwitchPreference switchPreference = (SwitchPreference) findPreference("notification_preference");
+            switchPreference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
 
+                @Override
+                public boolean onPreferenceChange(Preference arg0, Object isNotificationOnObj) {
+                    boolean isNotificationOn = (Boolean) isNotificationOnObj;
+                    if (isNotificationOn) {
+                        Toast.makeText(getActivity(), "Turned on!", Toast.LENGTH_SHORT).show();
+                    }
+                    return true;
+                }
+            });
         }
     }
 }

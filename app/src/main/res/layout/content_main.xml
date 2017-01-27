@@ -29,8 +29,6 @@
             android:id="@+id/startServiceButton"
             android:onClick="onStartServiceButtonClick"
             />
-    <TimePicker
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/notificationTimePicker"/>
+
 
 </LinearLayout>
