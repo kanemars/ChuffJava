@@ -23,6 +23,7 @@ import android.widget.Toast;
 import kanemars.KaneHuxleyJavaConsumer.Models.Journey;
 import kanemars.KaneHuxleyJavaConsumer.Models.JourneyException;
 
+import static kanemars.KaneHuxleyJavaConsumer.StationCodes.GetCrs;
 import static kanemars.KaneHuxleyJavaConsumer.StationCodes.STATION_CODES;
 
 public class MainActivity extends AppCompatActivity {
@@ -109,8 +110,8 @@ public class MainActivity extends AppCompatActivity {
     private Journey getJourney() throws JourneyException {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         String strSource = sharedPreferences.getString("edit_text_source", "TAP");
+        String strDestination = sharedPreferences.getString("edit_text_destination", "RDG");
 
-
-        return new Journey(strSource, destination.getText().toString());
+        return new Journey(GetCrs (strSource), GetCrs (strDestination));
     }
 }
