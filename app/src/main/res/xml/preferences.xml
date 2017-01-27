@@ -27,6 +27,7 @@
             android:title="Daily notification time"/>
     <SwitchPreference
             android:defaultValue="false"
-            android:title="Show notification " android:key="notification_preference"/>
+            android:title="Show notification "
+            android:key="notification_preference"/>
 
 </PreferenceScreen>
