@@ -39,8 +39,6 @@ public class ChuffPreferenceActivity extends PreferenceActivity {
                         String strSource = sharedPreferences.getString("edit_text_source", "Taplow - TAP");
                         String strDestination = sharedPreferences.getString("edit_text_destination", "Reading - RDG");
 
-
-
                         long strNotificationTime = sharedPreferences.getLong( "notification_time", 1232);
                         Calendar timeToNotify = Calendar.getInstance();
                         timeToNotify.setTimeInMillis(strNotificationTime);
