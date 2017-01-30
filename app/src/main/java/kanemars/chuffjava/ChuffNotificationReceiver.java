@@ -17,6 +17,8 @@ import kanemars.KaneHuxleyJavaConsumer.RestfulAsynchTasks;
 import java.util.Calendar;
 import java.util.concurrent.ExecutionException;
 
+import static kanemars.chuffjava.ChuffPreferenceActivity.notificationCounter;
+
 public class ChuffNotificationReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -30,7 +32,7 @@ public class ChuffNotificationReceiver extends BroadcastReceiver {
 
             Spanned msg = ChuffNotificationReceiver.getNext2Departures(journey);
 
-            ChuffNotificationReceiver.ShowChufferNotification(context, journey.toString(), msg.toString(), MainActivity.notificationCounter.getAndIncrement());
+            ChuffNotificationReceiver.ShowChufferNotification(context, journey.toString(), msg.toString(), notificationCounter.getAndIncrement());
         }
     }
 

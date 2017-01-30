@@ -22,13 +22,6 @@
             android:id="@+id/checkTimesButton"
             android:onClick="immediatelyShowNext2Trains"
             />
-    <Button
-            android:text="@string/start_service"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/startServiceButton"
-            android:onClick="onStartServiceButtonClick"
-            />
 
 
 </LinearLayout>
