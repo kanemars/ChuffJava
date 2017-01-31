@@ -36,7 +36,17 @@ public class ChuffPreferenceActivity extends PreferenceActivity {
             addPreferencesFromResource(R.xml.preferences);
 
             SwitchPreference switchPreference = (SwitchPreference) findPreference("notification_preference");
-            switchPreference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+            switchPreference.setOnPreferenceChangeListener(getOnPreferenceChangeListener());
+        }
+
+        private Preference.OnPreferenceChangeListener getOnPreferenceChangeListener() {
+            return new Preference.OnPreferenceChangeListener() {
+
+                AlarmManager alarmMgr;
+                PendingIntent pendingIntent;
+                Intent notificationIntent;
+                Journey journey;
+                String time;
 
                 @Override
                 public boolean onPreferenceChange(Preference preference, Object isNotificationOnObj) {
@@ -51,19 +61,18 @@ public class ChuffPreferenceActivity extends PreferenceActivity {
                         Calendar timeToNotify = Calendar.getInstance();
                         timeToNotify.setTimeInMillis(strNotificationTime);
 
-                        String time = DateFormat.getTimeFormat(getContext()).format(new Date(timeToNotify.getTimeInMillis()));
+                        time = DateFormat.getTimeFormat(getContext()).format(new Date(timeToNotify.getTimeInMillis()));
 
                         try {
-                            Journey journey = new Journey(GetCrs(strSource), GetCrs(strDestination));
+                            journey = new Journey(GetCrs(strSource), GetCrs(strDestination));
 
-                            Intent notificationIntent = new Intent(getActivity(), ChuffNotificationReceiver.class);
+                            notificationIntent = new Intent(getActivity(), ChuffNotificationReceiver.class);
                             notificationIntent.putExtra("journey", journey);
 
-                            PendingIntent pendingIntent = PendingIntent.getBroadcast(getActivity(), notificationCounter.getAndIncrement(), notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+                            pendingIntent = PendingIntent.getBroadcast(getActivity(), notificationCounter.getAndIncrement(), notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-                            AlarmManager alarmMgr = (AlarmManager) preference.getContext().getSystemService(Context.ALARM_SERVICE);
+                            alarmMgr = (AlarmManager) preference.getContext().getSystemService(Context.ALARM_SERVICE);
 
-                            //alarmMgr.set(AlarmManager.RTC_WAKEUP, timeToNotify.getTimeInMillis(), pendingIntent);
                             alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, timeToNotify.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
 
                             Toast.makeText(getActivity(), String.format("Notifications set up for %s to %s at %s",
@@ -72,10 +81,15 @@ public class ChuffPreferenceActivity extends PreferenceActivity {
                         } catch (JourneyException ex) {
                             Toast.makeText(getActivity(), ex.getMessage(), Toast.LENGTH_SHORT).show();
                         }
+                    } else if (alarmMgr != null) {
+                        alarmMgr.cancel(pendingIntent);
+                        Toast.makeText(getActivity(), String.format("Cancelled notifications between %s and %s at %s",
+                                journey.source, journey.destination, time), Toast.LENGTH_LONG).show();
+
                     }
                     return true;
                 }
-            });
+            };
         }
     }
 }

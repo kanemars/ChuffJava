@@ -28,7 +28,6 @@ public class ChuffNotificationReceiver extends BroadcastReceiver {
         if (dayOfWeek != Calendar.SATURDAY && dayOfWeek != Calendar.SUNDAY) {
 
             Journey journey = (Journey) intent.getExtras().getSerializable("journey");
-            //new Journey(intent.getStringExtra("source"), intent.getStringExtra("destination"));
 
             Spanned msg = ChuffNotificationReceiver.getNext2Departures(journey);
 
