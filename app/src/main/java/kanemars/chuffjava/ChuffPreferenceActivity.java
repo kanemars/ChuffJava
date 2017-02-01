@@ -61,7 +61,7 @@ public class ChuffPreferenceActivity extends PreferenceActivity {
                         Calendar timeToNotify = Calendar.getInstance();
                         timeToNotify.setTimeInMillis(strNotificationTime);
 
-                        time = DateFormat.getTimeFormat(getContext()).format(new Date(timeToNotify.getTimeInMillis()));
+                        time = getTimeInHHMM(timeToNotify);
 
                         try {
                             journey = new Journey(GetCrs(strSource), GetCrs(strDestination));
@@ -88,6 +88,10 @@ public class ChuffPreferenceActivity extends PreferenceActivity {
 
                     }
                     return true;
+                }
+
+                private String getTimeInHHMM(Calendar timeToNotify) {
+                    return DateFormat.getTimeFormat(getContext()).format(new Date(timeToNotify.getTimeInMillis()));
                 }
             };
         }

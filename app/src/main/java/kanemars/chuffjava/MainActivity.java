@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.format.DateFormat;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,6 +14,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 import kanemars.KaneHuxleyJavaConsumer.Models.Journey;
 import kanemars.KaneHuxleyJavaConsumer.Models.JourneyException;
+
+import java.util.Calendar;
+import java.util.Date;
 
 import static kanemars.KaneHuxleyJavaConsumer.StationCodes.GetCrs;
 
@@ -78,8 +82,13 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         String strSource = sharedPreferences.getString("edit_text_source", "Taplow - TAP");
         String strDestination = sharedPreferences.getString("edit_text_destination", "Reading - RDG");
+        long strNotificationTime = sharedPreferences.getLong("notification_time", 1234);
+        Calendar timeToNotify = Calendar.getInstance();
+        timeToNotify.setTimeInMillis(strNotificationTime);
+        String hhMM = DateFormat.getTimeFormat(this).format(new Date(timeToNotify.getTimeInMillis()));
+
         TextView textView = (TextView) findViewById(R.id.nextNotificationTextView);
-        textView.setText(String.format("%s to %s will be notified at ", strSource, strDestination));
+        textView.setText(String.format("%s to %s will be notified at %s", strSource, strDestination, hhMM));
 
     }
 }
