@@ -2,9 +2,12 @@ package kanemars.KaneHuxleyJavaConsumer.Models;
 
 import java.io.Serializable;
 
+import static kanemars.KaneHuxleyJavaConsumer.StationCodes.GetCrs;
+
 public class Journey implements Serializable{
     public String source;
     public String destination;
+    public String crsSource, crsDestination;
 
     public Journey(String source, String destination) throws JourneyException {
         if (source.equalsIgnoreCase(destination)) {
@@ -12,6 +15,8 @@ public class Journey implements Serializable{
         }
         this.source = source;
         this.destination = destination;
+        crsSource = GetCrs (source);
+        crsDestination = GetCrs(destination);
     }
 
     @Override

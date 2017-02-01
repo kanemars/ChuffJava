@@ -54,7 +54,7 @@ public class ChuffNotificationReceiver extends BroadcastReceiver {
 
     static Spanned getNext2Departures(Journey journey) {
         try {
-            AsyncTask<String, Integer, Departures> departuresAsyncTask = new RestfulAsynchTasks().execute(journey.source, journey.destination, "2");
+            AsyncTask<String, Integer, Departures> departuresAsyncTask = new RestfulAsynchTasks().execute(journey.crsSource, journey.crsDestination, "2");
             Departures departures = departuresAsyncTask.get();
             if (departures == null) {
                 return fromHtml("Problem connecting to internet");

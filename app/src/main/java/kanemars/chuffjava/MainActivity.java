@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 import kanemars.KaneHuxleyJavaConsumer.Models.Journey;
 import kanemars.KaneHuxleyJavaConsumer.Models.JourneyException;
@@ -24,7 +25,16 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.chuffToolbar);
         setSupportActionBar(myToolbar);
+        showNextNotification();
+
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        showNextNotification();
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -58,9 +68,18 @@ public class MainActivity extends AppCompatActivity {
 
     private Journey getJourney() throws JourneyException {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-        String strSource = sharedPreferences.getString("edit_text_source", "TAP");
-        String strDestination = sharedPreferences.getString("edit_text_destination", "RDG");
+        String strSource = sharedPreferences.getString("edit_text_source", "Taplow - TAP");
+        String strDestination = sharedPreferences.getString("edit_text_destination", "Reading - RDG");
 
-        return new Journey(GetCrs (strSource), GetCrs (strDestination));
+        return new Journey(strSource, strDestination);
+    }
+
+    private void showNextNotification() {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        String strSource = sharedPreferences.getString("edit_text_source", "Taplow - TAP");
+        String strDestination = sharedPreferences.getString("edit_text_destination", "Reading - RDG");
+        TextView textView = (TextView) findViewById(R.id.nextNotificationTextView);
+        textView.setText(String.format("%s to %s will be notified at ", strSource, strDestination));
+
     }
 }
