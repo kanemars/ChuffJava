@@ -79,7 +79,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showNextNotification() {
+        TextView textView = (TextView) findViewById(R.id.nextNotificationTextView);
+
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        boolean notificationOn = sharedPreferences.getBoolean("notification_preference", false);
+        if (!notificationOn) {
+            textView.setText("Notifications are turned off");
+            return;
+        }
+
         String strSource = sharedPreferences.getString("edit_text_source", "Taplow - TAP");
         String strDestination = sharedPreferences.getString("edit_text_destination", "Reading - RDG");
         long strNotificationTime = sharedPreferences.getLong("notification_time", 1234);
@@ -87,7 +95,6 @@ public class MainActivity extends AppCompatActivity {
         timeToNotify.setTimeInMillis(strNotificationTime);
         String hhMM = DateFormat.getTimeFormat(this).format(new Date(timeToNotify.getTimeInMillis()));
 
-        TextView textView = (TextView) findViewById(R.id.nextNotificationTextView);
         textView.setText(String.format("%s to %s will be notified at %s", strSource, strDestination, hhMM));
 
     }
