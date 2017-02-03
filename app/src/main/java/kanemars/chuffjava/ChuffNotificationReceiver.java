@@ -18,6 +18,7 @@ import java.util.Calendar;
 import java.util.concurrent.ExecutionException;
 
 import static kanemars.chuffjava.ChuffPreferenceActivity.notificationCounter;
+import static kanemars.chuffjava.Constants.KEY_JOURNEY;
 
 public class ChuffNotificationReceiver extends BroadcastReceiver {
     @Override
@@ -27,7 +28,7 @@ public class ChuffNotificationReceiver extends BroadcastReceiver {
         int dayOfWeek = today.get(Calendar.DAY_OF_WEEK);
         if (dayOfWeek != Calendar.SATURDAY && dayOfWeek != Calendar.SUNDAY) {
 
-            Journey journey = (Journey) intent.getExtras().getSerializable("journey");
+            Journey journey = (Journey) intent.getExtras().getSerializable(KEY_JOURNEY);
 
             Spanned msg = ChuffNotificationReceiver.getNext2Departures(journey);
 

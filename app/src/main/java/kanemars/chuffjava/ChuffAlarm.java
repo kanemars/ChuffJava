@@ -12,6 +12,7 @@ import java.util.Date;
 
 import static kanemars.KaneHuxleyJavaConsumer.StationCodes.GetCrs;
 import static kanemars.chuffjava.ChuffPreferenceActivity.notificationCounter;
+import static kanemars.chuffjava.Constants.KEY_JOURNEY;
 
 class ChuffAlarm {
 
@@ -21,12 +22,12 @@ class ChuffAlarm {
     static Journey journey;
     static String time;
 
-    static void startAlarm(Context context) throws JourneyException {
+    static void startAlarmIfNotificationOn(Context context) throws JourneyException {
         ChuffPreferences preferences = new ChuffPreferences(context);
         journey = new Journey(GetCrs(preferences.source), GetCrs(preferences.destination));
 
         notificationIntent = new Intent(context, ChuffNotificationReceiver.class);
-        notificationIntent.putExtra("journey", journey);
+        notificationIntent.putExtra(KEY_JOURNEY, journey);
 
         pendingIntent = PendingIntent.getBroadcast(context, notificationCounter.getAndIncrement(), notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
@@ -37,7 +38,7 @@ class ChuffAlarm {
         time =  DateFormat.getTimeFormat(context).format(new Date(preferences.timeToNotify.getTimeInMillis()));
     }
 
-    static boolean stopAlarm () {
+    static boolean stopAlarmIfRunning() {
         if (alarmMgr != null) {
             alarmMgr.cancel(pendingIntent);
             return true;
