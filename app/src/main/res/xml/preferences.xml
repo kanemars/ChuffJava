@@ -9,7 +9,7 @@
             android:title="Source station"
             android:inputType="textCapCharacters"
             android:maxLines="1"
-            android:key="edit_text_source"
+            android:key="source"
             android:summary="@string/source"
     />
     <kanemars.chuffjava.AutoCompletePreference
@@ -19,7 +19,7 @@
             android:title="Destination station"
             android:inputType="textCapCharacters"
             android:maxLines="1"
-            android:key="edit_text_destination"
+            android:key="destination"
             android:summary="@string/destination"
     />
     <kanemars.chuffjava.TimePreference

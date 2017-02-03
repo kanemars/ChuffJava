@@ -17,6 +17,10 @@ import java.util.Date;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import static kanemars.KaneHuxleyJavaConsumer.StationCodes.GetCrs;
+import static kanemars.chuffjava.Constants.KEY_SOURCE;
+import static kanemars.chuffjava.Constants.KEY_DESTINATION;
+import static kanemars.chuffjava.Constants.KEY_NOTIFICATION_TIME;
+import static kanemars.chuffjava.Constants.KEY_NOTIFICATION_ON;
 
 public class ChuffPreferenceActivity extends PreferenceActivity {
 
@@ -35,63 +39,33 @@ public class ChuffPreferenceActivity extends PreferenceActivity {
             super.onCreate(savedInstanceState);
             addPreferencesFromResource(R.xml.preferences);
 
-            SwitchPreference switchPreference = (SwitchPreference) findPreference("notification_preference");
+            SwitchPreference switchPreference = (SwitchPreference) findPreference(KEY_NOTIFICATION_ON);
             switchPreference.setOnPreferenceChangeListener(getOnPreferenceChangeListener());
         }
 
         private Preference.OnPreferenceChangeListener getOnPreferenceChangeListener() {
             return new Preference.OnPreferenceChangeListener() {
 
-                AlarmManager alarmMgr;
-                PendingIntent pendingIntent;
-                Intent notificationIntent;
-                Journey journey;
-                String time;
-
                 @Override
                 public boolean onPreferenceChange(Preference preference, Object isNotificationOnObj) {
                     boolean isNotificationOn = (Boolean) isNotificationOnObj;
                     if (isNotificationOn) {
 
-                        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
-                        String strSource = sharedPreferences.getString("edit_text_source", "Taplow - TAP");
-                        String strDestination = sharedPreferences.getString("edit_text_destination", "Reading - RDG");
-
-                        long strNotificationTime = sharedPreferences.getLong( "notification_time", 1232);
-                        Calendar timeToNotify = Calendar.getInstance();
-                        timeToNotify.setTimeInMillis(strNotificationTime);
-
-                        time = getTimeInHHMM(timeToNotify);
-
                         try {
-                            journey = new Journey(GetCrs(strSource), GetCrs(strDestination));
-
-                            notificationIntent = new Intent(getActivity(), ChuffNotificationReceiver.class);
-                            notificationIntent.putExtra("journey", journey);
-
-                            pendingIntent = PendingIntent.getBroadcast(getActivity(), notificationCounter.getAndIncrement(), notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-
-                            alarmMgr = (AlarmManager) preference.getContext().getSystemService(Context.ALARM_SERVICE);
-
-                            alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, timeToNotify.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
+                            ChuffAlarm.startAlarm(getActivity());
 
                             Toast.makeText(getActivity(), String.format("Notifications set up for %s to %s at %s",
-                                    strSource, strDestination, time), Toast.LENGTH_LONG).show();
+                                    ChuffAlarm.journey.source, ChuffAlarm.journey.destination, ChuffAlarm.time), Toast.LENGTH_LONG).show();
 
                         } catch (JourneyException ex) {
                             Toast.makeText(getActivity(), ex.getMessage(), Toast.LENGTH_SHORT).show();
                         }
-                    } else if (alarmMgr != null) {
-                        alarmMgr.cancel(pendingIntent);
+                    } else if (ChuffAlarm.stopAlarm()) {
                         Toast.makeText(getActivity(), String.format("Cancelled notifications between %s and %s at %s",
-                                journey.source, journey.destination, time), Toast.LENGTH_LONG).show();
+                                ChuffAlarm.journey.source, ChuffAlarm.journey.destination, ChuffAlarm.time), Toast.LENGTH_LONG).show();
 
                     }
                     return true;
-                }
-
-                private String getTimeInHHMM(Calendar timeToNotify) {
-                    return DateFormat.getTimeFormat(getContext()).format(new Date(timeToNotify.getTimeInMillis()));
                 }
             };
         }

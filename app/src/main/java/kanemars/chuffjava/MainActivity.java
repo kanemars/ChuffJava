@@ -18,7 +18,10 @@ import kanemars.KaneHuxleyJavaConsumer.Models.JourneyException;
 import java.util.Calendar;
 import java.util.Date;
 
-import static kanemars.KaneHuxleyJavaConsumer.StationCodes.GetCrs;
+import static kanemars.chuffjava.Constants.KEY_SOURCE;
+import static kanemars.chuffjava.Constants.KEY_DESTINATION;
+import static kanemars.chuffjava.Constants.KEY_NOTIFICATION_TIME;
+import static kanemars.chuffjava.Constants.KEY_NOTIFICATION_ON;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -72,30 +75,19 @@ public class MainActivity extends AppCompatActivity {
 
     private Journey getJourney() throws JourneyException {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-        String strSource = sharedPreferences.getString("edit_text_source", "Taplow - TAP");
-        String strDestination = sharedPreferences.getString("edit_text_destination", "Reading - RDG");
+        String strSource = sharedPreferences.getString(KEY_SOURCE, "Taplow - TAP");
+        String strDestination = sharedPreferences.getString(KEY_DESTINATION, "Reading - RDG");
 
         return new Journey(strSource, strDestination);
     }
 
     private void showNextNotification() {
+        ChuffPreferences preferences = new ChuffPreferences(getBaseContext());
+
         TextView textView = (TextView) findViewById(R.id.nextNotificationTextView);
-
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-        boolean notificationOn = sharedPreferences.getBoolean("notification_preference", false);
-        if (!notificationOn) {
-            textView.setText("Notifications are turned off");
-            return;
-        }
-
-        String strSource = sharedPreferences.getString("edit_text_source", "Taplow - TAP");
-        String strDestination = sharedPreferences.getString("edit_text_destination", "Reading - RDG");
-        long strNotificationTime = sharedPreferences.getLong("notification_time", 1234);
-        Calendar timeToNotify = Calendar.getInstance();
-        timeToNotify.setTimeInMillis(strNotificationTime);
-        String hhMM = DateFormat.getTimeFormat(this).format(new Date(timeToNotify.getTimeInMillis()));
-
-        textView.setText(String.format("%s to %s will be notified at %s", strSource, strDestination, hhMM));
-
+        textView.setText(preferences.notificationOn ? String.format("%s to %s will be notified at %s",
+                preferences.source,
+                preferences.destination,
+                preferences.notificationTime) : "Notifications are turned off");
     }
 }
