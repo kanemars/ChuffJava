@@ -4,7 +4,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/content_main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="fill_parent"
         android:gravity="center_horizontal"
         tools:showIn="@layout/activity_main"
         tools:context="kanemars.chuffjava.MainActivity"
@@ -14,11 +14,19 @@
             android:layout_height="wrap_content"
             android:background="?attr/colorPrimary"
             android:theme="?attr/actionBarTheme"
-            android:minHeight="?attr/actionBarSize" android:id="@+id/chuffToolbar"/>
+            android:minHeight="?attr/actionBarSize" android:id="@+id/chuffToolbar"/>    <Space
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_weight="1" >
+</Space>
     <TextView
             android:gravity="center"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/nextNotificationTextView"/>
+            android:layout_height="wrap_content" android:id="@+id/nextNotificationTextView"/>    <Space
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_weight="1" >
+</Space>
     <Button
             android:text="@string/check_times_now"
             android:layout_width="150dp"
@@ -26,8 +34,20 @@
             android:gravity="center_vertical|center_horizontal"
             android:id="@+id/checkTimesButton"
             android:onClick="immediatelyShowNext2Trains"
-            android:background="@drawable/roundedbutton" android:textAllCaps="false"/>
-
+            android:background="@drawable/roundedbutton" android:textAllCaps="false"/>    <Space
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_weight="1" >
+</Space>
+    <ProgressBar
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar" android:visibility="gone"/>    <Space
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_weight="1" >
+</Space>
 
 
 </LinearLayout>

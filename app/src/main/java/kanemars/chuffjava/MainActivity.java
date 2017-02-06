@@ -10,6 +10,7 @@ import android.text.format.DateFormat;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import kanemars.KaneHuxleyJavaConsumer.Models.Journey;
@@ -34,6 +35,11 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(myToolbar);
         showNextNotification();
 
+        try {
+            ChuffAlarm.startAlarmIfNotificationOn(this);
+        } catch (JourneyException ex) {
+
+        }
     }
 
     @Override
@@ -67,7 +73,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void immediatelyShowNext2Trains(View view) {
         try {
-            Toast.makeText(getApplicationContext(), ChuffNotificationReceiver.getNext2Departures(getJourney()), Toast.LENGTH_LONG).show();
+            ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
+            Toast.makeText(getApplicationContext(), ChuffNotificationReceiver.getNext2Departures(getJourney(), progressBar), Toast.LENGTH_LONG).show();
         } catch (JourneyException ex) {
             Toast.makeText(getApplicationContext(), ex.getMessage(), Toast.LENGTH_LONG).show();
         }

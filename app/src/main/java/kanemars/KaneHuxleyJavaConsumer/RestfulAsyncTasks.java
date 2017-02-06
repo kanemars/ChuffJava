@@ -1,6 +1,8 @@
 package kanemars.KaneHuxleyJavaConsumer;
 
 import android.os.AsyncTask;
+import android.view.View;
+import android.widget.ProgressBar;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import kanemars.KaneHuxleyJavaConsumer.Models.Departures;
@@ -9,7 +11,16 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 
-public class RestfulAsynchTasks extends AsyncTask<String, Integer, Departures>{
+public class RestfulAsyncTasks extends AsyncTask<String, Integer, Departures>{
+
+    private ProgressBar progressBar;
+
+    public RestfulAsyncTasks() {}
+
+    public RestfulAsyncTasks(ProgressBar progressBar) {
+        this.progressBar = progressBar;
+    }
+
     private static String readUrl(String urlString) throws Exception {
         BufferedReader reader = null;
 
@@ -26,6 +37,22 @@ public class RestfulAsynchTasks extends AsyncTask<String, Integer, Departures>{
         } finally {
             if (reader != null)
                 reader.close();
+        }
+    }
+
+    @Override
+    protected void onPreExecute() {
+        super.onPreExecute();
+        if (progressBar != null) {
+            progressBar.setVisibility(View.VISIBLE);
+        }
+    }
+
+    @Override
+    protected void onPostExecute(Departures departures) {
+        super.onPostExecute(departures);
+        if (progressBar != null) {
+            progressBar.setVisibility(View.GONE);
         }
     }
 

@@ -1,5 +1,6 @@
 package kanemars.chuffjava;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.*;
 import android.widget.Toast;
@@ -28,8 +29,20 @@ public class ChuffPreferenceActivity extends PreferenceActivity {
 
             SwitchPreference switchPreference = (SwitchPreference) findPreference(KEY_NOTIFICATION_ON);
             switchPreference.setOnPreferenceChangeListener(getOnPreferenceChangeListener());
+
+            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+            boolean notificationOn = sharedPreferences.getBoolean(KEY_NOTIFICATION_ON, false);
+            setPreferencesEnabled(notificationOn);
         }
 
+        private void setPreferencesEnabled(boolean isNotificationChecked) {
+            AutoCompletePreference source = (AutoCompletePreference) findPreference(KEY_SOURCE);
+            AutoCompletePreference destination = (AutoCompletePreference) findPreference(KEY_DESTINATION);
+            TimePreference timePreference = (TimePreference) findPreference(KEY_NOTIFICATION_TIME);
+            source.setEnabled(!isNotificationChecked);
+            destination.setEnabled(!isNotificationChecked);
+            timePreference.setEnabled(!isNotificationChecked);
+        }
 
         private Preference.OnPreferenceChangeListener getOnPreferenceChangeListener() {
             return new Preference.OnPreferenceChangeListener() {
@@ -57,15 +70,6 @@ public class ChuffPreferenceActivity extends PreferenceActivity {
 
                     }
                     return true;
-                }
-
-                private void setPreferencesEnabled(boolean isEnabled) {
-                    AutoCompletePreference source = (AutoCompletePreference) findPreference(KEY_SOURCE);
-                    AutoCompletePreference destination = (AutoCompletePreference) findPreference(KEY_DESTINATION);
-                    TimePreference timePreference = (TimePreference) findPreference(KEY_NOTIFICATION_TIME);
-                    source.setEnabled(!isEnabled);
-                    destination.setEnabled(!isEnabled);
-                    timePreference.setEnabled(!isEnabled);
                 }
             };
         }

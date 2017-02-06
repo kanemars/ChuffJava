@@ -9,10 +9,11 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.text.Html;
 import android.text.Spanned;
+import android.widget.ProgressBar;
 import kanemars.KaneHuxleyJavaConsumer.Models.Departures;
 import kanemars.KaneHuxleyJavaConsumer.Models.Journey;
 import kanemars.KaneHuxleyJavaConsumer.Models.TrainService;
-import kanemars.KaneHuxleyJavaConsumer.RestfulAsynchTasks;
+import kanemars.KaneHuxleyJavaConsumer.RestfulAsyncTasks;
 
 import java.util.Calendar;
 import java.util.concurrent.ExecutionException;
@@ -30,7 +31,7 @@ public class ChuffNotificationReceiver extends BroadcastReceiver {
 
             Journey journey = (Journey) intent.getExtras().getSerializable(KEY_JOURNEY);
 
-            Spanned msg = ChuffNotificationReceiver.getNext2Departures(journey);
+            Spanned msg = ChuffNotificationReceiver.getNext2Departures(journey, null);
 
             ChuffNotificationReceiver.ShowChufferNotification(context, journey.toString(), msg.toString(), notificationCounter.getAndIncrement());
         }
@@ -53,9 +54,10 @@ public class ChuffNotificationReceiver extends BroadcastReceiver {
         nm.notify(uniqueId, notification);
     }
 
-    static Spanned getNext2Departures(Journey journey) {
+    static Spanned getNext2Departures(Journey journey, ProgressBar progressBar) {
+        AsyncTask<String, Integer, Departures> departuresAsyncTask;
         try {
-            AsyncTask<String, Integer, Departures> departuresAsyncTask = new RestfulAsynchTasks().execute(journey.crsSource, journey.crsDestination, "2");
+            departuresAsyncTask = new RestfulAsyncTasks(progressBar).execute(journey.crsSource, journey.crsDestination, "2");
             Departures departures = departuresAsyncTask.get();
             if (departures == null) {
                 return fromHtml("Problem connecting to internet");

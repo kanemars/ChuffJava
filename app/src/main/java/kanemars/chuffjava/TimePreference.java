@@ -15,7 +15,7 @@ import java.util.GregorianCalendar;
 
 public class TimePreference extends DialogPreference {
     private Calendar calendar;
-    private TimePicker picker = null;
+    private TimePicker timePicker = null;
 
     public TimePreference(Context ctxt) {
         this(ctxt, null);
@@ -35,15 +35,16 @@ public class TimePreference extends DialogPreference {
 
     @Override
     protected View onCreateDialogView() {
-        picker = new TimePicker(getContext());
-        return (picker);
+        timePicker = new TimePicker(getContext());
+        return (timePicker);
     }
 
     @Override
     protected void onBindDialogView(View v) {
         super.onBindDialogView(v);
-        picker.setHour(calendar.get(Calendar.HOUR_OF_DAY));
-        picker.setMinute(calendar.get(Calendar.MINUTE));
+        timePicker.setIs24HourView(true);
+        timePicker.setHour(calendar.get(Calendar.HOUR_OF_DAY));
+        timePicker.setMinute(calendar.get(Calendar.MINUTE));
     }
 
     @Override
@@ -51,8 +52,8 @@ public class TimePreference extends DialogPreference {
         super.onDialogClosed(positiveResult);
 
         if (positiveResult) {
-            calendar.set(Calendar.HOUR_OF_DAY, picker.getHour());
-            calendar.set(Calendar.MINUTE, picker.getMinute());
+            calendar.set(Calendar.HOUR_OF_DAY, timePicker.getHour());
+            calendar.set(Calendar.MINUTE, timePicker.getMinute());
 
             setSummary(getSummary());
             if (callChangeListener(calendar.getTimeInMillis())) {

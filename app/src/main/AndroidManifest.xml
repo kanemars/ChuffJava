@@ -4,7 +4,6 @@
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <application
             android:allowBackup="true"
             android:icon="@drawable/ic_stat_train"
@@ -22,15 +21,9 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".ChuffRebootReceiver">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
-            </intent-filter>
-        </receiver>
-
         <activity android:name=".ChuffPreferenceActivity">
         </activity>
+        <receiver android:name=".ChuffNotificationReceiver"/>
     </application>
 
 </manifest>
