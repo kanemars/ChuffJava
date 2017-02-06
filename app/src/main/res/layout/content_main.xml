@@ -15,17 +15,19 @@
             android:background="?attr/colorPrimary"
             android:theme="?attr/actionBarTheme"
             android:minHeight="?attr/actionBarSize" android:id="@+id/chuffToolbar"/>
-    <Button
-            android:text="@string/check_times_now"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/checkTimesButton"
-            android:onClick="immediatelyShowNext2Trains"
-            />
     <TextView
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/nextNotificationTextView"/>
+    <Button
+            android:text="@string/check_times_now"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:id="@+id/checkTimesButton"
+            android:onClick="immediatelyShowNext2Trains"
+            android:background="@drawable/roundedbutton" android:textAllCaps="false"/>
+
 
 
 </LinearLayout>

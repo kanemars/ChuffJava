@@ -10,7 +10,7 @@
     <string name="pref_destination_station">Destination station</string>
 
     <string name="title_activity_main">Chuff</string>
-    <string name="check_times_now">Check times now</string>
+    <string name="check_times_now">Check&#10;times&#10;now!</string>
     <string name="start_service">Start repeating notifications</string>
     <string name="destination">%s</string>
     <string name="source">%s</string>
