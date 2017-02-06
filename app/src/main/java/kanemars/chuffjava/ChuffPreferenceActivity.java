@@ -7,7 +7,7 @@ import kanemars.KaneHuxleyJavaConsumer.Models.JourneyException;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-import static kanemars.chuffjava.Constants.KEY_NOTIFICATION_ON;
+import static kanemars.chuffjava.Constants.*;
 
 public class ChuffPreferenceActivity extends PreferenceActivity {
 
@@ -30,12 +30,16 @@ public class ChuffPreferenceActivity extends PreferenceActivity {
             switchPreference.setOnPreferenceChangeListener(getOnPreferenceChangeListener());
         }
 
+
         private Preference.OnPreferenceChangeListener getOnPreferenceChangeListener() {
             return new Preference.OnPreferenceChangeListener() {
 
                 @Override
                 public boolean onPreferenceChange(Preference preference, Object isNotificationOnObj) {
                     boolean isNotificationOn = (Boolean) isNotificationOnObj;
+
+                    setPreferencesEnabled(isNotificationOn);
+
                     if (isNotificationOn) {
 
                         try {
@@ -53,6 +57,15 @@ public class ChuffPreferenceActivity extends PreferenceActivity {
 
                     }
                     return true;
+                }
+
+                private void setPreferencesEnabled(boolean isEnabled) {
+                    AutoCompletePreference source = (AutoCompletePreference) findPreference(KEY_SOURCE);
+                    AutoCompletePreference destination = (AutoCompletePreference) findPreference(KEY_DESTINATION);
+                    TimePreference timePreference = (TimePreference) findPreference(KEY_NOTIFICATION_TIME);
+                    source.setEnabled(!isEnabled);
+                    destination.setEnabled(!isEnabled);
+                    timePreference.setEnabled(!isEnabled);
                 }
             };
         }
