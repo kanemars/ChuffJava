@@ -18,13 +18,9 @@ import android.widget.Toast;
 import kanemars.KaneHuxleyJavaConsumer.Models.Journey;
 import kanemars.KaneHuxleyJavaConsumer.Models.JourneyException;
 
-import java.util.Calendar;
-import java.util.Date;
-
+import static kanemars.KaneHuxleyJavaConsumer.StationCodes.GetStation;
 import static kanemars.chuffjava.Constants.KEY_SOURCE;
 import static kanemars.chuffjava.Constants.KEY_DESTINATION;
-import static kanemars.chuffjava.Constants.KEY_NOTIFICATION_TIME;
-import static kanemars.chuffjava.Constants.KEY_NOTIFICATION_ON;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -92,14 +88,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showNextNotification(ChuffPreferences preferences) {
+        String source = GetStation(preferences.source);
+        String destination = GetStation(preferences.destination);
+
+
         TextView textView = (TextView) findViewById(R.id.nextNotificationTextView);
         textView.setText(preferences.notificationOn ? String.format("%s to %s will be notified at %s",
-                preferences.source,
-                preferences.destination,
+                source,
+                destination,
                 preferences.notificationTime) : "Notifications are turned off");
 
         Button checkTimesButton = (Button) findViewById(R.id.checkTimesButton);
-        checkTimesButton.setText(String.format("Check times between %s and %s now", preferences.source, preferences.destination));
+        checkTimesButton.setText(String.format("Check times between %s and %s now", source, destination));
 
     }
 }

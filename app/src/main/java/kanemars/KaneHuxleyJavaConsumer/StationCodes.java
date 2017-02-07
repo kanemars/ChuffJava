@@ -10,6 +10,10 @@ public class StationCodes {
         return stationCode.substring(stationCode.length() - 3);
     }
 
+    public static String GetStation (String stationCode) {
+        return stationCode.substring(0, stationCode.length() - 6);
+    }
+
     public static final String[] STATION_CODES = new String[] {
             "Abbey Wood - ABW",
             "Aber - ABE",
