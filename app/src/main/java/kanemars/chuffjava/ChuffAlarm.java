@@ -23,7 +23,11 @@ class ChuffAlarm {
     static String time;
 
     static void startAlarmIfNotificationOn(Context context) throws JourneyException {
-        ChuffPreferences preferences = new ChuffPreferences(context);
+        startAlarmIfNotificationOn (context, new ChuffPreferences(context));
+    }
+
+
+    static void startAlarmIfNotificationOn(Context context, ChuffPreferences preferences) throws JourneyException {
         journey = new Journey(GetCrs(preferences.source), GetCrs(preferences.destination));
 
         notificationIntent = new Intent(context, ChuffNotificationReceiver.class);

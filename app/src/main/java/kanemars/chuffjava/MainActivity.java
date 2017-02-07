@@ -6,10 +6,12 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Spanned;
 import android.text.format.DateFormat;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,19 +35,20 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.chuffToolbar);
         setSupportActionBar(myToolbar);
-        showNextNotification();
-
+        ChuffPreferences chuffPreferences = new ChuffPreferences(this);
+        showNextNotification(chuffPreferences);
         try {
-            ChuffAlarm.startAlarmIfNotificationOn(this);
+            ChuffAlarm.startAlarmIfNotificationOn(this, chuffPreferences);
         } catch (JourneyException ex) {
 
         }
     }
 
+
     @Override
     protected void onResume() {
         super.onResume();
-        showNextNotification();
+        showNextNotification(new ChuffPreferences(this));
     }
 
     @Override
@@ -73,8 +76,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void immediatelyShowNext2Trains(View view) {
         try {
-            ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
-            Toast.makeText(getApplicationContext(), ChuffNotificationReceiver.getNext2Departures(getJourney(), progressBar), Toast.LENGTH_LONG).show();
+            Spanned departuresHTML = ChuffNotificationReceiver.getNext2Departures(getJourney());
+            Toast.makeText(getApplicationContext(), departuresHTML, Toast.LENGTH_LONG).show();
         } catch (JourneyException ex) {
             Toast.makeText(getApplicationContext(), ex.getMessage(), Toast.LENGTH_LONG).show();
         }
@@ -88,13 +91,15 @@ public class MainActivity extends AppCompatActivity {
         return new Journey(strSource, strDestination);
     }
 
-    private void showNextNotification() {
-        ChuffPreferences preferences = new ChuffPreferences(getBaseContext());
-
+    private void showNextNotification(ChuffPreferences preferences) {
         TextView textView = (TextView) findViewById(R.id.nextNotificationTextView);
         textView.setText(preferences.notificationOn ? String.format("%s to %s will be notified at %s",
                 preferences.source,
                 preferences.destination,
                 preferences.notificationTime) : "Notifications are turned off");
+
+        Button checkTimesButton = (Button) findViewById(R.id.checkTimesButton);
+        checkTimesButton.setText(String.format("Check times between %s and %s now", preferences.source, preferences.destination));
+
     }
 }
