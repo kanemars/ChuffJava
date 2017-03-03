@@ -31,13 +31,13 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.chuffToolbar);
         setSupportActionBar(myToolbar);
-        ChuffPreferences chuffPreferences = new ChuffPreferences(this);
-        showNextNotification(chuffPreferences);
-        try {
-            ChuffAlarm.startAlarmIfNotificationOn(this, chuffPreferences);
-        } catch (JourneyException ex) {
-
-        }
+//        ChuffPreferences chuffPreferences = new ChuffPreferences(this);
+//        showNextNotification(chuffPreferences);
+//        try {
+//            ChuffAlarm.startAlarmIfNotificationOn(this, chuffPreferences);
+//        } catch (JourneyException ex) {
+//
+//        }
     }
 
 

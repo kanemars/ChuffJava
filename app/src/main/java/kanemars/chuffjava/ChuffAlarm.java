@@ -16,9 +16,9 @@ import static kanemars.chuffjava.Constants.KEY_JOURNEY;
 
 class ChuffAlarm {
 
-    static AlarmManager alarmMgr;
-    static PendingIntent pendingIntent;
-    static Intent notificationIntent;
+    private static AlarmManager alarmMgr;
+    private static PendingIntent pendingIntent;
+    private static Intent notificationIntent;
     static Journey journey;
     static String time;
 
@@ -27,7 +27,7 @@ class ChuffAlarm {
     }
 
 
-    static void startAlarmIfNotificationOn(Context context, ChuffPreferences preferences) throws JourneyException {
+    private static void startAlarmIfNotificationOn(Context context, ChuffPreferences preferences) throws JourneyException {
         journey = new Journey(GetCrs(preferences.source), GetCrs(preferences.destination));
 
         notificationIntent = new Intent(context, ChuffNotificationReceiver.class);
