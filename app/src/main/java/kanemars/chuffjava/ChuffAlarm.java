@@ -19,7 +19,7 @@ class ChuffAlarm {
     private static AlarmManager alarmMgr;
     private static PendingIntent pendingIntent;
     private static Intent notificationIntent;
-    static Journey journey;
+    static Journey journey = new Journey("Taplow - TAP", "Reading - RDG");
     static String time;
 
     static void startAlarmIfNotificationOn(Context context) throws JourneyException {
@@ -28,14 +28,17 @@ class ChuffAlarm {
 
 
     private static void startAlarmIfNotificationOn(Context context, ChuffPreferences preferences) throws JourneyException {
-        journey = new Journey(GetCrs(preferences.source), GetCrs(preferences.destination));
-
-        notificationIntent = new Intent(context, ChuffNotificationReceiver.class);
+        journey.setJourney(preferences.source, preferences.destination);
+        if (notificationIntent == null) {
+            notificationIntent = new Intent(context, ChuffNotificationReceiver.class);
+        }
         notificationIntent.putExtra(KEY_JOURNEY, journey);
 
         pendingIntent = PendingIntent.getBroadcast(context, notificationCounter.getAndIncrement(), notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-        alarmMgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+        if (alarmMgr == null) {
+            alarmMgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+        }
 
         alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, preferences.timeToNotify.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
 
