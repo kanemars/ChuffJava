@@ -14,9 +14,6 @@ public class Journey implements Serializable{
     }
 
     public void setJourney(String source, String destination) {
-//        if (source.equalsIgnoreCase(destination)) {
-//            throw new JourneyException("Source and destination should be different");
-//        }
         this.source = source;
         this.destination = destination;
         crsSource = GetCrs (source);

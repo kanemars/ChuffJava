@@ -24,6 +24,8 @@ import static kanemars.chuffjava.Constants.KEY_DESTINATION;
 
 public class MainActivity extends AppCompatActivity {
 
+    private SharedPreferences.OnSharedPreferenceChangeListener listener;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,13 +33,15 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.chuffToolbar);
         setSupportActionBar(myToolbar);
-//        ChuffPreferences chuffPreferences = new ChuffPreferences(this);
-//        showNextNotification(chuffPreferences);
-//        try {
-//            ChuffAlarm.startAlarmIfNotificationOn(this, chuffPreferences);
-//        } catch (JourneyException ex) {
-//
-//        }
+
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        listener = new SharedPreferences.OnSharedPreferenceChangeListener() {
+            public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
+                Toast.makeText(getApplicationContext(), "you changed something!", Toast.LENGTH_SHORT).show();
+            }
+        };
+        sharedPreferences.registerOnSharedPreferenceChangeListener(listener);
+
     }
 
 
@@ -80,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private Journey getJourney() throws JourneyException {
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         String strSource = sharedPreferences.getString(KEY_SOURCE, "Taplow - TAP");
         String strDestination = sharedPreferences.getString(KEY_DESTINATION, "Reading - RDG");
 
