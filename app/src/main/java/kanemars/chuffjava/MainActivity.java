@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    private void showNextNotification(/*ChuffPreferences preferences*/) {
+    private void showNextNotification() {
         Journey journey = getJourney();
         boolean notificationOn = chuffPreferences.getBoolean(KEY_NOTIFICATION_ON, false);
         TextView textView = (TextView) findViewById(R.id.nextNotificationTextView);

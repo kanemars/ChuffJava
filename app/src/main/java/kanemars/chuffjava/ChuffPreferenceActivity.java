@@ -50,25 +50,9 @@ public class ChuffPreferenceActivity extends PreferenceActivity {
                 @Override
                 public boolean onPreferenceChange(Preference preference, Object isNotificationOnObj) {
                     boolean isNotificationOn = (Boolean) isNotificationOnObj;
-
                     setPreferencesEnabled(isNotificationOn);
-//
-//                    if (isNotificationOn) {
-//
-//                        try {
-//                            ChuffAlarm.startAlarmIfNotificationOn(getActivity());
-//
-//                            Toast.makeText(getActivity(), String.format("Notifications set up for %s to %s at %s",
-//                                    ChuffAlarm.journey.source, ChuffAlarm.journey.destination, ChuffAlarm.time), Toast.LENGTH_LONG).show();
-//
-//                        } catch (JourneyException ex) {
-//                            Toast.makeText(getActivity(), ex.getMessage(), Toast.LENGTH_SHORT).show();
-//                        }
-//                    } else if (ChuffAlarm.stopAlarmIfRunning()) {
-//                        Toast.makeText(getActivity(), String.format("Cancelled notifications between %s and %s at %s",
-//                                ChuffAlarm.journey.source, ChuffAlarm.journey.destination, ChuffAlarm.time), Toast.LENGTH_LONG).show();
-//
-//                    }
+                    String message = "Notifications will be turned " + (isNotificationOn ? "on" : "off");
+                    Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
                     return true;
                 }
             };
