@@ -35,7 +35,7 @@ public class ChuffPreferenceActivity extends PreferenceActivity {
             setPreferencesEnabled(notificationOn);
         }
 
-        private void setPreferencesEnabled(boolean isNotificationChecked) {
+        void setPreferencesEnabled(boolean isNotificationChecked) {
             AutoCompletePreference source = (AutoCompletePreference) findPreference(KEY_SOURCE);
             AutoCompletePreference destination = (AutoCompletePreference) findPreference(KEY_DESTINATION);
             TimePreference timePreference = (TimePreference) findPreference(KEY_NOTIFICATION_TIME);
@@ -52,23 +52,23 @@ public class ChuffPreferenceActivity extends PreferenceActivity {
                     boolean isNotificationOn = (Boolean) isNotificationOnObj;
 
                     setPreferencesEnabled(isNotificationOn);
-
-                    if (isNotificationOn) {
-
-                        try {
-                            ChuffAlarm.startAlarmIfNotificationOn(getActivity());
-
-                            Toast.makeText(getActivity(), String.format("Notifications set up for %s to %s at %s",
-                                    ChuffAlarm.journey.source, ChuffAlarm.journey.destination, ChuffAlarm.time), Toast.LENGTH_LONG).show();
-
-                        } catch (JourneyException ex) {
-                            Toast.makeText(getActivity(), ex.getMessage(), Toast.LENGTH_SHORT).show();
-                        }
-                    } else if (ChuffAlarm.stopAlarmIfRunning()) {
-                        Toast.makeText(getActivity(), String.format("Cancelled notifications between %s and %s at %s",
-                                ChuffAlarm.journey.source, ChuffAlarm.journey.destination, ChuffAlarm.time), Toast.LENGTH_LONG).show();
-
-                    }
+//
+//                    if (isNotificationOn) {
+//
+//                        try {
+//                            ChuffAlarm.startAlarmIfNotificationOn(getActivity());
+//
+//                            Toast.makeText(getActivity(), String.format("Notifications set up for %s to %s at %s",
+//                                    ChuffAlarm.journey.source, ChuffAlarm.journey.destination, ChuffAlarm.time), Toast.LENGTH_LONG).show();
+//
+//                        } catch (JourneyException ex) {
+//                            Toast.makeText(getActivity(), ex.getMessage(), Toast.LENGTH_SHORT).show();
+//                        }
+//                    } else if (ChuffAlarm.stopAlarmIfRunning()) {
+//                        Toast.makeText(getActivity(), String.format("Cancelled notifications between %s and %s at %s",
+//                                ChuffAlarm.journey.source, ChuffAlarm.journey.destination, ChuffAlarm.time), Toast.LENGTH_LONG).show();
+//
+//                    }
                     return true;
                 }
             };
