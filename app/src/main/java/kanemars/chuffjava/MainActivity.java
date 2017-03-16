@@ -1,10 +1,8 @@
 package kanemars.chuffjava;
 
 import android.app.AlarmManager;
-import android.app.AlertDialog;
 import android.app.PendingIntent;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -49,28 +47,44 @@ public class MainActivity extends AppCompatActivity {
 
         // http://stackoverflow.com/questions/2542938/sharedpreferences-onsharedpreferencechangelistener-not-being-called-consistently
         chuffPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+
+        // Start notifications if this has been saved
+        boolean notificationOn = chuffPreferences.getBoolean(KEY_NOTIFICATION_ON, false);
+        if (notificationOn) {
+            startNotifications(chuffPreferences);
+        }
+
         listener = new SharedPreferences.OnSharedPreferenceChangeListener() {
             public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
                 if (key.equals(KEY_NOTIFICATION_ON)) {
                     boolean notificationOn = prefs.getBoolean(KEY_NOTIFICATION_ON, false);
                     if (notificationOn) {
-                        notificationIntent.putExtra(KEY_JOURNEY, getJourney());
-                        pendingIntent = PendingIntent.getBroadcast(getBaseContext(), notificationCounter.getAndIncrement(), notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-                        alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, getNotificationTime(prefs), AlarmManager.INTERVAL_DAY, pendingIntent);
+                        startNotifications (prefs);
                     } else {
-                        alarmMgr.cancel(pendingIntent);
+                        stopNotifications ();
                     }
                 }
             }
         };
         chuffPreferences.registerOnSharedPreferenceChangeListener(listener);
-        showNextNotification();
+
+        showNotificationStatus();
+    }
+
+    private void startNotifications (SharedPreferences prefs) {
+        notificationIntent.putExtra(KEY_JOURNEY, getJourney());
+        pendingIntent = PendingIntent.getBroadcast(getBaseContext(), notificationCounter.getAndIncrement(), notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, getNotificationTime(prefs), AlarmManager.INTERVAL_DAY, pendingIntent);
+    }
+
+    private void stopNotifications () {
+        alarmMgr.cancel(pendingIntent);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        showNextNotification();
+        showNotificationStatus();
     }
 
     private long getNotificationTime (SharedPreferences prefs) {
@@ -118,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    private void showNextNotification() {
+    private void showNotificationStatus() {
         Journey journey = getJourney();
         boolean notificationOn = chuffPreferences.getBoolean(KEY_NOTIFICATION_ON, false);
         TextView textView = (TextView) findViewById(R.id.nextNotificationTextView);
