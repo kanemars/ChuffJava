@@ -21,11 +21,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
-        <activity android:name=".ChuffPreferenceActivity">
-        </activity>
+        <activity android:name=".ChuffPreferenceActivity"/>
         <receiver android:name=".ChuffNotificationReceiver"/>
-        <receiver android:name=".BootReceiver">
+        <receiver android:name=".StartMainActivityAtBootReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <category android:name="android.intent.category.HOME" />

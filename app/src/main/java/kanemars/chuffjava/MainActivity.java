@@ -1,13 +1,14 @@
 package kanemars.chuffjava;
 
 import android.app.AlarmManager;
+import android.app.AlertDialog;
 import android.app.PendingIntent;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.preference.SwitchPreference;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Spanned;
@@ -16,16 +17,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import kanemars.KaneHuxleyJavaConsumer.Models.Journey;
-import kanemars.KaneHuxleyJavaConsumer.Models.JourneyException;
 
 import java.util.Calendar;
 import java.util.Date;
 
-import static kanemars.KaneHuxleyJavaConsumer.StationCodes.GetStation;
 import static kanemars.chuffjava.ChuffPreferenceActivity.notificationCounter;
 import static kanemars.chuffjava.Constants.*;
 
@@ -68,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
         chuffPreferences.registerOnSharedPreferenceChangeListener(listener);
         showNextNotification();
     }
-
 
     @Override
     protected void onResume() {
