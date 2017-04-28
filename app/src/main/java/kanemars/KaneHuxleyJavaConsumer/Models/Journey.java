@@ -1,5 +1,7 @@
 package kanemars.KaneHuxleyJavaConsumer.Models;
 
+import kanemars.KaneHuxleyJavaConsumer.StationCodes;
+
 import java.io.Serializable;
 
 import static kanemars.KaneHuxleyJavaConsumer.StationCodes.GetCrs;
@@ -22,7 +24,7 @@ public class Journey implements Serializable{
 
     @Override
     public String toString() {
-        return source + " to " + destination;
+        return StationCodes.GetStation(source) + " to " + StationCodes.GetStation(destination);
     }
 }
 

@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import kanemars.KaneHuxleyJavaConsumer.Models.Journey;
+import kanemars.KaneHuxleyJavaConsumer.StationCodes;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -95,7 +96,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private Journey getJourney() {
-        //SharedPreferences chuffPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         String strSource = chuffPreferences.getString(KEY_SOURCE, "Taplow - TAP");
         String strDestination = chuffPreferences.getString(KEY_DESTINATION, "Reading - RDG");
 
@@ -135,13 +135,12 @@ public class MainActivity extends AppCompatActivity {
         Journey journey = getJourney();
         boolean notificationOn = chuffPreferences.getBoolean(KEY_NOTIFICATION_ON, false);
         TextView textView = (TextView) findViewById(R.id.nextNotificationTextView);
-        textView.setText(notificationOn ? String.format("%s to %s will be notified at %s",
-                journey.source,
-                journey.destination,
+        textView.setText(notificationOn ? String.format("%s will be notified at %s",
+                journey,
                 DateFormat.getTimeFormat(this).format(new Date(getNotificationTime (chuffPreferences))))
                 : "Notifications are turned off");
 
         Button checkTimesButton = (Button) findViewById(R.id.checkTimesButton);
-        checkTimesButton.setText(String.format("Check times between %s and %s now", journey.source, journey.destination));
+        checkTimesButton.setText(String.format("Check times from %s now", journey));
     }
 }
