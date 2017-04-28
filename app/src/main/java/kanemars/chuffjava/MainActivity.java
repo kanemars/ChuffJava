@@ -127,10 +127,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void immediatelyShowNext2Trains(View view) {
         Spanned departuresHTML = ChuffNotificationReceiver.getNext2Departures(getJourney());
-        Toast.makeText(getApplicationContext(), departuresHTML, Toast.LENGTH_LONG).show();
+        TextView textView = (TextView) findViewById(R.id.trainTimesTextView);
+        textView.setText(departuresHTML);
     }
-
-
 
     private void showNotificationStatus() {
         Journey journey = getJourney();
@@ -144,6 +143,5 @@ public class MainActivity extends AppCompatActivity {
 
         Button checkTimesButton = (Button) findViewById(R.id.checkTimesButton);
         checkTimesButton.setText(String.format("Check times between %s and %s now", journey.source, journey.destination));
-
     }
 }
