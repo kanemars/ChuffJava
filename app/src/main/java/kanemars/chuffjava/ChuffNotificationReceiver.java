@@ -44,7 +44,7 @@ public class ChuffNotificationReceiver extends BroadcastReceiver {
         Notification notification =
                 new Notification.Builder(context).setContentTitle(title)
                         .setContentText(message)
-                        .setSmallIcon(R.drawable.ic_stat_train)
+                        .setSmallIcon(R.drawable.ic_chuff_me)
                         .setDefaults(Notification.DEFAULT_ALL)
                         .setContentIntent(PendingIntent.getActivity(context, 0, resultIntent, PendingIntent.FLAG_CANCEL_CURRENT))
                         .build();
