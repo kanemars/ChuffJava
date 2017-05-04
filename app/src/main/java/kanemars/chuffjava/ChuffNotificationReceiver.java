@@ -6,6 +6,7 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.text.Html;
 import android.text.Spanned;
@@ -45,7 +46,8 @@ public class ChuffNotificationReceiver extends BroadcastReceiver {
                 new Notification.Builder(context).setContentTitle(title)
                         .setContentText(message)
                         .setSmallIcon(R.drawable.ic_chuff_me)
-                        .setDefaults(Notification.DEFAULT_ALL)
+                        .setDefaults(Notification.DEFAULT_LIGHTS | Notification.DEFAULT_VIBRATE)
+                        .setSound(Uri.parse("android.resource://" + context.getPackageName() + "/" + R.raw.thomas_whistle))
                         .setContentIntent(PendingIntent.getActivity(context, 0, resultIntent, PendingIntent.FLAG_CANCEL_CURRENT))
                         .build();
 
