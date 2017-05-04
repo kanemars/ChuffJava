@@ -4,7 +4,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.*;
 import android.widget.Toast;
-import kanemars.KaneHuxleyJavaConsumer.Models.JourneyException;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -32,10 +31,10 @@ public class ChuffPreferenceActivity extends PreferenceActivity {
 
             SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
             boolean notificationOn = sharedPreferences.getBoolean(KEY_NOTIFICATION_ON, false);
-            setPreferencesEnabled(notificationOn);
+            setPreferences(notificationOn);
         }
 
-        void setPreferencesEnabled(boolean isNotificationChecked) {
+        void setPreferences(boolean isNotificationChecked) {
             AutoCompletePreference source = (AutoCompletePreference) findPreference(KEY_SOURCE);
             AutoCompletePreference destination = (AutoCompletePreference) findPreference(KEY_DESTINATION);
             TimePreference timePreference = (TimePreference) findPreference(KEY_NOTIFICATION_TIME);
@@ -50,8 +49,8 @@ public class ChuffPreferenceActivity extends PreferenceActivity {
                 @Override
                 public boolean onPreferenceChange(Preference preference, Object isNotificationOnObj) {
                     boolean isNotificationOn = (Boolean) isNotificationOnObj;
-                    setPreferencesEnabled(isNotificationOn);
-                    String message = "Notifications will be turned " + (isNotificationOn ? "on" : "off");
+                    setPreferences(isNotificationOn);
+                    String message = "Notifications are now turned " + (isNotificationOn ? "on" : "off");
                     Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
                     return true;
                 }

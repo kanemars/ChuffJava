@@ -60,7 +60,7 @@ public class ChuffNotificationReceiver extends BroadcastReceiver {
             departuresAsyncTask = new GetDeparturesAsyncTask().execute(journey.crsSource, journey.crsDestination, "2");
             Departures departures = departuresAsyncTask.get();
             if (departures == null) {
-                return fromHtml("Problem connecting to internet");
+                return fromHtml("Problem connecting to internet, try turning off WIFI");
             }
             TrainService first = departures.trainServices.get(0);
             TrainService second = departures.trainServices.get(1);

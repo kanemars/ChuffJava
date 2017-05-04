@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import kanemars.KaneHuxleyJavaConsumer.Models.Journey;
@@ -74,7 +75,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void startNotifications (SharedPreferences prefs) {
         notificationIntent.putExtra(KEY_JOURNEY, getJourney());
-        pendingIntent = PendingIntent.getBroadcast(getBaseContext(), notificationCounter.getAndIncrement(), notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        //pendingIntent = PendingIntent.getBroadcast(getBaseContext(), notificationCounter.getAndIncrement(), notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        pendingIntent = PendingIntent.getBroadcast(getBaseContext(), 0, notificationIntent, PendingIntent.FLAG_ONE_SHOT);
         alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, getNotificationTime(prefs), AlarmManager.INTERVAL_DAY, pendingIntent);
     }
 
@@ -126,8 +128,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void immediatelyShowNext2Trains(View view) {
+        ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar1);
+        progressBar.setVisibility(View.VISIBLE);
         Spanned departuresHTML = ChuffNotificationReceiver.getNext2Departures(getJourney());
         TextView textView = (TextView) findViewById(R.id.trainTimesTextView);
+        progressBar.setVisibility(View.INVISIBLE);
         textView.setText(departuresHTML);
     }
 
