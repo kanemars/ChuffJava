@@ -19,8 +19,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import kanemars.KaneHuxleyJavaConsumer.Models.Journey;
-import kanemars.KaneHuxleyJavaConsumer.StationCodes;
-
+import android.util.Log;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -34,11 +33,14 @@ public class MainActivity extends AppCompatActivity {
     private PendingIntent pendingIntent;
     private Intent notificationIntent;
     private SharedPreferences chuffPreferences;
+    private static final String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Log.i(TAG, "Chuff creating!");
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.chuffToolbar);
         setSupportActionBar(myToolbar);

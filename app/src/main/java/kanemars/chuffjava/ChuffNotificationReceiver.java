@@ -8,7 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.text.Html;
+import android.util.Log;
 import android.text.Spanned;
 import android.widget.ProgressBar;
 import kanemars.KaneHuxleyJavaConsumer.Models.Departures;
@@ -23,8 +23,13 @@ import static kanemars.chuffjava.ChuffPreferenceActivity.notificationCounter;
 import static kanemars.chuffjava.Constants.KEY_JOURNEY;
 
 public class ChuffNotificationReceiver extends BroadcastReceiver {
+
+    private static final String TAG = "NotificationReceiver";
+
     @Override
     public void onReceive(Context context, Intent intent) {
+        Log.i(TAG, "onReceive called with context " + context.getPackageCodePath() + "; " + context.getPackageName());
+
         Calendar today = Calendar.getInstance();
         today.setTimeInMillis(System.currentTimeMillis());
         int dayOfWeek = today.get(Calendar.DAY_OF_WEEK);
