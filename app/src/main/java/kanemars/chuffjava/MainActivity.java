@@ -130,10 +130,17 @@ public class MainActivity extends AppCompatActivity {
     public void immediatelyShowNext2Trains(View view) {
         ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar1);
         progressBar.setVisibility(View.VISIBLE);
-        Spanned departuresHTML = ChuffNotificationReceiver.getNext2Departures(getJourney());
+
         TextView textView = (TextView) findViewById(R.id.trainTimesTextView);
+
+        try {
+            NextTwoDepartures departures = ChuffNotificationReceiver.getNext2Departures(getJourney());
+            textView.setText(departures.toSpanned());
+        } catch (Exception e) {
+            textView.setText(e.getMessage());
+        }
+
         progressBar.setVisibility(View.INVISIBLE);
-        textView.setText(departuresHTML);
     }
 
     private void showNotificationStatus() {

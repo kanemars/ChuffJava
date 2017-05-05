@@ -32,54 +32,45 @@ public class ChuffNotificationReceiver extends BroadcastReceiver {
 
             Journey journey = (Journey) intent.getExtras().getSerializable(KEY_JOURNEY);
 
-            Spanned msg = ChuffNotificationReceiver.getNext2Departures(journey);
-
-            ChuffNotificationReceiver.ShowChufferNotification(context, journey.toString(), msg.toString(), notificationCounter.getAndIncrement());
+            try {
+                NextTwoDepartures departures = ChuffNotificationReceiver.getNext2Departures(journey);
+                if (departures.areTrainsOnTime()) {
+                    ChuffNotificationReceiver.ShowChufferNotification(context, journey.toString(), departures.toString(), notificationCounter.getAndIncrement(), R.raw.thomas_whistle);
+                } else {
+                    ChuffNotificationReceiver.ShowChufferNotification(context, journey.toString(), departures.toString(), notificationCounter.getAndIncrement(), R.raw.exhale);
+                }
+            } catch (Exception e) {
+                ChuffNotificationReceiver.ShowChufferNotification(context, journey.toString(), e.getMessage(), notificationCounter.getAndIncrement(), R.raw.exhale);
+            }
         }
     }
 
-    private static void ShowChufferNotification(Context context, String title, String message, int uniqueId) {
+    private static void ShowChufferNotification(Context context, String journey, String message, int uniqueId, int sound) {
         Intent resultIntent = new Intent(context, MainActivity.class);
         resultIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
         Notification notification =
-                new Notification.Builder(context).setContentTitle(title)
+                new Notification.Builder(context).setContentTitle(journey)
                         .setContentText(message)
                         .setSmallIcon(R.drawable.ic_chuff_me)
                         .setDefaults(Notification.DEFAULT_LIGHTS | Notification.DEFAULT_VIBRATE)
-                        .setSound(Uri.parse("android.resource://" + context.getPackageName() + "/" + R.raw.thomas_whistle))
+                        .setSound(Uri.parse("android.resource://" + context.getPackageName() + "/" + sound))
                         .setContentIntent(PendingIntent.getActivity(context, 0, resultIntent, PendingIntent.FLAG_CANCEL_CURRENT))
                         .build();
 
-        NotificationManager nm = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+        NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
-        nm.notify(uniqueId, notification);
+        notificationManager.notify(uniqueId, notification);
     }
 
-    static Spanned getNext2Departures(Journey journey) {
+    static NextTwoDepartures getNext2Departures(Journey journey) throws Exception {
         AsyncTask<String, Integer, Departures> departuresAsyncTask;
-        try {
-            departuresAsyncTask = new GetDeparturesAsyncTask().execute(journey.crsSource, journey.crsDestination, "2");
-            Departures departures = departuresAsyncTask.get();
-            if (departures == null) {
-                return fromHtml("Problem connecting to internet, try turning off WIFI");
-            }
-            TrainService first = departures.trainServices.get(0);
-            TrainService second = departures.trainServices.get(1);
-            return fromHtml(String.format("<b>%s</b> %s; <b>%s</b> %s", first.std, first.etd, second.std, second.etd));
-        } catch (InterruptedException | ExecutionException e) {
-            return fromHtml(e.toString());
+        departuresAsyncTask = new GetDeparturesAsyncTask().execute(journey.crsSource, journey.crsDestination, "2");
+        Departures departures = departuresAsyncTask.get();
+        if (departures == null) {
+            throw new Exception("Problem connecting to internet, try turning off WIFI");
         }
-    }
 
-    @SuppressWarnings("deprecation")
-    private static Spanned fromHtml(String html){
-        Spanned result;
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-            result = Html.fromHtml(html,Html.FROM_HTML_MODE_LEGACY);
-        } else {
-            result = Html.fromHtml(html);
-        }
-        return result;
+        return new NextTwoDepartures (departures.trainServices.get(0), departures.trainServices.get(1));
     }
 }
