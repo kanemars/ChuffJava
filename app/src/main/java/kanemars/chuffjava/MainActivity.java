@@ -9,21 +9,18 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.Spanned;
 import android.text.format.DateFormat;
+import android.text.method.ScrollingMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 import kanemars.KaneHuxleyJavaConsumer.Models.Journey;
-import android.util.Log;
+
 import java.util.Calendar;
 import java.util.Date;
 
-import static kanemars.chuffjava.ChuffPreferenceActivity.notificationCounter;
 import static kanemars.chuffjava.Constants.*;
 
 public class MainActivity extends AppCompatActivity {
@@ -33,14 +30,15 @@ public class MainActivity extends AppCompatActivity {
     private PendingIntent pendingIntent;
     private Intent notificationIntent;
     private SharedPreferences chuffPreferences;
-    private static final String TAG = "MainActivity";
+    private static TextView logTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        logTextView = (TextView) findViewById(R.id.logTextView);
 
-        Log.i(TAG, "Chuff creating!");
+        log("Chuff creating!");
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.chuffToolbar);
         setSupportActionBar(myToolbar);
@@ -73,6 +71,11 @@ public class MainActivity extends AppCompatActivity {
         chuffPreferences.registerOnSharedPreferenceChangeListener(listener);
 
         showNotificationStatus();
+    }
+
+    static void log(String message) {
+        logTextView.setMovementMethod(new ScrollingMovementMethod());
+        logTextView.append(message);
     }
 
     private void startNotifications (SharedPreferences prefs) {
@@ -130,8 +133,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void immediatelyShowNext2Trains(View view) {
-        ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar1);
-        progressBar.setVisibility(View.VISIBLE);
+        log("Button pressed");
 
         TextView textView = (TextView) findViewById(R.id.trainTimesTextView);
 
@@ -141,8 +143,6 @@ public class MainActivity extends AppCompatActivity {
         } catch (Exception e) {
             textView.setText(e.getMessage());
         }
-
-        progressBar.setVisibility(View.INVISIBLE);
     }
 
     private void showNotificationStatus() {

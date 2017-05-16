@@ -51,11 +51,9 @@ public class AutoCompletePreference extends EditTextPreference {
                     }
 
                     autoCompleteTextView.setText("");
-
                 }
             }
         });
-
     }
 
     @Override
