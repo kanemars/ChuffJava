@@ -29,7 +29,9 @@ public class ChuffPreferenceActivity extends PreferenceActivity {
             SwitchPreference switchPreference = (SwitchPreference) findPreference(KEY_NOTIFICATION_ON);
             switchPreference.setOnPreferenceChangeListener(getOnPreferenceChangeListener());
 
-            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+//            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+
             boolean notificationOn = sharedPreferences.getBoolean(KEY_NOTIFICATION_ON, false);
             setPreferences(notificationOn);
         }

@@ -8,14 +8,13 @@ import java.util.Calendar;
 import android.text.format.DateFormat;
 import android.util.AttributeSet;
 import android.view.View;
-import android.widget.TimePicker;
 
 import java.util.Date;
 import java.util.GregorianCalendar;
 
 public class TimePreference extends DialogPreference {
     private Calendar calendar;
-    private TimePicker timePicker = null;
+    private NotificationTimePicker timePicker = null;
 
     public TimePreference(Context ctxt) {
         this(ctxt, null);
@@ -35,7 +34,7 @@ public class TimePreference extends DialogPreference {
 
     @Override
     protected View onCreateDialogView() {
-        timePicker = new TimePicker(getContext());
+        timePicker = new NotificationTimePicker(getContext());
         return (timePicker);
     }
 

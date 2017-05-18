@@ -5,6 +5,8 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
@@ -75,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
     static void log(String message) {
         logTextView.setMovementMethod(new ScrollingMovementMethod());
-        logTextView.append(message);
+        logTextView.append(message + System.getProperty("line.separator"));
     }
 
     private void startNotifications (SharedPreferences prefs) {
@@ -156,5 +158,11 @@ public class MainActivity extends AppCompatActivity {
 
         Button checkTimesButton = (Button) findViewById(R.id.checkTimesButton);
         checkTimesButton.setText(String.format("Check times from %s now", journey));
+    }
+
+    public boolean hasNetworkConnectivity(Context context) {
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+        return netInfo != null && netInfo.isConnected();
     }
 }
