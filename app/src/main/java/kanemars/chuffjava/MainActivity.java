@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         logTextView = (TextView) findViewById(R.id.logTextView);
 
-        log("Chuff creating!");
+        log("MainActivity creating!");
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.chuffToolbar);
         setSupportActionBar(myToolbar);
@@ -83,7 +83,8 @@ public class MainActivity extends AppCompatActivity {
     private void startNotifications (SharedPreferences prefs) {
         notificationIntent.putExtra(KEY_JOURNEY, getJourney());
         //pendingIntent = PendingIntent.getBroadcast(getBaseContext(), notificationCounter.getAndIncrement(), notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-        pendingIntent = PendingIntent.getBroadcast(getBaseContext(), 0, notificationIntent, PendingIntent.FLAG_ONE_SHOT);
+        pendingIntent = PendingIntent.getBroadcast(getBaseContext(), 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        log("Intention is to start PendingIntent " + pendingIntent.toString() + " at "  + DateFormat.getTimeFormat(this).format(new Date(getNotificationTime (chuffPreferences))));
         alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, getNotificationTime(prefs), AlarmManager.INTERVAL_DAY, pendingIntent);
     }
 

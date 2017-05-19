@@ -32,14 +32,14 @@ public class ChuffNotificationReceiver extends BroadcastReceiver {
             Journey journey = (Journey) intent.getExtras().getSerializable(KEY_JOURNEY);
 
             try {
-                NextTwoDepartures departures = ChuffNotificationReceiver.getNext2Departures(journey);
+                NextTwoDepartures departures = getNext2Departures(journey);
                 if (departures.areTrainsOnTime()) {
-                    ChuffNotificationReceiver.ShowChufferNotification(context, journey.toString(), departures.toString(), notificationCounter.getAndIncrement(), R.raw.thomas_whistle);
+                    ShowChufferNotification(context, journey.toString(), departures.toString(), notificationCounter.getAndIncrement(), R.raw.thomas_whistle);
                 } else {
-                    ChuffNotificationReceiver.ShowChufferNotification(context, journey.toString(), departures.toString(), notificationCounter.getAndIncrement(), R.raw.exhale);
+                    ShowChufferNotification(context, journey.toString(), departures.toString(), notificationCounter.getAndIncrement(), R.raw.exhale);
                 }
             } catch (Exception e) {
-                ChuffNotificationReceiver.ShowChufferNotification(context, journey.toString(), e.getMessage(), notificationCounter.getAndIncrement(), R.raw.exhale);
+                ShowChufferNotification(context, journey.toString(), e.getMessage(), notificationCounter.getAndIncrement(), R.raw.exhale);
             }
         }
     }
@@ -58,6 +58,9 @@ public class ChuffNotificationReceiver extends BroadcastReceiver {
                         .build();
 
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+
+        StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
+        MainActivity.log("Notification " + uniqueId + " called by " + stackTraceElements[2]);
 
         notificationManager.notify(uniqueId, notification);
     }
