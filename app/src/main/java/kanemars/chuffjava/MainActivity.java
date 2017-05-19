@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
         showNotificationStatus();
     }
 
-    private long getNotificationTime (SharedPreferences prefs) {
+    public static long getNotificationTime (SharedPreferences prefs) {
         long strNotificationTime = prefs.getLong(KEY_NOTIFICATION_TIME, 1234);
         Calendar timeToNotify = Calendar.getInstance();
         timeToNotify.setTimeInMillis(strNotificationTime);
