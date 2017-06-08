@@ -5,8 +5,6 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
@@ -20,6 +18,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import kanemars.KaneHuxleyJavaConsumer.Models.Journey;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -53,10 +52,10 @@ public class MainActivity extends AppCompatActivity {
         chuffPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
         // Start notifications if this has been saved
-        boolean notificationOn = chuffPreferences.getBoolean(KEY_NOTIFICATION_ON, false);
-        if (notificationOn) {
-            startNotifications(chuffPreferences);
-        }
+      //  boolean notificationOn = chuffPreferences.getBoolean(KEY_NOTIFICATION_ON, false);
+      //  if (notificationOn) {
+      //      startNotifications(chuffPreferences, "onCreate checking status");
+      //  }
 
         listener = new SharedPreferences.OnSharedPreferenceChangeListener() {
             public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
@@ -74,17 +73,20 @@ public class MainActivity extends AppCompatActivity {
 
         showNotificationStatus();
     }
+    private static SimpleDateFormat logDateFormat = new SimpleDateFormat("HH:mm");
 
     static void log(String message) {
         logTextView.setMovementMethod(new ScrollingMovementMethod());
-        logTextView.append(message + System.getProperty("line.separator"));
+        logTextView.append(logDateFormat.format(Calendar.getInstance().getTime()) + ": " + message + System.getProperty("line.separator"));
     }
 
     private void startNotifications (SharedPreferences prefs) {
+        // Stop any existing notifications for safety
+        //stopNotifications();
         notificationIntent.putExtra(KEY_JOURNEY, getJourney());
         //pendingIntent = PendingIntent.getBroadcast(getBaseContext(), notificationCounter.getAndIncrement(), notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-        pendingIntent = PendingIntent.getBroadcast(getBaseContext(), 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-        log("Intention is to start PendingIntent " + pendingIntent.toString() + " at "  + DateFormat.getTimeFormat(this).format(new Date(getNotificationTime (chuffPreferences))));
+        pendingIntent = PendingIntent.getBroadcast(getBaseContext(), 0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+        log("Called from MainActivity Intention is to start PendingIntent " + pendingIntent.toString() + " at " + DateFormat.getTimeFormat(this).format(new Date(getNotificationTime(chuffPreferences))));
         alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, getNotificationTime(prefs), AlarmManager.INTERVAL_DAY, pendingIntent);
     }
 
@@ -98,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
         showNotificationStatus();
     }
 
-    public static long getNotificationTime (SharedPreferences prefs) {
+    static long getNotificationTime(SharedPreferences prefs) {
         long strNotificationTime = prefs.getLong(KEY_NOTIFICATION_TIME, 1234);
         Calendar timeToNotify = Calendar.getInstance();
         timeToNotify.setTimeInMillis(strNotificationTime);
@@ -159,11 +161,5 @@ public class MainActivity extends AppCompatActivity {
 
         Button checkTimesButton = (Button) findViewById(R.id.checkTimesButton);
         checkTimesButton.setText(String.format("Check times from %s now", journey));
-    }
-
-    public boolean hasNetworkConnectivity(Context context) {
-        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo netInfo = cm.getActiveNetworkInfo();
-        return netInfo != null && netInfo.isConnected();
     }
 }
