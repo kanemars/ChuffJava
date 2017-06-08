@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private PendingIntent pendingIntent;
     private Intent notificationIntent;
     private SharedPreferences chuffPreferences;
-    private static TextView logTextView;
+    private TextView logTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
     }
     private static SimpleDateFormat logDateFormat = new SimpleDateFormat("HH:mm");
 
-    static void log(String message) {
+    void log(String message) {
         logTextView.setMovementMethod(new ScrollingMovementMethod());
         logTextView.append(logDateFormat.format(Calendar.getInstance().getTime()) + ": " + message + System.getProperty("line.separator"));
     }

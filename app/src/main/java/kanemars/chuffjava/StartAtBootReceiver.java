@@ -11,15 +11,12 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.text.format.DateFormat;
-import android.widget.Button;
-import android.widget.TextView;
 import kanemars.KaneHuxleyJavaConsumer.Models.Journey;
 
 import java.util.Date;
 
 import static kanemars.chuffjava.Constants.*;
 import static kanemars.chuffjava.MainActivity.getNotificationTime;
-import static kanemars.chuffjava.MainActivity.log;
 
 public class StartAtBootReceiver extends BroadcastReceiver {
     @Override
@@ -41,7 +38,7 @@ public class StartAtBootReceiver extends BroadcastReceiver {
                 DateFormat.getTimeFormat(context).format(new Date(notificationTime)));
 
         Notification notification =
-                new Notification.Builder(context).setContentTitle("Welcome to Chuff Me")
+                new Notification.Builder(context).setContentTitle(journey.toString())
                         .setContentText(message)
                         .setSmallIcon(R.drawable.ic_chuff_me)
                         .build();

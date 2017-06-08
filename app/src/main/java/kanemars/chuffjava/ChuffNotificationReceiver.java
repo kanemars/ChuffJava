@@ -22,7 +22,7 @@ public class ChuffNotificationReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        MainActivity.log ("onReceive called with context " + context.getPackageCodePath() + "; " + context.getPackageName());
+        //MainActivity.log ("onReceive called with context " + context.getPackageCodePath() + "; " + context.getPackageName());
 
         Calendar today = Calendar.getInstance();
         today.setTimeInMillis(System.currentTimeMillis());
@@ -44,7 +44,7 @@ public class ChuffNotificationReceiver extends BroadcastReceiver {
         }
     }
 
-    private static void ShowChufferNotification(Context context, String journey, String message, int uniqueId, int sound) {
+    protected static void ShowChufferNotification(Context context, String journey, String message, int uniqueId, int sound) {
         Intent resultIntent = new Intent(context, MainActivity.class);
         resultIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
@@ -60,7 +60,7 @@ public class ChuffNotificationReceiver extends BroadcastReceiver {
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
         StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-        MainActivity.log("Notification " + uniqueId + " called by " + stackTraceElements[2]);
+        //MainActivity.log("Notification " + uniqueId + " called by " + stackTraceElements[2]);
 
         notificationManager.notify(uniqueId, notification);
     }
