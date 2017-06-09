@@ -15,10 +15,13 @@ import kanemars.KaneHuxleyJavaConsumer.Models.Journey;
 
 import java.util.Calendar;
 
-import static kanemars.chuffjava.ChuffPreferenceActivity.notificationCounter;
 import static kanemars.chuffjava.Constants.KEY_JOURNEY;
 
 public class ChuffNotificationReceiver extends BroadcastReceiver {
+    // Using the same notificationId will ensure that Chuff Me will only have at most one notification listed
+    // Existing Chuff Me notifications will be replaced with the latest one
+    // The times of existing trains will become redundant after a while anyway
+    static int chuffMeNotificationId = 1;
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -34,17 +37,17 @@ public class ChuffNotificationReceiver extends BroadcastReceiver {
             try {
                 NextTwoDepartures departures = getNext2Departures(journey);
                 if (departures.areTrainsOnTime()) {
-                    ShowChufferNotification(context, journey.toString(), departures.toString(), notificationCounter.getAndIncrement(), R.raw.thomas_whistle);
+                    ShowChufferNotification(context, journey.toString(), departures.toString(), R.raw.thomas_whistle);
                 } else {
-                    ShowChufferNotification(context, journey.toString(), departures.toString(), notificationCounter.getAndIncrement(), R.raw.exhale);
+                    ShowChufferNotification(context, journey.toString(), departures.toString(), R.raw.exhale);
                 }
             } catch (Exception e) {
-                ShowChufferNotification(context, journey.toString(), e.getMessage(), notificationCounter.getAndIncrement(), R.raw.exhale);
+                ShowChufferNotification(context, journey.toString(), e.getMessage(), R.raw.exhale);
             }
         }
     }
 
-    protected static void ShowChufferNotification(Context context, String journey, String message, int uniqueId, int sound) {
+    private static void ShowChufferNotification(Context context, String journey, String message, int sound) {
         Intent resultIntent = new Intent(context, MainActivity.class);
         resultIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
@@ -62,7 +65,7 @@ public class ChuffNotificationReceiver extends BroadcastReceiver {
         StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
         //MainActivity.log("Notification " + uniqueId + " called by " + stackTraceElements[2]);
 
-        notificationManager.notify(uniqueId, notification);
+        notificationManager.notify(chuffMeNotificationId, notification);
     }
 
     static NextTwoDepartures getNext2Departures(Journey journey) throws Exception {

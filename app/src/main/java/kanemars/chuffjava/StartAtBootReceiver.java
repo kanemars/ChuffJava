@@ -12,11 +12,10 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.text.format.DateFormat;
 import kanemars.KaneHuxleyJavaConsumer.Models.Journey;
-
 import java.util.Date;
-
 import static kanemars.chuffjava.Constants.*;
 import static kanemars.chuffjava.MainActivity.getNotificationTime;
+import static kanemars.chuffjava.ChuffNotificationReceiver.chuffMeNotificationId;
 
 public class StartAtBootReceiver extends BroadcastReceiver {
     @Override
@@ -38,12 +37,12 @@ public class StartAtBootReceiver extends BroadcastReceiver {
                 DateFormat.getTimeFormat(context).format(new Date(notificationTime)));
 
         Notification notification =
-                new Notification.Builder(context).setContentTitle(journey.toString())
+                new Notification.Builder(context).setContentTitle("Welcome to Chuff Me")
                         .setContentText(message)
                         .setSmallIcon(R.drawable.ic_chuff_me)
                         .build();
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        notificationManager.notify(1, notification);
+        notificationManager.notify(chuffMeNotificationId, notification);
 
         if (notificationOn) {
             startNotificationsAtBoot(context, journey, notificationTime);

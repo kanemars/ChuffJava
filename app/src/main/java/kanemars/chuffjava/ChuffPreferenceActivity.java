@@ -11,7 +11,6 @@ import static kanemars.chuffjava.Constants.*;
 
 public class ChuffPreferenceActivity extends PreferenceActivity {
 
-    static AtomicInteger notificationCounter = new AtomicInteger ();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
