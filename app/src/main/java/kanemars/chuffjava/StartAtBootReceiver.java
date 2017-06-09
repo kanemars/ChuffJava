@@ -16,6 +16,7 @@ import java.util.Date;
 import static kanemars.chuffjava.Constants.*;
 import static kanemars.chuffjava.MainActivity.getNotificationTime;
 import static kanemars.chuffjava.ChuffNotificationReceiver.chuffMeNotificationId;
+import static kanemars.chuffjava.MainActivity.CHUFF_ALARM_INTERVAL;
 
 public class StartAtBootReceiver extends BroadcastReceiver {
     @Override
@@ -50,14 +51,13 @@ public class StartAtBootReceiver extends BroadcastReceiver {
     }
 
     private void startNotificationsAtBoot (Context context, Journey journey, long notificationTime) {
-
-        Intent notificationIntent = new Intent(context, ChuffNotificationReceiverFromBoot.class);
+        Intent notificationIntent = new Intent(context, ChuffNotificationReceiver.class);
         notificationIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_SINGLE_TOP);
 
         notificationIntent.putExtra(KEY_JOURNEY, journey);
         AlarmManager alarmMgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);
-        alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, notificationTime, AlarmManager.INTERVAL_DAY, pendingIntent);
+        alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, notificationTime, CHUFF_ALARM_INTERVAL, pendingIntent);
     }
 
     private void enableBluetooth() {

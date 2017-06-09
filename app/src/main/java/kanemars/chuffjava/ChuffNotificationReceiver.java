@@ -25,8 +25,6 @@ public class ChuffNotificationReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        //MainActivity.log ("onReceive called with context " + context.getPackageCodePath() + "; " + context.getPackageName());
-
         Calendar today = Calendar.getInstance();
         today.setTimeInMillis(System.currentTimeMillis());
         int dayOfWeek = today.get(Calendar.DAY_OF_WEEK);
@@ -37,22 +35,22 @@ public class ChuffNotificationReceiver extends BroadcastReceiver {
             try {
                 NextTwoDepartures departures = getNext2Departures(journey);
                 if (departures.areTrainsOnTime()) {
-                    ShowChufferNotification(context, journey.toString(), departures.toString(), R.raw.thomas_whistle);
+                    ShowChufferNotification(context, journey, departures.toString(), R.raw.thomas_whistle);
                 } else {
-                    ShowChufferNotification(context, journey.toString(), departures.toString(), R.raw.exhale);
+                    ShowChufferNotification(context, journey, departures.toString(), R.raw.exhale);
                 }
             } catch (Exception e) {
-                ShowChufferNotification(context, journey.toString(), e.getMessage(), R.raw.exhale);
+                ShowChufferNotification(context, journey, e.getMessage(), R.raw.exhale);
             }
         }
     }
 
-    private static void ShowChufferNotification(Context context, String journey, String message, int sound) {
+    private static void ShowChufferNotification(Context context, Journey journey, String message, int sound) {
         Intent resultIntent = new Intent(context, MainActivity.class);
         resultIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
         Notification notification =
-                new Notification.Builder(context).setContentTitle(journey)
+                new Notification.Builder(context).setContentTitle(journey.toString())
                         .setContentText(message)
                         .setSmallIcon(R.drawable.ic_chuff_me)
                         .setDefaults(Notification.DEFAULT_LIGHTS | Notification.DEFAULT_VIBRATE)
@@ -61,10 +59,6 @@ public class ChuffNotificationReceiver extends BroadcastReceiver {
                         .build();
 
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-
-        StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-        //MainActivity.log("Notification " + uniqueId + " called by " + stackTraceElements[2]);
-
         notificationManager.notify(chuffMeNotificationId, notification);
     }
 

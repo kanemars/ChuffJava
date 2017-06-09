@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private Intent notificationIntent;
     private SharedPreferences chuffPreferences;
     private TextView logTextView;
+    static long CHUFF_ALARM_INTERVAL = AlarmManager.INTERVAL_DAY; // 1 * 60 * 1000; //;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,22 +52,16 @@ public class MainActivity extends AppCompatActivity {
         // http://stackoverflow.com/questions/2542938/sharedpreferences-onsharedpreferencechangelistener-not-being-called-consistently
         chuffPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
-        // Start notifications if this has been saved
-      //  boolean notificationOn = chuffPreferences.getBoolean(KEY_NOTIFICATION_ON, false);
-      //  if (notificationOn) {
-      //      startNotifications(chuffPreferences, "onCreate checking status");
-      //  }
-
         listener = new SharedPreferences.OnSharedPreferenceChangeListener() {
             public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
-                if (key.equals(KEY_NOTIFICATION_ON)) {
-                    boolean notificationOn = prefs.getBoolean(KEY_NOTIFICATION_ON, false);
-                    if (notificationOn) {
-                        startNotifications (prefs);
-                    } else {
-                        stopNotifications ();
-                    }
+            if (key.equals(KEY_NOTIFICATION_ON)) {
+                boolean notificationOn = prefs.getBoolean(KEY_NOTIFICATION_ON, false);
+                if (notificationOn) {
+                    startNotifications (prefs);
+                } else {
+                    stopNotifications ();
                 }
+            }
             }
         };
         chuffPreferences.registerOnSharedPreferenceChangeListener(listener);
@@ -75,19 +70,17 @@ public class MainActivity extends AppCompatActivity {
     }
     private static SimpleDateFormat logDateFormat = new SimpleDateFormat("HH:mm");
 
-    void log(String message) {
+    private void log(String message) {
         logTextView.setMovementMethod(new ScrollingMovementMethod());
         logTextView.append(logDateFormat.format(Calendar.getInstance().getTime()) + ": " + message + System.getProperty("line.separator"));
     }
 
     private void startNotifications (SharedPreferences prefs) {
-        // Stop any existing notifications for safety
-        //stopNotifications();
         notificationIntent.putExtra(KEY_JOURNEY, getJourney());
         //pendingIntent = PendingIntent.getBroadcast(getBaseContext(), notificationCounter.getAndIncrement(), notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         pendingIntent = PendingIntent.getBroadcast(getBaseContext(), 0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);
         log("Called from MainActivity Intention is to start PendingIntent " + pendingIntent.toString() + " at " + DateFormat.getTimeFormat(this).format(new Date(getNotificationTime(chuffPreferences))));
-        alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, getNotificationTime(prefs), AlarmManager.INTERVAL_DAY, pendingIntent);
+        alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, getNotificationTime(prefs), CHUFF_ALARM_INTERVAL, pendingIntent);
     }
 
     private void stopNotifications () {
