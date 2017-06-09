@@ -14,9 +14,8 @@ import android.text.format.DateFormat;
 import kanemars.KaneHuxleyJavaConsumer.Models.Journey;
 import java.util.Date;
 import static kanemars.chuffjava.Constants.*;
-import static kanemars.chuffjava.MainActivity.getNotificationTime;
-import static kanemars.chuffjava.ChuffNotificationReceiver.chuffMeNotificationId;
-import static kanemars.chuffjava.MainActivity.CHUFF_ALARM_INTERVAL;
+import static kanemars.chuffjava.Constants.CHUFF_ME_NOTIFICATION_ID;
+import static kanemars.chuffjava.MainActivity.*;
 
 public class StartAtBootReceiver extends BroadcastReceiver {
     @Override
@@ -43,7 +42,7 @@ public class StartAtBootReceiver extends BroadcastReceiver {
                         .setSmallIcon(R.drawable.ic_chuff_me)
                         .build();
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        notificationManager.notify(chuffMeNotificationId, notification);
+        notificationManager.notify(CHUFF_ME_NOTIFICATION_ID, notification);
 
         if (notificationOn) {
             startNotificationsAtBoot(context, journey, notificationTime);
@@ -52,7 +51,7 @@ public class StartAtBootReceiver extends BroadcastReceiver {
 
     private void startNotificationsAtBoot (Context context, Journey journey, long notificationTime) {
         Intent notificationIntent = new Intent(context, ChuffNotificationReceiver.class);
-        notificationIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        notificationIntent.setFlags(NOTIFICATION_INTENT_FLAGS);
 
         notificationIntent.putExtra(KEY_JOURNEY, journey);
         AlarmManager alarmMgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);

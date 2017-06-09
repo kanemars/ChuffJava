@@ -8,20 +8,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.util.Log;
 import kanemars.KaneHuxleyJavaConsumer.GetDeparturesAsyncTask;
 import kanemars.KaneHuxleyJavaConsumer.Models.Departures;
 import kanemars.KaneHuxleyJavaConsumer.Models.Journey;
-
 import java.util.Calendar;
-
 import static kanemars.chuffjava.Constants.KEY_JOURNEY;
+import static kanemars.chuffjava.Constants.CHUFF_ME_NOTIFICATION_ID;
 
 public class ChuffNotificationReceiver extends BroadcastReceiver {
-    // Using the same notificationId will ensure that Chuff Me will only have at most one notification listed
-    // Existing Chuff Me notifications will be replaced with the latest one
-    // The times of existing trains will become redundant after a while anyway
-    static int chuffMeNotificationId = 1;
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -59,7 +53,7 @@ public class ChuffNotificationReceiver extends BroadcastReceiver {
                         .build();
 
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        notificationManager.notify(chuffMeNotificationId, notification);
+        notificationManager.notify(CHUFF_ME_NOTIFICATION_ID, notification);
     }
 
     static NextTwoDepartures getNext2Departures(Journey journey) throws Exception {
