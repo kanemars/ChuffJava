@@ -14,6 +14,7 @@ import kanemars.KaneHuxleyJavaConsumer.Models.Journey;
 import java.util.Calendar;
 import static kanemars.chuffjava.Constants.KEY_JOURNEY;
 import static kanemars.chuffjava.Constants.CHUFF_ME_NOTIFICATION_ID;
+import static kanemars.chuffjava.Constants.NOTIFICATION_INTENT_FLAGS;
 
 public class ChuffNotificationReceiver extends BroadcastReceiver {
 
@@ -41,7 +42,7 @@ public class ChuffNotificationReceiver extends BroadcastReceiver {
 
     private static void ShowChufferNotification(Context context, Journey journey, String message, int sound) {
         Intent resultIntent = new Intent(context, MainActivity.class);
-        resultIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        resultIntent.setFlags(NOTIFICATION_INTENT_FLAGS);
 
         Notification notification =
                 new Notification.Builder(context).setContentTitle(journey.toString())

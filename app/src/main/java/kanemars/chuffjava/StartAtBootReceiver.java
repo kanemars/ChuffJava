@@ -1,9 +1,7 @@
 package kanemars.chuffjava;
 
-import android.app.AlarmManager;
 import android.app.Notification;
 import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.bluetooth.BluetoothAdapter;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -50,13 +48,9 @@ public class StartAtBootReceiver extends BroadcastReceiver {
     }
 
     private void startNotificationsAtBoot (Context context, Journey journey, long notificationTime) {
-        Intent notificationIntent = new Intent(context, ChuffNotificationReceiver.class);
-        notificationIntent.setFlags(NOTIFICATION_INTENT_FLAGS);
-
-        notificationIntent.putExtra(KEY_JOURNEY, journey);
-        AlarmManager alarmMgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);
-        alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, notificationTime, CHUFF_ALARM_INTERVAL, pendingIntent);
+        Intent i = new Intent(context, MainActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(i);
     }
 
     private void enableBluetooth() {

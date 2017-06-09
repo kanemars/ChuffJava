@@ -1,6 +1,7 @@
 package kanemars.chuffjava;
 
 import android.app.AlarmManager;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
@@ -28,14 +29,11 @@ public class MainActivity extends AppCompatActivity {
     private PendingIntent pendingIntent;
     private Intent notificationIntent;
     private SharedPreferences chuffPreferences;
-    private TextView logTextView;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        logTextView = (TextView) findViewById(R.id.logTextView);
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.chuffToolbar);
         setSupportActionBar(myToolbar);
@@ -62,24 +60,25 @@ public class MainActivity extends AppCompatActivity {
         chuffPreferences.registerOnSharedPreferenceChangeListener(listener);
 
         showNotificationStatus();
-    }
-    private static SimpleDateFormat logDateFormat = new SimpleDateFormat("HH:mm");
 
-//    private void log(String message) {
-//        logTextView.setMovementMethod(new ScrollingMovementMethod());
-//        logTextView.append(logDateFormat.format(Calendar.getInstance().getTime()) + ": " + message + System.getProperty("line.separator"));
-//    }
+        // Now this MainActivity may have been called from StartAtBootReceiver
+        boolean notificationOn = chuffPreferences.getBoolean(KEY_NOTIFICATION_ON, false);
+        if (notificationOn) {
+            startNotifications(chuffPreferences);
+            moveTaskToBack(true);
+        }
+
+    }
 
     private void startNotifications (SharedPreferences prefs) {
         notificationIntent.putExtra(KEY_JOURNEY, getJourney());
-        //pendingIntent = PendingIntent.getBroadcast(getBaseContext(), notificationCounter.getAndIncrement(), notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         pendingIntent = PendingIntent.getBroadcast(getBaseContext(), 0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);
         alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, getNotificationTime(prefs), CHUFF_ALARM_INTERVAL, pendingIntent);
     }
 
     private void stopNotifications () {
-//        NotificationManager notificationManager = (NotificationManager) getBaseContext().getSystemService(Context.NOTIFICATION_SERVICE);
-//        notificationManager.cancel(CHUFF_ME_NOTIFICATION_ID);
+        NotificationManager notificationManager = (NotificationManager) getBaseContext().getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.cancel(CHUFF_ME_NOTIFICATION_ID);
         alarmMgr.cancel(pendingIntent);
     }
 
