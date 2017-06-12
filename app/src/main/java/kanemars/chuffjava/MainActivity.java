@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
     private SharedPreferences.OnSharedPreferenceChangeListener listener;
     private AlarmManager alarmMgr;
     private PendingIntent pendingIntent;
-    private Intent notificationIntent;
     private SharedPreferences chuffPreferences;
 
     @Override
@@ -38,8 +37,6 @@ public class MainActivity extends AppCompatActivity {
         Toolbar myToolbar = (Toolbar) findViewById(R.id.chuffToolbar);
         setSupportActionBar(myToolbar);
 
-        notificationIntent = new Intent(this, ChuffNotificationReceiver.class);
-        notificationIntent.setFlags(NOTIFICATION_INTENT_FLAGS);
         alarmMgr = (AlarmManager) this.getSystemService(Context.ALARM_SERVICE);
 
         // http://stackoverflow.com/questions/2542938/sharedpreferences-onsharedpreferencechangelistener-not-being-called-consistently
@@ -71,7 +68,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void startNotifications (SharedPreferences prefs) {
+        stopNotifications();
+
+        Intent notificationIntent = new Intent(this, ChuffNotificationReceiver.class);
+        notificationIntent.setFlags(NOTIFICATION_INTENT_FLAGS);
         notificationIntent.putExtra(KEY_JOURNEY, getJourney());
+
         pendingIntent = PendingIntent.getBroadcast(getBaseContext(), 0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);
         alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, getNotificationTime(prefs), CHUFF_ALARM_INTERVAL, pendingIntent);
     }
@@ -90,9 +92,21 @@ public class MainActivity extends AppCompatActivity {
 
     static long getNotificationTime(SharedPreferences prefs) {
         long strNotificationTime = prefs.getLong(KEY_NOTIFICATION_TIME, 1234);
-        Calendar timeToNotify = Calendar.getInstance();
-        timeToNotify.setTimeInMillis(strNotificationTime);
-        return timeToNotify.getTimeInMillis();
+
+        Calendar timeToNotifyCal = Calendar.getInstance();
+        Calendar currentCal = Calendar.getInstance();
+
+        timeToNotifyCal.setTimeInMillis(strNotificationTime);
+
+        long intendedTime = timeToNotifyCal.getTimeInMillis();
+        long currentTime = currentCal.getTimeInMillis();
+
+        if (intendedTime >= currentTime) {
+            return intendedTime;
+        }
+
+        timeToNotifyCal.add(Calendar.DAY_OF_MONTH, 1); // Start tomorrow
+        return timeToNotifyCal.getTimeInMillis();
     }
 
     private Journey getJourney() {
