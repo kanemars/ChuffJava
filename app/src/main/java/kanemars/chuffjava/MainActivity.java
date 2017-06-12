@@ -10,16 +10,13 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.format.DateFormat;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import kanemars.KaneHuxleyJavaConsumer.Models.Journey;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
+
 import static kanemars.chuffjava.Constants.*;
 
 public class MainActivity extends AppCompatActivity {
@@ -64,18 +61,15 @@ public class MainActivity extends AppCompatActivity {
             startNotifications(chuffPreferences);
             moveTaskToBack(true);
         }
-
     }
 
     private void startNotifications (SharedPreferences prefs) {
-        stopNotifications();
-
         Intent notificationIntent = new Intent(this, ChuffNotificationReceiver.class);
         notificationIntent.setFlags(NOTIFICATION_INTENT_FLAGS);
         notificationIntent.putExtra(KEY_JOURNEY, getJourney());
 
         pendingIntent = PendingIntent.getBroadcast(getBaseContext(), 0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);
-        alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, getNotificationTime(prefs), CHUFF_ALARM_INTERVAL, pendingIntent);
+        alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, new NotificationTime(prefs).getInMillis(), CHUFF_ALARM_INTERVAL, pendingIntent);
     }
 
     private void stopNotifications () {
@@ -88,25 +82,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         showNotificationStatus();
-    }
-
-    static long getNotificationTime(SharedPreferences prefs) {
-        long strNotificationTime = prefs.getLong(KEY_NOTIFICATION_TIME, 1234);
-
-        Calendar timeToNotifyCal = Calendar.getInstance();
-        Calendar currentCal = Calendar.getInstance();
-
-        timeToNotifyCal.setTimeInMillis(strNotificationTime);
-
-        long intendedTime = timeToNotifyCal.getTimeInMillis();
-        long currentTime = currentCal.getTimeInMillis();
-
-        if (intendedTime >= currentTime) {
-            return intendedTime;
-        }
-
-        timeToNotifyCal.add(Calendar.DAY_OF_MONTH, 1); // Start tomorrow
-        return timeToNotifyCal.getTimeInMillis();
     }
 
     private Journey getJourney() {
@@ -152,12 +127,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void showNotificationStatus() {
         Journey journey = getJourney();
-        boolean notificationOn = chuffPreferences.getBoolean(KEY_NOTIFICATION_ON, false);
+
         TextView textView = (TextView) findViewById(R.id.nextNotificationTextView);
-        textView.setText(notificationOn ? String.format("%s will be notified at %s",
-                journey,
-                DateFormat.getTimeFormat(this).format(new Date(getNotificationTime (chuffPreferences))))
-                : "Notifications are turned off");
+        textView.setText(new NotificationTime(chuffPreferences).toString(this, journey));
 
         Button checkTimesButton = (Button) findViewById(R.id.checkTimesButton);
         checkTimesButton.setText(String.format("Check times from %s now", journey));
