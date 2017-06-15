@@ -22,9 +22,6 @@ public class GetDeparturesAsyncTask extends AsyncTask<String, Integer, Departure
             String json = readUrl(url);
 
             GsonBuilder gsonBuilder = new GsonBuilder();
-//            gsonBuilder.setDateFormat("d/M/yy hh:mm a");
-
-//            Thread.sleep(2000);
             Gson gson = gsonBuilder.create();
             return gson.fromJson(json, Departures.class);
         } catch (Exception ex) {
