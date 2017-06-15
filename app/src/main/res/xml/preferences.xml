@@ -24,11 +24,16 @@
     />
     <kanemars.chuffjava.TimePreference
             android:key="notification_time"
-            android:title="Daily midweek notification time"
+            android:title="Daily notification time"
             />
+
     <SwitchPreference
             android:defaultValue="false"
-            android:title="Show daily midweek notifications"
+            android:title="Show daily notifications"
             android:key="notification_preference"/>
+    <MultiSelectListPreference android:title="Days of Week"
+                    android:key="DayOfWeek"
+                    android:summary="Select Days of the Week" android:entries="@array/daysOfWeek"
+                    android:entryValues="@array/daysOfWeekValues" />
 
 </PreferenceScreen>
