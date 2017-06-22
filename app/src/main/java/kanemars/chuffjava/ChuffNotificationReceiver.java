@@ -12,9 +12,8 @@ import kanemars.KaneHuxleyJavaConsumer.GetDeparturesAsyncTask;
 import kanemars.KaneHuxleyJavaConsumer.Models.Departures;
 import kanemars.KaneHuxleyJavaConsumer.Models.Journey;
 import java.util.Calendar;
-import static kanemars.chuffjava.Constants.KEY_JOURNEY;
-import static kanemars.chuffjava.Constants.CHUFF_ME_NOTIFICATION_ID;
-import static kanemars.chuffjava.Constants.NOTIFICATION_INTENT_FLAGS;
+
+import static kanemars.chuffjava.Constants.*;
 
 public class ChuffNotificationReceiver extends BroadcastReceiver {
 
@@ -23,16 +22,19 @@ public class ChuffNotificationReceiver extends BroadcastReceiver {
         Calendar today = Calendar.getInstance();
         today.setTimeInMillis(System.currentTimeMillis());
         int dayOfWeek = today.get(Calendar.DAY_OF_WEEK);
-        if (dayOfWeek != Calendar.SATURDAY && dayOfWeek != Calendar.SUNDAY) {
 
+        String daysSelected = (String) intent.getExtras().getSerializable(KEY_DAYS_OF_WEEK);
+
+        if (daysSelected.indexOf(Integer.toString(dayOfWeek)) > 0) {
             Journey journey = (Journey) intent.getExtras().getSerializable(KEY_JOURNEY);
 
             try {
                 NextTwoDepartures departures = getNext2Departures(journey);
+                String message = departures.toString();
                 if (departures.areTrainsOnTime()) {
-                    ShowChufferNotification(context, journey, departures.toString(), R.raw.thomas_whistle);
+                    ShowChufferNotification(context, journey, message, R.raw.thomas_whistle);
                 } else {
-                    ShowChufferNotification(context, journey, departures.toString(), R.raw.exhale);
+                    ShowChufferNotification(context, journey, message, R.raw.exhale);
                 }
             } catch (Exception e) {
                 ShowChufferNotification(context, journey, e.getMessage(), R.raw.exhale);

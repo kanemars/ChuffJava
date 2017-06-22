@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.preference.*;
 import android.widget.Toast;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
 import static kanemars.chuffjava.Constants.*;
 
 public class ChuffPreferenceActivity extends PreferenceActivity {
@@ -28,7 +26,6 @@ public class ChuffPreferenceActivity extends PreferenceActivity {
             SwitchPreference switchPreference = (SwitchPreference) findPreference(KEY_NOTIFICATION_ON);
             switchPreference.setOnPreferenceChangeListener(getOnPreferenceChangeListener());
 
-//            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
             SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
 
             boolean notificationOn = sharedPreferences.getBoolean(KEY_NOTIFICATION_ON, false);

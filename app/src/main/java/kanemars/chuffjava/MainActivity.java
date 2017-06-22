@@ -17,6 +17,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import kanemars.KaneHuxleyJavaConsumer.Models.Journey;
 
+import java.io.Serializable;
+import java.util.Set;
+
 import static kanemars.chuffjava.Constants.*;
 
 public class MainActivity extends AppCompatActivity {
@@ -67,6 +70,10 @@ public class MainActivity extends AppCompatActivity {
         Intent notificationIntent = new Intent(this, ChuffNotificationReceiver.class);
         notificationIntent.setFlags(NOTIFICATION_INTENT_FLAGS);
         notificationIntent.putExtra(KEY_JOURNEY, getJourney());
+        Set<String> daysSelected = prefs.getStringSet(KEY_DAYS_OF_WEEK, null);
+        String daysSelectedDelim = daysSelected.toString();
+        notificationIntent.putExtra(KEY_DAYS_OF_WEEK, (Serializable) daysSelectedDelim);
+
 
         pendingIntent = PendingIntent.getBroadcast(getBaseContext(), 0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);
         alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, new NotificationTime(prefs).getInMillis(), CHUFF_ALARM_INTERVAL, pendingIntent);
