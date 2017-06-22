@@ -34,6 +34,7 @@
     <MultiSelectListPreference android:title="Days of week to be notified"
                     android:key="DayOfWeek"
                     android:summary="Select days of the week" android:entries="@array/daysOfWeek"
-                    android:entryValues="@array/daysOfWeekValues" />
+                    android:entryValues="@array/daysOfWeekValues"
+    android:defaultValue="@array/daysOfWeekDefaults"/>
 
 </PreferenceScreen>
