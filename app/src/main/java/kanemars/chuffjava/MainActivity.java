@@ -7,6 +7,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.MultiSelectListPreference;
+import android.preference.Preference;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -44,14 +46,16 @@ public class MainActivity extends AppCompatActivity {
 
         listener = new SharedPreferences.OnSharedPreferenceChangeListener() {
             public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
-            if (key.equals(KEY_NOTIFICATION_ON)) {
-                boolean notificationOn = prefs.getBoolean(KEY_NOTIFICATION_ON, false);
-                if (notificationOn) {
-                    startNotifications (prefs);
-                } else {
-                    stopNotifications ();
+                switch (key) {
+                    case KEY_NOTIFICATION_ON:
+                        boolean notificationOn = prefs.getBoolean(KEY_NOTIFICATION_ON, false);
+                        if (notificationOn) {
+                            startNotifications (prefs);
+                        } else {
+                            stopNotifications ();
+                        }
+                        break;
                 }
-            }
             }
         };
         chuffPreferences.registerOnSharedPreferenceChangeListener(listener);

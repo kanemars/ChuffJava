@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.preference.*;
 import android.widget.Toast;
 
+import java.text.DateFormatSymbols;
+import java.util.Set;
+
 import static kanemars.chuffjava.Constants.*;
 
 public class ChuffPreferenceActivity extends PreferenceActivity {
@@ -24,7 +27,10 @@ public class ChuffPreferenceActivity extends PreferenceActivity {
             addPreferencesFromResource(R.xml.preferences);
 
             SwitchPreference switchPreference = (SwitchPreference) findPreference(KEY_NOTIFICATION_ON);
-            switchPreference.setOnPreferenceChangeListener(getOnPreferenceChangeListener());
+            switchPreference.setOnPreferenceChangeListener(getNotificationOnChangeListener());
+
+            MultiSelectListPreference days = (MultiSelectListPreference) findPreference(KEY_DAYS_OF_WEEK);
+            days.setOnPreferenceChangeListener(getDaysChangeListener());
 
             SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
 
@@ -41,7 +47,33 @@ public class ChuffPreferenceActivity extends PreferenceActivity {
             timePreference.setEnabled(!isNotificationChecked);
         }
 
-        private Preference.OnPreferenceChangeListener getOnPreferenceChangeListener() {
+        private Preference.OnPreferenceChangeListener getDaysChangeListener() {
+            return new Preference.OnPreferenceChangeListener() {
+
+                @Override
+                public boolean onPreferenceChange(Preference preference, Object days) {
+                    MultiSelectListPreference daysMulti = (MultiSelectListPreference) findPreference(KEY_DAYS_OF_WEEK);
+                    Set<String> selectedDays = (Set<String>) days;
+                    daysMulti.setSummary(getShortDays (selectedDays));
+                    return true;
+                }
+            };
+        }
+
+        private static String getShortDays (Set<String> numbers) {
+            if (numbers.isEmpty()) {
+                return "No days selected";
+            }
+            StringBuilder days = new StringBuilder();
+            DateFormatSymbols symbols = new DateFormatSymbols();
+            for (String number : numbers) {
+                Integer dayOfWeek = Integer.parseInt(number);
+                days.append(symbols.getShortWeekdays()[dayOfWeek]).append(", ");
+            }
+            return days.toString().substring(0, days.length() - 2);
+        }
+
+        private Preference.OnPreferenceChangeListener getNotificationOnChangeListener() {
             return new Preference.OnPreferenceChangeListener() {
 
                 @Override
