@@ -26,25 +26,19 @@ public class ChuffPreferenceActivity extends PreferenceActivity {
             super.onCreate(savedInstanceState);
             addPreferencesFromResource(R.xml.preferences);
 
-            SwitchPreference switchPreference = (SwitchPreference) findPreference(KEY_NOTIFICATION_ON);
-            switchPreference.setOnPreferenceChangeListener(getNotificationOnChangeListener());
-
-            MultiSelectListPreference days = (MultiSelectListPreference) findPreference(KEY_DAYS_OF_WEEK);
-            days.setOnPreferenceChangeListener(getDaysChangeListener());
+            findPreference(KEY_NOTIFICATION_ON).setOnPreferenceChangeListener(getNotificationOnChangeListener());
+            findPreference(KEY_DAYS_OF_WEEK).setOnPreferenceChangeListener(getDaysChangeListener());
 
             SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
-
             boolean notificationOn = sharedPreferences.getBoolean(KEY_NOTIFICATION_ON, false);
             setPreferences(notificationOn);
         }
 
         void setPreferences(boolean isNotificationChecked) {
-            AutoCompletePreference source = (AutoCompletePreference) findPreference(KEY_SOURCE);
-            AutoCompletePreference destination = (AutoCompletePreference) findPreference(KEY_DESTINATION);
-            TimePreference timePreference = (TimePreference) findPreference(KEY_NOTIFICATION_TIME);
-            source.setEnabled(!isNotificationChecked);
-            destination.setEnabled(!isNotificationChecked);
-            timePreference.setEnabled(!isNotificationChecked);
+            findPreference(KEY_SOURCE).setEnabled(!isNotificationChecked);
+            findPreference(KEY_DESTINATION).setEnabled(!isNotificationChecked);
+            findPreference(KEY_NOTIFICATION_TIME).setEnabled(!isNotificationChecked);
+            findPreference(KEY_DAYS_OF_WEEK).setEnabled(!isNotificationChecked);
         }
 
         private Preference.OnPreferenceChangeListener getDaysChangeListener() {
@@ -52,16 +46,19 @@ public class ChuffPreferenceActivity extends PreferenceActivity {
 
                 @Override
                 public boolean onPreferenceChange(Preference preference, Object days) {
-                    MultiSelectListPreference daysMulti = (MultiSelectListPreference) findPreference(KEY_DAYS_OF_WEEK);
                     Set<String> selectedDays = (Set<String>) days;
-                    daysMulti.setSummary(getShortDays (selectedDays));
+
+                    findPreference(Constants.KEY_NOTIFICATION_ON).setEnabled(!selectedDays.isEmpty());
+                    findPreference(KEY_DAYS_OF_WEEK).setSummary(getShortDays (selectedDays));
                     return true;
                 }
             };
         }
 
         private static String getShortDays (Set<String> numbers) {
+
             if (numbers.isEmpty()) {
+                // Disable notificationOn button
                 return "No days selected";
             }
             StringBuilder days = new StringBuilder();

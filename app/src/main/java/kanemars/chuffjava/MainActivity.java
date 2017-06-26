@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
         notificationIntent.setFlags(NOTIFICATION_INTENT_FLAGS);
         notificationIntent.putExtra(KEY_JOURNEY, getJourney());
         Set<String> daysSelected = prefs.getStringSet(KEY_DAYS_OF_WEEK, null);
+
         String daysSelectedDelim = daysSelected.toString();
         notificationIntent.putExtra(KEY_DAYS_OF_WEEK, (Serializable) daysSelectedDelim);
 

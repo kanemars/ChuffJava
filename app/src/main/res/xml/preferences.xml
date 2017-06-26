@@ -26,15 +26,15 @@
             android:key="notification_time"
             android:title="Daily notification time"
             />
-
+    <MultiSelectListPreference android:title="Days of week to be notified"
+                               android:key="DayOfWeek"
+                               android:summary="Select days of the week" android:entries="@array/daysOfWeek"
+                               android:entryValues="@array/daysOfWeekValues"
+                               android:defaultValue="@array/daysOfWeekDefaults"/>
     <SwitchPreference
             android:defaultValue="false"
             android:title="Show daily notifications"
             android:key="notification_preference"/>
-    <MultiSelectListPreference android:title="Days of week to be notified"
-                    android:key="DayOfWeek"
-                    android:summary="Select days of the week" android:entries="@array/daysOfWeek"
-                    android:entryValues="@array/daysOfWeekValues"
-    android:defaultValue="@array/daysOfWeekDefaults"/>
+
 
 </PreferenceScreen>
