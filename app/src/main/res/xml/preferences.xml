@@ -13,7 +13,7 @@
             android:summary="@string/source"
     />
     <kanemars.chuffjava.AutoCompletePreference
-            android:defaultValue="Reading - RDG"
+            android:defaultValue="Maidenhead - MAI"
             android:selectAllOnFocus="true"
             android:singleLine="true"
             android:title="Destination station"

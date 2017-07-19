@@ -16,14 +16,14 @@ public class StartAtBootReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         // This gets called when Android starts up
-        enableBluetooth();
+//        enableBluetooth();
         sendHelloNotificationAndStartNotifications (context);
     }
 
     private void sendHelloNotificationAndStartNotifications (Context context) {
         SharedPreferences chuffPreferences = PreferenceManager.getDefaultSharedPreferences(context);
         String strSource = chuffPreferences.getString(KEY_SOURCE, "Taplow - TAP");
-        String strDestination = chuffPreferences.getString(KEY_DESTINATION, "Reading - RDG");
+        String strDestination = chuffPreferences.getString(KEY_DESTINATION, "Maidenhead - MAI");
         Journey journey = new Journey(strSource, strDestination);
         String message = new NotificationTime(chuffPreferences).toString(context, journey);
 
