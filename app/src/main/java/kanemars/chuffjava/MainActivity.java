@@ -7,8 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.MultiSelectListPreference;
-import android.preference.Preference;
+import android.media.MediaPlayer;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -127,6 +126,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void immediatelyShowNext2Trains(View view) {
+        final MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.thomas_whistle);
+
+        mediaPlayer.start();
+
         TextView textView = (TextView) findViewById(R.id.trainTimesTextView);
 
         try {
