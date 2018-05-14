@@ -1,4 +1,4 @@
-package kanemars.chuffjava;
+package kanemars.chuffme;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -13,7 +13,7 @@ import kanemars.KaneHuxleyJavaConsumer.Models.Departures;
 import kanemars.KaneHuxleyJavaConsumer.Models.Journey;
 import java.util.Calendar;
 
-import static kanemars.chuffjava.Constants.*;
+import static kanemars.chuffme.Constants.*;
 
 public class ChuffNotificationReceiver extends BroadcastReceiver {
 

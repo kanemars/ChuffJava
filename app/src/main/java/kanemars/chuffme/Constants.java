@@ -1,4 +1,4 @@
-package kanemars.chuffjava;
+package kanemars.chuffme;
 
 import android.content.Intent;
 import static android.app.AlarmManager.*;

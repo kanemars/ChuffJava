@@ -1,4 +1,4 @@
-package kanemars.chuffjava;
+package kanemars.chuffme;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -9,8 +9,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import kanemars.KaneHuxleyJavaConsumer.Models.Journey;
-import static kanemars.chuffjava.Constants.*;
-import static kanemars.chuffjava.Constants.CHUFF_ME_NOTIFICATION_ID;
+import static kanemars.chuffme.Constants.*;
+import static kanemars.chuffme.Constants.CHUFF_ME_NOTIFICATION_ID;
 
 public class StartAtBootReceiver extends BroadcastReceiver {
     @Override

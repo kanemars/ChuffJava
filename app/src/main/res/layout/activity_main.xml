@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        tools:context="kanemars.chuffjava.MainActivity">
+        tools:context="kanemars.chuffme.MainActivity">
 
     <include layout="@layout/content_main"/>
 

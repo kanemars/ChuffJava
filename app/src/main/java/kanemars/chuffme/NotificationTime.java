@@ -1,4 +1,4 @@
-package kanemars.chuffjava;
+package kanemars.chuffme;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -8,8 +8,8 @@ import kanemars.KaneHuxleyJavaConsumer.Models.Journey;
 import java.util.Calendar;
 import java.util.Date;
 
-import static kanemars.chuffjava.Constants.KEY_NOTIFICATION_ON;
-import static kanemars.chuffjava.Constants.KEY_NOTIFICATION_TIME;
+import static kanemars.chuffme.Constants.KEY_NOTIFICATION_ON;
+import static kanemars.chuffme.Constants.KEY_NOTIFICATION_TIME;
 
 public class NotificationTime {
     private long notificationTimeInMillis;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="kanemars.chuffjava">
+          package="kanemars.chuffme">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -15,7 +15,7 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity
-                android:name=".MainActivity"
+                android:name="kanemars.chuffme.MainActivity"
                 android:launchMode="singleTop"
                 android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -23,9 +23,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ChuffPreferenceActivity"/>
-        <receiver android:name=".ChuffNotificationReceiver"/>
-        <receiver android:name=".StartAtBootReceiver">
+        <activity android:name="kanemars.chuffme.ChuffPreferenceActivity"/>
+        <receiver android:name="kanemars.chuffme.ChuffNotificationReceiver"/>
+        <receiver android:name="kanemars.chuffme.StartAtBootReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <category android:name="android.intent.category.HOME" />

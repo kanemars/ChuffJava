@@ -1,13 +1,9 @@
 package kanemars.KaneHuxleyJavaConsumer;
 
-import android.app.ProgressDialog;
 import android.os.AsyncTask;
-import android.view.View;
-import android.widget.ProgressBar;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import kanemars.KaneHuxleyJavaConsumer.Models.Departures;
-import kanemars.chuffjava.MainActivity;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

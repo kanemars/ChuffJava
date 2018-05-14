@@ -1,4 +1,4 @@
-package kanemars.chuffjava;
+package kanemars.chuffme;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -8,7 +8,7 @@ import android.widget.Toast;
 import java.text.DateFormatSymbols;
 import java.util.Set;
 
-import static kanemars.chuffjava.Constants.*;
+import static kanemars.chuffme.Constants.*;
 
 public class ChuffPreferenceActivity extends PreferenceActivity {
 

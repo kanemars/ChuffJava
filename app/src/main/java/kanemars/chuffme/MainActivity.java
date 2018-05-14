@@ -1,4 +1,4 @@
-package kanemars.chuffjava;
+package kanemars.chuffme;
 
 import android.app.AlarmManager;
 import android.app.NotificationManager;
@@ -21,7 +21,7 @@ import kanemars.KaneHuxleyJavaConsumer.Models.Journey;
 import java.io.Serializable;
 import java.util.Set;
 
-import static kanemars.chuffjava.Constants.*;
+import static kanemars.chuffme.Constants.*;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.chuffToolbar);
+        Toolbar myToolbar = findViewById(R.id.chuffToolbar);
         setSupportActionBar(myToolbar);
 
         alarmMgr = (AlarmManager) this.getSystemService(Context.ALARM_SERVICE);
@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
 
         mediaPlayer.start();
 
-        TextView textView = (TextView) findViewById(R.id.trainTimesTextView);
+        TextView textView = findViewById(R.id.trainTimesTextView);
 
         try {
             NextTwoDepartures departures = ChuffNotificationReceiver.getNext2Departures(getJourney());
@@ -143,10 +143,10 @@ public class MainActivity extends AppCompatActivity {
     private void showNotificationStatus() {
         Journey journey = getJourney();
 
-        TextView textView = (TextView) findViewById(R.id.nextNotificationTextView);
+        TextView textView = findViewById(R.id.nextNotificationTextView);
         textView.setText(new NotificationTime(chuffPreferences).toString(this, journey));
 
-        Button checkTimesButton = (Button) findViewById(R.id.checkTimesButton);
+        Button checkTimesButton = findViewById(R.id.checkTimesButton);
         checkTimesButton.setText(String.format("Check times from %s now", journey));
     }
 }
