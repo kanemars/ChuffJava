@@ -19,6 +19,7 @@ import android.widget.TextView;
 import kanemars.KaneHuxleyJavaConsumer.Models.Journey;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 
 import static kanemars.chuffme.Constants.*;
@@ -73,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         Intent notificationIntent = new Intent(this, ChuffNotificationReceiver.class);
         notificationIntent.setFlags(NOTIFICATION_INTENT_FLAGS);
         notificationIntent.putExtra(KEY_JOURNEY, getJourney());
-        Set<String> daysSelected = prefs.getStringSet(KEY_DAYS_OF_WEEK, null);
+        Set<String> daysSelected = prefs.getStringSet(KEY_DAYS_OF_WEEK, new HashSet<String>());
 
         String daysSelectedDelim = daysSelected.toString();
         notificationIntent.putExtra(KEY_DAYS_OF_WEEK, (Serializable) daysSelectedDelim);
@@ -85,8 +86,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void stopNotifications () {
         NotificationManager notificationManager = (NotificationManager) getBaseContext().getSystemService(Context.NOTIFICATION_SERVICE);
-        notificationManager.cancel(CHUFF_ME_NOTIFICATION_ID);
-        alarmMgr.cancel(pendingIntent);
+        if (notificationManager!=null) {
+            notificationManager.cancel(CHUFF_ME_NOTIFICATION_ID);
+        }
+        if (pendingIntent != null) {
+            alarmMgr.cancel(pendingIntent);
+        }
     }
 
     @Override
