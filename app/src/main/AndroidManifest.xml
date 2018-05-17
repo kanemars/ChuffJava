@@ -24,7 +24,12 @@
             </intent-filter>
         </activity>
         <activity android:name="kanemars.chuffme.ChuffPreferenceActivity"/>
-        <receiver android:name="kanemars.chuffme.ChuffNotificationReceiver"/>
+        <receiver android:name="kanemars.chuffme.ChuffNotificationBroadcastReceiver">
+            <!--<intent-filter>-->
+                <!--<action android:name="kanemars.chuffme.NotificationData" >-->
+                <!--</action>-->
+            <!--</intent-filter>-->
+        </receiver>
         <receiver android:name="kanemars.chuffme.StartAtBootReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />

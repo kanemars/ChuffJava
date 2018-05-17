@@ -71,24 +71,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void startNotifications (SharedPreferences prefs) {
-        Intent notificationIntent = new Intent(this, ChuffNotificationReceiver.class);
-        notificationIntent.setFlags(NOTIFICATION_INTENT_FLAGS);
-        notificationIntent.putExtra(KEY_JOURNEY, getJourney());
+        Intent notificationIntent = new Intent(this, ChuffNotificationBroadcastReceiver.class);
+        //Intent notificationIntent = new Intent("kanemars.chuffme.NotificationData");
+        //notificationIntent.setFlags(NOTIFICATION_INTENT_FLAGS);
+
         Set<String> daysSelected = prefs.getStringSet(KEY_DAYS_OF_WEEK, new HashSet<String>());
-
         String daysSelectedDelim = daysSelected.toString();
-        notificationIntent.putExtra(KEY_DAYS_OF_WEEK, (Serializable) daysSelectedDelim);
+        notificationIntent.putExtra(KEY_DAYS_OF_WEEK, daysSelectedDelim);
+        //notificationIntent.putExtra(KEY_JOURNEY, getJourney());
 
-
-        pendingIntent = PendingIntent.getBroadcast(getBaseContext(), 0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+        //pendingIntent = PendingIntent.getBroadcast(getBaseContext(), 0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+        pendingIntent = PendingIntent.getBroadcast(getBaseContext(), 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, new NotificationTime(prefs).getInMillis(), CHUFF_ALARM_INTERVAL, pendingIntent);
     }
 
     private void stopNotifications () {
         NotificationManager notificationManager = (NotificationManager) getBaseContext().getSystemService(Context.NOTIFICATION_SERVICE);
-        if (notificationManager!=null) {
-            notificationManager.cancel(CHUFF_ME_NOTIFICATION_ID);
-        }
+        if (notificationManager!=null)
+        notificationManager.cancel(CHUFF_ME_NOTIFICATION_ID);
         if (pendingIntent != null) {
             alarmMgr.cancel(pendingIntent);
         }
@@ -138,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
         TextView textView = findViewById(R.id.trainTimesTextView);
 
         try {
-            NextTwoDepartures departures = ChuffNotificationReceiver.getNext2Departures(getJourney());
+            NextTwoDepartures departures = ChuffNotificationBroadcastReceiver.getNext2Departures(getJourney());
             textView.setText(departures.toSpanned());
         } catch (Exception e) {
             textView.setText(e.getMessage());

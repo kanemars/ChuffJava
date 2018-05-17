@@ -8,55 +8,64 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Bundle;
+import android.support.v4.app.NotificationCompat;
 import kanemars.KaneHuxleyJavaConsumer.GetDeparturesAsyncTask;
 import kanemars.KaneHuxleyJavaConsumer.Models.Departures;
 import kanemars.KaneHuxleyJavaConsumer.Models.Journey;
 import java.util.Calendar;
 
+import static java.security.AccessController.getContext;
 import static kanemars.chuffme.Constants.*;
 
-public class ChuffNotificationReceiver extends BroadcastReceiver {
+public class ChuffNotificationBroadcastReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        Calendar today = Calendar.getInstance();
-        today.setTimeInMillis(System.currentTimeMillis());
-        int dayOfWeek = today.get(Calendar.DAY_OF_WEEK);
 
-        String daysSelected = (String) intent.getExtras().getSerializable(KEY_DAYS_OF_WEEK);
 
-        if (daysSelected.indexOf(Integer.toString(dayOfWeek)) > 0) {
-            Journey journey = (Journey) intent.getExtras().getSerializable(KEY_JOURNEY);
+        String action = intent.getAction();
+        Bundle bundle = intent.getExtras();
+        if (bundle != null) {
+            Calendar today = Calendar.getInstance();
+            today.setTimeInMillis(System.currentTimeMillis());
+            int dayOfWeek = today.get(Calendar.DAY_OF_WEEK);
 
-            try {
-                NextTwoDepartures departures = getNext2Departures(journey);
-                String message = departures.toString();
-                if (departures.areTrainsOnTime()) {
-                    ShowChufferNotification(context, journey, message, R.raw.thomas_whistle);
-                } else {
-                    ShowChufferNotification(context, journey, message, R.raw.exhale);
+            String daysSelected = (String) bundle.getSerializable(KEY_DAYS_OF_WEEK);
+
+            if (daysSelected == null || daysSelected.indexOf(Integer.toString(dayOfWeek)) > 0) {
+                Journey journey = (Journey) bundle.getSerializable(KEY_JOURNEY);
+
+                try {
+                    NextTwoDepartures departures = getNext2Departures(journey);
+                    String message = departures.toString();
+                    if (departures.areTrainsOnTime()) {
+                        ShowChufferNotification(context, journey, message, R.raw.thomas_whistle);
+                    } else {
+                        ShowChufferNotification(context, journey, message, R.raw.exhale);
+                    }
+                } catch (Exception e) {
+                    ShowChufferNotification(context, journey, e.getMessage(), R.raw.exhale);
                 }
-            } catch (Exception e) {
-                ShowChufferNotification(context, journey, e.getMessage(), R.raw.exhale);
             }
         }
     }
-
     private static void ShowChufferNotification(Context context, Journey journey, String message, int sound) {
         Intent resultIntent = new Intent(context, MainActivity.class);
         resultIntent.setFlags(NOTIFICATION_INTENT_FLAGS);
 
-        Notification notification =
-                new Notification.Builder(context).setContentTitle(journey.toString())
+        NotificationCompat.Builder notification = new NotificationCompat.Builder(context, "M_CH_ID");
+        notification.setContentTitle(journey.toString())
                         .setContentText(message)
                         .setSmallIcon(R.drawable.ic_chuff_me)
                         .setDefaults(Notification.DEFAULT_LIGHTS | Notification.DEFAULT_VIBRATE)
                         .setSound(Uri.parse("android.resource://" + context.getPackageName() + "/" + sound))
-                        .setContentIntent(PendingIntent.getActivity(context, 0, resultIntent, PendingIntent.FLAG_CANCEL_CURRENT))
-                        .build();
+                        .setContentIntent(PendingIntent.getActivity(context, 0, resultIntent, PendingIntent.FLAG_CANCEL_CURRENT));
 
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        notificationManager.notify(CHUFF_ME_NOTIFICATION_ID, notification);
+        if (notificationManager != null) {
+            notificationManager.notify(CHUFF_ME_NOTIFICATION_ID, notification.build());
+        }
     }
 
     static NextTwoDepartures getNext2Departures(Journey journey) throws Exception {
