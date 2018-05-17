@@ -78,7 +78,11 @@ public class MainActivity extends AppCompatActivity {
         Set<String> daysSelected = prefs.getStringSet(KEY_DAYS_OF_WEEK, new HashSet<String>());
         String daysSelectedDelim = daysSelected.toString();
         notificationIntent.putExtra(KEY_DAYS_OF_WEEK, daysSelectedDelim);
-        //notificationIntent.putExtra(KEY_JOURNEY, getJourney());
+        Journey journey = getJourney();
+        Bundle bundle = new Bundle();
+        bundle.putSerializable(KEY_JOURNEY, journey);
+        notificationIntent.putExtras(bundle);
+//        notificationIntent.putExtra(KEY_JOURNEY, journey);
 
         //pendingIntent = PendingIntent.getBroadcast(getBaseContext(), 0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);
         pendingIntent = PendingIntent.getBroadcast(getBaseContext(), 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
