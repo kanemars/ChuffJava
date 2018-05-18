@@ -72,17 +72,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void startNotifications (SharedPreferences prefs) {
         Intent notificationIntent = new Intent(this, ChuffNotificationBroadcastReceiver.class);
-        //Intent notificationIntent = new Intent("kanemars.chuffme.NotificationData");
-        //notificationIntent.setFlags(NOTIFICATION_INTENT_FLAGS);
 
         Set<String> daysSelected = prefs.getStringSet(KEY_DAYS_OF_WEEK, new HashSet<String>());
         String daysSelectedDelim = daysSelected.toString();
         notificationIntent.putExtra(KEY_DAYS_OF_WEEK, daysSelectedDelim);
         Journey journey = getJourney();
-        Bundle bundle = new Bundle();
-        bundle.putSerializable(KEY_JOURNEY, journey);
-        notificationIntent.putExtras(bundle);
-//        notificationIntent.putExtra(KEY_JOURNEY, journey);
+        notificationIntent.putExtra(KEY_SOURCE, journey.source);
+        notificationIntent.putExtra(KEY_DESTINATION, journey.destination);
 
         //pendingIntent = PendingIntent.getBroadcast(getBaseContext(), 0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);
         pendingIntent = PendingIntent.getBroadcast(getBaseContext(), 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);

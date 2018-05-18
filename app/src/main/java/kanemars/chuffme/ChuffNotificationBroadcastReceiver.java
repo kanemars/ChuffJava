@@ -22,9 +22,6 @@ public class ChuffNotificationBroadcastReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-
-
-        String action = intent.getAction();
         Bundle bundle = intent.getExtras();
         if (bundle != null) {
             Calendar today = Calendar.getInstance();
@@ -34,7 +31,7 @@ public class ChuffNotificationBroadcastReceiver extends BroadcastReceiver {
             String daysSelected = (String) bundle.getSerializable(KEY_DAYS_OF_WEEK);
 
             if (daysSelected == null || daysSelected.indexOf(Integer.toString(dayOfWeek)) > 0) {
-                Journey journey = (Journey) bundle.getSerializable(KEY_JOURNEY);
+                Journey journey = new Journey(bundle.getString(KEY_SOURCE), bundle.getString(KEY_DESTINATION));
 
                 try {
                     NextTwoDepartures departures = getNext2Departures(journey);
