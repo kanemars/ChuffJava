@@ -1,6 +1,7 @@
 package kanemars.chuffme;
 
 import android.app.Notification;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
@@ -8,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import kanemars.KaneHuxleyJavaConsumer.GetDeparturesAsyncTask;
@@ -15,10 +17,14 @@ import kanemars.KaneHuxleyJavaConsumer.Models.Departures;
 import kanemars.KaneHuxleyJavaConsumer.Models.Journey;
 import java.util.Calendar;
 
+import static android.os.Build.*;
+import static android.os.Build.VERSION.*;
 import static java.security.AccessController.getContext;
 import static kanemars.chuffme.Constants.*;
 
 public class ChuffNotificationBroadcastReceiver extends BroadcastReceiver {
+
+    //private NotificationManager notificationManager;
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -50,19 +56,41 @@ public class ChuffNotificationBroadcastReceiver extends BroadcastReceiver {
     private static void ShowChufferNotification(Context context, Journey journey, String message, int sound) {
         Intent resultIntent = new Intent(context, MainActivity.class);
         resultIntent.setFlags(NOTIFICATION_INTENT_FLAGS);
-
-        NotificationCompat.Builder notification = new NotificationCompat.Builder(context, "M_CH_ID");
-        notification.setContentTitle(journey.toString())
-                        .setContentText(message)
-                        .setSmallIcon(R.drawable.ic_chuff_me)
-                        .setDefaults(Notification.DEFAULT_LIGHTS | Notification.DEFAULT_VIBRATE)
-                        .setSound(Uri.parse("android.resource://" + context.getPackageName() + "/" + sound))
-                        .setContentIntent(PendingIntent.getActivity(context, 0, resultIntent, PendingIntent.FLAG_CANCEL_CURRENT));
-
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        if (notificationManager != null) {
-            notificationManager.notify(CHUFF_ME_NOTIFICATION_ID, notification.build());
+
+        NotificationCompat.Builder builder;
+        String id = "chuffmeid";
+        long [] vibrator = new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400};
+
+        if (SDK_INT >= VERSION_CODES.O) { // Since android Oreo notification channel is needed.
+            NotificationChannel mChannel = notificationManager.getNotificationChannel(id);
+            if (mChannel == null) {
+                mChannel = new NotificationChannel(id, "chuffme1", NotificationManager.IMPORTANCE_HIGH);
+                mChannel.setDescription("Notification for chuffme");
+                mChannel.enableVibration(true);
+                mChannel.setVibrationPattern(vibrator);
+                notificationManager.createNotificationChannel(mChannel);
+            }
+            builder = new NotificationCompat.Builder(context, id);
+
+            builder.setContentTitle(message)
+                    .setSmallIcon(R.drawable.ic_chuff_me)
+                    .setContentText(message)
+                    .setDefaults(Notification.DEFAULT_ALL)
+                    .setAutoCancel(true)
+                    .setContentIntent(PendingIntent.getActivity(context, 0, resultIntent, 0))
+                    .setTicker(message)
+                    .setVibrate(vibrator);
+        }else{
+            builder = new NotificationCompat.Builder(context, id);
+            builder.setContentTitle(journey.toString())
+                    .setContentText(message)
+                    .setSmallIcon(R.drawable.ic_chuff_me)
+                    .setDefaults(Notification.DEFAULT_LIGHTS | Notification.DEFAULT_VIBRATE)
+                    .setSound(Uri.parse("android.resource://" + context.getPackageName() + "/" + sound))
+                    .setContentIntent(PendingIntent.getActivity(context, 0, resultIntent, 0));
         }
+        notificationManager.notify(CHUFF_ME_NOTIFICATION_ID, builder.build());
     }
 
     static NextTwoDepartures getNext2Departures(Journey journey) throws Exception {

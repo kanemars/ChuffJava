@@ -16,7 +16,7 @@ final class Constants {
 
     //private static final long MINUTE =  60 * 1000;
     static final long CHUFF_ALARM_INTERVAL = INTERVAL_DAY;
-    static final int NOTIFICATION_INTENT_FLAGS = Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_SINGLE_TOP;
+    static final int NOTIFICATION_INTENT_FLAGS = Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP; // Intent.FLAG_ACTIVITY_NEW_TASK
 
     // Using the same notificationId will ensure that Chuff Me will only have at most one notification listed
     // Existing Chuff Me notifications will be replaced with the latest one
