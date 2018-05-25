@@ -56,40 +56,34 @@ public class ChuffNotificationBroadcastReceiver extends BroadcastReceiver {
     private static void ShowChufferNotification(Context context, Journey journey, String message, int sound) {
         Intent resultIntent = new Intent(context, MainActivity.class);
         resultIntent.setFlags(NOTIFICATION_INTENT_FLAGS);
-        NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
-        NotificationCompat.Builder builder;
         String id = "chuffmeid";
         long [] vibrator = new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400};
 
-        if (SDK_INT >= VERSION_CODES.O) { // Since android Oreo notification channel is needed.
-            NotificationChannel mChannel = notificationManager.getNotificationChannel(id);
-            if (mChannel == null) {
-                mChannel = new NotificationChannel(id, "chuffme1", NotificationManager.IMPORTANCE_HIGH);
-                mChannel.setDescription("Notification for chuffme");
-                mChannel.enableVibration(true);
-                mChannel.setVibrationPattern(vibrator);
-                notificationManager.createNotificationChannel(mChannel);
-            }
-            builder = new NotificationCompat.Builder(context, id);
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, id)
+            .setContentTitle(message)
+                .setSmallIcon(R.drawable.ic_chuff_me)
+                .setContentText(message)
+                .setDefaults(Notification.DEFAULT_ALL)
+                .setAutoCancel(true)
+                .setContentIntent(PendingIntent.getActivity(context, 0, resultIntent, 0))
+                .setTicker(message)
+                .setVibrate(vibrator);
 
-            builder.setContentTitle(message)
-                    .setSmallIcon(R.drawable.ic_chuff_me)
-                    .setContentText(message)
-                    .setDefaults(Notification.DEFAULT_ALL)
-                    .setAutoCancel(true)
-                    .setContentIntent(PendingIntent.getActivity(context, 0, resultIntent, 0))
-                    .setTicker(message)
-                    .setVibrate(vibrator);
-        }else{
-            builder = new NotificationCompat.Builder(context, id);
-            builder.setContentTitle(journey.toString())
-                    .setContentText(message)
-                    .setSmallIcon(R.drawable.ic_chuff_me)
-                    .setDefaults(Notification.DEFAULT_LIGHTS | Notification.DEFAULT_VIBRATE)
-                    .setSound(Uri.parse("android.resource://" + context.getPackageName() + "/" + sound))
-                    .setContentIntent(PendingIntent.getActivity(context, 0, resultIntent, 0));
+        NotificationManager notificationManager =
+                (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+
+        if (SDK_INT >= VERSION_CODES.O) { // Since android Oreo notification channel is needed.
+            NotificationChannel notificationChannel = notificationManager.getNotificationChannel(id);
+            if (notificationChannel == null) {
+                notificationChannel = new NotificationChannel(id, "chuffme1", NotificationManager.IMPORTANCE_DEFAULT);
+                notificationChannel.setDescription("Notification for chuffme");
+                notificationChannel.enableVibration(true);
+                notificationChannel.setVibrationPattern(vibrator);
+                notificationManager.createNotificationChannel(notificationChannel);
+            }
         }
+
         notificationManager.notify(CHUFF_ME_NOTIFICATION_ID, builder.build());
     }
 

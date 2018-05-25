@@ -7,8 +7,8 @@ android {
         applicationId "kanemars.chuffme"
         minSdkVersion 22
         targetSdkVersion 26
-        versionCode 9
-        versionName "9 Just passing reliable strings as extras in Intent"
+        versionCode 10
+        versionName "Notifications that work on Android Orio"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
