@@ -22,4 +22,7 @@ final class Constants {
     // Existing Chuff Me notifications will be replaced with the latest one
     // The times of existing trains will become redundant after a while anyway
     static final int CHUFF_ME_NOTIFICATION_ID = 1;
+
+    static final long [] VIBRATOR = new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400};
+
 }

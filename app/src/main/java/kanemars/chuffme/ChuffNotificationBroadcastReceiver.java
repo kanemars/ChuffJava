@@ -19,12 +19,9 @@ import java.util.Calendar;
 
 import static android.os.Build.*;
 import static android.os.Build.VERSION.*;
-import static java.security.AccessController.getContext;
 import static kanemars.chuffme.Constants.*;
 
 public class ChuffNotificationBroadcastReceiver extends BroadcastReceiver {
-
-    //private NotificationManager notificationManager;
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -54,21 +51,32 @@ public class ChuffNotificationBroadcastReceiver extends BroadcastReceiver {
         }
     }
     private static void ShowChufferNotification(Context context, Journey journey, String message, int sound) {
+        // Below mention the Activity which needs to be
+        // triggered when user clicks on notification(MainActivity.class in this case)
+
+        Uri soundUri = Uri.parse("android.resource://" + context.getPackageName() + "/" + sound);
+
         Intent resultIntent = new Intent(context, MainActivity.class);
-        resultIntent.setFlags(NOTIFICATION_INTENT_FLAGS);
+        resultIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
+                | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        PendingIntent pendingIntent = PendingIntent.getActivity(
+                context,
+                0,
+                resultIntent,
+                PendingIntent.FLAG_UPDATE_CURRENT);
 
         String id = "chuffmeid";
-        long [] vibrator = new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400};
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, id)
-            .setContentTitle(message)
+            .setContentTitle(journey.toString())
                 .setSmallIcon(R.drawable.ic_chuff_me)
                 .setContentText(message)
                 .setDefaults(Notification.DEFAULT_ALL)
                 .setAutoCancel(true)
-                .setContentIntent(PendingIntent.getActivity(context, 0, resultIntent, 0))
+                .setContentIntent(pendingIntent)
                 .setTicker(message)
-                .setVibrate(vibrator);
+                .setVibrate(VIBRATOR)
+                .setSound(soundUri);
 
         NotificationManager notificationManager =
                 (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
@@ -79,8 +87,9 @@ public class ChuffNotificationBroadcastReceiver extends BroadcastReceiver {
                 notificationChannel = new NotificationChannel(id, "chuffme1", NotificationManager.IMPORTANCE_DEFAULT);
                 notificationChannel.setDescription("Notification for chuffme");
                 notificationChannel.enableVibration(true);
-                notificationChannel.setVibrationPattern(vibrator);
+                notificationChannel.setVibrationPattern(VIBRATOR);
                 notificationManager.createNotificationChannel(notificationChannel);
+                //notificationChannel.setSound(soundUri, )
             }
         }
 
