@@ -84,7 +84,7 @@ public class ChuffNotificationBroadcastReceiver extends BroadcastReceiver {
         if (SDK_INT >= VERSION_CODES.O) { // Since android Oreo notification channel is needed.
             NotificationChannel notificationChannel = notificationManager.getNotificationChannel(id);
             if (notificationChannel == null) {
-                notificationChannel = new NotificationChannel(id, "chuffme1", NotificationManager.IMPORTANCE_DEFAULT);
+                notificationChannel = new NotificationChannel(id, "Default notifications", NotificationManager.IMPORTANCE_DEFAULT);
                 notificationChannel.setDescription("Notification for chuffme");
                 notificationChannel.enableVibration(true);
                 notificationChannel.setVibrationPattern(VIBRATOR);
