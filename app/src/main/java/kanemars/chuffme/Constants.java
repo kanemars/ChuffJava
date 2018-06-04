@@ -11,7 +11,7 @@ final class Constants {
     static final String KEY_SOURCE = "source";
     static final String KEY_DESTINATION = "destination";
     static final String KEY_NOTIFICATION_TIME = "notification_time";
-    static final String KEY_DAYS_OF_WEEK = "DayOfWeek";
+    static final String KEY_DAYS_OF_WEEK = "DaysOfWeek";
     static final String KEY_NOTIFICATION_ON = "notification_preference";
 
     //private static final long MINUTE =  60 * 1000;
