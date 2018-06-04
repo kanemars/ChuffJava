@@ -18,7 +18,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import kanemars.KaneHuxleyJavaConsumer.Models.Journey;
 
-import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -26,7 +25,6 @@ import static kanemars.chuffme.Constants.*;
 
 public class MainActivity extends AppCompatActivity {
 
-    private SharedPreferences.OnSharedPreferenceChangeListener listener;
     private AlarmManager alarmMgr;
     private PendingIntent pendingIntent;
     private SharedPreferences chuffPreferences;
@@ -41,10 +39,23 @@ public class MainActivity extends AppCompatActivity {
 
         alarmMgr = (AlarmManager) this.getSystemService(Context.ALARM_SERVICE);
 
-        // http://stackoverflow.com/questions/2542938/sharedpreferences-onsharedpreferencechangelistener-not-being-called-consistently
         chuffPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
-        listener = new SharedPreferences.OnSharedPreferenceChangeListener() {
+        chuffPreferences.registerOnSharedPreferenceChangeListener(getNotificationButtonListener());
+
+        showNotificationStatus();
+
+        // Now this MainActivity may have been called from StartAtBootReceiver
+        boolean notificationOn = chuffPreferences.getBoolean(KEY_NOTIFICATION_ON, false);
+        if (notificationOn) {
+            startNotifications(chuffPreferences);
+            moveTaskToBack(true);
+        }
+    }
+
+    private SharedPreferences.OnSharedPreferenceChangeListener getNotificationButtonListener() {
+        // http://stackoverflow.com/questions/2542938/sharedpreferences-onsharedpreferencechangelistener-not-being-called-consistently
+        return new SharedPreferences.OnSharedPreferenceChangeListener() {
             public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
                 switch (key) {
                     case KEY_NOTIFICATION_ON:
@@ -58,16 +69,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         };
-        chuffPreferences.registerOnSharedPreferenceChangeListener(listener);
-
-        showNotificationStatus();
-
-        // Now this MainActivity may have been called from StartAtBootReceiver
-        boolean notificationOn = chuffPreferences.getBoolean(KEY_NOTIFICATION_ON, false);
-        if (notificationOn) {
-            startNotifications(chuffPreferences);
-            moveTaskToBack(true);
-        }
     }
 
     private void startNotifications (SharedPreferences prefs) {

@@ -26,12 +26,13 @@
             android:key="notification_time"
             android:title="Daily notification time"
             />
-    <MultiSelectListPreference android:title="Days of week to be notified"
-                               android:key="DaysOfWeek"
-                               android:summary="%s"
-                               android:entries="@array/daysOfWeek"
-                               android:entryValues="@array/daysOfWeekValues"
-                               android:defaultValue="@array/daysOfWeekDefaults"/>
+    <kanemars.chuffme.MultiSelectListPreferenceWithSummary
+            android:title="Days of week to be notified"
+               android:key="DaysOfWeek"
+               android:summary="%s"
+               android:entries="@array/daysOfWeek"
+               android:entryValues="@array/daysOfWeekValues"
+               android:defaultValue="@array/daysOfWeekDefaults"/>
     <SwitchPreference
             android:defaultValue="false"
             android:title="Show daily notifications"

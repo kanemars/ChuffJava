@@ -1,6 +1,5 @@
 package kanemars.chuffme;
 
-import android.content.Intent;
 import static android.app.AlarmManager.*;
 
 final class Constants {
@@ -14,9 +13,7 @@ final class Constants {
     static final String KEY_DAYS_OF_WEEK = "DaysOfWeek";
     static final String KEY_NOTIFICATION_ON = "notification_preference";
 
-    //private static final long MINUTE =  60 * 1000;
     static final long CHUFF_ALARM_INTERVAL = INTERVAL_DAY;
-    static final int NOTIFICATION_INTENT_FLAGS = Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP; // Intent.FLAG_ACTIVITY_NEW_TASK
 
     // Using the same notificationId will ensure that Chuff Me will only have at most one notification listed
     // Existing Chuff Me notifications will be replaced with the latest one
