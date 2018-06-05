@@ -3,6 +3,7 @@ package kanemars.chuffme;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.bluetooth.BluetoothAdapter;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -30,9 +31,18 @@ public class StartAtBootReceiver extends BroadcastReceiver {
     private void sendHelloNotificationAndStartNotifications (Context context) {
         SharedPreferences chuffPreferences = PreferenceManager.getDefaultSharedPreferences(context);
         String strSource = chuffPreferences.getString(KEY_SOURCE, "Taplow - TAP");
-        String strDestination = chuffPreferences.getString(KEY_DESTINATION, "Reading -RDG");
+        String strDestination = chuffPreferences.getString(KEY_DESTINATION, "Reading - RDG");
         Journey journey = new Journey(strSource, strDestination);
         String message = new NotificationTime(chuffPreferences).toString(context, journey);
+
+        // Following will launch MainActivity when user clicks on Welcome notification
+        Intent launchMainActivityIntent = new Intent(context, MainActivity.class);
+        launchMainActivityIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        PendingIntent pendingIntent = PendingIntent.getActivity(context,
+                0,
+                launchMainActivityIntent,
+                PendingIntent.FLAG_UPDATE_CURRENT);
+
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)
                 .setContentTitle("Welcome to Chuff Me")
@@ -40,7 +50,8 @@ public class StartAtBootReceiver extends BroadcastReceiver {
                 .setContentText(message)
                 .setDefaults(Notification.DEFAULT_ALL)
                 .setAutoCancel(true)
-                .setTicker(message);
+                .setTicker(message)
+                .setContentIntent(pendingIntent);
 
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
