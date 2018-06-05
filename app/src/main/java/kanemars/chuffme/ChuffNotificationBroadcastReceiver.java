@@ -86,6 +86,7 @@ public class ChuffNotificationBroadcastReceiver extends BroadcastReceiver {
                 notificationChannel.setDescription("Notification for chuffme");
                 notificationChannel.enableVibration(true);
                 notificationChannel.setVibrationPattern(VIBRATOR);
+                notificationChannel.setSound(soundUri, AUDIO_ATTRIBUTES);
                 notificationManager.createNotificationChannel(notificationChannel);
             }
         }
