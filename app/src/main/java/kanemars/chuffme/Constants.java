@@ -12,6 +12,7 @@ final class Constants {
     static final String KEY_NOTIFICATION_TIME = "notification_time";
     static final String KEY_DAYS_OF_WEEK = "DaysOfWeek";
     static final String KEY_NOTIFICATION_ON = "notification_preference";
+    static final String CHANNEL_ID = "chuff_me_channel_1";
 
     static final long CHUFF_ALARM_INTERVAL = INTERVAL_DAY;
 

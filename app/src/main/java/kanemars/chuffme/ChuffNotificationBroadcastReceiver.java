@@ -65,9 +65,7 @@ public class ChuffNotificationBroadcastReceiver extends BroadcastReceiver {
                 resultIntent,
                 PendingIntent.FLAG_UPDATE_CURRENT);
 
-        String id = "chuffmeid";
-
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, id)
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)
             .setContentTitle(journey.toString())
                 .setSmallIcon(R.drawable.ic_chuff_me)
                 .setContentText(message)
@@ -82,9 +80,9 @@ public class ChuffNotificationBroadcastReceiver extends BroadcastReceiver {
                 (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
         if (SDK_INT >= VERSION_CODES.O) { // Since android Oreo notification channel is needed.
-            NotificationChannel notificationChannel = notificationManager.getNotificationChannel(id);
+            NotificationChannel notificationChannel = notificationManager.getNotificationChannel(CHANNEL_ID);
             if (notificationChannel == null) {
-                notificationChannel = new NotificationChannel(id, "Default notifications", NotificationManager.IMPORTANCE_DEFAULT);
+                notificationChannel = new NotificationChannel(CHANNEL_ID, "Default notifications", NotificationManager.IMPORTANCE_DEFAULT);
                 notificationChannel.setDescription("Notification for chuffme");
                 notificationChannel.enableVibration(true);
                 notificationChannel.setVibrationPattern(VIBRATOR);

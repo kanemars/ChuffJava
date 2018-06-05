@@ -7,8 +7,8 @@ android {
         applicationId "kanemars.chuffme"
         minSdkVersion 22
         targetSdkVersion 26
-        versionCode 11
-        versionName "Show app when user clicks on the notification"
+        versionCode 12
+        versionName "Show days of week on preference screen when app is first run"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
