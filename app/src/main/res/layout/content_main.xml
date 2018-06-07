@@ -31,12 +31,7 @@
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/trainTimesTextView"/>
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textIsSelectable="true"
-            android:id="@+id/logTextView"
-            android:scrollbars="vertical"
-            android:maxLines="9999"/>
 
+<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/chuffme_promo_graphic"
+           android:contentDescription="Homepage image"/>
 </LinearLayout>
