@@ -102,8 +102,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private Journey getJourney() {
-        String strSource = chuffPreferences.getString(KEY_SOURCE, "Taplow - TAP");
-        String strDestination = chuffPreferences.getString(KEY_DESTINATION, "Reading - RDG");
+        String strSource = chuffPreferences.getString(KEY_SOURCE, getString(R.string.default_source_station));
+        String strDestination = chuffPreferences.getString(KEY_DESTINATION, getString(R.string.default_destination_station));
 
         return new Journey(strSource, strDestination);
     }

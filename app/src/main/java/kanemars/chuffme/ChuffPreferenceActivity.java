@@ -45,6 +45,7 @@ public class ChuffPreferenceActivity extends PreferenceActivity {
             return new Preference.OnPreferenceChangeListener() {
 
                 @Override
+                @SuppressWarnings("unchecked")
                 public boolean onPreferenceChange(Preference preference, Object days) {
                     Set<String> selectedDays = (Set<String>) days;
 

@@ -19,4 +19,6 @@
     <string name="settings">Journeys</string>
     <string name="set">Set</string>
     <string name="cancel">Cancel</string>
+    <string name="default_source_station">Taplow - Tap</string>
+    <string name="default_destination_station">Reading - RDG</string>
 </resources>

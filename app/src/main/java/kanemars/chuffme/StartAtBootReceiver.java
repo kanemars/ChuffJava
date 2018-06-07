@@ -30,8 +30,8 @@ public class StartAtBootReceiver extends BroadcastReceiver {
 
     private void sendHelloNotificationAndStartNotifications (Context context) {
         SharedPreferences chuffPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-        String strSource = chuffPreferences.getString(KEY_SOURCE, "Taplow - TAP");
-        String strDestination = chuffPreferences.getString(KEY_DESTINATION, "Reading - RDG");
+        String strSource = chuffPreferences.getString(KEY_SOURCE, context.getString(R.string.default_source_station));
+        String strDestination = chuffPreferences.getString(KEY_DESTINATION, context.getString(R.string.default_destination_station));
         Journey journey = new Journey(strSource, strDestination);
         String message = new NotificationTime(chuffPreferences).toString(context, journey);
 
