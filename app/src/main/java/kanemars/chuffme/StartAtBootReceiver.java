@@ -1,9 +1,6 @@
 package kanemars.chuffme;
 
-import android.app.Notification;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
+import android.app.*;
 import android.bluetooth.BluetoothAdapter;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -13,6 +10,9 @@ import android.os.Build;
 import android.preference.PreferenceManager;
 import android.support.v4.app.NotificationCompat;
 import kanemars.KaneHuxleyJavaConsumer.Models.Journey;
+
+import java.util.HashSet;
+import java.util.Set;
 
 import static android.os.Build.VERSION.SDK_INT;
 import static kanemars.chuffme.Constants.*;
@@ -35,15 +35,6 @@ public class StartAtBootReceiver extends BroadcastReceiver {
         Journey journey = new Journey(strSource, strDestination);
         String message = new NotificationTime(chuffPreferences).toString(context, journey);
 
-        // Following will launch MainActivity when user clicks on Welcome notification
-        Intent launchMainActivityIntent = new Intent(context, MainActivity.class);
-        launchMainActivityIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        PendingIntent pendingIntent = PendingIntent.getActivity(context,
-                0,
-                launchMainActivityIntent,
-                PendingIntent.FLAG_UPDATE_CURRENT);
-
-
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)
                 .setContentTitle("Welcome to Chuff Me")
                 .setSmallIcon(R.drawable.ic_chuff_me)
@@ -51,7 +42,7 @@ public class StartAtBootReceiver extends BroadcastReceiver {
                 .setDefaults(Notification.DEFAULT_ALL)
                 .setAutoCancel(true)
                 .setTicker(message)
-                .setContentIntent(pendingIntent);
+                .setContentIntent(launchMainActivityIfUserClicksOnWelcomeNotification(context));
 
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
@@ -70,14 +61,35 @@ public class StartAtBootReceiver extends BroadcastReceiver {
 
         boolean notificationOn = chuffPreferences.getBoolean(KEY_NOTIFICATION_ON, false);
         if (notificationOn) {
-            startNotificationsAtBoot(context);
+            startNotificationsAtBoot(context, chuffPreferences);
         }
     }
 
-    private void startNotificationsAtBoot (Context context) {
-        Intent i = new Intent(context, MainActivity.class);
-        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        context.startActivity(i);
+    private PendingIntent launchMainActivityIfUserClicksOnWelcomeNotification(Context context) {
+        Intent launchMainActivityIntent = new Intent(context, MainActivity.class);
+        launchMainActivityIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        return PendingIntent.getActivity(context,
+                0,
+                launchMainActivityIntent,
+                PendingIntent.FLAG_UPDATE_CURRENT);
+    }
+
+    // Now don't launch the MainActivity but instead just atart the AlarmManager
+    private void startNotificationsAtBoot (Context context, SharedPreferences chuffPreferences) {
+        Intent bootNotificationIntent = new Intent(context, ChuffNotificationBroadcastReceiver.class);
+
+        Set<String> daysSelected = chuffPreferences.getStringSet(KEY_DAYS_OF_WEEK, new HashSet<String>());
+        String daysSelectedDelim = daysSelected.toString();
+        bootNotificationIntent.putExtra(KEY_DAYS_OF_WEEK, daysSelectedDelim);
+        Journey journey = Constants.getJourney(chuffPreferences, context);
+        bootNotificationIntent.putExtra(KEY_SOURCE, journey.source);
+        bootNotificationIntent.putExtra(KEY_DESTINATION, journey.destination);
+
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(
+                context, PENDING_INTENT_REQUEST_CODE, bootNotificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        AlarmManager alarmMgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+
+        alarmMgr.setInexactRepeating(AlarmManager.RTC_WAKEUP, new NotificationTime(chuffPreferences).getInMillis(), CHUFF_ALARM_INTERVAL, pendingIntent);
     }
 
     private void enableBluetooth() {

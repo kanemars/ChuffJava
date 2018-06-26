@@ -25,9 +25,9 @@ import static kanemars.chuffme.Constants.*;
 
 public class MainActivity extends AppCompatActivity {
 
-    private AlarmManager alarmMgr;
     private PendingIntent pendingIntent;
     private SharedPreferences chuffPreferences;
+    private AlarmManager alarmMgr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         Toolbar myToolbar = findViewById(R.id.chuffToolbar);
         setSupportActionBar(myToolbar);
 
-        alarmMgr = (AlarmManager) this.getSystemService(Context.ALARM_SERVICE);
 
         chuffPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
@@ -46,11 +45,12 @@ public class MainActivity extends AppCompatActivity {
         showNotificationStatus();
 
         // Now this MainActivity may have been called from StartAtBootReceiver
-        boolean notificationOn = chuffPreferences.getBoolean(KEY_NOTIFICATION_ON, false);
-        if (notificationOn) {
-            startNotifications(chuffPreferences);
-            moveTaskToBack(true);
-        }
+        // Actually, we don't want the MainActivity to start notifications, just the StartAtBootReceiver
+        //boolean notificationOn = chuffPreferences.getBoolean(KEY_NOTIFICATION_ON, false);
+        //if (notificationOn) {
+//            startNotifications(chuffPreferences);
+//            moveTaskToBack(true);
+//        }
     }
 
     private SharedPreferences.OnSharedPreferenceChangeListener getNotificationButtonListener() {
@@ -77,13 +77,15 @@ public class MainActivity extends AppCompatActivity {
         Set<String> daysSelected = prefs.getStringSet(KEY_DAYS_OF_WEEK, new HashSet<String>());
         String daysSelectedDelim = daysSelected.toString();
         notificationIntent.putExtra(KEY_DAYS_OF_WEEK, daysSelectedDelim);
-        Journey journey = getJourney();
+        Journey journey = Constants.getJourney(prefs, this);
         notificationIntent.putExtra(KEY_SOURCE, journey.source);
         notificationIntent.putExtra(KEY_DESTINATION, journey.destination);
 
-        //pendingIntent = PendingIntent.getBroadcast(getBaseContext(), 0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);
-        pendingIntent = PendingIntent.getBroadcast(getBaseContext(), 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-        alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, new NotificationTime(prefs).getInMillis(), CHUFF_ALARM_INTERVAL, pendingIntent);
+        pendingIntent = PendingIntent.getBroadcast(
+                getBaseContext(), PENDING_INTENT_REQUEST_CODE, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        alarmMgr = (AlarmManager) this.getSystemService(Context.ALARM_SERVICE);
+
+        alarmMgr.setInexactRepeating(AlarmManager.RTC_WAKEUP, new NotificationTime(prefs).getInMillis(), CHUFF_ALARM_INTERVAL, pendingIntent);
     }
 
     private void stopNotifications () {
@@ -99,13 +101,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         showNotificationStatus();
-    }
-
-    private Journey getJourney() {
-        String strSource = chuffPreferences.getString(KEY_SOURCE, getString(R.string.default_source_station));
-        String strDestination = chuffPreferences.getString(KEY_DESTINATION, getString(R.string.default_destination_station));
-
-        return new Journey(strSource, strDestination);
     }
 
     @Override
@@ -139,7 +134,8 @@ public class MainActivity extends AppCompatActivity {
         TextView textView = findViewById(R.id.trainTimesTextView);
 
         try {
-            NextTwoDepartures departures = ChuffNotificationBroadcastReceiver.getNext2Departures(getJourney());
+            Journey journey = Constants.getJourney(chuffPreferences, this);
+            NextTwoDepartures departures = ChuffNotificationBroadcastReceiver.getNext2Departures(journey);
             textView.setText(departures.toSpanned());
         } catch (Exception e) {
             textView.setText(e.getMessage());
@@ -147,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showNotificationStatus() {
-        Journey journey = getJourney();
+        Journey journey = Constants.getJourney(chuffPreferences, this);
 
         TextView textView = findViewById(R.id.nextNotificationTextView);
         textView.setText(new NotificationTime(chuffPreferences).toString(this, journey));
