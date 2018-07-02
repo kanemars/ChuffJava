@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
 
         try {
             Journey journey = Constants.getJourney(chuffPreferences, this);
-            NextTwoDepartures departures = ChuffNotificationBroadcastReceiver.getNext2Departures(journey);
+            NextTwoDepartures departures = ChuffNotificationBroadcastReceiver.getNext2Departures(journey, getString(R.string.nointernet));
             textView.setText(departures.toSpanned());
         } catch (Exception e) {
             textView.setText(e.getMessage());

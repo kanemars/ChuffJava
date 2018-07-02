@@ -37,7 +37,7 @@ public class ChuffNotificationBroadcastReceiver extends BroadcastReceiver {
                 Journey journey = new Journey(bundle.getString(KEY_SOURCE), bundle.getString(KEY_DESTINATION));
 
                 try {
-                    NextTwoDepartures departures = getNext2Departures(journey);
+                    NextTwoDepartures departures = getNext2Departures(journey, context.getResources().getString(R.string.nointernet));
                     String message = departures.toString();
                     if (departures.areTrainsOnTime()) {
                         ShowChufferNotification(context, journey, message, R.raw.thomas_whistle);
@@ -94,12 +94,12 @@ public class ChuffNotificationBroadcastReceiver extends BroadcastReceiver {
         notificationManager.notify(CHUFF_ME_NOTIFICATION_ID, builder.build());
     }
 
-    static NextTwoDepartures getNext2Departures(Journey journey) throws Exception {
+    protected static NextTwoDepartures getNext2Departures(Journey journey, String noInternetMessage) throws Exception {
         AsyncTask<String, Integer, Departures> departuresAsyncTask;
         departuresAsyncTask = new GetDeparturesAsyncTask().execute(journey.crsSource, journey.crsDestination, "2");
         Departures departures = departuresAsyncTask.get();
         if (departures == null) {
-            throw new Exception("Problem connecting to internet, try turning off WIFI");
+            throw new Exception(noInternetMessage);
         }
 
         return new NextTwoDepartures (departures.trainServices.get(0), departures.trainServices.get(1));
