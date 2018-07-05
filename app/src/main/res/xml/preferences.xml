@@ -11,6 +11,7 @@
             android:maxLines="1"
             android:key="source"
             android:summary="@string/source"
+        android:id="@+id/source"
     />
     <kanemars.chuffme.AutoCompletePreference
             android:defaultValue="@string/default_destination_station"
@@ -21,10 +22,12 @@
             android:maxLines="1"
             android:key="destination"
             android:summary="@string/destination"
+        android:id="@+id/destination"
     />
     <kanemars.chuffme.TimePreference
             android:key="notification_time"
             android:title="Daily notification time"
+        android:id="@+id/notificationTime"/>
             />
     <kanemars.chuffme.MultiSelectListPreferenceWithSummary
             android:title="Days of week to be notified"
@@ -32,11 +35,13 @@
                android:summary="%s"
                android:entries="@array/daysOfWeek"
                android:entryValues="@array/daysOfWeekValues"
-               android:defaultValue="@array/daysOfWeekDefaults"/>
+               android:defaultValue="@array/daysOfWeekDefaults"
+        android:id="@+id/daysOfWeek"/>
     <SwitchPreference
             android:defaultValue="false"
             android:title="Show daily notifications"
-            android:key="notification_preference"/>
+            android:key="notification_preference"
+            android:id="@+id/notificationPreference"/>
 
 
 </PreferenceScreen>
